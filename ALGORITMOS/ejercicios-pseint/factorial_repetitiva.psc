@@ -1,7 +1,7 @@
 Algoritmo CalculoFactorial
     Definir Numero, Factorial, i Como Entero
     
-    Escribir "Ingrese un nÃºmero para calcular el factorial:"
+    Escribir "Ingrese un número para calcular el factorial:"
     Leer Numero
     
     // Inicializar la variable Factorial

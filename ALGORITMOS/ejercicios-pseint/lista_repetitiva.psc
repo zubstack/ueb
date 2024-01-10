@@ -2,11 +2,14 @@ Algoritmo ListaDeCompras
 	// Declarar variables
 	Definir listaCompras Como Cadena
 	Definir articulo Como Cadena
+	Definir repeticion Como Logico 
 	Definir opcion Como Entero
 	// Inicializar la lista de compras como vacía
 	listaCompras <- ''
+	// Inicializar indicador de repeticion
+	repeticion <- Verdadero
 	// Menú principal
-	Mientras Verdadero Hacer
+	Mientras repeticion = Verdadero Hacer
 		Escribir '1. Agregar artículo a la lista'
 		Escribir '2. Mostrar lista de compras'
 		Escribir '3. Salir'
@@ -30,6 +33,8 @@ Algoritmo ListaDeCompras
 			3:
 				// Salir del programa
 				Escribir 'Saliendo del programa.'
+				repeticion <- Falso
+				
 			Defecto:
 				Escribir 'Opción no válida. Por favor, seleccione una opción válida.'
 		FinSegún
