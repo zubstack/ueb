@@ -1,0 +1,80 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "workbench.sideBar.location": "right",
+  "workbench.colorTheme": "Monokai Dark Soda",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorBlinking": "expand",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.autoClosingBrackets": "always",
+  "editor.stickyScroll.enabled": true,
+  "editor.minimap.enabled": false,
+  "editor.glyphMargin": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "errorLens.excludeBySource": [
+    "eslint(react/jsx-no-target-blank)",
+    "eslint(no-undef)",
+    "eslint(react/prop-types)"
+  ],
+  "editor.fontFamily": "'Ubuntu Mono', 'Fira Code', Consolas, \"Currier New\", monospace",
+  "editor.wordWrap": "on",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 18,
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDelete": false,
+
+  "explorer.autoReveal": true,
+  "window.menuBarVisibility": "toggle",
+  "settingsSync.ignoredSettings": ["editor.fontFamily"],
+  "security.workspace.trust.untrustedFiles": "open",
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
+  "git.openRepositoryInParentFolders": "never",
+  "custom-md-pdf.convertOnSave": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "settingsSync.ignoredExtensions": ["sibiraj-s.vscode-scss-formatter"],
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "isort.args": ["--profile", "black"],
+  "python.linting.mypyEnabled": true,
+  "autoDocstring.docstringFormat": "numpy",
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.env.linux": {},
+  "console-ninja.featureSet": "Community",
+  "window.zoomPerWindow": false,
+  "workbench.editor.showTabs": "none",
+  "workbench.statusBar.visible": false,
+  "workbench.editor.editorActionsLocation": "titleBar",
+  "workbench.startupEditor": "none",
+  "redhat.telemetry.enabled": true,
+  "terminal.integrated.fontSize": 18,
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "accessibility.signals.terminalBell": {
+    "sound": "on"
+  },
+  "terminal.integrated.enableVisualBell": true,
+  "workbench.activityBar.location": "hidden",
+  "cSpell.userWords": ["scanf"]
+}
