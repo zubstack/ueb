@@ -1,0 +1,28 @@
+Inicio
+
+    // Declarar las variables para la cantidad y los billetes de cada denominación
+    Entero cantidad, billete_50, billete_20, billete_10, billete_5
+    
+    // Solicitar al usuario que ingrese la cantidad de tres cifras
+    Escribir "Ingrese una cantidad de tres cifras: "
+    Leer cantidad
+    
+    // Calcular la cantidad de billetes de cada denominación
+    billete_50 = cantidad / 50
+    cantidad = cantidad % 50
+    
+    billete_20 = cantidad / 20
+    cantidad = cantidad % 20
+    
+    billete_10 = cantidad / 10
+    cantidad = cantidad % 10
+    
+    billete_5 = cantidad / 5
+    
+    // Mostrar el resultado
+    Escribir "Cantidad de billetes de $50: ", billete_50
+    Escribir "Cantidad de billetes de $20: ", billete_20
+    Escribir "Cantidad de billetes de $10: ", billete_10
+    Escribir "Cantidad de billetes de $5: ", billete_5
+    
+Fin

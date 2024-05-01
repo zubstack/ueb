@@ -1,0 +1,40 @@
+Inicio
+
+    // Declarar las variables para almacenar los 4 números enteros
+    Entero num1, num2, num3, num4
+    
+    // Solicitar al usuario que ingrese los 4 números
+    Escribir "Ingresa el primer número: "
+    Leer num1
+    Escribir "Ingresa el segundo número: "
+    Leer num2
+    Escribir "Ingresa el tercer número: "
+    Leer num3
+    Escribir "Ingresa el cuarto número: "
+    Leer num4
+    
+    // Suponer que el primer número es tanto el mayor como el menor inicialmente
+    Entero mayor = num1
+    Entero menor = num1
+    
+    // Comparar con los otros números para encontrar el mayor y el menor
+    Si num2 > mayor Entonces
+        mayor = num2
+    Sino Si num2 < menor Entonces
+        menor = num2
+    
+    Si num3 > mayor Entonces
+        mayor = num3
+    Sino Si num3 < menor Entonces
+        menor = num3
+    
+    Si num4 > mayor Entonces
+        mayor = num4
+    Sino Si num4 < menor Entonces
+        menor = num4
+    
+    // Mostrar el resultado
+    Escribir "El número mayor es: ", mayor
+    Escribir "El número menor es: ", menor
+    
+Fin
