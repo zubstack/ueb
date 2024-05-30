@@ -1,0 +1,77 @@
+INICIO
+
+  DECLARAR entero option, start, end, base
+
+  MIENTRAS verdadero
+    ASIGNAR 0 a option
+    IMPRIMIR "Seleccione la operación:"
+    IMPRIMIR "1. Suma"
+    IMPRIMIR "2. Resta"
+    IMPRIMIR "3. Multiplicación"
+    IMPRIMIR "4. División"
+    IMPRIMIR "5. Potenciación"
+    IMPRIMIR "6. Salir"
+
+    MIENTRAS option > 6 O option < 1
+      IMPRIMIR "Ingrese el número de la opción deseada: "
+      LEER option
+
+    SI option = 6 ENTONCES
+      IMPRIMIR "Saliendo del programa..."
+      SALIR DEL BUCLE
+    FIN SI
+
+    IMPRIMIR "Ingrese el número inicial del rango: "
+    LEER start
+    IMPRIMIR "Ingrese el número final del rango: "
+    LEER end
+    IMPRIMIR "Ingrese el número base para la tabla: "
+    LEER base
+
+    SI start > end ENTONCES
+      IMPRIMIR "[Error]: El rango no es válido. El número inicial debe ser menor o igual al número final."
+      CONTINUAR
+    FIN SI
+
+    SEGÚN option HACER
+      CASO 1:
+        IMPRIMIR "Tabla de suma para base del start al end:"
+        PARA i DESDE start HASTA end HACER
+          IMPRIMIR "base + i = base + i"
+        FIN PARA
+
+      CASO 2:
+        IMPRIMIR "Tabla de resta para base del start al end:"
+        PARA i DESDE start HASTA end HACER
+          IMPRIMIR "base - i = base - i"
+        FIN PARA
+
+      CASO 3:
+        IMPRIMIR "Tabla de multiplicación para base del start al end:"
+        PARA i DESDE start HASTA end HACER
+          IMPRIMIR "base * i = base * i"
+        FIN PARA
+
+      CASO 4:
+        IMPRIMIR "Tabla de división para base del start al end:"
+        PARA i DESDE start HASTA end HACER
+          SI i != 0 ENTONCES
+            IMPRIMIR "base / i = base / i"
+          SINO
+            IMPRIMIR "base / i = indefinido (división por cero)"
+          FIN SI
+        FIN PARA
+
+      CASO 5:
+        IMPRIMIR "Tabla de potenciación para base del start al end:"
+        PARA i DESDE start HASTA end HACER
+          IMPRIMIR "base ^ i = pow(base, i)"
+        FIN PARA
+
+      OTRO CASO:
+        IMPRIMIR "Opción no válida. Por favor, seleccione una opción válida."
+    FIN SEGÚN
+
+  FIN MIENTRAS
+
+FIN
