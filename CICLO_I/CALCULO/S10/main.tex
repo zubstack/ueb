@@ -1,0 +1,485 @@
+\documentclass[answers]{exam} % Clase para exámenes con respuestas
+\usepackage[english,spanish]{babel} % Soporte para inglés y español
+\usepackage[autostyle]{csquotes} % Manejo de citas
+\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
+\usepackage{graphicx} % Inclusión de gráficos
+\usepackage{enumitem} % Personalización de listas enumeradas
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} % Configuración de márgenes
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} % Enlaces con color
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Respuesta:}\par\noindent} % Personalización del título de respuestas
+\renewcommand{\familydefault}{\sfdefault}
+
+% Configuración de encabezado y pie de página
+\pagestyle{headandfoot}
+\firstpageheader{Universidad de Bolívar}{}{\selectlanguage{spanish}\today} 
+\runningheader{Universidad de Bolívar}{}{Cálculo I}
+\firstpagefooter{}{\thepage}{}
+\runningfooter{}{\thepage}{}
+
+\begin{document}
+
+\begin{center}
+	\large\textbf{Trabajo Autónomo 2.10 - Cálculo I}\\[1em]
+	\large Primer Ciclo \enquote*{A} - Ingeniería de Software\\[1em]
+\end{center}
+
+\vspace{0.5cm}
+\large\textbf{Estudiante:} Ariel Alejandro Calderón
+\vspace{0.5cm}
+
+\begin{questions}
+
+	% Pregunta 1
+	\question \large\textbf{Calcular los siguientes límites:}
+	\begin{enumerate}[label=\alph*.]
+		\item $\displaystyle \lim_{x\to{0}} \frac{4x-3x^2+8x^3}{2x-5x^2}$
+		\item $\displaystyle \lim_{x\to{5}} \frac{3-\sqrt{4+x}}{x-5}$
+		\item $\displaystyle \lim_{x\to{1}} \frac{x^3+x^2-5x+3}{x^4-x^3-x^2+x}$
+		\item $\displaystyle \lim_{x\to{2}} \frac{x-3}{x+4}$
+	\end{enumerate}
+	\begin{solution}
+		\begin{enumerate}[label=\alph*.]
+			\item Para calcular este límite, factorizamos \(x\) en el numerador y denominador:
+
+			      \[
+				      \frac{4x-3x^2+8x^3}{2x-5x^2} = \frac{x(4-3x+8x^2)}{x(2-5x)}
+			      \]
+
+			      Cancelamos \(x\):
+
+			      \[
+				      = \frac{4-3x+8x^2}{2-5x}
+			      \]
+
+			      Evaluamos el límite al sustituir \(x = 0\):
+
+			      \[
+				      \lim_{x\to{0}} \frac{4-3x+8x^2}{2-5x} = \frac{4-3(0)+8(0)^2}{2-5(0)} = \frac{4}{2} = 2
+			      \]
+
+			\item Este límite tiene una forma indeterminada \( \frac{0}{0} \). Usamos la racionalización:
+
+			      \[
+				      \lim_{x\to{5}} \frac{3-\sqrt{4+x}}{x-5} \cdot \frac{3+\sqrt{4+x}}{3+\sqrt{4+x}} = \lim_{x\to{5}} \frac{(3-\sqrt{4+x})(3+\sqrt{4+x})}{(x-5)(3+\sqrt{4+x})}
+			      \]
+
+			      \[
+				      = \lim_{x\to{5}} \frac{9 - (4+x)}{(x-5)(3+\sqrt{4+x})} = \lim_{x\to{5}} \frac{5-x}{(x-5)(3+\sqrt{4+x})}
+			      \]
+
+			      \[
+				      = \lim_{x\to{5}} \frac{-(x-5)}{(x-5)(3+\sqrt{4+x})} = \lim_{x\to{5}} \frac{-1}{3+\sqrt{4+5}} = \frac{-1}{3+\sqrt{9}} = \frac{-1}{3+3} = \frac{-1}{6}
+			      \]
+			      \vspace{1cm}
+
+			\item Este límite también tiene una forma indeterminada \( \frac{0}{0} \). Factorizamos el numerador y denominador:
+
+			      \[
+				      x^3 + x^2 - 5x + 3 = (x-1)(x^2 + 2x - 3)
+			      \]
+
+			      \[
+				      x^4 - x^3 - x^2 + x = x(x-1)(x^2 - 1)
+			      \]
+
+			      \[
+				      = x(x-1)(x-1)(x+1) = x(x-1)^2(x+1)
+			      \]
+
+			      Simplificamos:
+
+			      \[
+				      \frac{(x-1)(x^2 + 2x - 3)}{x(x-1)^2(x+1)} = \frac{x^2 + 2x - 3}{x(x-1)(x+1)}
+			      \]
+
+			      Evaluamos el límite al sustituir \(x = 1\):
+
+			      \[
+				      \lim_{x\to{1}} \frac{x^2 + 2x - 3}{x(x-1)(x+1)} = \frac{1^2 + 2(1) - 3}{1(1-1)(1+1)} = \frac{0}{0} \text{ (indeterminado)}
+			      \]
+
+			      Factorizamos:
+
+			      \[
+				      \lim_{x\to{1}} \frac{(x-1)(x+3)}{x(x-1)(x+1)} = \frac{x+3}{x(x+1)}
+			      \]
+
+			      \[
+				      = \frac{1+3}{1(1+1)} = \frac{4}{2} = 2
+			      \]
+
+			\item Evaluamos el límite al sustituir \(x = 2\):
+
+			      \[
+				      \frac{2-3}{2+4} = \frac{-1}{6}
+			      \]
+		\end{enumerate}
+		\vspace{1cm}
+	\end{solution}
+
+
+	\vspace{0.5cm}
+
+	% Pregunta 2
+	\question \large\textbf{Calcular $\displaystyle \lim_{x\to{1}} |x-1|$}
+	\begin{solution}
+		Consideramos el comportamiento de la función a medida que \( x \) se acerca a 1 desde ambos lados.
+
+		\[
+			|x-1| =
+			\begin{cases}
+				1 - x, & \text{si } x < 1   \\
+				x - 1, & \text{si } x \ge 1
+			\end{cases}
+		\]
+
+		- Cuando \( x \to 1^- \):
+		\[
+			\lim_{x \to 1^-} |x-1| = \lim_{x \to 1^-} (1 - x) = 0
+		\]
+
+		- Cuando \( x \to 1^+ \):
+		\[
+			\lim_{x \to 1^+} |x-1| = \lim_{x \to 1^+} (x - 1) = 0
+		\]
+
+		Dado que ambos límites laterales son iguales, podemos concluir que:
+
+		\[
+			\lim_{x \to 1} |x-1| = 0
+		\]
+	\end{solution}
+
+	% Pregunta 3
+	\question \large\textbf{Calcular $\displaystyle \lim_{x\to{0}} \frac{x}{|x|}$}
+	\begin{solution}
+		Consideramos el comportamiento de la función a medida que \( x \) se acerca a 0 desde ambos lados.
+
+		\[
+			\frac{x}{|x|} =
+			\begin{cases}
+				1,  & \text{si } x > 0 \\
+				-1, & \text{si } x < 0
+			\end{cases}
+		\]
+
+		- Cuando \( x \to 0^+ \):
+		\[
+			\lim_{x \to 0^+} \frac{x}{|x|} = \lim_{x \to 0^+} 1 = 1
+		\]
+
+		- Cuando \( x \to 0^- \):
+		\[
+			\lim_{x \to 0^-} \frac{x}{|x|} = \lim_{x \to 0^-} (-1) = -1
+		\]
+
+		Dado que los límites laterales son diferentes, podemos concluir que el límite no existe:
+
+		\[
+			\lim_{x \to 0} \frac{x}{|x|} \text{ no existe}
+		\]
+	\end{solution}
+
+
+	\vspace{0.5cm}
+
+	% Pregunta 4
+	\question \large\textbf{Si $ f(x) =
+			\begin{cases}
+				x^2+2, & \text{si } x \geq 1 \\
+				x+b,   & \text{si } x < 1
+			\end{cases}
+		$ donde a y b son constantes. \\[1em] Para que exista $\displaystyle \lim_{x\to{1}} f(x)$, ¿qué relación debe haber entre a y b?}
+	\newpage
+	\begin{solution}
+		Para que exista $\displaystyle \lim_{x\to{1}} f(x)$, los límites laterales deben ser iguales y también deben ser iguales al valor de la función en ese punto, si está definido. En este caso, analizamos la función dada:
+
+		\[
+			f(x) =
+			\begin{cases}
+				x^2 + 2, & \text{si } x \geq 1 \\
+				x + b,   & \text{si } x < 1
+			\end{cases}
+		\]
+
+		Calculamos los límites laterales al acercarse \(x\) a 1:
+
+		- Cuando \( x \to 1^- \):
+		\[
+			\lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} (x + b) = 1 + b
+		\]
+
+		- Cuando \( x \to 1^+ \):
+		\[
+			\lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} (x^2 + 2) = 1^2 + 2 = 3
+		\]
+
+		Para que los límites laterales sean iguales:
+
+		\[
+			1 + b = 3
+		\]
+
+		Despejamos \(b\):
+
+		\[
+			b = 3 - 1 = 2
+		\]
+
+		Entonces, para que exista $\displaystyle \lim_{x\to{1}} f(x)$, debe cumplirse que \( b = 2 \).
+		\vspace{0.5cm}
+	\end{solution}
+
+
+	\vspace{0.5cm}
+
+	% Pregunta 5
+	\question \large\textbf{Calcular $\displaystyle \lim_{x\to{1}} \frac{|x^2-1|}{x-1}$}
+	\begin{solution}
+		Primero simplificamos la expresión. Notamos que \(x^2 - 1\) se puede factorizar como una diferencia de cuadrados:
+
+		\[
+			x^2 - 1 = (x - 1)(x + 1)
+		\]
+
+		Por lo tanto, tenemos:
+
+		\[
+			|x^2 - 1| = |(x - 1)(x + 1)|
+		\]
+
+		Así, el límite se convierte en:
+
+		\[
+			\lim_{x\to{1}} \frac{|(x - 1)(x + 1)|}{x - 1}
+		\]
+
+		\vspace{1cm}
+
+		Podemos simplificar cancelando \(x - 1\) en el numerador y el denominador:
+
+		\[
+			\lim_{x\to{1}} \frac{|(x - 1)(x + 1)|}{x - 1} = \lim_{x\to{1}} |x + 1|
+		\]
+
+		Dado que \(x \to 1\):
+
+		\[
+			\lim_{x\to{1}} |x + 1| = |1 + 1| = 2
+		\]
+
+		Por lo tanto,
+
+		\[
+			\lim_{x\to{1}} \frac{|x^2-1|}{x-1} = 2
+		\]
+	\end{solution}
+
+
+	\vspace{0.5cm}
+
+	% Pregunta 6
+	\question \large\textbf{Calcular $\displaystyle \lim_{x\to{0}} f(x) \text{ si } f(x) =
+			\begin{cases}
+				x^3, & \text{si } x \leq 0 \\
+				x^2, & \text{si } x > 0
+			\end{cases}$}
+	\begin{solution}
+		Consideramos los límites laterales:
+
+		- Cuando \( x \to 0^- \):
+		\[
+			\lim_{x \to 0^-} f(x) = \lim_{x \to 0^-} x^3 = 0^3 = 0
+		\]
+
+		- Cuando \( x \to 0^+ \):
+		\[
+			\lim_{x \to 0^+} f(x) = \lim_{x \to 0^+} x^2 = 0^2 = 0
+		\]
+
+		Dado que ambos límites laterales son iguales, podemos concluir que:
+
+		\[
+			\lim_{x \to 0} f(x) = 0
+		\]
+	\end{solution}
+
+
+	\vspace{0.5cm}
+
+	% Pregunta 7
+	\question \large\textbf{Calcular los siguientes límites:}
+	\begin{enumerate}[label=\alph*.]
+		\item $\displaystyle \lim_{x\to{-\infty}} \frac{x^2-5x+3}{-3x^2+x-2}$
+		\item $\displaystyle \lim_{x\to{-\infty}} (\sqrt{x^2+5}-\sqrt{x}+2)$
+		\item $\displaystyle \lim_{x\to{\infty}} (\sqrt{x^2+3x}-\sqrt{x^2+x})$
+		\item $\displaystyle \lim_{x\to{\infty}} (\sqrt{x^2+1}-\sqrt{x^2-4x})$
+	\end{enumerate}
+	\begin{solution}
+		\begin{enumerate}[label=\alph*.]
+			\item Para calcular este límite, dividimos el numerador y el denominador por \(x^2\):
+	
+			\[
+			\lim_{x\to{-\infty}} \frac{x^2-5x+3}{-3x^2+x-2} = \lim_{x\to{-\infty}} \frac{1-\frac{5}{x}+\frac{3}{x^2}}{-3+\frac{1}{x}-\frac{2}{x^2}}
+			\]
+	
+			A medida que \(x \to -\infty\), los términos \(\frac{5}{x}\), \(\frac{3}{x^2}\), \(\frac{1}{x}\) y \(\frac{2}{x^2}\) tienden a 0:
+	
+			\[
+			= \frac{1+0+0}{-3+0+0} = \frac{1}{-3} = -\frac{1}{3}
+			\]
+	
+			\item Para este límite, factorizamos \(\sqrt{x^2}\) fuera de la raíz y simplificamos:
+	
+			\[
+			\lim_{x\to{-\infty}} (\sqrt{x^2+5}-\sqrt{x}+2) = \lim_{x\to{-\infty}} (\sqrt{x^2(1+\frac{5}{x^2})}-\sqrt{x}+2)
+			\]
+	
+			\[
+			= \lim_{x\to{-\infty}} (|x|\sqrt{1+\frac{5}{x^2}}-\sqrt{x}+2)
+			\]
+	
+			Dado que \(x\) es negativo, \(|x| = -x\):
+	
+			\[
+			= \lim_{x\to{-\infty}} (-x\sqrt{1+\frac{5}{x^2}}-\sqrt{x}+2)
+			\]
+	
+			A medida que \(x \to -\infty\), \(\sqrt{1+\frac{5}{x^2}} \to 1\) y \(\sqrt{x} \to -\infty\):
+	
+			\[
+			= \lim_{x\to{-\infty}} (-x - \sqrt{x} + 2) = \infty
+			\]
+	
+			\item Para este límite, factorizamos \(\sqrt{x^2}\) fuera de la raíz y simplificamos:
+	
+			\[
+			\lim_{x\to{\infty}} (\sqrt{x^2+3x}-\sqrt{x^2+x}) = \lim_{x\to{\infty}} (x\sqrt{1+\frac{3}{x}}-x\sqrt{1+\frac{1}{x}})
+			\]
+	
+			\[
+			= \lim_{x\to{\infty}} x (\sqrt{1+\frac{3}{x}} - \sqrt{1+\frac{1}{x}})
+			\]
+	
+			Usamos la fórmula de la diferencia de raíces:
+	
+			\[
+			= \lim_{x\to{\infty}} x \cdot \frac{(1+\frac{3}{x}) - (1+\frac{1}{x})}{\sqrt{1+\frac{3}{x}} + \sqrt{1+\frac{1}{x}}}
+			\]
+	
+			\[
+			= \lim_{x\to{\infty}} x \cdot \frac{\frac{2}{x}}{\sqrt{1+\frac{3}{x}} + \sqrt{1+\frac{1}{x}}}
+			\]
+	
+			\[
+			= \lim_{x\to{\infty}} \frac{2}{\sqrt{1+\frac{3}{x}} + \sqrt{1+\frac{1}{x}}} = \frac{2}{2} = 1
+			\]
+	
+			\item Para este límite, factorizamos \(\sqrt{x^2}\) fuera de la raíz y simplificamos:
+	
+			\[
+			\lim_{x\to{\infty}} (\sqrt{x^2+1}-\sqrt{x^2-4x}) = \lim_{x\to{\infty}} x(\sqrt{1+\frac{1}{x^2}}-\sqrt{1-\frac{4}{x}})
+			\]
+	
+			Usamos la fórmula de la diferencia de raíces:
+	
+			\[
+			= \lim_{x\to{\infty}} x \cdot \frac{(1+\frac{1}{x^2}) - (1-\frac{4}{x})}{\sqrt{1+\frac{1}{x^2}} + \sqrt{1-\frac{4}{x}}}
+			\]
+	
+			\[
+			= \lim_{x\to{\infty}} x \cdot \frac{\frac{1}{x^2} + \frac{4}{x}}{\sqrt{1+\frac{1}{x^2}} + \sqrt{1-\frac{4}{x}}}
+			\]
+	
+			\[
+			= \lim_{x\to{\infty}} \frac{\frac{1}{x} + 4}{\sqrt{1+\frac{1}{x^2}} + \sqrt{1-\frac{4}{x}}} = \frac{0+4}{2} = 2
+			\]
+	
+		\end{enumerate}
+	\end{solution}
+	
+
+	\vspace{0.5cm}
+
+	% Pregunta 8
+	\question \large\textbf{Calcular los siguientes límites trigonométricos:}
+	\begin{enumerate}[label=\alph*.]
+		\item $\displaystyle \lim_{x\to{0}} \frac{1- cos^2 x}{x}$
+		\item $\displaystyle \lim_{x\to{0}} \frac{cos^2 x}{x}$
+		\item $\displaystyle \lim_{x\to{-1}} \frac{sen(x+1)}{x+1}$
+		\item $\displaystyle \lim_{x\to{0}} \frac{sen(3x)}{x}$
+		\item $\displaystyle \lim_{x\to{0}} \frac{sen(3x)}{sen(2x)}$
+		\item $\displaystyle \lim_{x\to{\pi}} x * secx$
+	\end{enumerate}
+	\begin{solution}
+		\begin{enumerate}[label=\alph*.]
+			\item Utilizamos la identidad trigonométrica \(1 - \cos^2 x = \sin^2 x\):
+	
+			\[
+			\lim_{x\to{0}} \frac{1-\cos^2 x}{x} = \lim_{x\to{0}} \frac{\sin^2 x}{x}
+			\]
+	
+			Podemos escribirlo como:
+	
+			\[
+			\lim_{x\to{0}} \frac{\sin^2 x}{x} = \lim_{x\to{0}} \left(\sin x \cdot \frac{\sin x}{x}\right)
+			\]
+	
+			Sabemos que \(\lim_{x \to 0} \frac{\sin x}{x} = 1\), entonces:
+	
+			\[
+			= \lim_{x\to{0}} (\sin x \cdot 1) = \sin 0 = 0
+			\]
+	
+			\item Dado que \(\cos^2 x\) es continuo en \(x = 0\) y \(\cos^2 0 = 1\):
+	
+			\[
+			\lim_{x\to{0}} \frac{\cos^2 x}{x} = \lim_{x\to{0}} \left(\cos^2 x \cdot \frac{1}{x}\right)
+			\]
+	
+			La expresión \(\frac{1}{x}\) tiende a infinito mientras que \(\cos^2 x\) tiende a 1:
+	
+			\[
+			= \infty
+			\]
+	
+			\item Haciendo un cambio de variable \(u = x + 1\), entonces cuando \(x \to -1\), \(u \to 0\):
+	
+			\[
+			\lim_{x\to{-1}} \frac{\sin(x+1)}{x+1} = \lim_{u\to{0}} \frac{\sin u}{u}
+			\]
+	
+			Sabemos que \(\lim_{u \to 0} \frac{\sin u}{u} = 1\):
+	
+			\[
+			= 1
+			\]
+	
+			\item Usamos la fórmula \(\lim_{u \to 0} \frac{\sin u}{u} = 1\), con \(u = 3x\):
+	
+			\[
+			\lim_{x\to{0}} \frac{\sin(3x)}{x} = \lim_{x\to{0}} \frac{\sin(3x)}{3x} \cdot 3 = 1 \cdot 3 = 3
+			\]
+	
+			\item Usamos las fórmulas \(\lim_{u \to 0} \frac{\sin u}{u} = 1\) con \(u = 3x\) y \(v = 2x\):
+	
+			\[
+			\lim_{x\to{0}} \frac{\sin(3x)}{\sin(2x)} = \lim_{x\to{0}} \frac{\frac{\sin(3x)}{3x}}{\frac{\sin(2x)}{2x}} \cdot \frac{3x}{2x} = \frac{1}{1} \cdot \frac{3}{2} = \frac{3}{2}
+			\]
+	
+			\item Dado que \(\sec x = \frac{1}{\cos x}\) y \(\cos \pi = -1\):
+	
+			\[
+			\lim_{x\to{\pi}} x \cdot \sec x = \lim_{x\to{\pi}} x \cdot \frac{1}{\cos x} = \pi \cdot \frac{1}{-1} = -\pi
+			\]
+	
+		\end{enumerate}
+	\end{solution}
+	
+
+	\vspace{0.5cm}
+
+\end{questions}
+
+\end{document}
