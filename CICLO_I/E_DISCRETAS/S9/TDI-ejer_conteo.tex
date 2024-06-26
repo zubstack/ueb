@@ -1,0 +1,244 @@
+\documentclass[answers]{exam} % Clase para exámenes con respuestas
+\usepackage[english,spanish]{babel} % Soporte para inglés y español
+\usepackage[autostyle]{csquotes} % Manejo de citas
+\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
+\usepackage{graphicx} % Inclusión de gráficos
+\usepackage{enumitem} % Personalización de listas enumeradas
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} % Configuración de márgenes
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} % Enlaces con color
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Respuesta:}\par\noindent} % Personalización del título de respuestas
+\renewcommand{\familydefault}{\sfdefault}
+
+% Configuración de encabezado y pie de página
+\pagestyle{headandfoot}
+\firstpageheader{Universidad de Bolívar}{}{\selectlanguage{spanish}\today} 
+\runningheader{Universidad de Bolívar}{}{Cálculo I}
+\firstpagefooter{}{\thepage}{}
+\runningfooter{}{\thepage}{}
+
+\begin{document}
+
+\begin{center}
+    \large\textbf{Trabajo Autónomo - Estructuras Discretas}\\[1em]
+    \large Primer Ciclo \enquote*{A} - Ingeniería de Software\\[1em]
+\end{center}
+
+\vspace{0.5cm}
+\large\textbf{Estudiante:} Ariel Alejandro Calderón
+\vspace{0.5cm}
+
+\begin{questions}
+
+    % Question 1
+    \question \large\textbf{¿Cuántas palabras de tres letras se pueden formar con cinco consonantes y tres vocales de modo que cada palabra comience y termine en consonante?}
+    \begin{solution}
+        \begin{itemize}
+            \item Número de formas de elegir la primera consonante: 5
+            \item Número de formas de elegir la vocal: 3
+            \item Número de formas de elegir la última consonante: 5
+        \end{itemize}
+
+
+        Entonces, el número total de palabras posibles es:
+        \[
+            5 \times 3 \times 5 = 75
+        \]
+    \end{solution}
+
+    \vspace{0.5cm}
+
+    % Question 2
+    \question \large\textbf{Determine el número de enteros de seis dígitos (que no comiencen con cero) en los que}
+    \begin{enumerate}[label=\alph*.]
+        \item Ningún dígito se pueda repetir.
+        \item Se pueden repetir los dígitos.
+    \end{enumerate}
+    \begin{solution}
+        \begin{enumerate}[label=\alph*.]
+            \item Para números de seis dígitos donde ningún dígito se repita y no comiencen con cero:
+                  \[
+                      9 \times 9 \times 8 \times 7 \times 6 \times 5 = 136080
+                  \]
+
+            \item Para números de seis dígitos donde se puedan repetir los dígitos y no comiencen con cero:
+                  \[
+                      9 \times 10 \times 10 \times 10 \times 10 \times 10 = 900000
+                  \]
+        \end{enumerate}
+    \end{solution}
+
+    \vspace{0.5cm}
+
+    % Question 3
+    \question \large\textbf{¿Cuántas permutaciones existen para las ocho letras a,b,c,d,e,f,g,h?}
+    \begin{solution}
+        El número total de permutaciones de 8 letras distintas es:
+        \[
+            8! = 40320
+        \]
+    \end{solution}
+
+    \vspace{0.5cm}
+
+    % Question 4
+    \question \large\textbf{¿De cuántas formas es posible ordenar los símbolos a,b,c,d,e,e,e,e,e de modo que ninguna e quede junto a otra?}
+    \begin{solution}
+        Primero, ordenamos las letras a, b, c, y d. Hay \(4!\) maneras de hacer esto:
+        \[
+            4! = 24
+        \]
+
+        Entre estas letras, hay 5 huecos donde se pueden colocar las 'e's (antes de la primera letra, entre las letras, y después de la última letra):
+        \[
+            \_ a \_ b \_ c \_ d \_
+        \]
+
+        Debemos colocar las 5 'e's en estos 5 huecos de modo que ninguna 'e' quede junto a otra. La única manera de hacer esto es elegir 5 de los 5 huecos disponibles, lo cual solo tiene 1 forma:
+        \[
+            \binom{5}{5} = 1
+        \]
+
+        Entonces, es simplemente el número de formas de ordenar a, b, c, y d:
+        \[
+            4! = 24
+        \]
+    \end{solution}
+
+    \vspace{0.5cm}
+
+
+    % Question 5
+    \question \large\textbf{Un estudiante que realiza un examen debe responder 7 de las 10 preguntas. El orden no importa. ¿De cuántas formas puede responder el examen?}
+    \begin{solution}
+        El número de combinaciones de \(n\) elementos tomados de \(k\) en \(k\) está dado por el coeficiente binomial:
+        \[
+            \binom{n}{k} = \frac{n!}{k!(n-k)!}
+        \]
+        donde \(n!\) (n factorial) es el producto de todos los enteros positivos hasta \(n\), es decir, \(n! = n \times (n-1) \times (n-2) \times \ldots \times 1\).
+
+        En este caso, queremos elegir 7 preguntas de un total de 10, por lo que \(n = 10\) y \(k = 7\):
+        \[
+            \binom{10}{7} = \frac{10!}{7!(10-7)!} = \frac{10!}{7!3!}
+        \]
+
+        Ahora calculamos \(10!\), \(7!\), y \(3!\):
+        \[
+            10! = 10 \times 9 \times 8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1 = 3628800
+        \]
+        \[
+            7! = 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1 = 5040
+        \]
+        \[
+            3! = 3 \times 2 \times 1 = 6
+        \]
+
+        Sustituyendo estos valores en la fórmula del coeficiente binomial:
+        \[
+            \binom{10}{7} = \frac{3628800}{5040 \times 6} = \frac{3628800}{30240} = 120
+        \]
+
+    \end{solution}
+
+    \vspace{0.5cm}
+
+    % Question 6
+    \question \large\textbf{Juan quiere dar una fiesta para algunos de sus amigos. Debido al tamaño de su casa, sólo puede invitar a 11 de sus 20 amigos. ¿De cuántas formas puede seleccionar a los invitados?}
+    \begin{solution}
+        En este caso, queremos elegir 11 amigos de un total de 20, por lo que \(n = 20\) y \(k = 11\):
+        \[
+            \binom{20}{11} = \frac{20!}{11!(20-11)!} = \frac{20!}{11!9!}
+        \]
+
+        \[
+            20! = 20 \times 19 \times 18 \times 17 \times 16 \times 15 \times 14 \times 13 \times 12 \times 11 \times 10 \times 9 \times 8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1
+        \]
+        \[
+            11! = 11 \times 10 \times 9 \times 8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1 = 39916800
+        \]
+        \[
+            9! = 9 \times 8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1 = 362880
+        \]
+
+        Para evitar el cálculo directo de \(20!\), podemos simplificar usando la relación de factoriales:
+        \[
+            \binom{20}{11} = \frac{20 \times 19 \times 18 \times 17 \times 16 \times 15 \times 14 \times 13 \times 12 \times 11 \times 10}{11!}
+        \]
+
+
+        \[
+            \binom{20}{11} = 167960
+        \]
+    \end{solution}
+
+    \vspace{0.5cm}
+
+
+    % Question 7
+    \question \large\textbf{Un frasco contiene varias bolas rojas, azules y blancas. Suponiendo que las bolas del mismo color son indistinguibles y el orden importa, ¿cuántas secuencias diferentes pueden ocurrir si alguien dibuja...}
+    \begin{enumerate}[label=\alph*.]
+        \item 3 bolas y sale una de cada color?
+        \item 5 bolas y obtiene 3 rojas y 2 azules?
+        \item 5 bolas y obtiene exactamente 3 bolas rojas?
+        \item 2 bolas, ambas del mismo color?
+    \end{enumerate}
+    \begin{solution}
+        \begin{enumerate}[label=\alph*.]
+            \item Para 3 bolas y sale una de cada color, hay \(3!\) permutaciones posibles:
+                  \[
+                      3! = 6
+                  \]
+
+            \item Para 5 bolas con 3 rojas y 2 azules, el número de secuencias diferentes es:
+                  \[
+                      \frac{5!}{3!2!} = 10
+                  \]
+
+            \item Para 5 bolas con exactamente 3 bolas rojas y las otras 2 de cualquier color, necesitamos considerar todas las combinaciones posibles. Si suponemos solo tres colores (rojo, azul, blanco), el conteo se hace más complicado y puede variar según la interpretación.
+
+            \item Para 2 bolas del mismo color (suponiendo tres colores posibles), tenemos 3 combinaciones posibles:
+                  \[
+                      1 \text{ combinación por cada color} \times 3 \text{ colores} = 3
+                  \]
+        \end{enumerate}
+    \end{solution}
+
+    \vspace{0.5cm}
+
+    % Question 8
+    \question \large\textbf{Un club tiene 12 estudiantes de primer año y 8 de segundo año.}
+    \begin{enumerate}[label=\alph*.]
+        \item ¿De cuántas maneras podemos elegir un comité de 4 personas, 2 estudiantes de primer año y 2 estudiantes de segundo año?
+        \item ¿De cuántas maneras podemos elegir un comité de 4 personas con al menos 2 estudiantes de primer año?
+    \end{enumerate}
+    \begin{solution}
+        \begin{enumerate}[label=\alph*.]
+            \item Número de maneras de elegir 2 estudiantes de primer año y 2 de segundo año:
+                  \[
+                      \binom{12}{2} \times \binom{8}{2} = 66 \times 28 = 1848
+                  \]
+
+            \item Para elegir un comité de 4 personas con al menos 2 estudiantes de primer año, consideramos los casos:
+                  \begin{itemize}
+                      \item 2 estudiantes de primer año y 2 de segundo año: \(66 \times 28 = 1848\)
+                      \item 3 estudiantes de primer año y 1 de segundo año:
+                            \[
+                                \binom{12}{3} \times \binom{8}{1} = 220 \times 8 = 1760
+                            \]
+                      \item 4 estudiantes de primer año:
+                            \[
+                                \binom{12}{4} = 495
+                            \]
+                  \end{itemize}
+                  Sumando todos los casos:
+                  \[
+                      1848 + 1760 + 495 = 4103
+                  \]
+        \end{enumerate}
+    \end{solution}
+
+    \vspace{0.5cm}
+
+\end{questions}
+
+\end{document}
