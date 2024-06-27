@@ -89,8 +89,11 @@
 	% Question 2
 	\question \large\textbf{Usando el GeoGebra graficar la primera función, e imprimir en una escala adecuada
 		(visible).}
-	\begin{solution}
-	\end{solution}
+
+	\begin{minipage}{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{public/g1.png}\\
+	\end{minipage}
 
 	\vspace{0.5cm}
 	% Question 3
@@ -105,116 +108,122 @@
 		.}\\[2em]
 	\large\textbf{Para g(x) encontrar matematicamente el lımite indicado.:}
 
-    \begin{solution}
-        Simplificamos: \( x^2 - 9 \) se puede factorizar como \( (x - 3)(x + 3) \):
-    
-        \[
-        g(x) = \frac{(x - 3)(x + 3)}{x(x^2 + 1)}
-        \]
-    
-        Evaluamos el límite cuando \( x \rightarrow 3 \):
-    
-        \[
-        \lim_{{x \to 3}} g(x) = \lim_{{x \to 3}} \frac{(x - 3)(x + 3)}{x(x^2 + 1)}
-        \]
-    
-        Sustituyendo \( x = 3 \):
-    
-        \[
-        g(3) = \frac{(3 - 3)(3 + 3)}{3(3^2 + 1)} = \frac{0 \cdot 6}{3(9 + 1)} = \frac{0}{30} = 0
-        \]
-    
-        Por lo tanto, el límite de la función cuando \( x \rightarrow 3 \) es \( 0 \).
-    
-        Ahora, evaluamos el límite cuando \( x \rightarrow \infty \):
-    
-        \[
-        \lim_{{x \to \infty}} g(x) = \lim_{{x \to \infty}} \frac{x^2 - 9}{x(x^2 + 1)}
-        \]
-    
-        Dividimos el numerador y el denominador por \( x^2 \):
-    
-        \[
-        \lim_{{x \to \infty}} \dfrac{\dfrac{x^2}{x^2} - \dfrac{9}{x^2}}{\dfrac{x(x^2 + 1)}{x^2}} = \lim_{{x \to \infty}} \dfrac{1 - \dfrac{9}{x^2}}{x + \dfrac{1}{x}}
-        \]
-    
-        Conforme \( x \) tiende a infinito, los términos $\displaystyle \dfrac{9}{x^2}$ y $\displaystyle \dfrac{1}{x}$ tienden a cero:
-    
-        \[
-        \lim_{{x \to \infty}} \dfrac{1 - 0}{x + 0} = \lim_{{x \to \infty}} \dfrac{1}{x} = 0
-        \]
-    
-        Por lo tanto, el límite de la función cuando \( x \rightarrow \infty \) es \( 0 \).
-        \end{solution}
-    
-	\large\textbf{Grafico de g(x):}
-    \begin{solution}
+	\begin{solution}
+		Simplificamos: \( x^2 - 9 \) se puede factorizar como \( (x - 3)(x + 3) \):
+
+		\[
+			g(x) = \frac{(x - 3)(x + 3)}{x(x^2 + 1)}
+		\]
+
+		Evaluamos el límite cuando \( x \rightarrow 3 \):
+
+		\[
+			\lim_{{x \to 3}} g(x) = \lim_{{x \to 3}} \frac{(x - 3)(x + 3)}{x(x^2 + 1)}
+		\]
+
+		Sustituyendo \( x = 3 \):
+
+		\[
+			g(3) = \frac{(3 - 3)(3 + 3)}{3(3^2 + 1)} = \frac{0 \cdot 6}{3(9 + 1)} = \frac{0}{30} = 0
+		\]
+
+		Por lo tanto, el límite de la función cuando \( x \rightarrow 3 \) es \( 0 \).
+
+		Ahora, evaluamos el límite cuando \( x \rightarrow \infty \):
+
+		\[
+			\lim_{{x \to \infty}} g(x) = \lim_{{x \to \infty}} \frac{x^2 - 9}{x(x^2 + 1)}
+		\]
+
+		Dividimos el numerador y el denominador por \( x^2 \):
+
+		\[
+			\lim_{{x \to \infty}} \dfrac{\dfrac{x^2}{x^2} - \dfrac{9}{x^2}}{\dfrac{x(x^2 + 1)}{x^2}} = \lim_{{x \to \infty}} \dfrac{1 - \dfrac{9}{x^2}}{x + \dfrac{1}{x}}
+		\]
+
+		Conforme \( x \) tiende a infinito, los términos $\displaystyle \dfrac{9}{x^2}$ y $\displaystyle \dfrac{1}{x}$ tienden a cero:
+
+		\[
+			\lim_{{x \to \infty}} \dfrac{1 - 0}{x + 0} = \lim_{{x \to \infty}} \dfrac{1}{x} = 0
+		\]
+
+		Por lo tanto, el límite de la función cuando \( x \rightarrow \infty \) es \( 0 \).
 	\end{solution}
+	\newpage
+	\large\textbf{Gráfico de g(x):}\\[1em]
+	\begin{minipage}{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{public/g2.png}\\
+	\end{minipage}
+
+	\vspace{1cm}
+    
 	\large\textbf{Para h(x) encontrar matematicamente el lımite indicado.:}
-    \begin{solution}
-        La función \( h(x) \) está definida por partes:
-    
-        \[
-        h(x) =
-        \begin{cases}
-            \dfrac{x^2 - 7x + 6}{x^2 + 5x - 6}, & \text{si } x \leq 1 \\
-            \\
-            \dfrac{x^3 - 1}{x^2 - 1}, & \text{si } x > 1
-        \end{cases}
-        \]
-    
-        Primero, evaluamos el límite cuando \( x \rightarrow 1 \) desde la izquierda (\( x \leq 1 \)):
-    
-        \[
-        h(x) = \frac{x^2 - 7x + 6}{x^2 + 5x - 6}
-        \]
-    
-        Factorizamos el numerador y el denominador:
-    
-        \[
-        h(x) = \frac{(x - 1)(x - 6)}{(x - 1)(x + 6)}
-        \]
-    
-    
-        \[
-        h(x) = \frac{x - 6}{x + 6}
-        \]
-    
-        Evaluamos el límite cuando \( x \rightarrow 1 \) desde la izquierda:
-    
-        \[
-        \lim_{{x \to 1^-}} h(x) = \frac{1 - 6}{1 + 6} = \frac{-5}{7} = -\frac{5}{7}
-        \]
-    
-        Ahora, evaluamos el límite cuando \( x \rightarrow 1 \) desde la derecha (\( x > 1 \)):
-    
-        \[
-        h(x) = \frac{x^3 - 1}{x^2 - 1}
-        \]
-    
-        Factorizamos el numerador y el denominador:
-    
-        \[
-        h(x) = \frac{(x - 1)(x^2 + x + 1)}{(x - 1)(x + 1)}
-        \]
-    
-        \[
-        h(x) = \frac{x^2 + x + 1}{x + 1}
-        \]
-    
-        Evaluamos el límite cuando \( x \rightarrow 1 \) desde la derecha:
-    
-        \[
-        \lim_{{x \to 1^+}} h(x) = \frac{1^2 + 1 + 1}{1 + 1} = \frac{3}{2} = \frac{3}{2}
-        \]
-    
-        Como los límites laterales no son iguales, el límite de \( h(x) \) cuando \( x \rightarrow 1 \) no existe.
-        \end{solution}
-    
-	\large\textbf{Grafico de h(x):}
-    \begin{solution}
+	\begin{solution}
+		La función \( h(x) \) está definida por partes:
+
+		\[
+			h(x) =
+			\begin{cases}
+				\dfrac{x^2 - 7x + 6}{x^2 + 5x - 6}, & \text{si } x \leq 1 \\
+				\\
+				\dfrac{x^3 - 1}{x^2 - 1},           & \text{si } x > 1
+			\end{cases}
+		\]
+
+		Primero, evaluamos el límite cuando \( x \rightarrow 1 \) desde la izquierda (\( x \leq 1 \)):
+
+		\[
+			h(x) = \frac{x^2 - 7x + 6}{x^2 + 5x - 6}
+		\]
+
+		Factorizamos el numerador y el denominador:
+
+		\[
+			h(x) = \frac{(x - 1)(x - 6)}{(x - 1)(x + 6)}
+		\]
+
+
+		\[
+			h(x) = \frac{x - 6}{x + 6}
+		\]
+
+		Evaluamos el límite cuando \( x \rightarrow 1 \) desde la izquierda:
+
+		\[
+			\lim_{{x \to 1^-}} h(x) = \frac{1 - 6}{1 + 6} = \frac{-5}{7} = -\frac{5}{7}
+		\]
+
+		Ahora, evaluamos el límite cuando \( x \rightarrow 1 \) desde la derecha (\( x > 1 \)):
+
+		\[
+			h(x) = \frac{x^3 - 1}{x^2 - 1}
+		\]
+
+		Factorizamos el numerador y el denominador:
+
+		\[
+			h(x) = \frac{(x - 1)(x^2 + x + 1)}{(x - 1)(x + 1)}
+		\]
+
+		\[
+			h(x) = \frac{x^2 + x + 1}{x + 1}
+		\]
+
+		Evaluamos el límite cuando \( x \rightarrow 1 \) desde la derecha:
+
+		\[
+			\lim_{{x \to 1^+}} h(x) = \frac{1^2 + 1 + 1}{1 + 1} = \frac{3}{2} = \frac{3}{2}
+		\]
+
+		Como los límites laterales no son iguales, el límite de \( h(x) \) cuando \( x \rightarrow 1 \) no existe.
 	\end{solution}
 
+	\large\textbf{Gráfico de h(x):}\\[1em]
+	\begin{minipage}{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{public/g3.png}\\
+	\end{minipage}
 
 	\vspace{0.5cm}
 
