@@ -3,15 +3,12 @@
 int main()
 {
     const int MAX_ESTUDIANTES = 30;
-    int n;
+    int n = 0;
 
-    printf("Ingrese el número de estudiantes (máximo %d): ", MAX_ESTUDIANTES);
-    scanf("%d", &n);
-
-    if (n > MAX_ESTUDIANTES)
+    while (n > MAX_ESTUDIANTES || n < 1)
     {
-        printf("El número de estudiantes excede el máximo permitido (%d).\n", MAX_ESTUDIANTES);
-        return 1;
+        printf("Ingrese el número de estudiantes (máximo %d): ", MAX_ESTUDIANTES);
+        scanf("%d", &n);
     }
 
     char nombres[MAX_ESTUDIANTES][50];
