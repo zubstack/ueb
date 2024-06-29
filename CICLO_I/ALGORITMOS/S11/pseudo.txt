@@ -1,0 +1,66 @@
+Inicio
+
+// Constantes y variables
+const MAX_ESTUDIANTES = 30
+n = 0
+
+// Controlador
+Mientras n > MAX_ESTUDIANTES O n < 1 Hacer
+    Escribir "Ingrese el número de estudiantes (máximo MAX_ESTUDIANTES): "
+    Leer n
+Fin Mientras
+
+// Arreglos
+Dimension nombres[MAX_ESTUDIANTES][50]
+Dimension calificaciones[MAX_ESTUDIANTES][4]
+Dimension promedios[MAX_ESTUDIANTES]
+
+// Ingresar datos
+Para i = 0 Hasta n-1 Hacer
+    Escribir "Ingrese el NOMBRE del estudiante #" + (i+1) + ": "
+    Leer nombres[i]
+    Para j = 0 Hasta 3 Hacer
+        Repetir
+            Escribir "Ingrese la calificación #" + (j+1) + " de " + nombres[i] + " (entre 1 y 10): "
+            Leer calificaciones[i][j]
+            Si calificaciones[i][j] < 1 O calificaciones[i][j] > 10 Entonces
+                Escribir "Calificación inválida. Debe estar entre 1 y 10."
+            Fin Si
+        Hasta que calificaciones[i][j] >= 1 Y calificaciones[i][j] <= 10
+    Fin Para
+Fin Para
+
+// Promedios
+Para i = 0 Hasta n-1 Hacer
+    suma = 0
+    Para j = 0 Hasta 3 Hacer
+        suma = suma + calificaciones[i][j]
+    Fin Para
+    promedios[i] = suma / 4
+Fin Para
+
+// Resultados
+Escribir "\nResultados:"
+Escribir "Nombre\t\tCalificaciones\t\t\tPromedio\tEstado"
+Para i = 0 Hasta n-1 Hacer
+    Escribir nombres[i] + "\t\t"
+    Para j = 0 Hasta 3 Hacer
+        Escribir calificaciones[i][j] + " "
+    Fin Para
+    Escribir "\t" + promedios[i] + "\t\t"
+    Si promedios[i] >= 7 Entonces
+        Escribir "Aprobado"
+    Sino
+        Escribir "Reprobado"
+    Fin Si
+Fin Para
+
+// Lista de reprobados
+Escribir "\nListado de estudiantes reprobados:"
+Para i = 0 Hasta n-1 Hacer
+    Si promedios[i] < 7 Entonces
+        Escribir nombres[i]
+    Fin Si
+Fin Para
+
+Fin
