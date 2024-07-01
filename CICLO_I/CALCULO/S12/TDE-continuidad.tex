@@ -1,0 +1,317 @@
+\documentclass[answers]{exam} % Clase para exámenes con respuestas
+\usepackage[english,spanish]{babel} % Soporte para inglés y español
+\usepackage[autostyle]{csquotes} % Manejo de citas
+\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
+\usepackage{graphicx} % Inclusión de gráficos
+\usepackage{enumitem} % Personalización de listas enumeradas
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} % Configuración de márgenes
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} % Enlaces con color
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Respuesta:}\par\noindent} % Personalización del título de respuestas
+\renewcommand{\familydefault}{\sfdefault}
+
+% Configuración de encabezado y pie de página
+\pagestyle{headandfoot}
+\firstpageheader{Universidad de Bolívar}{}{\selectlanguage{spanish}\today} 
+\runningheader{Universidad de Bolívar}{}{Cálculo I}
+\firstpagefooter{}{\thepage}{}
+\runningfooter{}{\thepage}{}
+
+\begin{document}
+
+\begin{center}
+    \large\textbf{Trabajo Autónomo 2.11 - Cálculo I}\\[1em]
+    \large Primer Ciclo \enquote*{A} - Ingeniería de Software\\[1em]
+\end{center}
+
+\vspace{0.5cm}
+\large\textbf{Estudiante:} Ariel Alejandro Calderón
+\vspace{0.5cm}
+
+\begin{questions}
+
+    % Question 1
+    \question \large\textbf{Estudiar la continuidad de \(f(x) =
+    \begin{cases}
+        \dfrac{x}{x^2 -1}, & \text{si } x < 0 \\
+        3x + 1, & \text{si } x \ge 0
+    \end{cases}\)}
+    \begin{solution}
+
+        Primero, estudiemos la continuidad de cada parte en sus respectivos dominios.
+
+        \begin{itemize}
+            \item Para \( x < 0 \):
+                \[
+                f(x) = \frac{x}{x^2 - 1}
+                \]
+                La función está definida para todos los \( x \) tales que \( x^2 - 1 \neq 0 \). Entonces, no está definida en \( x = \pm 1 \). Pero, dado que consideramos solo \( x < 0 \), la función no está definida en \( x = -1 \). Por lo tanto, \( f(x) \) no es continua en \( x = -1 \).
+
+            \item Para \( x \ge 0 \):
+                \[
+                f(x) = 3x + 1
+                \]
+                Esta es una función lineal, y por lo tanto, es continua en todo su dominio.
+
+            \item En \( x = 0 \):
+                Debemos verificar el límite lateral y el valor de la función en este punto.
+
+                \[
+                \lim_{x \to 0^-} f(x) = \lim_{x \to 0^-} \frac{x}{x^2 - 1} = 0
+                \]
+                \[
+                \lim_{x \to 0^+} f(x) = \lim_{x \to 0^+} (3x + 1) = 1
+                \]
+
+                El límite lateral izquierdo no es igual al límite lateral derecho, por lo que \( f(x) \) no es continua en \( x = 0 \).
+        \end{itemize}
+
+        En resumen, \( f(x) \) no es continua en \( x = -1 \) y \( x = 0 \).
+    \end{solution}
+
+    \vspace{0.5cm}
+    % Question 2
+    \question \large\textbf{Estudiar la continuidad de \(f(x) =
+    \begin{cases}
+        \dfrac{x^2-1}{x+1}, & \text{si } x \le 1 \\[1em]
+        \dfrac{1-x}{x}, & \text{si } 1 < x \le 3 \\[1em]
+        \dfrac{2x}{x-5}, & \text{si } x > 3 
+    \end{cases}\) }
+    \begin{solution}
+        Para estudiar la continuidad de la función \( f(x) \), debemos analizarla en los puntos críticos y verificar la continuidad en su dominio. La función \( f(x) \) se define por partes:
+        
+        \[
+        f(x) =
+        \begin{cases}
+            \dfrac{x^2-1}{x+1}, & \text{si } x \le 1 \\[1em]
+            \dfrac{1-x}{x}, & \text{si } 1 < x \le 3 \\[1em]
+            \dfrac{2x}{x-5}, & \text{si } x > 3 
+        \end{cases}
+        \]
+    
+        Primero, estudiemos la continuidad de cada parte en sus respectivos dominios.
+        
+        \begin{itemize}
+            \item Para \( x \le 1 \):
+                \[
+                f(x) = \frac{x^2 - 1}{x + 1} = \frac{(x - 1)(x + 1)}{x + 1} = x - 1 \quad \text{para } x \neq -1
+                \]
+                Esta simplificación es válida para \( x \neq -1 \), y es continua para todos los \( x \) en este dominio excepto en \( x = -1 \).
+                
+            \item Para \( 1 < x \le 3 \):
+                \[
+                f(x) = \frac{1 - x}{x}
+                \]
+                Esta es una función racional y está definida y es continua para todos los \( x \) en el intervalo \( 1 < x \le 3 \).
+                
+            \item Para \( x > 3 \):
+                \[
+                f(x) = \frac{2x}{x - 5}
+                \]
+                Esta es una función racional y está definida y es continua para todos los \( x \) en este dominio excepto en \( x = 5 \).
+        \end{itemize}
+        
+        Ahora, estudiemos la continuidad en los puntos de unión \( x = 1 \) y \( x = 3 \):
+        
+        \begin{itemize}
+            \item En \( x = 1 \):
+                \[
+                \lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} (x - 1) = 0
+                \]
+                \[
+                \lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} \frac{1 - x}{x} = \frac{1 - 1}{1} = 0
+                \]
+                \[
+                f(1) = \frac{1^2 - 1}{1 + 1} = \frac{0}{2} = 0
+                \]
+                Los límites laterales y el valor de la función en \( x = 1 \) son iguales, por lo tanto, \( f(x) \) es continua en \( x = 1 \).
+                
+            \item En \( x = 3 \):
+                \[
+                \lim_{x \to 3^-} f(x) = \lim_{x \to 3^-} \frac{1 - x}{x} = \frac{1 - 3}{3} = -\frac{2}{3}
+                \]
+                \[
+                \lim_{x \to 3^+} f(x) = \lim_{x \to 3^+} \frac{2x}{x - 5}
+                \]
+                Para evaluar este límite, observamos que a medida que \( x \to 3^+ \), el denominador \( x - 5 \to -2 \):
+                \[
+                \frac{2 \cdot 3}{3 - 5} = \frac{6}{-2} = -3
+                \]
+                Los límites laterales no son iguales, por lo que \( f(x) \) no es continua en \( x = 3 \).
+        \end{itemize}
+        
+        En resumen, \( f(x) \) es continua en todo su dominio excepto en \( x = -1 \) y \( x = 3 \).
+    \end{solution}
+    
+
+    \vspace{0.5cm}
+    % Question 3
+    \question \large\textbf{Encontrar los siguientes límites:}
+    \begin{enumerate}[label=\alph*.]
+		\item $\displaystyle \lim_{x\to{0}} (1+x)^{\frac{2}{x}}$
+		\item $\displaystyle \lim_{x\to{\infty}} (1+\dfrac{a}{x})^{x}$
+		\item $\displaystyle \lim_{x\to{\infty}} (1+\dfrac{x}{n})^{n}$
+		
+	\end{enumerate}
+    \begin{solution}
+        Vamos a encontrar los siguientes límites:
+    
+        \begin{enumerate}[label=\alph*.]
+            \item \(\displaystyle \lim_{x\to{0}} (1+x)^{\frac{2}{x}}\)
+    
+            Este límite se puede evaluar utilizando la propiedad del logaritmo natural y la exponencial:
+    
+            \[
+            \lim_{x\to 0} (1+x)^{\frac{2}{x}} = \lim_{x\to 0} e^{\frac{2}{x} \ln(1+x)}
+            \]
+    
+            Usamos la serie de Taylor para \(\ln(1+x)\) alrededor de \(x = 0\):
+    
+            \[
+            \ln(1+x) \approx x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots
+            \]
+    
+            Por lo tanto:
+    
+            \[
+            \frac{2}{x} \ln(1+x) \approx \frac{2}{x} \left( x - \frac{x^2}{2} + \cdots \right) = 2 - x + \cdots
+            \]
+    
+            Al tomar el límite cuando \(x \to 0\), los términos más altos desaparecen:
+    
+            \[
+            \lim_{x \to 0} e^{2 - x} = e^2
+            \]
+    
+            Por lo tanto:
+    
+            \[
+            \lim_{x\to 0} (1+x)^{\frac{2}{x}} = e^2
+            \]
+    
+            \item \(\displaystyle \lim_{x\to{\infty}} \left(1+\frac{a}{x}\right)^{x}\)
+    
+            Reconocemos este límite como una forma de la definición del número \(e\):
+    
+            \[
+            \lim_{x \to \infty} \left(1 + \frac{a}{x}\right)^x = e^a
+            \]
+    
+            \item \(\displaystyle \lim_{x\to{\infty}} \left(1+\frac{x}{n}\right)^{n}\)
+    
+            Aquí, observamos que al reescribir en términos de \(y = \frac{n}{x}\), cuando \(x \to \infty\), \(y \to 0\):
+    
+            \[
+            \lim_{x \to \infty} \left(1 + \frac{x}{n}\right)^n = \lim_{y \to 0} \left(1 + \frac{1}{y}\right)^{\frac{1}{y} \cdot y \cdot n}
+            \]
+    
+            Esto se puede simplificar como:
+    
+            \[
+            \left[\left(1 + \frac{1}{y}\right)^{y}\right]^n \approx e^n
+            \]
+    
+            Pero al reevaluar en el contexto de \(x \to \infty\), se observa que \(\left(1 + \frac{x}{n}\right)^n\) tiende a \(e^{n}\):
+    
+            \[
+            \lim_{x \to \infty} \left(1 + \frac{x}{n}\right)^n = e^n
+            \]
+        \end{enumerate}
+    \end{solution}
+    
+
+    \vspace{0.5cm}
+    % Question 4
+    \question \large\textbf{Determinar las asíntotas que tiene la función \(f(x)=\dfrac{x^2}{x^2-9}\)}
+    \begin{solution}
+        Para determinar las asíntotas de la función \( f(x) = \dfrac{x^2}{x^2 - 9} \), consideramos los siguientes tipos de asíntotas:
+    
+        \begin{enumerate}
+            \item **Asíntotas verticales:**
+    
+            Las asíntotas verticales ocurren donde el denominador se hace cero y el numerador no es cero.
+    
+            \[
+            x^2 - 9 = 0 \implies x^2 = 9 \implies x = \pm 3
+            \]
+    
+            Por lo tanto, hay asíntotas verticales en \( x = 3 \) y \( x = -3 \).
+    
+            \item **Asíntotas horizontales:**
+    
+            Las asíntotas horizontales se encuentran al evaluar los límites de \( f(x) \) cuando \( x \to \infty \) o \( x \to -\infty \).
+    
+            \[
+            \lim_{x \to \infty} \dfrac{x^2}{x^2 - 9} = \lim_{x \to \infty} \dfrac{1}{1 - \frac{9}{x^2}} = \dfrac{1}{1 - 0} = 1
+            \]
+    
+            \[
+            \lim_{x \to -\infty} \dfrac{x^2}{x^2 - 9} = \lim_{x \to -\infty} \dfrac{1}{1 - \frac{9}{x^2}} = \dfrac{1}{1 - 0} = 1
+            \]
+    
+            Por lo tanto, hay una asíntota horizontal en \( y = 1 \).
+        \end{enumerate}
+    
+        En resumen, las asíntotas de la función \( f(x) = \dfrac{x^2}{x^2 - 9} \) son:
+    
+        \begin{itemize}
+            \item Asíntotas verticales en \( x = 3 \) y \( x = -3 \).
+            \item Una asíntota horizontal en \( y = 1 \).
+        \end{itemize}
+    \end{solution}
+    
+
+    \vspace{0.5cm}
+    % Question 5
+    \question \large\textbf{Determinar las asíntotas oblicuas de la función \(f(x)=\sqrt{4x^2+2x+1}\)}
+    \begin{solution}
+        Para determinar las asíntotas oblicuas de la función \( f(x) = \sqrt{4x^2 + 2x + 1} \), primero debemos simplificar la expresión bajo la raíz para grandes valores de \( x \). Observamos que para \( x \to \infty \):
+    
+        \[
+        f(x) = \sqrt{4x^2 + 2x + 1}
+        \]
+    
+        Podemos factorizar \( 4x^2 \) de la expresión dentro de la raíz:
+    
+        \[
+        f(x) = \sqrt{4x^2 \left( 1 + \frac{2x}{4x^2} + \frac{1}{4x^2} \right)} = \sqrt{4x^2 \left( 1 + \frac{1}{2x} + \frac{1}{4x^2} \right)}
+        \]
+    
+        Esto se puede simplificar aún más:
+    
+        \[
+        f(x) = 2x \sqrt{1 + \frac{1}{2x} + \frac{1}{4x^2}}
+        \]
+    
+        Para \( x \to \infty \), los términos \(\frac{1}{2x}\) y \(\frac{1}{4x^2}\) tienden a cero, así que podemos aproximar:
+    
+        \[
+        f(x) \approx 2x \sqrt{1} = 2x
+        \]
+    
+        Por lo tanto, la función se comporta como \( y = 2x \) para valores grandes de \( x \). Esta es la ecuación de la asíntota oblicua.
+    
+        Para verificar esto, encontramos el límite:
+    
+        \[
+        \lim_{x \to \infty} \left( \frac{\sqrt{4x^2 + 2x + 1}}{x} - 2 \right) = \lim_{x \to \infty} \left( \sqrt{4 + \frac{2}{x} + \frac{1}{x^2}} - 2 \right)
+        \]
+    
+        Nuevamente, los términos \(\frac{2}{x}\) y \(\frac{1}{x^2}\) tienden a cero:
+    
+        \[
+        \lim_{x \to \infty} \left( \sqrt{4 + 0 + 0} - 2 \right) = \sqrt{4} - 2 = 2 - 2 = 0
+        \]
+    
+        Entonces, confirmamos que la asíntota oblicua es \( y = 2x \).
+    
+        En resumen, la función \( f(x) = \sqrt{4x^2 + 2x + 1} \) tiene una asíntota oblicua en \( y = 2x \).
+    \end{solution}
+    
+
+    \vspace{0.5cm}
+
+    
+\end{questions}
+
+\end{document}
