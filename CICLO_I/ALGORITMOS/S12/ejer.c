@@ -5,17 +5,11 @@ int main()
     char nombres[28][31];
     float calificaciones[28];
     int n_estudiantes = 0;
-    int longitud_maxima_nombres = 0;
 
     while (n_estudiantes < 1 || n_estudiantes > 27)
     {
         printf("Ingrese cantidad de estudiantes de primer ciclo (maximo: 27): ");
         scanf("%d", &n_estudiantes);
-    }
-    while (longitud_maxima_nombres < 1 || longitud_maxima_nombres > 30)
-    {
-        printf("Ingrese la longitud del nombre mas largo (maximo: 30): ");
-        scanf("%d", &longitud_maxima_nombres);
     }
 
     printf("Ingrese los nombres de los estudiantes:\n");
