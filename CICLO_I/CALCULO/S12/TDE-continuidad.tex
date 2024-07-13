@@ -12,7 +12,7 @@
 
 % Configuración de encabezado y pie de página
 \pagestyle{headandfoot}
-\firstpageheader{Universidad de Bolívar}{}{\selectlanguage{spanish}\today} 
+\firstpageheader{Universidad de Bolívar}{}{\selectlanguage{spanish}8 de julio del 2024} 
 \runningheader{Universidad de Bolívar}{}{Cálculo I}
 \firstpagefooter{}{\thepage}{}
 \runningfooter{}{\thepage}{}
@@ -37,6 +37,13 @@
         3x + 1, & \text{si } x \ge 0
     \end{cases}\)}
     \begin{solution}
+
+        \vspace{0.2cm}
+
+        \emph{Para estudiar la continuidad de la función \( f(x) \), debemos analizarla en los puntos críticos y verificar la continuidad en su dominio.}
+
+        \vspace{0.2cm}
+
 
         Primero, estudiemos la continuidad de cada parte en sus respectivos dominios.
 
@@ -78,16 +85,6 @@
         \dfrac{2x}{x-5}, & \text{si } x > 3 
     \end{cases}\) }
     \begin{solution}
-        Para estudiar la continuidad de la función \( f(x) \), debemos analizarla en los puntos críticos y verificar la continuidad en su dominio. La función \( f(x) \) se define por partes:
-        
-        \[
-        f(x) =
-        \begin{cases}
-            \dfrac{x^2-1}{x+1}, & \text{si } x \le 1 \\[1em]
-            \dfrac{1-x}{x}, & \text{si } 1 < x \le 3 \\[1em]
-            \dfrac{2x}{x-5}, & \text{si } x > 3 
-        \end{cases}
-        \]
     
         Primero, estudiemos la continuidad de cada parte en sus respectivos dominios.
         
@@ -154,7 +151,6 @@
 		
 	\end{enumerate}
     \begin{solution}
-        Vamos a encontrar los siguientes límites:
     
         \begin{enumerate}[label=\alph*.]
             \item \(\displaystyle \lim_{x\to{0}} (1+x)^{\frac{2}{x}}\)
@@ -227,7 +223,7 @@
         Para determinar las asíntotas de la función \( f(x) = \dfrac{x^2}{x^2 - 9} \), consideramos los siguientes tipos de asíntotas:
     
         \begin{enumerate}
-            \item **Asíntotas verticales:**
+            \item \textbf{Asíntotas verticales:}
     
             Las asíntotas verticales ocurren donde el denominador se hace cero y el numerador no es cero.
     
@@ -237,7 +233,7 @@
     
             Por lo tanto, hay asíntotas verticales en \( x = 3 \) y \( x = -3 \).
     
-            \item **Asíntotas horizontales:**
+            \item \textbf{Asíntotas horizontales:}
     
             Las asíntotas horizontales se encuentran al evaluar los límites de \( f(x) \) cuando \( x \to \infty \) o \( x \to -\infty \).
     
@@ -252,7 +248,7 @@
             Por lo tanto, hay una asíntota horizontal en \( y = 1 \).
         \end{enumerate}
     
-        En resumen, las asíntotas de la función \( f(x) = \dfrac{x^2}{x^2 - 9} \) son:
+        Entonces, las asíntotas de la función \( f(x) = \dfrac{x^2}{x^2 - 9} \) son:
     
         \begin{itemize}
             \item Asíntotas verticales en \( x = 3 \) y \( x = -3 \).
@@ -265,7 +261,7 @@
     % Question 5
     \question \large\textbf{Determinar las asíntotas oblicuas de la función \(f(x)=\sqrt{4x^2+2x+1}\)}
     \begin{solution}
-        Para determinar las asíntotas oblicuas de la función \( f(x) = \sqrt{4x^2 + 2x + 1} \), primero debemos simplificar la expresión bajo la raíz para grandes valores de \( x \). Observamos que para \( x \to \infty \):
+        Para determinar las asíntotas oblicuas de la función primero debemos simplificar la expresión bajo la raíz para grandes valores de \( x \):
     
         \[
         f(x) = \sqrt{4x^2 + 2x + 1}
@@ -286,7 +282,7 @@
         Para \( x \to \infty \), los términos \(\frac{1}{2x}\) y \(\frac{1}{4x^2}\) tienden a cero, así que podemos aproximar:
     
         \[
-        f(x) \approx 2x \sqrt{1} = 2x
+        f(x) = 2x \sqrt{1} = 2x
         \]
     
         Por lo tanto, la función se comporta como \( y = 2x \) para valores grandes de \( x \). Esta es la ecuación de la asíntota oblicua.
@@ -303,9 +299,7 @@
         \lim_{x \to \infty} \left( \sqrt{4 + 0 + 0} - 2 \right) = \sqrt{4} - 2 = 2 - 2 = 0
         \]
     
-        Entonces, confirmamos que la asíntota oblicua es \( y = 2x \).
-    
-        En resumen, la función \( f(x) = \sqrt{4x^2 + 2x + 1} \) tiene una asíntota oblicua en \( y = 2x \).
+        Entonces, la función \( f(x) = \sqrt{4x^2 + 2x + 1} \) tiene una asíntota oblicua en \( y = 2x \).
     \end{solution}
     
 
