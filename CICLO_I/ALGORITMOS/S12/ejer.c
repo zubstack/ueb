@@ -13,7 +13,6 @@ int main()
         printf("Ingrese cantidad de estudiantes de primer ciclo (maximo: 29): ");
         scanf("%d", &n_estudiantes);
     }
-  
     printf("Ingrese los nombres de los estudiantes:\n");
     for (int i = 0; i < n_estudiantes; i++)
     {
