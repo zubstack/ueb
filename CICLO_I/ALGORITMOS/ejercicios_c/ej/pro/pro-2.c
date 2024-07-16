@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// Utilizar procedimientos: para imprimir las tablas de multiplicar de n números que el usuario seleccione , la multiplicación por cada tabla debe ser hasta el 10 
+
 void tablaMultiplicar(int numero) {
     printf("Tabla de multiplicar del %d:\n", numero);
     for (int i = 1; i <= 10; i++) {

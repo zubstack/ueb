@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <windows.h>
+
+// Realizar un cuadro con caracteres especiales  y al interior colocar su nombre, carrera y curso.
+
 void gotoxy(int x, int y) 
 {
     COORD coord;
