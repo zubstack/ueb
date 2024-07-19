@@ -1,9 +1,9 @@
-# Ejercicios de Programación del Segundo Parcial 
+<!-- # Ejercicios de Programación del Segundo Parcial 
 
 **Asignatura:** Algoritmos y Lógica de Progrmación\
 **Docente:** Ing. Mónica Bonilla M.\
 **Estudiante:** Ariel Alejandro Calderón\
-**Curso:** Primer ciclo - Software
+**Curso:** Primer ciclo - Software -->
 
 
 ## ARREGLOS
@@ -1148,4 +1148,220 @@ for (int Cols=Col1;Cols<=Col2;Cols++)
 }
 
 ```
+## FUNCIONES
+
 ---
+### Ejercicio #25
+
+> Construya una función que calcule la suma de los k primeros números enteros impares.
+
+```c
+#include <stdio.h>
+
+int sumaImpares(int k) {
+    int suma = 0;
+    for (int i = 0; i < k; i++) {
+        suma += 2 * i + 1;
+    }
+    return suma;
+}
+
+int main() {
+    int k;
+    printf("Introduce el número de primeros enteros impares que quieres sumar: ");
+    scanf("%d", &k);
+
+    int resultado = sumaImpares(k);
+    printf("La suma de los primeros %d números impares es: %d\n", k, resultado);
+
+    return 0;
+}
+
+```
+---
+### Ejercicio #26
+
+> Construya una función que realice intercambio de los valores entre 2 variables.
+
+```c
+#include <stdio.h>
+
+void intercambiar(int a, int b) {
+    int temp = a;
+    a = b;
+    b = temp;
+    printf("Después del intercambio dentro de la función: a = %d, b = %d\n", a, b);
+}
+
+int main() {
+    int x, y;
+    printf("Introduce el valor de x: ");
+    scanf("%d", &x);
+    printf("Introduce el valor de y: ");
+    scanf("%d", &y);
+
+    printf("Antes del intercambio: x = %d, y = %d\n", x, y);
+    intercambiar(x, y);
+    printf("Después del intercambio en main: x = %d, y = %d\n", x, y);
+
+    return 0;
+}
+
+
+```
+---
+### Ejercicio #27
+
+> Calcula el cubo de los números del 1 al 5 utilizando una función.
+
+```c
+#include <stdio.h>
+
+int calcularCubo(int n) {
+    return n * n * n;
+}
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        printf("El cubo de %d es %d\n", i, calcularCubo(i));
+    }
+    return 0;
+}
+
+
+```
+## ESTRUCTURAS
+
+---
+### Ejercicio #28
+
+> Desarrolla un programa que permita ingresar y mostrar la información de 5 personas. Cada persona debe tener un nombre, un apellido, una edad (entre 1 y 100), una dirección y un hobby. El programa debe solicitar la información al usuario, verificar que la edad esté en el rango válido, y luego imprimir los datos de cada persona en una tabla. Utiliza una estructura persona para almacenar la información y un arreglo de 5 elementos de tipo persona para gestionar los datos.
+
+```c
+#include <stdio.h>
+
+struct persona {
+    char nombre[20];
+    char apellido[20];
+    int edad = 0;
+    char direccion[20];
+    char hobby[20];
+} estudiantes[5];
+
+int main() {
+	
+	int cantidad = 1;
+	int i;
+	
+	for(i = 0; i < cantidad; i++) {
+	    printf("Persona #%d:\n", i + 1);
+	    printf("Nombre: ");
+	    scanf("%19s", estudiantes[i].nombre);
+	    printf("Apellido: ");
+	    scanf("%19s", estudiantes[i].apellido);
+	    while(estudiantes[i].edad < 1 || estudiantes[i].edad > 100){
+	    	printf("Edad (maximo: 100): ");
+	    	scanf("%d", &estudiantes[i].edad);
+		}
+	    printf("Direccion: ");
+	    scanf("%19s", estudiantes[i].direccion);
+	    printf("Hobby: ");
+	    scanf("%19s", estudiantes[i].hobby);
+	    printf("\n");	
+	}
+
+    printf("Datos ingresados:\n");
+	printf("\tNOMBRE\tAPELLIDO\tEDAD\tDIRECCION\tHOBBY\n");
+    for (i = 0; i < cantidad; i++) {
+        printf("#%d:", i + 1);
+        printf("%s\t", estudiantes[i].nombre);
+        printf("%s\t", estudiantes[i].apellido);
+        printf("%d\t", estudiantes[i].edad);
+        printf("%s\t", estudiantes[i].direccion);
+        printf("%s", estudiantes[i].hobby);
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+```
+---
+### Ejercicio #29
+
+> Desarrollar un programa que permita al usuario ingresar la información de un estudiante y luego mostrar esa información junto con el promedio de las notas.
+
+```c
+#include <stdio.h>
+
+struct FechaNacimiento
+{
+    int dia;
+    int mes;
+    int anyo;
+};
+
+struct DatosPersona
+{
+    char nombre[20];
+    char inicial;
+    struct FechaNacimiento fechaNacimiento;
+    float nota1;
+    float nota2;
+    float nota3;
+};
+
+int main()
+{
+    const int cantidad = 5; 
+    struct DatosPersona estudiantes[cantidad];
+
+    for (int i = 0; i < cantidad; i++) {
+        printf("Estudiante #%d:\n", i + 1);
+        
+        printf("Nombre: ");
+        scanf("%19s", estudiantes[i].nombre);
+
+        printf("Inicial (solo una letra): ");
+        scanf(" %c", &estudiantes[i].inicial);
+
+        printf("Fecha de nacimiento\nDia: ");
+        scanf("%d", &estudiantes[i].fechaNacimiento.dia);
+
+        printf("Mes: ");
+        scanf("%d", &estudiantes[i].fechaNacimiento.mes);
+
+        printf("Año: ");
+        scanf("%d", &estudiantes[i].fechaNacimiento.anyo);
+
+        printf("Notas:\nNota #1: ");
+        scanf("%f", &estudiantes[i].nota1);
+
+        printf("Nota #2: ");
+        scanf("%f", &estudiantes[i].nota2);
+
+        printf("Nota #3: ");
+        scanf("%f", &estudiantes[i].nota3);
+
+        printf("\n");
+    }
+
+
+    printf("Datos ingresados:\n");
+    printf("\tNOMBRE\tINICIAL\tFECHA NACIMIENTO\tPROMEDIO\n");
+    for (int i = 0; i < cantidad; i++) {
+        float promedio = (estudiantes[i].nota1 + estudiantes[i].nota2 + estudiantes[i].nota3) / 3.0f;
+
+        printf("#%d:\t", i + 1);
+        printf("%s\t", estudiantes[i].nombre);
+        printf("%c\t", estudiantes[i].inicial);
+        printf("%02d/%02d/%d\t", estudiantes[i].fechaNacimiento.dia, estudiantes[i].fechaNacimiento.mes, estudiantes[i].fechaNacimiento.anyo);
+        printf("%.2f\n", promedio);
+    }
+
+    return 0;
+}
+
+
+```
