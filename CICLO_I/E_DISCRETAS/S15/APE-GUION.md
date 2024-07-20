@@ -22,9 +22,9 @@ O(log n), o complejidad logarítmica, significa que el tiempo de ejecución crec
 
 O(n^2), o complejidad cuadrática, indica que el tiempo de ejecución crece proporcionalmente al cuadrado del tamaño de la entrada. Un ejemplo es el algoritmo de ordenamiento por burbuja, que requiere un número de operaciones que aumenta cuadráticamente con el número de elementos.
 
-## Parte 6: O(2^n) - Exponencial
+## Parte 6: O(n!) - Factorial
 
-O(2^n), o complejidad exponencial, significa que el tiempo de ejecución se duplica con cada incremento en el tamaño de la entrada. Un ejemplo es el algoritmo de fuerza bruta para resolver problemas del conjunto de la mochila, donde el tiempo de ejecución crece exponencialmente con el número de elementos.
+O(n!) indica que el tiempo de ejecución de un algoritmo crece factorialmente con respecto al tamaño de la entrada. Esto significa que si el tamaño de la entrada (n) aumenta, el tiempo de ejecución aumenta extremadamente rápido, siguiendo la fórmula factorial: n! = n × (n-1) × (n-2) × ... 
 
 ## Parte 7: Cierre
 
