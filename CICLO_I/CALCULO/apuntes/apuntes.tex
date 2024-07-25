@@ -1,0 +1,110 @@
+\documentclass[12pt,a4paper,fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tcolorbox}
+% \usepackage[showframe]{geometry}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+
+% \setlength{\mathindent}{0pt} % Ajusta la indentación a cero
+
+% Márgenes
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+% Encabezado y pie de página
+\pagestyle{fancy}
+\fancyhead[L]{Apuntes de Derivadas}
+\fancyhead[C]{}
+\fancyhead[R]{\thepage}
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{}
+
+% Título
+\title{Apuntes de Derivadas}
+\author{Ariel Alejandro Calderón}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Derivadas}
+\subsection{Ejercicios}
+
+\textbf{Hallar la derivada de $f(x)=x^3$}
+\begin{equation*}
+    f'(x) = \lim_{h \to 0} \dfrac{f(x+h) - f(x)}{h}
+\end{equation*}
+\begin{equation*}
+    f'(x) = \lim_{h \to 0} \dfrac{(x+h)^3 - x^3}{h} = \dfrac{x^3 - x^3}{0} = \dfrac{0}{0}
+\end{equation*}
+\begin{equation*}
+    f'(x) = \dfrac{x^3 + 3x^2h + 3xh^2 + h^3 - x^3}{h} = \dfrac{3x^2h + 3xh^2 + h^3}{h} = 3x^2 + 3xh + h^2
+\end{equation*}
+\begin{equation*}
+    f'(x) = \lim_{h \to 0} (3x^2 + 3xh + h^2) = 3x^2
+\end{equation*}\\[10pt]
+% Ejercicio
+\textbf{Hallar la derivada de $f(x)=\sqrt[3]{x^2}$}
+\begin{equation*}
+    f(x) = x^{\frac{2}{3}} \implies f'(x)= \frac{2}{3}x^{\frac{2}{3}-1}
+\end{equation*}
+\begin{equation*}
+    f'(x)= \frac{2}{3}x^{-\frac{1}{3}}=\frac{2}{3}\cdot\frac{1}{\sqrt[3]{x}}=\frac{2}{3\sqrt[3]{x}}
+\end{equation*}\\[10pt]
+% Ejercicio
+\textbf{Hallar la derivada de $f(x)= \sin x$}\\[10pt]
+\boxed{\sin A - \sin B = 2 \sin \left(\frac{A-B}{2}\right)\cos \left(\frac{A+B}{2}\right)}
+
+\begin{align*}
+    f'(x) & =\lim_{h\to0}\dfrac{\sin (x+h)-\sin x}{h}                                \\
+          & =\lim_{h\to0}\dfrac{2\sin (\frac{h}{2})\cos (2+\frac{h}{2})}{h}          \\
+          & =\lim_{h\to0}\dfrac{\sin (\frac{h}{2})\cos (2+\frac{h}{2})}{\frac{h}{2}} \\
+          & =\lim_{h\to0}1\cdot\cos(x+\frac{h}{2})                                   \\
+          & =\cos x
+\end{align*}\\[10pt]
+% Ejercicio
+\textbf{Hallar la derivada de $f(x)= e^x$}
+\begin{align*}
+    f'(x) & = \lim_{h \to 0} \dfrac{e^{x+h} - e^x}{h}       \\
+          & = \lim_{h \to 0} \dfrac{e^x \cdot e^h - e^x}{h} \\
+          & = \lim_{h \to 0} e^x \cdot \dfrac{e^h - 1}{h}   \\
+          & = e^x \cdot \lim_{h \to 0} \dfrac{e^h - 1}{h}   \\
+          & = e^x \cdot 1 \text{ *}                         \\
+          & = e^x
+\end{align*}
+% Ejercicio
+\textbf{Hallar la derivada de $f(x)= \ln x$}
+\begin{align*}
+    f'(x) & = \lim_{h \to 0} \dfrac{\ln{x+h} - \ln x}{h}      \\
+          & = \lim_{h \to 0} \dfrac{\ln{\frac{x+h}{x}}}{h}    \\
+          & \dfrac{h}{x}=u \implies h=ux                      \\
+          & = \lim_{u \to 0} \dfrac{\ln (1+u)}{ux}            \\
+          & = \dfrac{1}{x}\lim_{u \to 0} \dfrac{\ln (1+u)}{u} \\
+          & = \dfrac{1}{x}\cdot 1 = \dfrac{1}{x}              \\
+\end{align*}
+
+\begin{tcolorbox}[colback=white!95!blue, colframe=blue!40!black, title=Teoremas de Álgebra de Derivadas]
+    \[  
+        (f \pm g)'(x) = f'(x) \pm g'(x) 
+    \]\
+    \[
+        (f \cdot g)'(x) = f'(x) g(x) + f(x) g'(x) 
+    \]\
+    \[
+        \left( \frac{f}{g} \right)'(x) = \frac{f'(x) g(x) - f(x) g'(x)}{g(x)^2}, \quad g(x) \neq 0
+    \]
+\end{tcolorbox}
+
+
+\end{document}
