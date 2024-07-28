@@ -1090,13 +1090,11 @@ int main() {
 ---
 ### Ejercicio #24
 
-> Crear un menú con 4 opciones: 1. Ingresar n elementos en un arreglo de tipo entero 2. Guardar en una matriz las tablas de multiplicar de los elementos del vector 3. Imprimir el vector y la matriz, la impresión de la matriz debe ser en forma de tabla o malla 4. Salir
+> Realizar un cuadro con caracteres especiales  y al interior colocar su nombre, carrera y curso.
 
 ```c
 #include <stdio.h>
 #include <windows.h>
-
-// Realizar un cuadro con caracteres especiales  y al interior colocar su nombre, carrera y curso.
 
 void gotoxy(int x, int y) 
 {
