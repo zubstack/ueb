@@ -1,0 +1,274 @@
+\documentclass[answers]{exam} % Clase para exámenes con respuestas
+\usepackage[english,spanish]{babel} % Soporte para inglés y español
+\usepackage[autostyle]{csquotes} % Manejo de citas
+\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
+\usepackage{graphicx} % Inclusión de gráficos
+\usepackage{enumitem} % Personalización de listas enumeradas
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} % Configuración de márgenes
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} % Enlaces con color
+
+\usepackage{array}   % for adjusting row height
+\renewcommand{\arraystretch}{1.5} % adjust the vertical spacing between rows
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Respuesta:}\par\noindent} % Personalización del título de respuestas
+\renewcommand{\familydefault}{\sfdefault}
+
+% Configuración de encabezado y pie de página
+\pagestyle{headandfoot}
+\firstpageheader{Universidad de Bolívar}{}{24 de julio del 2024} 
+\runningheader{Universidad de Bolívar}{}{Calculo I}
+\firstpagefooter{}{\thepage}{}
+\runningfooter{}{\thepage}{}
+
+\begin{document}
+
+\begin{center}
+    \large\textbf{Trabajo Autónomo 2.14 - Cálculo I}\\[1em]
+    \large Primer Ciclo \enquote*{A} - Ingeniería de Software\\[1em]
+\end{center}
+
+\vspace{0.5cm}
+\large\textbf{Estudiante:} Ariel Alejandro Calderón
+\vspace{0.5cm}
+
+\begin{questions}
+
+    % Question 1
+    \question \large\textbf{Presentar una tabla con las fórmulas de las derivadas de las funciones básicas:}
+
+    \begin{center}
+
+
+        \noindent
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \begin{tabular}{|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{3cm}|}
+                \hline
+                Función           & Derivada                       \\
+                \hline
+                $(k)$ (constante) & $0$                            \\
+                $x^n$             & $nx^{n-1}$                     \\
+                $x^\frac{m}{n}$   & $\frac{m}{n}x^{\frac{m}{n}-1}$ \\
+                $\sin(x)$         & $\cos(x)$                      \\
+                $\cos(x)$         & $-\sin(x)$                     \\
+                $\tan(x)$         & $\sec^2(x)$                    \\
+                $\arcsin(x)$      & $\dfrac{1}{\sqrt{1-x^2}}$      \\
+                $\arccos(x)$      & $-\dfrac{1}{\sqrt{1-x^2}}$     \\
+                $\arctan(x)$      & $\dfrac{1}{1+x^2}$             \\
+                $e^x$             & $e^x$                          \\
+                $\ln(x)$          & $\dfrac{1}{x}$                 \\[10px]
+                \hline
+            \end{tabular}
+        \end{minipage}%
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \begin{tabular}{|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}m{3cm}|}
+                \hline
+                $a^x$              & $a^x \ln(a)$                    \\
+                $\log_b{x}$        & $\dfrac{1}{x \ln(b)}$           \\
+                $\sin^{-1}(x)$     & $\dfrac{1}{\sqrt{1-x^2}}$       \\
+                $\cos^{-1}(x)$     & $-\dfrac{1}{\sqrt{1-x^2}}$      \\
+                $\tan^{-1}(x)$     & $\dfrac{1}{1+x^2}$              \\
+                $\cot^{-1}(x)$     & $-\dfrac{1}{1+x^2}$             \\
+                $\sec^{-1}(x)$     & $\dfrac{1}{|x|\sqrt{x^2-1}}$    \\
+                $\csc^{-1}(x)$     & $-\dfrac{1}{|x|\sqrt{x^2-1}}$   \\
+                $ax^n$             & $anx^{n-1}$                     \\
+                $ax^{\frac{m}{n}}$ & $\frac{m}{n}ax^{\frac{m}{n}-1}$ \\
+                $ax^{bx}$          & $abx^{bx} \ln(a)$               \\[9px]
+                \hline
+            \end{tabular}
+        \end{minipage}
+
+
+    \end{center}
+
+    \vspace{0.5cm}
+
+    % Question 2
+    \question \large\textbf{Resolver los siguientes ejercicios de derivadas: }
+
+    \begin{enumerate}[label=\alph*.]
+        \item $\displaystyle f(x)=(\sin(x) + x)^2$
+              \[
+                  f'(x) = 2(\sin(x) + x)(\cos(x) + 1)
+              \]
+
+        \item $\displaystyle f(x)=\log(x^2 + 2x^4)$
+              \[
+                  f'(x) = \frac{1}{x^2 + 2x^4} \cdot (2x + 8x^3) = \frac{2x(1 + 4x^2)}{x^2 + 2x^4}
+              \]
+
+        \item $\displaystyle f(x)=a^{x^2}, a \text{ constante}$
+              \[
+                  f'(x) = a^{x^2} \cdot \ln(a) \cdot 2x
+              \]
+
+        \item $\displaystyle f(x)=a^{\tan(nx)}, a \text{ constante}$
+              \[
+                  f'(x) = a^{\tan(nx)} \cdot \ln(a) \cdot \sec^2(nx) \cdot n
+              \]
+
+        \item $\displaystyle f(x)=\arcsin\left(\dfrac{x}{\sqrt{1+x^2}}\right)$
+              \[
+                  f'(x) = \frac{1}{\sqrt{1-\left(\frac{x}{\sqrt{1+x^2}}\right)^2}} \cdot \left( \frac{\sqrt{1+x^2} - \frac{x \cdot x}{\sqrt{1+x^2}}}{(1+x^2)} \right) = \frac{1}{\sqrt{1 - \frac{x^2}{1+x^2}}} \cdot \frac{1}{\sqrt{1+x^2}} \\
+              \]
+              \[
+                  = \frac{1+x^2}{\sqrt{1+x^2-x^2}} \cdot \frac{1}{\sqrt{1+x^2}} = \frac{1}{1+x^2}
+              \]
+
+
+        \item $\displaystyle f(x)=x^x$
+              \[
+                  f'(x) = x^x (\ln(x) + 1)
+              \]
+
+        \item $\displaystyle f(x)=\tan^{-1}(x^2)$
+              \[
+                  f'(x) = \frac{2x}{1+(x^2)^2} = \frac{2x}{1+x^4}
+              \]
+    \end{enumerate}
+
+
+    \vspace{0.5cm}
+
+    % Question 3
+    \question \large\textbf{Resolver los siguientes ejercicios de derivadas: }
+
+
+    \begin{enumerate}[label=\alph*.]
+        \item $\displaystyle 2x^3-4x^2y+y^2=0$
+              \[
+                  \frac{d}{dx}(2x^3 - 4x^2y + y^2) = 0 \implies 6x^2 - 4x^2 \frac{dy}{dx} - 8xy + 2y \frac{dy}{dx} = 0
+              \]
+              \[
+                  \implies 6x^2 - 8xy = (4x^2 - 2y) \frac{dy}{dx}
+              \]
+              \[
+                  \implies \frac{dy}{dx} = \frac{6x^2 - 8xy}{4x^2 - 2y}
+              \]
+        \item $\displaystyle e^{x}\sin(y)+e^{y}\cos(x)=1$
+              \[
+                  \frac{d}{dx}(e^x \sin(y) + e^y \cos(x)) = 0 \implies e^x \sin(y) + e^y (-\sin(x)) \frac{dy}{dx} + e^y \cos(x) + e^x \cos(x) \frac{dy}{dx} = 0
+              \]
+              \[
+                  \implies e^x \sin(y) + e^y \cos(x) = -e^y \sin(x) \frac{dy}{dx} - e^x \cos(x) \frac{dy}{dx} \\[10pt]
+              \]
+              \[
+                  \implies \frac{dy}{dx} = \frac{e^x \sin(y) + e^y \cos(x)}{-e^y \sin(x) - e^x \cos(x)}
+              \]
+    \end{enumerate}
+    \vspace{0.5cm}
+
+    % Question 4
+    \question \large\textbf{Encontrar las derivadas de orden superior que se indican: }
+
+    \begin{enumerate}[label=\alph*.]
+        \item $\displaystyle y=10x^2-3x+1,\text{ } y''$
+              \[
+                  y' = 20x - 3
+              \]
+              \[
+                  y'' = 20
+              \]
+
+        \item $\displaystyle y=\sin(7x),\text{ } y''$
+              \[
+                  y' = 7\cos(7x)
+              \]
+              \[
+                  y'' = -49\sin(7x)
+              \]
+
+        \item $\displaystyle Ax^2+Bxy+Cy^2+Dx+Ey+F=1, A,B,C,D,E,F \text{ son constantes. } y''$
+              \[
+                  \frac{d}{d x}(2Ax + By + D) + \frac{d}{d y}(2Cy + Bx + E) = 0
+              \]
+              \[
+                  y'' = -\frac{2A + By'}{B + 2C y'}
+              \]
+    \end{enumerate}
+
+
+    \vspace{0.5cm}
+
+    % Question 5
+    \question \large\textbf{Encontrar las derivadas parciales que se indican: }
+
+
+    \begin{enumerate}[label=\alph*.]
+        \item $\displaystyle f(x,y)=-x^2+2xy-y$ ,encontrar $f'_x$ y $f'_y$
+              \[
+                  f'_x = \frac{d}{d x} (-x^2 + 2xy - y) = -2x + 2y
+              \]
+              \[
+                  f'_y = \frac{d}{d y} (-x^2 + 2xy - y) = 2x - 1
+              \]
+
+        \item $\displaystyle f(x,y)=\sqrt{x^3+y^2}$, calcular $f'_x(1,1)$
+              \[
+                  f'_x = \frac{d}{d x} (\sqrt{x^3 + y^2}) = \frac{1}{2\sqrt{x^3 + y^2}} \cdot 3x^2 = \frac{3x^2}{2\sqrt{x^3 + y^2}}
+              \]
+              \[
+                  f'_x(1,1) = \frac{3 \cdot 1^2}{2 \sqrt{1^3 + 1^2}} = \frac{3}{2\sqrt{2}}
+              \]
+
+        \item $\displaystyle f(x,y)=\dfrac{2xy-y}{x^2+y}$, encontrar $f'_x$ y $f'_y$
+              \begin{align*}
+                  f'_x & = \frac{d}{d x} \left( \frac{2xy - y}{x^2 + y} \right) = \frac{(2y)(x^2 + y) - (2xy - y)(2x)}{(x^2 + y)^2} \\
+                       & = \frac{2yx^2 + 2y^2 - 4x^2y + 2xy}{(x^2 + y)^2}                                                           \\
+                       & = \frac{-2yx^2 + 2y^2 + 2xy}{(x^2 + y)^2}
+              \end{align*}
+              \begin{align*}
+                  f'_y & = \frac{d}{d y} \left( \frac{2xy - y}{x^2 + y} \right) = \frac{(2x - 1)(x^2 + y) - (2xy - y)}{(x^2 + y)^2} \\
+                       & = \frac{2x x^2 + 2xy - x^2 - y - 2xy + y}{(x^2 + y)^2}                                                     \\
+                       & = \frac{2xx^2 - x^2}{(x^2 + y)^2}                                                                          \\
+                       & = \frac{x(2x - 1)}{(x^2 + y)^2}
+              \end{align*}
+    \end{enumerate}
+
+    \vspace{0.5cm}
+    \newpage
+    % Question 6
+    \question \large\textbf{Encontrar lo que se indica: }
+
+    \begin{enumerate}[label=\alph*.]
+        \item $\displaystyle f'\left(\dfrac{\pi}{4}\right)$ si $f(x)=\sin(x)+x$
+              \[
+                  f'(x) = \cos(x) + 1
+              \]
+              \[
+                  f'\left(\dfrac{\pi}{4}\right) = \cos\left(\dfrac{\pi}{4}\right) + 1 = \dfrac{\sqrt{2}}{2} + 1
+              \]
+
+        \item $\displaystyle f'(2)$ si $f(x)=x^x$
+              \[
+                  f(x) = e^{x \ln(x)}
+              \]
+              \[
+                  f'(x) = e^{x \ln(x)} \left( \ln(x) + 1 \right) = x^x \left( \ln(x) + 1 \right)
+              \]
+              \[
+                  f'(2) = 2^2 \left( \ln(2) + 1 \right) = 4 \left( \ln(2) + 1 \right)
+              \]
+
+        \item Encontrar la ecuación de la recta tangente a $f(x)=x^2-2x+2$ en $x=2$
+              \[
+                  f'(x) = 2x - 2
+              \]
+              \[
+                  f'(2) = 2(2) - 2 = 2
+              \]
+              La pendiente de la recta tangente es $2$ y el punto tangente es:
+              \[
+                  (2, f(2)) = (2, 2^2 - 2(2) + 2) = (2, 2)
+              \]
+
+              La ecuación de la recta tangente es:
+              \[
+                  y - 2 = 2(x - 2) \implies y = 2x - 2
+              \]
+    \end{enumerate}
+    \vspace{0.5cm}
+\end{questions}
+
+\end{document}

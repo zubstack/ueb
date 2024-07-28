@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+    <title>Técnicas de conteo</title>
+    <meta charset="utf-8">
+    
+</head>
+<body>
+<p dir="ltr" style="text-align: left;"></p><p><p><b>Principio de multiplicación</b></p>
+
+<p>Si un
+evento <i>E</i> puede ocurrir de <i>m</i> formas, e independiente de este
+evento un evento <i>F</i> puede ocurrir de <i>n</i> formas, entonces los
+eventos juntos pueden ocurrir un total de <i>m x n</i> formas.</p>
+
+<p><b>Ejemplo:
+Menú en restaurant</b></p>
+
+<p>Supongamos
+que un restaurant ofrece 4 entradas, 5 platos principales y 2 postres. ¿De
+cuántas formas un cliente puede ordenar una comida?</p>
+
+<p><b>Respuesta</b>: Se aplica el principio de
+multiplicación, por lo tanto, hay 4 x 5 x 2 formas diferentes de ordenar una
+comida: 40 formas.</p>
+
+<p><b>Regla factorial</b></p>
+
+<p>¡Una
+colección de n elementos distintos se pueden acomodar de n! &nbsp;formas diferentes. Es decir, el primer
+elemento se puede seleccionar de <i>n</i> maneras distintas, el segundo de <i>n-1</i>
+maneras, y así sucesivamente.</p>
+
+<p><b>Ejemplo:&nbsp;Mesa
+de honor</b></p>
+
+<p>Se
+requiere acomodar a 8 personas en una mesa de honor y se le solicita que haga
+un listado de las diferentes formas de ordenar a las personas. Antes de aceptar
+la tarea decide investigar cuántas formas diferentes existen.</p>
+
+<p><b>Respuesta</b>: Se aplica la regla factorial.
+Para el primer puesto hay 8 opciones, para el segundo, 7, para el tercero 6, y
+así sucesivamente. ¡Entonces hay 8! Formas de acomodar a las personas: 40320.
+(No sería sencillo tratar de hacer la lista completa).</p>
+
+<p><b>Ejemplo:
+Niños y niñas</b></p>
+
+<p>Una
+familia tiene 3 niños y 2 niñas. ¿De cuántas formas pueden sentarse en una
+fila? ¿Cuántas formas hay si los niños desean sentarse separados de las niñas?</p>
+
+<p><b>Respuesta:</b> Hay 5! &nbsp;formas de sentarse: 120.</p>
+
+<p>Si desean
+sentarse separados, hay 2 formas de distribuirlos: HHHMM y MMHHH y en cada caso
+los niños pueden sentarse de 3! formas diferentes y las niñas de 2! Por lo que
+hay 3! x 2! x 2! formas: 24 formas.</p>
+
+<p><b>Ejemplo:
+Mesa circular.</b></p>
+
+<p>Encuentre
+el número de formas en las que 7 personas pueden organizarse alrededor de una
+mesa circular.</p>
+
+<p><b>Respuesta:</b> Una persona puede sentarse en
+cualquier lugar de una mesa circular. Las otras 6 personas pueden organizarse
+en 6! formas. Este es un ejemplo de <b>permutación circular.</b> <i>N</i>
+objetos pueden ordenarse en un circulo en (n-1)! formas.</p>
+
+<p><b>Permutaciones</b></p>
+
+<p>Se le
+llama <b>permutación</b> a cualquier ordenamiento de un conjunto de n objetos en un orden dato. Un
+ordenamiento de r de éstos objetos
+se denomina permutación r o permutación de n objetos tomados r a la vez.</p>
+
+<p>La
+siguiente fórmula aplica…</p>
+
+<ul type="disc">
+ <li>Si existen <i>n</i>
+     elementos diferentes disponibles. (No aplica si algunos elementos son
+     iguales)</li>
+ <li>Se selecciona <i>r</i> de los
+     n elementos</li>
+ <li>Los reordenamientos de los
+     mismos elementos se consideran secuencias diferentes</li>
+</ul>
+
+<p align="center">nPr=n!/(n−r)!</p>
+
+<p><b>Ejemplo:
+4 sitios disponibles</b></p>
+
+<p>¿De
+cuántas maneras pueden sentarse 10 personas en un banco si hay 4 sitios
+disponibles?</p>
+
+<p><b>Respuesta</b></p>
+
+<p><sub>10</sub>P<sub>4</sub>=10!/(10−4)!</p>
+
+<p>&nbsp;</p>
+
+<p>= 10 x 9
+x 8 x 7 = 5040 maneras.</p>
+
+<p><b>Ejemplo:
+3 premios</b></p>
+
+<p>En una
+clase de 10 alumnos se van a distribuir 3 premios. ¿De cuántas formas puede
+hacerse si los premios son diferentes?</p>
+
+<p><b>Repuesta</b>: &nbsp;</p>
+
+<p>10!/(10−3)!</p>
+
+<p>= 10 x 9
+x 8 = 720 formas</p>
+
+<p><b>Permutaciones con repeticiones</b></p>
+
+<p>Cuando se
+desea conocer el número de permutaciones de un conjunto de objetos, algunos de
+los cuales son iguales.</p>
+
+<p>La
+siguiente fórmula aplica cuando…</p>
+
+<ul type="disc">
+ <li>Existen <i>n</i> elementos
+     disponibles, y algunos de ellos son idénticos a otros</li>
+ <li>Seleccionamos todos los <i>n</i>
+     elementos (sin reemplazo)</li>
+ <li>Consideramos que los
+     reordenamientos son secuencias diferentes.</li>
+</ul>
+
+<p align="center">=n!/n1!n2!...nk!=n1!n2!...nk!n!​</p>
+
+<p><b>Ejemplo:
+Señales con banderas</b></p>
+
+<p>En un
+barco se&nbsp;pueden izar 3 banderas rojas, 2 azules y 4 verdes. ¿Cuántas
+señales distintas pueden indicarse con la colocación de las 9 banderas?</p>
+
+<p><b>Respuesta:</b></p>
+
+<p>9!/3!2!4!
+​ = 1260 señales diferentes.</p>
+
+<p><b>Ejemplo:
+Sociological</b></p>
+
+<p>Utilizando
+las letras de la palabra SOCIOLOGICAL, ¿cuántas permutaciones distintas pueden
+formarse?</p>
+
+<p>Respuesta:
+Hay 12 letras en la palabra, y 3 de ellas son O, 2 son C, 2 son I, y 2 son L.</p>
+
+<p>Por lo
+que hay 12! / 3!2!2! formas.</p></p><p><br></p><br><p></p>
+</body>
+</html>
