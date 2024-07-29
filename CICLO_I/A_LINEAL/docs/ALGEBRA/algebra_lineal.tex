@@ -1,0 +1,114 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb} % Add this package for \mathbb
+
+\title{Resolución de los ejercicios y explicación detallada}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Resolución de los ejercicios y explicación detallada}
+
+\subsection*{Ejercicio 1: Subconjunto en \(\mathbb{R}^3\)}
+
+\textbf{Dado el subconjunto:}
+
+\[ W = \{(a + 2b, a - b, 3b) \mid a, b \in \mathbb{R}\} \]
+
+\textbf{Conclusión:} \( W \) es un subespacio vectorial de \(\mathbb{R}^3\).
+
+\textbf{Explicación:}
+
+Para demostrar que \( W \) es un subespacio vectorial de \(\mathbb{R}^3\), debemos verificar que \( W \) satisface las siguientes condiciones:
+
+\begin{enumerate}
+    \item El vector cero está en \( W \).
+    \item Si \(\mathbf{u}, \mathbf{v} \in W\), entonces \(\mathbf{u} + \mathbf{v} \in W\).
+    \item Si \(\mathbf{u} \in W\) y \(c \in \mathbb{R}\), entonces \(c\mathbf{u} \in W\).
+\end{enumerate}
+
+\subsubsection*{1. El vector cero está en \( W \):}
+
+Consideramos \(a = 0\) y \(b = 0\):
+
+\[ (a + 2b, a - b, 3b) = (0 + 2 \cdot 0, 0 - 0, 3 \cdot 0) = (0, 0, 0) \]
+
+Por lo tanto, \((0, 0, 0) \in W\).
+
+\subsubsection*{2. Cerradura bajo la adición:}
+
+Sean \(\mathbf{u} = (a + 2b, a - b, 3b)\) y \(\mathbf{v} = (c + 2d, c - d, 3d)\) dos vectores en \(W\). Entonces,
+
+\[
+\mathbf{u} + \mathbf{v} = (a + 2b + c + 2d, a - b + c - d, 3b + 3d)
+\]
+
+Podemos reescribir esto como:
+
+\[
+\mathbf{u} + \mathbf{v} = ((a + c) + 2(b + d), (a + c) - (b + d), 3(b + d))
+\]
+
+Dado que \(a + c \in \mathbb{R}\) y \(b + d \in \mathbb{R}\), se sigue que \(\mathbf{u} + \mathbf{v} \in W\).
+
+\subsubsection*{3. Cerradura bajo la multiplicación por un escalar:}
+
+Sea \(\mathbf{u} = (a + 2b, a - b, 3b) \in W\) y \(c \in \mathbb{R}\). Entonces,
+
+\[
+c\mathbf{u} = c(a + 2b, a - b, 3b) = (ca + 2cb, ca - cb, 3cb)
+\]
+
+Podemos reescribir esto como:
+
+\[
+c\mathbf{u} = (c(a + 2b), c(a - b), 3(cb))
+\]
+
+Dado que \(ca \in \mathbb{R}\) y \(cb \in \mathbb{R}\), se sigue que \(c\mathbf{u} \in W\).
+
+\subsubsection*{Conclusión:}
+
+Dado que \(W\) contiene el vector cero, y es cerrado bajo la adición y la multiplicación por un escalar, \(W\) es un subespacio vectorial de \(\mathbb{R}^3\).
+
+\subsection*{Contraejemplo:}
+
+Consideremos el siguiente conjunto:
+
+\[ W' = \left\{ \begin{pmatrix} a+1 & b \\ a+b+1 & 0 \\ 0 & c+1 \end{pmatrix} \mid a, b, c \in \mathbb{R} \right\} \]
+
+Este conjunto no es un subespacio vectorial porque:
+
+\begin{itemize}
+    \item \textbf{No contiene al vector cero:} Al hacer \(a = 0\), \(b = 0\), y \(c = 0\), obtenemos:
+
+    \[
+    \begin{pmatrix}
+    0+1 & 0 \\
+    0+0+1 & 0 \\ 
+    0 & 0+1 
+    \end{pmatrix} =
+    \begin{pmatrix}
+    1 & 0 \\
+    1 & 0 \\
+    0 & 1
+    \end{pmatrix}
+    \]
+
+    Esto no es la matriz nula.
+
+    \item \textbf{No es cerrado bajo la suma:} Sean \(\mathbf{A} = \begin{pmatrix} a+1 & b \\ a+b+1 & 0 \\ 0 & c+1 \end{pmatrix}\) y \(\mathbf{B} = \begin{pmatrix} d+1 & e \\ d+e+1 & 0 \\ 0 & f+1 \end{pmatrix}\) dos matrices en \(W'\). Entonces,
+
+    \[
+    \mathbf{A} + \mathbf{B} = \begin{pmatrix} a+1 & b \\ a+b+1 & 0 \\ 0 & c+1 \end{pmatrix} + \begin{pmatrix} d+1 & e \\ d+e+1 & 0 \\ 0 & f+1 \end{pmatrix} = \begin{pmatrix} (a+d)+2 & b+e \\ (a+d)+(b+e)+2 & 0 \\ 0 & (c+f)+2 \end{pmatrix}
+    \]
+
+    Las constantes \(1\) se suman dos veces, alterando la estructura original. Por lo tanto, \(\mathbf{A} + \mathbf{B} \notin W'\).
+\end{itemize}
+
+
+\end{document}
