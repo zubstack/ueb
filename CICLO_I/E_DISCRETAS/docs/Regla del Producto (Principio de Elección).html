@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Regla del Producto (Principio de Elección)</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <p>
+      <span class="texto"
+        >Para conjuntos finitos <b>S</b> y <b>T</b> se tiene que |<b>S</b> ×
+        <b>T</b>| = |<b>S</b>| · |<b>T</b>| ya que <b>S</b> × <b>T</b> = {(s, t)
+        | s ∈ <b>S</b> y t ∈ <b>T</b>} y para cada una de las |<b>S</b>|
+        selecciones en s en <b>S</b> hay |<b>T</b>| elecciones para t en
+        <b>T</b>.</span
+      ><br /><br /><span class="subtitulo">Ejemplo:</span><br /><span
+        class="texto"
+        >Sean <b>S</b> = {1, 2} y <b>T</b> = {a, b, c}, entonces |<b>S</b>| = 2
+        y |<b>T</b>| = 3, por lo que:</span
+      >
+    </p>
+    <p></p>
+    <p class="texto">
+      |<b>S</b> × <b>T</b>| = |<b>S</b>| · |<b>T</b>| = 2 · 3 = 6, dichos
+      elementos son:
+    </p>
+    <p></p>
+    <p class="texto">
+      <b>S</b> × <b>T</b> = {(1, a), (1, b), (1, c), (2, a), (2, b), (2, c)}
+    </p>
+    <p>
+      <span class="subtitulo">Regla del Producto<br /></span
+      ><span class="texto"
+        >a) Para conjuntos finitos <i>S</i><sub>1</sub>, <i>S</i><sub>2</sub>,
+        ..., <i>S</i><sub>k</sub> se tiene que:</span
+      >
+    </p>
+    <p align="center">
+      |<i>S</i><sub>1</sub> × <i>S</i><sub>2</sub> × ... × <i>S</i><sub>k</sub>|
+      = |<i>S</i><sub>1</sub>| · |<i>S</i><sub>2</sub>| · ... · |<i>S</i
+      ><sub>k</sub>|
+    </p>
+    <p class="texto">
+      b) De manera más general, supongamos que un conjunto dado puede verse como
+      <i>k</i>-adas ordenadas (s<sub>1</sub>,...,s<sub>k</sub>) con la siguiente
+      estructura: Hay <i>n</i><sub>1</sub> elecciones posibles para <i>S</i
+      ><sub>1</sub>. Dado <i>S</i><sub>1</sub> hay <i>n</i
+      ><sub>2</sub> elecciones posibles para <i>S</i><sub>2</sub>. Dados <i>S</i
+      ><sub>1</sub> y <i>S</i><sub>2</sub> hay <i>n</i><sub>3</sub> elecciones
+      posibles de <i>S</i><sub>3</sub>. En general, dados <i>S</i
+      ><sub>1</sub>,..., <i>S</i><sub>j-1</sub>, hay <i>n</i
+      ><sub>j</sub> elecciones posibles para <i>S</i><sub>j</sub>. Entonces el
+      conjunto tiene <i>n</i><sub>1</sub> · <i>n</i><sub>2</sub> · ... · <i>n</i
+      ><sub>k</sub> elementos.
+    </p>
+    <p>
+      <span class="subtitulo"> Ejemplos:</span><br /><span class="texto"
+        >a) Calculemos el número de maneras distintas de seleccionar 5 cartas
+        con reemplazo de una baraja de 52 cartas. Así procedemos a contar
+        quintillas ordenadas de cartas de la baraja. Con reemplazo significa que
+        cada carta se regresa a la baraja antes de sacar la nueva carta. El
+        conjunto de formas de seleccionar 5 cartas con reemplazo está en
+        correspondencia uno a uno con D · D · D · D · D = D<sup>5</sup>, donde D
+        es el conjunto de cartas de 52 elementos. Por lo tanto, por a) de la
+        regla del producto, el conjunto tiene 52<sup>5</sup> elementos. También
+        este problema puede resolverse utilizando b) de la misma regla. Hay 52
+        maneras de seleccionar la primera carta. Después, al regresar la carta,
+        hay 52 maneras de seleccionar la segunda y así sucesivamente, por lo
+        tanto, hay 52 · 52 · 52 · 52 · 52 formas de seleccionar cinco cartas con
+        reemplazo.</span
+      >
+    </p>
+    <p class="texto">
+      b) Calculemos ahora la forma de seleccionar 5 cartas distintas sin
+      reemplazo de una baraja de 52 cartas. Sin reemplazo significa que una vez
+      seleccionada una carta ya no es posible regresarla a la baraja. Esta vez,
+      a) de la regla del producto no puede aplicarse, ya que están prohibidas
+      las quintillas donde se repita una carta. Sin embargo, podemos aplicar la
+      regla b) del producto. La primera carta puede seleccionarse de 52 maneras.
+      Una vez seleccionada, la segunda carta puede elegirse de 51 maneras. La
+      tercera puede escogerse de 50 formas, la cuarta de 49 y la quinta de 48.
+      De manera que para elegir 5 cartas sin reemplazo existen 52 · 51 · 50 · 49
+      · 48 formas diferentes.
+    </p>
+    <p class="texto">
+      c) El club de teatro de la Universidad realiza ensayos para una obra de
+      teatro que se montará el próximo año. Si seis hombres y ocho mujeres
+      ensayan para los papeles principales (masculino y femenino), por la regla
+      del producto, el director puede elegir a la pareja principal de 6 · 8 = 48
+      formas diferentes.
+    </p>
+  </body>
+</html>
