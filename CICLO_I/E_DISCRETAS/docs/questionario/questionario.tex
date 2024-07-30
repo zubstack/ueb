@@ -1,0 +1,221 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section*{Solución del Examen de Matemáticas}
+
+\textbf{Pregunta 1}
+
+Formaliza las siguientes proposiciones:
+
+\textbf{a)}
+
+\textit{“Si tuvieran que justificarse ciertos hechos por su enorme tradición entonces, si estos hechos son inofensivos y respetan a todo ser viviente y al medio ambiente, no habría ningún problema. Pero si los hechos son bárbaros o no respetuosos con los seres vivientes o el medio ambiente, entonces habría que dejar de justificarlos o no podríamos considerarnos dignos de nuestro tiempo.”}
+
+Para formalizar esta proposición, usaremos las siguientes variables:
+
+- \( J \): "Los hechos se justifican por su enorme tradición"
+- \( I \): "Los hechos son inofensivos"
+- \( R \): "Los hechos respetan a todo ser viviente y al medio ambiente"
+- \( P \): "No hay ningún problema"
+- \( B \): "Los hechos son bárbaros"
+- \( N \): "Los hechos no respetan a los seres vivientes o al medio ambiente"
+- \( D \): "Habría que dejar de justificarlos"
+- \( T \): "No podemos considerarnos dignos de nuestro tiempo"
+
+La proposición puede expresarse como:
+
+\[ J \rightarrow [(I \land R) \rightarrow P] \land [(B \lor N) \rightarrow (D \lor T)] \]
+
+\
+\section*{Pregunta 2}
+
+\textit{Todo número entero o es primo o es compuesto. Si es compuesto, es un producto de factores primos, y si es un producto de factores primos, entonces es divisible por ellos. Pero si un número entero es primo, no es compuesto, aunque es divisible por sí mismo y por la unidad, y consiguientemente, también divisible por números primos. Por tanto, todo número entero es divisible por números primos.}
+
+Para formalizar esta proposición, usaremos las siguientes variables:
+
+- \( E(x) \): "x es un número entero"
+- \( P(x) \): "x es primo"
+- \( C(x) \): "x es compuesto"
+- \( F(x) \): "x es un producto de factores primos"
+- \( D(x, y) \): "x es divisible por y"
+
+La proposición puede expresarse como:
+
+\[ \forall x (E(x) \rightarrow [P(x) \lor C(x)]) \]
+\[ \forall x (C(x) \rightarrow F(x)) \]
+\[ \forall x (F(x) \rightarrow \forall y (D(x, y) \rightarrow P(y))) \]
+\[ \forall x (P(x) \rightarrow \neg C(x)) \]
+\[ \forall x (P(x) \rightarrow (D(x, x) \land D(x, 1))) \]
+\[ \forall x (P(x) \rightarrow \forall y (D(x, y) \rightarrow P(y))) \]
+
+\section*{Pregunta 3}
+
+La cantidad de correos electrónicos no leídos en la cuenta de Sylvia es 75. Esta cantidad aumenta en 10 correos electrónicos no leídos por día. La función \( N(t) = 75 + 10t \) representa la relación entre el número de correos electrónicos, \( N \), y el tiempo, \( t \), medido en días.
+
+\textbf{a.} Determinar la variable independiente y dependiente.
+
+Para la función \( N(t) = 75 + 10t \):
+
+- La variable independiente es \( t \) (el tiempo en días).
+- La variable dependiente es \( N \) (el número de correos electrónicos no leídos).
+
+\textbf{b.} Encuentre \( N(5) \). Explique qué significa este resultado.
+
+Para encontrar \( N(5) \), sustituimos \( t = 5 \) en la función:
+
+\[ N(5) = 75 + 10 \cdot 5 = 75 + 50 = 125 \]
+
+Este resultado significa que después de 5 días, Sylvia tendrá 125 correos electrónicos no leídos en su cuenta.
+
+\section*{Pregunta 4}
+
+El costo diario para la imprenta por imprimir un libro se realiza mediante la función \( C(x) = 3.25x + 1500 \) donde \( C \) es el costo diario total y \( x \) es el número de libros impresos.
+
+\textbf{a.} Determine la variable independiente y dependiente.
+
+Para la función \( C(x) = 3.25x + 1500 \):
+
+- La variable independiente es \( x \) (el número de libros impresos).
+- La variable dependiente es \( C \) (el costo diario total).
+
+\textbf{b.} Encuentre \( C(0) \). Explique qué significa este resultado.
+
+Para encontrar \( C(0) \), sustituimos \( x = 0 \) en la función:
+
+\[ C(0) = 3.25 \cdot 0 + 1500 = 1500 \]
+
+Este resultado significa que el costo diario total cuando no se imprime ningún libro es \$1500, que probablemente representa los costos fijos de la imprenta.
+
+\textbf{c.} Encuentre \( C(1000) \). Explique qué significa este resultado.
+
+Para encontrar \( C(1000) \), sustituimos \( x = 1000 \) en la función:
+
+\[ C(1000) = 3.25 \cdot 1000 + 1500 = 3250 + 1500 = 4750 \]
+
+Este resultado significa que el costo diario total para imprimir 1000 libros es \$4750.
+
+\newpage
+
+\section*{Pregunta 5}
+
+Si 10 personas se dan la mano cada una, ¿cuántos apretones de manos se produjeron? ¿Qué tiene que ver esta pregunta con la teoría de grafos?
+
+Para determinar el número de apretones de manos, podemos usar la fórmula combinatoria para elegir 2 personas de un grupo de 10, que es \(\binom{10}{2}\):
+
+\[ \binom{10}{2} = \frac{10!}{2!(10-2)!} = \frac{10 \cdot 9}{2 \cdot 1} = 45 \]
+
+Se produjeron 45 apretones de manos.
+
+En la teoría de grafos, esto representa un grafo completo \( K_{10} \)
+
+\section*{Pregunta 6}
+
+Determina por extensión el siguiente conjunto:
+\[ A = \left\{ x^2 + 1 \mid x \in \mathbb{Z} \land -3 < x \leq 4 \right\} \]
+
+Primero, encontramos los valores de \( x \) en el intervalo dado:
+\[ x = -2, -1, 0, 1, 2, 3, 4 \]
+
+Ahora, calculamos \( x^2 + 1 \) para cada valor de \( x \):
+\[ 
+\begin{align*}
+(-2)^2 + 1 & = 4 + 1 = 5 \\
+(-1)^2 + 1 & = 1 + 1 = 2 \\
+0^2 + 1 & = 0 + 1 = 1 \\
+1^2 + 1 & = 1 + 1 = 2 \\
+2^2 + 1 & = 4 + 1 = 5 \\
+3^2 + 1 & = 9 + 1 = 10 \\
+4^2 + 1 & = 16 + 1 = 17 \\
+\end{align*}
+\]
+
+Por lo tanto, el conjunto \( A \) es:
+\[ A = \{1, 2, 5, 10, 17\} \]
+
+La suma de los elementos del conjunto \( A \) es:
+\[ 1 + 2 + 5 + 10 + 17 = 35 \]
+
+\section*{Pregunta 7}
+
+Encuentra el dominio de la siguiente relación \( R = \{(x, y) \mid y = x + 2\} \), dado los conjuntos \( A = \{1, 2, 3, 4, 6, 7\} \) y \( B = \{1, 2, 3, 4, 5, 6\} \).
+
+Para que \( y \in B \), \( y \) debe satisfacer \( y = x + 2 \) y pertenecer al conjunto \( B \). Entonces:
+\[ x + 2 \in B \]
+\[ x \in A \]
+
+Analizamos los valores de \( x \) de \( A \) y verificamos si \( x + 2 \in B \):
+
+\[ 
+\begin{align*}
+1 + 2 & = 3 \in B \\
+2 + 2 & = 4 \in B \\
+3 + 2 & = 5 \in B \\
+4 + 2 & = 6 \in B \\
+6 + 2 & = 8 \notin B \\
+7 + 2 & = 9 \notin B \\
+\end{align*}
+\]
+
+Por lo tanto, el dominio de \( R \) es:
+\[ \{1, 2, 3, 4\} \]
+
+\section*{Pregunta 8}
+
+Una persona tiene cuatro llaves y solo una llave cabe en la cerradura de una puerta. ¿Cuál es la probabilidad de que la puerta se pueda desbloquear en como máximo tres intentos?
+
+La probabilidad de éxito en el primer intento es \( \frac{1}{4} \).
+
+Si falla el primer intento, le quedan 3 llaves, así que la probabilidad de éxito en el segundo intento es \( \frac{1}{3} \).
+
+Si falla el segundo intento, le quedan 2 llaves, así que la probabilidad de éxito en el tercer intento es \( \frac{1}{2} \).
+
+La probabilidad de desbloquear la puerta en como máximo tres intentos es la suma de las probabilidades de éxito en cada intento:
+
+\[
+P(\text{éxito en 1er intento}) + P(\text{fracaso en 1er intento} \land \text{éxito en 2do intento}) + P(\text{fracaso en 1er y 2do intento} \land \text{éxito en 3er intento})
+\]
+
+\[
+\begin{align*}
+P(\text{éxito en 1er intento}) & = \frac{1}{4} \\
+P(\text{fracaso en 1er intento} \land \text{éxito en 2do intento}) & = \frac{3}{4} \cdot \frac{1}{3} = \frac{1}{4} \\
+P(\text{fracaso en 1er y 2do intento} \land \text{éxito en 3er intento}) & = \frac{3}{4} \cdot \frac{2}{3} \cdot \frac{1}{2} = \frac{1}{4} \\
+\end{align*}
+\]
+
+\[
+\frac{1}{4} + \frac{1}{4} + \frac{1}{4} = \frac{3}{4}
+\]
+
+Por lo tanto, la probabilidad de que la puerta se pueda desbloquear en como máximo tres intentos es \( \frac{3}{4} \) o 75\%.
+
+\section*{Pregunta 9}
+
+En una caja vacía ponemos 8 bolas azules, 4 bolas naranjas y 2 bolas verdes. Si sacamos primero una bola y después otra bola sin volver a poner la primera bola extraída dentro de la caja, ¿cuál es la probabilidad de que la primera bola sea azul y la segunda bola sea naranja?
+
+Para encontrar esta probabilidad, primero calculamos el número total de bolas en la caja:
+
+\[ 8 + 4 + 2 = 14 \]
+
+La probabilidad de que la primera bola sea azul es:
+
+\[ \frac{8}{14} \]
+
+Después de sacar una bola azul, quedan 13 bolas en la caja, de las cuales 4 son naranjas. La probabilidad de que la segunda bola sea naranja, dado que la primera fue azul, es:
+
+\[ \frac{4}{13} \]
+
+Por lo tanto, la probabilidad de que la primera bola sea azul y la segunda sea naranja es el producto de estas dos probabilidades:
+
+\[
+\frac{8}{14} \times \frac{4}{13} = \frac{8 \cdot 4}{14 \cdot 13} = \frac{32}{182} = \frac{16}{91}
+\]
+
+Así, la probabilidad de que la primera bola sea azul y la segunda bola sea naranja es \(\frac{16}{91}\).
+
+
+\end{document}
