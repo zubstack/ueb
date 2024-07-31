@@ -1,0 +1,183 @@
+\documentclass[answers]{exam} % Clase para exámenes con respuestas
+\usepackage[english,spanish]{babel} % Soporte para inglés y español
+\usepackage[autostyle]{csquotes} % Manejo de citas
+\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
+\usepackage{graphicx} % Inclusión de gráficos
+\usepackage{enumitem} % Personalización de listas enumeradas
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} % Configuración de márgenes
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} % Enlaces con color
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Respuesta:}\par\noindent} % Personalización del título de respuestas
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+
+\vspace{0.5cm}
+\large Cuestionario
+\vspace{0.5cm}
+
+Resuelva las siguientes derivadas:
+\begin{questions}
+
+    \question $f(x)=(\sin x + x)^2$
+    
+    \[
+    f'(x) = 2(\sin x + x)(\cos x + 1)
+    \]
+
+    \question $f(x)=\log(x^2+2x^4)$
+    
+    \[
+    f'(x) = \frac{1}{x^2 + 2x^4} \cdot (2x + 8x^3) = \frac{2x(1 + 4x^2)}{x^2 + 2x^4}
+    \]
+
+    \question $f(x)=\sqrt{\dfrac{x^2+3x}{2x+1}}$
+    
+    \[
+    f'(x) = \frac{(2x + 3)(2x + 1) - (x^2 + 3x)2}{2(2x + 1)^2\sqrt{\frac{x^2 + 3x}{2x + 1}}}
+    \]
+
+    \question $f(x)=\dfrac{ax^2}{\sqrt[3]{x}}+\dfrac{b}{x\cdot \sqrt{x}}-\dfrac{\sqrt[3]{x}}{\sqrt{x}}$
+    
+    \[
+    f'(x) = \frac{2ax^{\frac{5}{3}}}{3} - \frac{b}{2x^{\frac{3}{2}}} - \frac{1}{6x^{\frac{5}{6}}}
+    \]
+
+    \question $f(x)=\ln \sqrt{\dfrac{1+\sin x}{1-\sin x}}$
+    
+    \[
+    f'(x) = \frac{1}{2} \cdot \frac{d}{dx} \left[\ln\left(\frac{1+\sin x}{1-\sin x}\right)\right] = \frac{\cos x}{\sqrt{1-\sin^2 x}}
+    \]
+
+    \question $f(x)=a^{x^2}$
+    
+    \[
+    f'(x) = 2x \cdot a^{x^2} \ln a
+    \]
+
+    \question $f(x)=a^{\tan (nx)}$
+    
+    \[
+    f'(x) = a^{\tan (nx)} \ln a \cdot n \sec^2(nx)
+    \]
+
+    \question $f(x)= \arcsin\left(\dfrac{x}{\sqrt{1+x^2}}\right)$
+    
+    \[
+    f'(x) = \frac{1}{\sqrt{1+x^2} \sqrt{1-\left(\frac{x}{\sqrt{1+x^2}}\right)^2}} = \frac{1}{1+x^2}
+    \]
+
+    \question $f(x)=x^x$
+    
+    \[
+    f'(x) = x^x \left(\ln x + 1\right)
+    \]
+
+    \question $f(x)=\tan^{-1}(x^2)$
+    
+    \[
+    f'(x) = \frac{2x}{1+x^4}
+    \]
+
+    \question $2x^3-4x^2y+y^2=0$
+    
+    \[
+    \frac{dy}{dx} = \frac{6x^2-4xy}{2y-4x^2}
+    \]
+
+    \question $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 1$
+    
+    \[
+    \frac{dy}{dx} = -\frac{2Ax + By + D}{Bx + 2Cy + E}
+    \]
+
+    \question $e^x \sin y + e^y \cos x = 1$
+    
+    \[
+    \frac{dy}{dx} = -\frac{e^x \cos y + e^y \sin x}{e^y \cos x - e^x \sin y}
+    \]
+
+    \question $y=10x^2-3x+1$, encontrar y''.
+    
+    \[
+    y'' = 20
+    \]
+
+    \question $y=\sin(7x)$, encontrar y'''.
+    
+    \[
+    y''' = -343\sin(7x)
+    \]
+
+    \question $y=\sqrt{1+2t}$, encontrar y''.
+    
+    \[
+    y'' = -\frac{1}{(1+2t)^{3/2}}
+    \]
+
+    \question $y=\ln(\cos(2x))$, encontrar y'''.
+    
+    \[
+    y''' = -8\sec^2(2x)\tan(2x)
+    \]
+
+    \question $f(x,y)=-x^2+2xy-y$, encontrar $f'_x y f'_y$.
+    
+    \[
+    f'_x = -2x + 2y, \quad f'_y = 2x - 1
+    \]
+
+    \question $f(x,y)=\sqrt{x^3+y^2}$, encontrar $f_x(1,1)$.
+    
+    \[
+    f'_x(1,1) = \frac{3\sqrt{1}}{2\sqrt{1+1}} = \frac{3}{2\sqrt{2}}
+    \]
+
+    \question $f(x,y)=\dfrac{2xy-y}{x^2+y}$, calcular $f'_x y f'_y$.
+    
+    \[
+    f'_x = \frac{2y(x^2+y) - 4x^2y + y^2}{(x^2 + y)^2}, \quad f'_y = \frac{2x(x^2 + y) - y(2xy - 1)}{(x^2 + y)^2}
+    \]
+
+    \question Encontrar $f'(\dfrac{\pi}{4})$ si $f(x)=\sin(x)+x$
+   
+    \[
+    f'(x) = \cos(x) + 1
+    \]
+    \[
+    f'\left(\frac{\pi}{4}\right) = \cos\left(\frac{\pi}{4}\right) + 1 = \frac{\sqrt{2}}{2} + 1
+    \]
+
+    \question Encontrar $f'(2)$ si $f(x)=x^x$
+   
+    \[
+    f'(x) = x^x (\ln x + 1)
+    \]
+    \[
+    f'(2) = 2^2 (\ln 2 + 1) = 4 (\ln 2 + 1)
+    \]
+
+    \question Encontrar la ecuación de la recta tangente a $f(x)=x^2-2x+2$ en $x=7$
+   
+    \[
+    f'(x) = 2x - 2
+    \]
+    \[
+    f'(7) = 2(7) - 2 = 12
+    \]
+    \[
+    f(7) = 7^2 - 2 \cdot 7 + 2 = 49 - 14 + 2 = 37
+    \]
+    La ecuación de la recta tangente es:
+    \[
+    y - 37 = 12(x - 7)
+    \]
+    Simplificando:
+    \[
+    y = 12x - 84 + 37 = 12x - 47
+    \]
+    
+
+\end{questions}
+
+\end{document}
