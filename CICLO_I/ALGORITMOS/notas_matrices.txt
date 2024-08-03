@@ -1,0 +1,26 @@
+Pasar diapositivas de semana 10 y 11 al cuaderno
+
+Repetir la estructura de los arreglos unidiensionales:
+
+* Tipo de dato
+* Nombre del arreglo
+* [tamaño del arreglo]
+* Punto y coma
+
+Matrices:
+
+* Tipo de dato
+* Nombre del arreglo
+* [tamaño de filas][tamaño de columnas]
+* Punto y coma
+
+Estrucutura del ciclo:
+
+* Inicialization
+* Condicion
+* Incrementos
+
+
+INGRESAR MATRIZ MXN Y COLOCAR EN UN VECTOR LOS ELEMENTOS DE LA COLUMNA DEL MEDIO. IMPRIMIR MATRIZ Y VECTOR (AGREGAR CONTROL DE IMPARES)
+
+Ingresar matriz mxn que contendra los nombres de los estudiantes de primer ciclo, en un arrreglo de tipo flotante ubicar las calificaciones del examen del primer parcial, imprimir el nombre del estudiante y la nota obtenida en el examen.

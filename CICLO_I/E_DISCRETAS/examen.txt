@@ -1,0 +1,59 @@
+1. **¿De cuántas maneras se pueden sentar 5 personas alrededor de una mesa redonda?**
+   - **Respuesta:** La respuesta es 24.
+   - **Procedimiento:** Para calcularlo, consideramos que las permutaciones lineales se reducen por la simetría de la mesa redonda. Fijando a una persona, las otras 4 se pueden organizar de \(4!\) formas, que es \(24\) formas en total.
+
+2. **¿Cuántas palabras distintas de tres letras se pueden formar con las letras de la palabra MARDONES?**
+   - **Respuesta:** La respuesta es 336.
+   - **Procedimiento:** Se calcula usando la fórmula de permutaciones con repetición, considerando las letras repetidas en "MARDONES".
+
+3. **¿Cuántas maneras distintas puedo combinar una camisa, un pantalón y una corbata si tengo tres camisas, cinco pantalones y cuatro corbatas?**
+   - **Respuesta:** La respuesta es 60.
+   - **Procedimiento:** Se multiplica el número de opciones disponibles para cada prenda (camisa, pantalón, corbata) para obtener todas las combinaciones posibles.
+
+4. **¿De cuántas maneras se pueden formar grupos de 3 alumnos desde un curso con 5 alumnos?**
+   - **Respuesta:** La respuesta es 10.
+   - **Procedimiento:** Se calcula utilizando combinaciones de 5 elementos tomados de 3 en 3.
+
+5. **¿Cuántos grupos de 3 alumnos se pueden formar desde un curso con 5 alumnos?**
+   - **Respuesta:** La respuesta es 10.
+   - **Procedimiento:** Similar al anterior, se calcula utilizando combinaciones.
+
+6. **¿Cuántas maneras distintas puedo elegir un automóvil entre las marcas A y B si la marca A tiene 2 modelos y 3 colores, y la marca B tiene 4 modelos y 5 colores?**
+   - **Respuesta:** La respuesta es 26.
+   - **Procedimiento:** Se suman las opciones disponibles de modelos y colores de ambas marcas.
+
+7. **¿Cuántos números de tres dígitos se pueden formar con los primeros 6 números naturales?**
+   - **Respuesta:** La respuesta es 216.
+   - **Procedimiento:** Se calcula multiplicando las opciones para cada posición de los dígitos (centena, decena, unidad).
+
+8. **¿Cuántos grupos de 3 alumnos se pueden formar desde un curso con 10 alumnos?**
+   - **Respuesta:** La respuesta es 120.
+   - **Procedimiento:** Se calcula utilizando combinaciones de 10 elementos tomados de 3 en 3.
+
+9. **¿Cuál es la probabilidad de que un día cualquiera, Carlos almuerce pollo frito o hamburguesa?**
+   - **Respuesta:** La respuesta es 0.6.
+   - **Procedimiento:** Se suma la probabilidad de almuerzar pollo frito y hamburguesa, excluyendo la intersección.
+
+10. **¿Cuántas formas diferentes podemos alinear a 3 alumnos de un curso de 10 alumnos?**
+    - **Respuesta:** La respuesta es 720.
+    - **Procedimiento:** Se calcula utilizando permutaciones de 10 elementos tomados de 3 en 3.
+
+11. **¿Cuántos números de tres dígitos se pueden formar con los primeros 6 números naturales?**
+    - **Respuesta:** La respuesta es 216.
+    - **Procedimiento:** Se calcula multiplicando las opciones para cada posición de los dígitos (centena, decena, unidad).
+
+12. **Un frasco contiene 3 mármoles negros y 2 blancos. ¿Cuál es la probabilidad de que obtengamos exactamente dos canicas negras en como máximo tres intentos?**
+    - **Respuesta:** La probabilidad es \( \frac{21}{40} \).
+    - **Procedimiento:** Se calcula sumando las probabilidades de los casos donde se obtienen dos canicas negras en los primeros dos intentos, y donde se obtiene una canica blanca seguida de dos canicas negras en los tres intentos.
+
+13. **¿De cuántas maneras podemos alinear a 3 alumnos de un curso de 10 alumnos?**
+    - **Respuesta:** La respuesta es 720.
+    - **Procedimiento:** Se calcula utilizando permutaciones de 10 elementos tomados de 3 en 3.
+
+14. **Si me quiero comprar un automóvil, puedo elegir entre distintas marcas y modelos. La marca A tiene 2 modelos y 3 colores, la marca B tiene 4 modelos y 5 colores disponibles. ¿De cuántas maneras posibles puedo elegir un automóvil?**
+    - **Respuesta:** La respuesta es 26.
+    - **Procedimiento:** Se suman las opciones disponibles de modelos y colores de ambas marcas.
+
+15. **¿Cuántos números de tres dígitos se pueden formar con los primeros 6 números naturales?**
+    - **Respuesta:** La respuesta es 216.
+    - **Procedimiento:** Se calcula multiplicando las opciones para cada posición de los dígitos (centena, decena, unidad).
