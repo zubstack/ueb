@@ -1,0 +1,23 @@
+Desafío: Transposición de Matrices y Ordenación de Estructuras
+
+Descripción:
+
+Dado un conjunto de matrices de tamaño MxN (donde M y N son enteros positivos) y una estructura que contiene una matriz y su identificador, realiza las siguientes tareas:
+
+    Transposición de Matrices:
+        Implementa una función que tome una matriz MxN y devuelva su transpuesta NxM.
+
+    Ordenación de Matrices:
+        Implementa una función que ordene un arreglo de estructuras, donde cada estructura contiene una matriz y un identificador. La ordenación se debe hacer en función de la suma de los elementos de cada matriz. El identificador es un número único para cada matriz.
+
+    Estructura de Datos:
+        Usa una estructura para representar una matriz que contenga:
+            Un identificador (entero)
+            Las dimensiones de la matriz (M y N)
+            Un puntero a una matriz de enteros
+
+Especificaciones:
+
+    - La función de transposición debe recibir un puntero a una matriz y devolver una nueva matriz transpuesta.
+    
+    - La función de ordenación debe recibir un puntero a un arreglo de estructuras y el número de matrices. La ordenación debe hacerse en orden ascendente de la suma de los elementos de cada matriz.
