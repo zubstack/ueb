@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Regla de la Suma (Regla de la Unión)</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <p><span class="texto">Si A y B son dos conjuntos finitos:</span></p>
+    <p class="texto">
+      a) Si A y B son disjuntos, es decir, A ∩ B = ∅, entonces |A ∪ B| = |A| +
+      |B|
+    </p>
+    <p class="texto">b) En general |A ∪ B| = |A| + |B| - |A ∩ B|</p>
+    <p class="texto">
+      La razón intuitiva por la que se cumple b) es que cuando calculamos |A| +
+      |B| se están contando dos veces los elementos de A ∩ B, por lo que debemos
+      restar |A ∩ B| de la suma de |A| + |B| para obtener |A ∪ B|.
+    </p>
+    <p>
+      <span class="subtitulo">Ejemplos:</span><br /><span class="texto"
+        >a) En una escuela 20 alumnos toman clases de computación, 30 física y 7
+        de ellos toman ambas. ¿Cuántos alumnos hay en total?<br
+      /></span>
+    </p>
+    <p class="texto">
+      <span class="texto"
+        >Sea <b>C</b> el conjunto de los alumnos que toman la clase de
+        computación y sea <b>F</b> el conjunto de los alumnos que toman la clase
+        de física. Aplicando la regla de la suma tenemos que:</span
+      >
+    </p>
+    <table border="0" width="400" cellpadding="0">
+      <tbody>
+        <tr>
+          <td class="texto" width="44">|<b>C</b> ∪ <b>F</b>|</td>
+          <td class="texto" width="344">
+            = |<b>C</b>| + |<b>F</b>| - |<b>C</b> ∩ <b>F</b>|
+          </td>
+        </tr>
+        <tr>
+          <td class="texto" width="44"> </td>
+          <td class="texto" width="344">= 20 + 30 - 7</td>
+        </tr>
+        <tr>
+          <td class="texto" width="44"> </td>
+          <td class="texto" width="344">= 43</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="texto">Es decir, en total hay 43 alumnos.</p>
+    <p class="texto">
+      <span class="texto"
+        >b) ¿Cuántos enteros en <b>S</b> = {1, 2, 3, ..., 1000} son divisibles
+        por 3 o 5?</span
+      >
+    </p>
+    <p class="texto">
+      Sean:<br />D3 = {<i>n</i> ∈ <b>S</b> | <i>n</i> es divisible por 3}<br />D5
+      = {<i>n</i> ∈ <b>S</b> | <i>n</i> es divisible por 5}
+    </p>
+    <p class="texto">
+      Buscamos el número de elementos en D3 ∪ D5, que no es obvio. Puede verse
+      que |D3| = 333; basta dividir 1000 entre 3 y redondear. De la misma
+      manera, |D5| = 200. Además, |D3 ∩ D5| = |D15| = 66.
+    </p>
+    <p class="texto">Por b) de la Regla de la Suma tenemos que:</p>
+    <p class="texto">
+      |D3 ∪ D5| = 333 + 200 – 66 = 467 números enteros que son divisibles por 3
+      o 5.
+    </p>
+  </body>
+</html>
