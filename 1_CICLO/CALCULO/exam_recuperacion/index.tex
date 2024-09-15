@@ -1,0 +1,188 @@
+\documentclass[12pt, answers]{exam} % Clase para exámenes con respuestas
+\usepackage[english,spanish]{babel} % Soporte para inglés y español
+\usepackage[autostyle]{csquotes} % Manejo de citas
+\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
+\usepackage{graphicx} % Inclusión de gráficos
+\usepackage{enumitem} % Personalización de listas enumeradas
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} % Configuración de márgenes
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} % Enlaces con color
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Respuesta:}\par\noindent} % Personalización del título de respuestas
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\large EXAMEN DE RECUPERACIÓN (CÁLCULO 1)}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{questions}
+
+    % Pregunta 1
+    \question Sean las funciones \( f(x) = \ln(x + 1) \) y \( g(x) = x^2 - 5x + 6 \):
+    \begin{parts}
+        \part Encontrar matemáticamente el dominio y recorrido de cada función.
+        \part Encontrar \(\frac{f(x)}{g(x)}\) y su dominio.
+    \end{parts}
+
+    % Pregunta 2
+    \question Determinar si la siguiente función es continua en \( x = 1 \) y en \( x = 2 \); además graficarla a mano.
+    \[
+    f(x) = 
+    \begin{cases} 
+    x & \text{si } x < 1, \\
+    x^2 + 1 & \text{si } 1 \leq x \leq 2, \\
+    2 & \text{si } x > 2.
+    \end{cases}
+    \]
+
+    % Pregunta 3
+    \question Determine las derivadas solicitadas en los siguientes literales:
+    % \begin{parts}
+    %     \part La primera derivada de \( f(x) = \ln \left(\sqrt[3]{\frac{x-1}{x+1}}\right) \).
+    %     \part La segunda derivada de \( f(x) = xe^x \).
+    %     \part La tercera derivada de \( f(x) = \frac{1}{(x-a)^n} \) con \( a \) constante.
+    %     \part La cuarta derivada de \( f(x) = \ln x^2 \).
+    % \end{parts}
+
+    \begin{solution}
+
+        \begin{parts}
+            \part La primera derivada de \( f(x) = \ln \left(\sqrt[3]{\frac{x-1}{x+1}}\right) \):
+            \[
+            f(x) = \ln \left(\left(\frac{x-1}{x+1}\right)^{\frac{1}{3}}\right)
+            \]
+            \[
+            f(x) = \frac{1}{3} \ln \left(\frac{x-1}{x+1}\right)
+            \]
+            \[
+            f'(x) = \frac{1}{3} \cdot \frac{1}{\frac{x-1}{x+1}} \cdot \frac{d}{dx}\left(\frac{x-1}{x+1}\right)
+            \]
+            \[
+            \frac{d}{dx}\left(\frac{x-1}{x+1}\right) = \frac{(x+1)\cdot 1 - (x-1)\cdot 1}{(x+1)^2}
+            \]
+            \[
+            \frac{d}{dx}\left(\frac{x-1}{x+1}\right) = \frac{x+1-(x-1)}{(x+1)^2} = \frac{2}{(x+1)^2}
+            \]
+            \[
+            f'(x) = \frac{1}{3} \cdot \frac{x+1}{x-1} \cdot \frac{2}{(x+1)^2} = \frac{2}{3(x^2-1)}
+            \]
+    
+            \part La segunda derivada de \( f(x) = xe^x \):
+            \[
+            f'(x) = \frac{d}{dx}\left(xe^x\right)
+            \]
+            \[
+            f'(x) = x \cdot \frac{d}{dx}\left(e^x\right) + e^x \cdot \frac{d}{dx}(x)
+            \]
+            \[
+            f'(x) = xe^x + e^x
+            \]
+            \[
+            f''(x) = \frac{d}{dx}\left(xe^x + e^x\right)
+            \]
+            \[
+            f''(x) = x \cdot \frac{d}{dx}\left(e^x\right) + e^x \cdot \frac{d}{dx}(x) + \frac{d}{dx}\left(e^x\right)
+            \]
+            \[
+            f''(x) = xe^x + e^x + e^x = e^x(x + 2)
+            \]
+    
+            \part La tercera derivada de \( f(x) = \frac{1}{(x-a)^n} \):
+            \[
+            f(x) = (x-a)^{-n}
+            \]
+            \[
+            f'(x) = -n(x-a)^{-n-1} \cdot \frac{d}{dx}(x-a)
+            \]
+            \[
+            f'(x) = -n(x-a)^{-n-1}
+            \]
+            \[
+            f''(x) = \frac{d}{dx}\left(-n(x-a)^{-n-1}\right)
+            \]
+            \[
+            f''(x) = -n(-n-1)(x-a)^{-n-2}
+            \]
+            \[
+            f''(x) = n(n+1)(x-a)^{-n-2}
+            \]
+            \[
+            f'''(x) = \frac{d}{dx}\left(n(n+1)(x-a)^{-n-2}\right)
+            \]
+            \[
+            f'''(x) = n(n+1)(-n-2)(x-a)^{-n-3}
+            \]
+            \[
+            f'''(x) = -n(n+1)(n+2)(x-a)^{-n-3}
+            \]
+    
+            \part La cuarta derivada de \( f(x) = \ln x^2 \):
+            \[
+            f(x) = 2 \ln x
+            \]
+            \[
+            f'(x) = 2 \cdot \frac{1}{x}
+            \]
+            \[
+            f'(x) = \frac{2}{x}
+            \]
+            \[
+            f''(x) = \frac{d}{dx}\left(\frac{2}{x}\right)
+            \]
+            \[
+            f''(x) = 2 \cdot \frac{d}{dx}\left(x^{-1}\right)
+            \]
+            \[
+            f''(x) = 2(-1)x^{-2} = \frac{-2}{x^2}
+            \]
+            \[
+            f'''(x) = \frac{d}{dx}\left(\frac{-2}{x^2}\right)
+            \]
+            \[
+            f'''(x) = -2(-2)x^{-3} = \frac{4}{x^3}
+            \]
+            \[
+            f^{(4)}(x) = \frac{d}{dx}\left(\frac{4}{x^3}\right)
+            \]
+            \[
+            f^{(4)}(x) = 4(-3)x^{-4} = \frac{-12}{x^4}
+            \]
+        \end{parts}
+    
+    \end{solution}
+    
+    
+
+    % Pregunta 4
+    \question Determine el ángulo que forma la curva \( y = e^{0.5x} \) con la recta \( x = 2 \) en el punto de intersección.
+
+    \begin{solution}
+
+        Para encontrar el ángulo que forma la curva \( y = e^{0.5x} \) con la recta \( x = 2 \):
+    
+        1. **Derivada de la función:**
+        \[
+        y' = \frac{d}{dx}\left(e^{0.5x}\right)
+        \]
+        \[
+        y' = 0.5e^{0.5x}
+        \]
+        \[
+        y'(2) = 0.5e^{0.5 \times 2} = 0.5e
+        \]
+    
+        2. **Cálculo del ángulo:**
+        \[
+        \theta = \tan^{-1}(0.5e)
+        \]
+    
+    \end{solution}
+    
+    
+
+\end{questions}
+
+\end{document}

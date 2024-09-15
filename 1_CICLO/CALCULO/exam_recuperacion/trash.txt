@@ -1,0 +1,21 @@
+
+EXAMEN DE RECUPERACIÓN (CÁLCULO 1)
+
+1. Sean las funciones $f(x) = ln(x + 1)$
+y $g(x) = x^2-5x+6 $
+a. Encontrar matemáticamente el dominio y recorrido de cada función
+b. Encontrar \frac{f(x)}{g(x)} y su dominio
+2. Determinar si la siguiente función es continua en x = 1 y en x=2; además graficarla
+a mano.
+     
+$f(x) = { x si x< 1, x^2+1 si 1\leqx\leq2, 2 x > 2}$
+
+
+3. Determine las derivadas solicitadas en los siguientes literales
+a. La primera derivada de $f(x) = \ln (\sqrt[3]{\frac{x-1}{x+1}})$
+b. La segunda derivada de $f(x) = xe^x$
+c. La tercera derivada de $f(x) = \frac{1}{((x-a)^n)}$ con a constante
+d. La cuarta derivada de $f(x) = \ln x^2$
+
+4. Determine el ángulo que forma la curva $y = e^{0.5x}$ con la recta x = 2 en el punto
+de intersección.
