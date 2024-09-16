@@ -143,7 +143,6 @@
 		común es de $20^{\circ}$, calcular el valor de Q.  }
 
 	\begin{multicols}{2} % Inicia el entorno de dos columnas
-		Para resolver el problema, analizamos la situación de equilibrio de las dos esferas cargadas con \( Q \), de masa \( 1 \, \text{g} \), colgadas por hilos de \( 20 \, \text{cm} \). El ángulo que forman los hilos en el punto de suspensión es \( 20^\circ \).
 
 		La fuerza de repulsión electrostática entre las esferas \( F_e \) es responsable de mantener el ángulo \( 20^\circ \). Por otro lado, el peso de cada esfera \( W \) actúa hacia abajo, y la tensión en los hilos tiene una componente vertical que equilibra el peso y una componente horizontal que equilibra la fuerza electrostática.
 
@@ -187,16 +186,16 @@
 		\centering
 		\begin{tikzpicture}[scale=1]
 			% Dibujar las cuerdas
-			\draw[thick] (0,0) -- (-1,2) node[midway, right] {$20^\circ$};
-			\draw[thick] (0,0) -- (1,2);
+			\draw[thick] (0,0) -- (-1,-2) node[midway, right] {$20^\circ$};
+			\draw[thick] (0,0) -- (1,-2);
 
 			% Dibujar las esferas
-			\shade[ball color=blue] (-1,2) circle (0.1);
-			\shade[ball color=blue] (1,2) circle (0.1);
+			\shade[ball color=blue] (-1,-2) circle (0.1);
+			\shade[ball color=blue] (1,-2) circle (0.1);
 
 			% Dibujar etiquetas de las cargas
-			\node at (-1.3,2.3) {$Q$};
-			\node at (1.3,2.3) {$Q$};
+			\node at (-1.3,-2.3) {$Q$};
+			\node at (1.3,-2.3) {$Q$};
 
 		\end{tikzpicture}
 		% \caption{Esferas suspendidas con cargas \( Q \)}
