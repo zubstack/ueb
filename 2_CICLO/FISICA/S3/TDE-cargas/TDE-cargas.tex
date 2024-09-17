@@ -18,7 +18,7 @@
 
 % Configuración de encabezado y pie de página
 \pagestyle{headandfoot}
-\firstpageheader{Universidad de Bolívar}{}{24 de julio del 2024} 
+\firstpageheader{Universidad de Bolívar}{}{17 de Septiembre del 2024} 
 \runningheader{Universidad de Bolívar}{}{Física}
 \firstpagefooter{}{\thepage}{}
 \runningfooter{}{\thepage}{}
@@ -40,11 +40,6 @@
 	\question \large\textbf{Encontrar la fórmula que determina la carga total de un cubo de lado $\alpha$, cuya carga se encuentra distribuida uniformemente solo en las caras superficiales con densidad superficial $\sigma$. Determinar el valor para el caso $\alpha = 0.2 m$ $\sigma = 106C/m^2$.}
 
 	\vspace{0.5cm}
-
-	% \begin{minipage}{\textwidth}
-	% 	\centering
-	% 	\includegraphics[width=0.3\textwidth]{public/ueb.png}\\
-	% \end{minipage}
 
 
 
@@ -198,63 +193,69 @@
 		ésta última carga se mantenga estática.}
 
 	\begin{multicols}{2} % Inicia el entorno de dos columnas
-		Para resolver este problema, debemos aplicar la ley de Coulomb y el principio de superposición de fuerzas. La idea es encontrar la posición de \( Q_3 \) donde las fuerzas eléctricas de \( Q_1 \) y \( Q_2 \) sobre \( Q_3 \) se cancelen mutuamente, manteniendo \( Q_3 \) en equilibrio.
 
-		Las fuerzas que actúan sobre \( Q_3 \) están dadas por las cargas \( Q_1 \) y \( Q_2 \), ambas situadas en posiciones fijas en el eje \( x \).
+		Para que la tercera carga \( Q_3 \) esté en equilibrio, la fuerza que ejerce \( Q_1 \) sobre \( Q_3 \) debe ser igual a la fuerza que ejerce \( Q_2 \) sobre \( Q_3 \). Aplicamos la ley de Coulomb para ambas fuerzas:
 
-		La fuerza eléctrica entre dos cargas está dada por:
 		\[
 			F = k_e \frac{|Q_i Q_j|}{r^2}
 		\]
-		donde \( k_e = 9 \times 10^9 \, \text{Nm}^2/\text{C}^2 \) es la constante de Coulomb, y \( r \) es la distancia entre las cargas.
 
-		Supongamos que \( Q_3 \) está situada en algún punto \( x_3 \) en el eje \( x \). La distancia entre \( Q_3 \) y \( Q_1 \) será \( |x_3 - 1| \) y entre \( Q_3 \) y \( Q_2 \) será \( |x_3 - 2| \). La condición de equilibrio para \( Q_3 \) es que las fuerzas ejercidas por \( Q_1 \) y \( Q_2 \) sobre \( Q_3 \) sean iguales y opuestas:
+		Por lo tanto, el equilibrio de fuerzas se expresa como:
+
 		\[
-			k_e \frac{Q_1 Q_3}{(x_3 - 1)^2} = k_e \frac{Q_2 Q_3}{(x_3 - 2)^2}
+			|\vec{F_{13}}| = |\vec{F_{23}}|
 		\]
-		Cancelamos \( k_e \) y \( Q_3 \) en ambos lados de la ecuación:
+
 		\[
-			\frac{Q_1}{(x_3 - 1)^2} = \frac{Q_2}{(x_3 - 2)^2}
+			k_e \dfrac{|Q_1 Q_3|}{|\vec{r_{13}}|^2} = k_e \dfrac{|Q_2 Q_3|}{|\vec{r_{23}}|^2}
 		\]
-		Sustituyendo los valores de \( Q_1 = 1 \, \text{mC} = 1 \times 10^{-3} \, \text{C} \) y \( Q_2 = 2 \times 10^{-6} \, \text{C} \), obtenemos:
+
+		\[
+			k_e \dfrac{|Q_1 Q_3|}{(x_3 - x_1)^2} = k_e \dfrac{|Q_2 Q_3|}{(x_3 - x_2)^2}
+		\]
+
+		\[
+			\frac{|Q_1|}{(x_3 - x_1)^2} = \frac{|Q_2|}{(x_3 - x_2)^2}
+		\]
+
 		\[
 			\frac{1 \times 10^{-3}}{(x_3 - 1)^2} = \frac{2 \times 10^{-6}}{(x_3 - 2)^2}
 		\]
-		Resolviendo esta ecuación cuadrática para \( x_3 \), obtenemos la posición de \( Q_3 \).
+
+		\[
+			1 \times 10^{-3} (x_3 - 2)^2 = 2 \times 10^{-6} (x_3 - 1)^2
+		\]
+
+
+		\[
+			500 (x_3 - 2)^2 = (x_3 - 1)^2
+		\]
+
+		\[
+			\sqrt{500} (x_3 - 2) = x_3 - 1
+		\]
+
+		\[
+			21.36 x_3 = 43.72
+		\]
+
+		\[
+			x_3 = \frac{43.72}{21.36} \approx 2.05 \, \text{m}
+		\]
 	\end{multicols}
-
-	\begin{minipage}{\textwidth}
-		\centering
-		\begin{tikzpicture}[scale=1]
-			% Dibujar el eje x
-			% \draw[thick,->] (-1,0) -- (5,0) node[right] {$x$};
-			\draw[thick] (-1,0) -- (5,0) node[right] {$x$};
-
-			% Posiciones de las cargas Q1, Q2 y Q3
-			% \node at (1,0) [below] {$Q_1 = 1 \, \text{mC}$};
-			% \node at (2,0) [below] {$Q_2 = 2 \times 10^{-6} \, \text{C}$};
-			% \node at (3.5,0) [below] {$Q_3$};
-
-			% Dibujar las fuerzas
-			% \draw[->, thick] (3.5,0) -- (1,0) node[midway, above] {$F_{13}$};
-			% \draw[->, thick] (2,0) -- (3.5,0) node[midway, above] {$F_{23}$};
-			% \draw[ thick] (3.5,0) -- (1,0) node[midway, above] {$F_{13}$};
-			% \draw[ thick] (2,0) -- (3.5,0) node[midway, above] {$F_{23}$};
-
-			% Dibujar las cargas
-			\shade[ball color=blue] (1,0) circle (0.1);
-			\shade[ball color=red] (2,0) circle (0.1);
-			\shade[ball color=green] (3.5,0) circle (0.1);
-		\end{tikzpicture}
-		% \caption{Posición de las cargas en el eje \( x \)}
-	\end{minipage}
 
 	\vspace{0.5cm}
 
-	% Question 5
-	\question \large\textbf{Calcular la fuerza electrostática que produce un anillo de radio a, cargado con densidad lineal $\lambda$, sobre una carga ubicada a una distancia b del centro del anillo
-		sobre su eje. }
-	\begin{multicols}{2} % Inicia el entorno de dos columnas
+	\begin{minipage}{\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{public/g4.png}\\
+	\end{minipage}
+
+	\vspace{0.5cm}
+	\newpage
+	% % Question 5
+	\question \large\textbf{Calcular la fuerza electrostática que produce un anillo de radio a, cargado con densidad lineal $\lambda$, sobre una carga ubicada a una distancia b del centro del anillo sobre su eje. }
+	\begin{multicols}{2}
 		La configuración es un triángulo equilátero, por lo que las tres distancias entre las cargas son iguales: \( r = 0.5 \, \text{m} \).
 
 		Para encontrar la fuerza neta sobre \( Q_1 \), debemos calcular las fuerzas ejercidas sobre \( Q_1 \) por \( Q_2 \) y \( Q_3 \), y luego sumarlas vectorialmente.
@@ -265,7 +266,7 @@
 		\]
 		donde \( k_e = 9 \times 10^9 \, \text{Nm}^2/\text{C}^2 \).
 
-		**Fuerza de \( Q_2 \) sobre \( Q_1 \)**:
+		\textbf{Fuerza de \( Q_2 \) sobre \( Q_1 \)}
 		\[
 			F_{21} = k_e \frac{|2 \times 10^{-6} \times (-3 \times 10^{-6})|}{(0.5)^2}
 		\]
@@ -274,7 +275,7 @@
 		\]
 		La dirección de esta fuerza es hacia \( Q_2 \).
 
-		**Fuerza de \( Q_3 \) sobre \( Q_1 \)**:
+		\textbf{Fuerza de \( Q_3 \) sobre \( Q_1 \):}
 		\[
 			F_{31} = k_e \frac{|2 \times 10^{-6} \times 1 \times 10^{-6}|}{(0.5)^2}
 		\]
@@ -283,7 +284,7 @@
 		\]
 		La dirección de esta fuerza es hacia \( Q_3 \).
 
-		**Suma vectorial de fuerzas**: Dado que el triángulo es equilátero, las fuerzas están separadas por ángulos de \( 60^\circ \). Utilizamos descomposición en componentes para obtener la fuerza neta.
+		\textbf{Suma vectorial de fuerzas}: Dado que el triángulo es equilátero, las fuerzas están separadas por ángulos de \( 60^\circ \). Utilizamos descomposición en componentes para obtener la fuerza neta.
 
 		La fuerza neta sobre \( Q_1 \) es:
 		\[
@@ -309,7 +310,6 @@
 		% \caption{Distribución de cargas en un triángulo equilátero}
 	\end{minipage}
 
-	\vspace{0.5cm}
 
 
 	\vspace{0.5cm}
