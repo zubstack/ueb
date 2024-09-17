@@ -152,7 +152,7 @@
 		\]
 		donde \( k_e \) es la constante de Coulomb (\( 9 \times 10^9 \, \text{Nm}^2/\text{C}^2 \)) y \( r \) es la distancia entre las esferas. La distancia \( r \) entre las esferas se puede calcular en función del ángulo \( \theta = 20^\circ \) y la longitud del hilo \( L = 20 \, \text{cm} \):
 		\[
-			r = 2L \sin\left(\frac{\theta}{2}\right)
+			\sin\left(\frac{\theta}{2}\right) = \dfrac{\frac{r}{2}}{L}\implies r = 2L \sin\left(\frac{\theta}{2}\right)
 		\]
 
 		Sustituyendo \( L = 0.2 \, \text{m} \) y \( \theta = 20^\circ \):
@@ -162,17 +162,20 @@
 
 		Ahora, igualamos la componente horizontal de la tensión \( T \) con la fuerza electrostática:
 		\[
-			T \sin\left(10^\circ\right) = F_e
+			\sum F_x = 0  \implies T \sin\left(10^\circ\right) = F_e
 		\]
 
 		También, la componente vertical de la tensión equilibra el peso \( W = mg \), donde \( m = 1 \, \text{g} = 0.001 \, \text{kg} \) y \( g = 9.8 \, \text{m/s}^2 \):
 		\[
-			T \cos\left(10^\circ\right) = W
+			\sum F_y = 0  \implies T \cos\left(10^\circ\right) = W
+		\]
+		\[
+			T  = \dfrac{mg}{\cos\left(10^\circ\right)} \implies F_e = mg\cdot \tan\left(10^\circ\right)
 		\]
 
 		Resolviendo ambas ecuaciones para \( Q \), obtenemos:
 		\[
-			Q = \sqrt{\frac{r^2 mg \tan\left(10^\circ\right)}{k_e}} = \sqrt{\frac{(0.0698)^2 (0.001)(9.8) \tan(10^\circ)}{9 \times 10^9}}
+			Q = \sqrt{\frac{r^2 \cdot F_e}{k_e}} = \sqrt{\frac{(0.0698)^2 (0.001)(9.8) \tan(10^\circ)}{9 \times 10^9}}
 		\]
 
 		Aproximando los valores:
@@ -184,24 +187,11 @@
 
 	\begin{minipage}{\textwidth}
 		\centering
-		\begin{tikzpicture}[scale=1]
-			% Dibujar las cuerdas
-			\draw[thick] (0,0) -- (-1,-2) node[midway, right] {$20^\circ$};
-			\draw[thick] (0,0) -- (1,-2);
-
-			% Dibujar las esferas
-			\shade[ball color=blue] (-1,-2) circle (0.1);
-			\shade[ball color=blue] (1,-2) circle (0.1);
-
-			% Dibujar etiquetas de las cargas
-			\node at (-1.3,-2.3) {$Q$};
-			\node at (1.3,-2.3) {$Q$};
-
-		\end{tikzpicture}
-		% \caption{Esferas suspendidas con cargas \( Q \)}
+		\includegraphics[width=0.9\textwidth]{public/g3.png}\\
 	\end{minipage}
 
 	\vspace{0.5cm}
+	\newpage
 
 	% Question 4
 	\question \large\textbf{Tres cargas puntuales se ubican a lo largo del eje x. Q1= 1mC está en x = 1m ,  Q2 = 2 x $10^{-6}$C en x = 2m. Dónde debe ubicarse la tercera carga Q3 positiva de modo que
