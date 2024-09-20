@@ -10,8 +10,9 @@
 \usepackage{array}   % for adjusting row height
 \renewcommand{\arraystretch}{1.5} % adjust the vertical spacing between rows
 \usepackage{multicol}
+\usepackage{babel}
 \usepackage{tikz}
-
+\usetikzlibrary{babel}
 
 \renewcommand{\solutiontitle}{\noindent\textbf{Respuesta:}\par\noindent} % Personalización del título de respuestas
 \renewcommand{\familydefault}{\sfdefault}
@@ -181,27 +182,49 @@
 		\]
 	\end{multicols}
 
+	\begin{multicols}{2}
+		\begin{minipage}{\textwidth}
+			\begin{tikzpicture}[scale=1]
+				% Dibujar las cuerdas
+				\draw[thick] (0,0) -- (-1,-2) node[midway, right] {$20^\circ$};
+				\draw[thick] (0,0) -- (1,-2);
+	
+				% Dibujar las esferas
+				\shade[ball color=blue] (-1,-2) circle (0.1);
+				\shade[ball color=blue] (1,-2) circle (0.1);
+	
+				% Dibujar etiquetas de las cargas
+				\node at (-1.3,-2.3) {$Q$};
+				\node at (1.3,-2.3) {$Q$};
+	
+			\end{tikzpicture}
+			% \caption{Esferas suspendidas con cargas \( Q \)}
+		\end{minipage}
 
-	\begin{minipage}{\textwidth}
-		\centering
-		\begin{tikzpicture}[scale=1]
-			% Dibujar las cuerdas
-			\draw[thick] (0,0) -- (-1,-2) node[midway, right] {$20^\circ$};
-			\draw[thick] (0,0) -- (1,-2);
+		\begin{minipage}{\textwidth}
+			
+			\begin{tikzpicture}[scale=1]
+				% Dibujar las esferas
+				\shade[ball color=blue] (-1,-2) circle (0.9);
+				% Componentes
+				\draw[dashed,->] (-1,-2) -- (1.5,0);
+				% Ejes
+				\draw[->] (-1,-2) -- (-1,0);
+				\draw[->] (-1,-2) -- (-1,-4);
+				\draw[->] (-1,-2) -- (2,-2);
 
-			% Dibujar las esferas
-			\shade[ball color=blue] (-1,-2) circle (0.1);
-			\shade[ball color=blue] (1,-2) circle (0.1);
+				\node at (-1.3,-2.3) {$Q$};
+				\node at (1.3,-2.3) {$Q$};
 
-			% Dibujar etiquetas de las cargas
-			\node at (-1.3,-2.3) {$Q$};
-			\node at (1.3,-2.3) {$Q$};
 
-		\end{tikzpicture}
-		% \caption{Esferas suspendidas con cargas \( Q \)}
-	\end{minipage}
+			\end{tikzpicture}
+			% \caption{Esferas suspendidas con cargas \( Q \)}
+		\end{minipage}
+	\end{multicols}
 
 	\vspace{0.5cm}
+
+	\newpage
 
 	% Question 4
 	\question \large\textbf{Tres cargas puntuales se ubican a lo largo del eje x. Q1= 1mC está en x = 1m ,  Q2 = 2 x $10^{-6}$C en x = 2m. Dónde debe ubicarse la tercera carga Q3 positiva de modo que
@@ -232,6 +255,7 @@
 		\]
 		Resolviendo esta ecuación cuadrática para \( x_3 \), obtenemos la posición de \( Q_3 \).
 	\end{multicols}
+
 
 	\begin{minipage}{\textwidth}
 		\centering
