@@ -10,9 +10,8 @@
 \usepackage{array}   % for adjusting row height
 \renewcommand{\arraystretch}{1.5} % adjust the vertical spacing between rows
 \usepackage{multicol}
-\usepackage{babel}
 \usepackage{tikz}
-\usetikzlibrary{babel}
+
 
 \renewcommand{\solutiontitle}{\noindent\textbf{Respuesta:}\par\noindent} % Personalización del título de respuestas
 \renewcommand{\familydefault}{\sfdefault}
@@ -180,56 +179,13 @@
 		\]
 	\end{multicols}
 
-	\begin{multicols}{2}
-		\begin{minipage}{\textwidth}
-			\begin{tikzpicture}[scale=1]
-				% Dibujar las cuerdas
-				\draw[thick] (0,0) -- (-1,-2) node[midway, right] {$20^\circ$};
-				\draw[thick] (0,0) -- (1,-2);
-	
-				% Dibujar las esferas
-				\shade[ball color=blue] (-1,-2) circle (0.1);
-				\shade[ball color=blue] (1,-2) circle (0.1);
-	
-				% Dibujar etiquetas de las cargas
-				\node at (-1.3,-2.3) {$Q$};
-				\node at (1.3,-2.3) {$Q$};
-	
-			\end{tikzpicture}
-			% \caption{Esferas suspendidas con cargas \( Q \)}
-		\end{minipage}
 
-<<<<<<< HEAD
-		\begin{minipage}{\textwidth}
-			
-			\begin{tikzpicture}[scale=1]
-				% Dibujar las esferas
-				\shade[ball color=blue] (-1,-2) circle (0.9);
-				% Componentes
-				\draw[dashed,->] (-1,-2) -- (1.5,0);
-				% Ejes
-				\draw[->] (-1,-2) -- (-1,0);
-				\draw[->] (-1,-2) -- (-1,-4);
-				\draw[->] (-1,-2) -- (2,-2);
-
-				\node at (-1.3,-2.3) {$Q$};
-				\node at (1.3,-2.3) {$Q$};
-
-
-			\end{tikzpicture}
-			% \caption{Esferas suspendidas con cargas \( Q \)}
-		\end{minipage}
-	\end{multicols}
-=======
 	\begin{minipage}{\textwidth}
 		\centering
 		\includegraphics[width=0.9\textwidth]{public/g3.png}\\
 	\end{minipage}
->>>>>>> faa70998f42655185a0185d34fbb2808f7bb0545
 
 	\vspace{0.5cm}
-	\newpage
-
 	\newpage
 
 	% Question 4
@@ -288,36 +244,6 @@
 		\]
 	\end{multicols}
 
-<<<<<<< HEAD
-
-	\begin{minipage}{\textwidth}
-		\centering
-		\begin{tikzpicture}[scale=1]
-			% Dibujar el eje x
-			% \draw[thick,->] (-1,0) -- (5,0) node[right] {$x$};
-			\draw[thick] (-1,0) -- (5,0) node[right] {$x$};
-
-			% Posiciones de las cargas Q1, Q2 y Q3
-			% \node at (1,0) [below] {$Q_1 = 1 \, \text{mC}$};
-			% \node at (2,0) [below] {$Q_2 = 2 \times 10^{-6} \, \text{C}$};
-			% \node at (3.5,0) [below] {$Q_3$};
-
-			% Dibujar las fuerzas
-			% \draw[->, thick] (3.5,0) -- (1,0) node[midway, above] {$F_{13}$};
-			% \draw[->, thick] (2,0) -- (3.5,0) node[midway, above] {$F_{23}$};
-			% \draw[ thick] (3.5,0) -- (1,0) node[midway, above] {$F_{13}$};
-			% \draw[ thick] (2,0) -- (3.5,0) node[midway, above] {$F_{23}$};
-
-			% Dibujar las cargas
-			\shade[ball color=blue] (1,0) circle (0.1);
-			\shade[ball color=red] (2,0) circle (0.1);
-			\shade[ball color=green] (3.5,0) circle (0.1);
-		\end{tikzpicture}
-		% \caption{Posición de las cargas en el eje \( x \)}
-	\end{minipage}
-
-=======
->>>>>>> faa70998f42655185a0185d34fbb2808f7bb0545
 	\vspace{0.5cm}
 
 	\begin{minipage}{\textwidth}
