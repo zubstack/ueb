@@ -1,0 +1,1 @@
+A continuacion una serie de preguntas en latex. Vas respondiendo conforme el numero de pregunta indique. Si la pregunta necesita paquetes adicionales me avisas. Imprime la solucion en Latex solamente de la pregunta indicada. Empieza por la primera pregunta: 
