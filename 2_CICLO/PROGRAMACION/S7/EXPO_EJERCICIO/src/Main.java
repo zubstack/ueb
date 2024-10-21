@@ -6,6 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         String nombreCliente;
+        
         // Configurar base de datos
         BaseDeDatos baseDeDatos = new BaseDeDatos(true);
 
