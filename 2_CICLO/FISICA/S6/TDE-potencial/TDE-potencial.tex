@@ -59,11 +59,11 @@
 	\end{itemize}
 
 	\[
-		r = \frac{1}{4 \pi (8.854 \times 10^{-12})} \frac{100}{2} \implies r \approx 4.493 \times 10^9 \, \text{m}
+		r = \frac{1}{4 \pi (8.854 \times 10^{-12})} \frac{100}{2} \implies r \approx 4.5 \times 10^{10}	 \, \text{m}
 	\]
 
 
-	Por lo tanto, la distancia es aproximadamente \( 4.49 \times 10^9 \, \text{m} \).
+	Por lo tanto, la distancia es aproximadamente \( 4.5 \times 10^{10} \, \text{m} \).
 
 	\vspace{0.5cm}
 
@@ -86,15 +86,10 @@
 		      Sustituyendo los valores:
 
 		      \[
-			      V = \frac{1}{4 \pi (8.854 \times 10^{-12})} \left( \frac{0.02}{0.05} + \frac{0.03}{0.05} \right)
+			      V = \frac{1}{4 \pi (8.854 \times 10^{-12})} \left( \frac{0.02}{0.05} + \frac{0.03}{0.05} \right) \approx 9 \times 10^{9} \, \text{V}
 		      \]
 
-		      Realizando los cálculos:
-
-		      \[
-			      V \approx 1.0806 \times 10^{11} \, \text{V}
-		      \]
-
+		\newpage
 		\item \textbf{En un punto a 2 cm de la primera carga y entre ellas:}
 
 		      En este caso, la distancia de la primera carga es \( r_1 = 0.02 \, \text{m} \), y la distancia de la segunda carga es \( r_2 = 0.08 \, \text{m} \). El potencial total es:
@@ -106,18 +101,13 @@
 		      Sustituyendo los valores:
 
 		      \[
-			      V = \frac{1}{4 \pi (8.854 \times 10^{-12})} \left( \frac{0.02}{0.02} + \frac{0.03}{0.08} \right)
+			      V = \frac{1}{4 \pi (8.854 \times 10^{-12})} \left( 1 + \frac{0.03}{0.08} \right) \approx 12.4 \times 10^{9} \, \text{V}
 		      \]
-
-		      Realizando los cálculos:
-
-		      \[
-			      V \approx 1.125 \times 10^{11} \, \text{V}
-		      \]
+		\vspace{1cm}
 
 		\item \textbf{En un punto a 4 cm de la primera carga y fuera de ellas:}
 
-		      Aquí, la distancia de la primera carga es \( r_1 = 0.04 \, \text{m} \), y la distancia de la segunda carga es \( r_2 = 0.06 \, \text{m} \). El potencial total es:
+		      Aquí, la distancia de la primera carga es \( r_1 = 0.04 \, \text{m} \), y la distancia de la segunda carga es \( r_2 = 0.14 \, \text{m} \). El potencial total es:
 
 		      \[
 			      V = \frac{1}{4 \pi \varepsilon_0} \left( \frac{q_1}{r_1} + \frac{q_2}{r_2} \right)
@@ -126,14 +116,10 @@
 		      Sustituyendo los valores:
 
 		      \[
-			      V = \frac{1}{4 \pi (8.854 \times 10^{-12})} \left( \frac{0.02}{0.04} + \frac{0.03}{0.06} \right)
+			      V = \frac{1}{4 \pi (8.854 \times 10^{-12})} \left( \frac{0.02}{0.04} + \frac{0.03}{0.14} \right) \approx 6.4 \times 10^{9} \, \text{V}
 		      \]
 
-		      Realizando los cálculos:
-
-		      \[
-			      V \approx 8.9876 \times 10^{10} \, \text{V}
-		      \]
+	\vspace{1cm}   
 	\end{enumerate}
 
 	\begin{center}
@@ -160,7 +146,7 @@
 		\end{tikzpicture}
 	\end{center}
 
-	\vspace{0.5cm}
+	\vspace{1cm}
 
 	% Question 3
 	\question \large\textbf{¿Cuál es la diferencia de potencial entre dos puntos si para transportar una carga de 12.5 C el campo realiza un trabajo de 6.25 J?}
@@ -168,19 +154,7 @@
 	La relación entre el trabajo \(W\), la carga \(q\), y la diferencia de potencial \(\Delta V\) está dada por la ecuación:
 
 	\[
-		W = q \cdot \Delta V
-	\]
-
-	De esta expresión, despejamos la diferencia de potencial:
-
-	\[
-		\Delta V = \frac{W}{q}
-	\]
-
-	Sustituyendo los valores dados:
-
-	\[
-		\Delta V = \frac{6.25 \, \text{J}}{12.5 \, \text{C}} = 0.5 \, \text{V}
+		W = q \cdot \Delta V \implies \Delta V = \frac{W}{q} = \frac{6.25 \, \text{J}}{12.5 \, \text{C}} = 0.5 \, \text{V}
 	\]
 
 	Por lo tanto, la diferencia de potencial entre los dos puntos es de \(0.5 \, \text{V}\).
@@ -195,13 +169,11 @@
 			\draw[thick] (A) -- (B) node[midway, above] {$\vec{E}$};
 
 			% Carga
-			\node at (0,-0.5) [below] {Carga $q = 12.5 \, \text{C}$};
+			\node at (0,-0.5) [below] {$q = 12.5 \, \text{C}$};
 
 			% Trabajo realizado
-			\node at (0, 1.5) {Trabajo $W = 6.25 \, \text{J}$};
+			\node at (0, 1.5) {$W = 6.25 \, \text{J}$};
 
-			% Diferencia de potencial
-			\node at (0,-1.5) {$\Delta V = 0.5 \, \text{V}$};
 		\end{tikzpicture}
 	\end{center}
 
@@ -230,10 +202,10 @@
 	Despejando $r$:
 
 	\[
-		r = \frac{1}{4\pi (8.85 \times 10^{-12})(80)} \cdot \frac{1}{100} \approx 0.113 \, \text{m}
+		r = \frac{1}{4\pi (8.85 \times 10^{-12})(80)} \cdot \frac{1}{100} \approx 11.2 \times 10^5 \, \text{m}
 	\]
 
-	Por lo tanto, el radio de la esfera equipotencial es aproximadamente $r = 0.113 \, \text{m}$.
+	Por lo tanto, el radio de la esfera equipotencial es aproximadamente $r = 11.2 \times 10^5 \, \text{m}$.
 
 	\newpage
 
@@ -278,28 +250,16 @@
 	Por lo tanto, la energía potencial total del sistema es:
 
 	\[
-		U_{\text{total}} = \frac{1}{4 \pi \varepsilon_0} \left[ 6 \frac{q^2}{a} + 6 \frac{q^2}{\sqrt{3}a} + 3 \frac{q^2}{2a} \right]
-	\]
-
-	Sustituyendo \( q = 5 \times 10^{-6} \, \text{C} \) y \( \varepsilon_0 = 8.854 \times 10^{-12} \, \text{C}^2/\text{N}\cdot\text{m}^2 \):
-
-	\[
-		U_{\text{total}} = \frac{1}{4 \pi (8.854 \times 10^{-12})} \left[ 6 \frac{(5 \times 10^{-6})^2}{a} + 6 \frac{(5 \times 10^{-6})^2}{\sqrt{3}a} + 3 \frac{(5 \times 10^{-6})^2}{2a} \right]
-	\]
-
-	Simplificando:
-
-	\[
-		U_{\text{total}} = \frac{9 \times 10^9}{a} \left[ 6 (25 \times 10^{-12}) + 6 \frac{25 \times 10^{-12}}{\sqrt{3}} + 3 \frac{25 \times 10^{-12}}{2} \right]
+		U_{\text{total}} = \frac{q^2}{4 \pi \varepsilon_0} \left[ \frac{6}{a} + \frac{6}{\sqrt{3}a} +  \frac{3}{2a} \right] =\frac{q^2}{4 \pi \varepsilon_0 \cdot a} \left[6 + \frac{6}{\sqrt{3}} +  \frac{3}{2} \right]
 	\]
 
 	Calculamos la energía total para cuando \( a = 0.25 \, \text{m} \):
 
 	\[
-		U_{\text{total}} = \frac{9 \times 10^9}{0.25} \left[ 6 (25 \times 10^{-12}) + 6 \frac{25 \times 10^{-12}}{\sqrt{3}} + 3 \frac{25 \times 10^{-12}}{2} \right] = 1.008 \, \text{J}
+		U_{\text{total}} = \frac{9 \times 10^9 \cdot (5\times 10^{-6})^2}{0.25} \left[6 + \frac{6}{\sqrt{3}} +  \frac{3}{2} \right] = 9.9 \, \text{J}
 	\]
 
-	Por lo tanto, el trabajo necesario para ensamblar las cargas en los vértices del hexágono es de \( 1.008 \, \text{J} \) cuando \( a = 0.25 \, \text{m} \).
+	Por lo tanto, el trabajo necesario para ensamblar las cargas en los vértices del hexágono es de \( 9.9\, \text{J} \) cuando \( a = 0.25 \, \text{m} \).
 
 	\begin{figure}[h!]
 		\centering

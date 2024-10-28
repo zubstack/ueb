@@ -1,0 +1,209 @@
+\documentclass[12pt, answers]{exam}
+\usepackage{amsmath}
+\usepackage[letterpaper, top=2cm, bottom=2cm, left=2cm, right=2.5cm]{geometry}
+\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
+\usepackage{graphicx} % Inclusión de gráficos
+\usepackage{tikz} % Dibujos y figuras en LaTeX
+\usepackage{enumitem} % Listas personalizadas
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Respuesta:}\par\noindent}
+
+\begin{document}
+
+\title{Examen de Física Electromagnética}
+\author{}
+\date{}
+\maketitle
+
+\begin{questions}
+
+	% Pregunta 1
+	\question \large\textbf{Realice un ensayo de las formas de cargar un cuerpo en máximo una página.}
+
+	Existen tres formas básicas de modificar la carga neta de un cuerpo: electrización por frotamiento, contacto e inducción. En todos estos mecanismos siempre está presente el \textbf{principio de conservación de la carga}, que nos dice que la carga eléctrica no se crea ni se destruye, solamente se transfiere de un cuerpo a otro.
+
+	- \textbf{Frotamiento}: En la electrización por fricción, el cuerpo menos conductor saca electrones de las capas exteriores de los átomos del otro cuerpo quedando cargado negativamente y el que pierde electrones queda cargado positivamente.\\
+	- \textbf{Contacto}: En la electrización por contacto, el que tiene exceso de electrones (carga –) traspasa carga negativa al otro, o el que tiene carencia de ellos (carga +) atrae electrones del otro cuerpo. Ambos quedan con igual tipo de carga.\\
+	- \textbf{Inducción}: Al acercar un cuerpo cargado al conductor neutro, las cargas eléctricas se mueven de tal manera que las de signo igual a las del cuerpo cargado se alejan en el conductor y las de signo contrario se aproximan al cuerpo cargado, quedando el conductor polarizado. Si se hace contacto con tierra en uno de los extremos polarizados, el cuerpo adquiere carga del signo opuesto.
+
+
+	% Pregunta 2
+	\question \large\textbf {Una partícula de masa 1 gr y carga 1 C se suelta en el seno de un campo eléctrico de 1000 N/C. Calcule:}
+	\begin{parts}
+		\part La aceleración que adquiere la partícula.
+		\part La velocidad que tendrá luego de moverse 100 m.
+		\part El tiempo que dura en moverse 100 m.
+		\part La energía cinética que tiene la partícula a los 100 m de movimiento.
+	\end{parts}
+
+	\begin{solution}
+		Para resolver esta pregunta, analizaremos cada inciso paso a paso.
+
+		Dado:
+		\begin{itemize}
+			\item Masa de la partícula, \( m = 1 \, \text{g} = 0.001 \, \text{kg} \)
+			\item Carga de la partícula, \( q = 1 \, \text{C} \)
+			\item Campo eléctrico, \( E = 1000 \, \text{N/C} \)
+			\item Distancia recorrida, \( d = 100 \, \text{m} \)
+		\end{itemize}
+
+		\begin{parts}
+			\part \textbf{Aceleración que adquiere la partícula}
+
+			La fuerza eléctrica sobre la partícula es:
+			\[
+				F = q \cdot E
+			\]
+			Sustituyendo los valores:
+			\[
+				F = 1 \cdot 1000 = 1000 \, \text{N}
+			\]
+			Ahora, aplicando la segunda ley de Newton para calcular la aceleración \( a \):
+			\[
+				F = m \cdot a \Rightarrow a = \frac{F}{m} = \frac{1000}{0.001} = 10^6 \, \text{m/s}^2
+			\]
+
+			\part \textbf{Velocidad luego de moverse 100 m}
+
+			Utilizando la ecuación de la cinemática:
+			\[
+				v^2 = u^2 + 2 a d
+			\]
+			donde \( u = 0 \) (parte del reposo), entonces:
+			\[
+				v^2 = 0 + 2 \cdot 10^6 \cdot 100
+			\]
+			\[
+				v = \sqrt{2 \cdot 10^6 \cdot 100} = \sqrt{2 \cdot 10^8} = \sqrt{2} \cdot 10^4 \approx 1.414 \times 10^4 \, \text{m/s}
+			\]
+
+			\part \textbf{Tiempo que dura en moverse 100 m}
+
+			Usamos la fórmula:
+			\[
+				d = u \cdot t + \frac{1}{2} a t^2
+			\]
+			Resolviendo para \( t \):
+			\[
+				100 = 0 + \frac{1}{2} \cdot 10^6 \cdot t^2
+			\]
+			\[
+				t^2 = \frac{100}{5 \times 10^5} = 2 \times 10^{-4}
+			\]
+			\[
+				t = \sqrt{2 \times 10^{-4}} = \sqrt{2} \times 10^{-2} \approx 1.414 \times 10^{-2} \, \text{s}
+			\]
+
+			\part \textbf{Energía cinética a los 100 m de movimiento}
+
+			La energía cinética \( K \) se calcula como:
+			\[
+				K = \frac{1}{2} m v^2
+			\]
+			Sustituyendo los valores:
+			\[
+				K = \frac{1}{2} \cdot 0.001 \cdot (1.414 \times 10^4)^2
+			\]
+			\[
+				K = 0.0005 \cdot 2 \times 10^8 = 10^5 \, \text{J}
+			\]
+
+		\end{parts}
+	\end{solution}
+
+
+	% Pregunta 3
+	\question \large\textbf {Se tienen las cargas puntuales \( q_1 = 3 \, \text{mC} \), \( q_2 = -2 \, \text{mC} \), \( q_3 = 4 \, \text{mC} \) y \( q_4 = -5 \, \text{mC} \) ubicadas en los puntos \( A(0,0) \), \( B(-2,-3) \), \( C(0,3) \) y \( D(3,1) \) en metros respectivamente. Calcular:}
+	\begin{parts}
+		\part La fuerza eléctrica sobre la carga \( q_3 \)
+		\part El campo eléctrico en el punto \( (3,3) \)
+	\end{parts}
+
+	\begin{solution}
+
+		\begin{parts}
+			\part \textbf{Fuerza eléctrica sobre la carga \( q_3 \)}
+
+			Primero, calcularemos la fuerza que cada una de las cargas ejerce sobre \( q_3 \) y luego sumaremos vectorialmente para encontrar la fuerza neta.
+
+			1. Fuerza entre \( q_1 \) y \( q_3 \):
+			\[
+				r_{13} = \sqrt{(0 - 0)^2 + (3 - 0)^2} = 3 \, \text{m}
+			\]
+			\[
+				F_{13} = k \frac{|q_1 \cdot q_3|}{r_{13}^2} = 8.99 \times 10^9 \frac{(3 \times 10^{-3})(4 \times 10^{-3})}{3^2} = 1.1987 \times 10^4 \, \text{N}
+			\]
+			La fuerza \( F_{13} \) está en la dirección positiva del eje \( y \).
+
+			2. Fuerza entre \( q_2 \) y \( q_3 \):
+			\[
+				r_{23} = \sqrt{(0 + 2)^2 + (3 + 3)^2} = \sqrt{4 + 36} = \sqrt{40} \approx 6.32 \, \text{m}
+			\]
+			\[
+				F_{23} = k \frac{|q_2 \cdot q_3|}{r_{23}^2} = 8.99 \times 10^9 \frac{(2 \times 10^{-3})(4 \times 10^{-3})}{6.32^2} = 1.798 \times 10^3 \, \text{N}
+			\]
+			La dirección de \( F_{23} \) es hacia \( q_2 \), en el ángulo correspondiente a su posición.
+
+			3. Fuerza entre \( q_4 \) y \( q_3 \):
+			\[
+				r_{43} = \sqrt{(0 - 3)^2 + (3 - 1)^2} = \sqrt{9 + 4} = \sqrt{13} \approx 3.61 \, \text{m}
+			\]
+			\[
+				F_{43} = k \frac{|q_4 \cdot q_3|}{r_{43}^2} = 8.99 \times 10^9 \frac{(5 \times 10^{-3})(4 \times 10^{-3})}{3.61^2} = 1.384 \times 10^4 \, \text{N}
+			\]
+			La dirección de \( F_{43} \) se encuentra hacia \( q_4 \).
+
+			Finalmente, sumamos vectorialmente \( F_{13} \), \( F_{23} \) y \( F_{43} \) para obtener la fuerza neta sobre \( q_3 \).
+
+			\part \textbf{Campo eléctrico en el punto \( (3,3) \)}
+
+			Para encontrar el campo eléctrico en el punto \( (3,3) \), calculamos el campo debido a cada una de las cargas y sumamos vectorialmente.
+
+			1. Campo debido a \( q_1 \):
+			\[
+				r_1 = \sqrt{(3 - 0)^2 + (3 - 0)^2} = \sqrt{18} \approx 4.24 \, \text{m}
+			\]
+			\[
+				E_1 = k \frac{|q_1|}{r_1^2} = 8.99 \times 10^9 \frac{3 \times 10^{-3}}{4.24^2} = 1.597 \times 10^3 \, \text{N/C}
+			\]
+
+			2. Campo debido a \( q_2 \):
+			\[
+				r_2 = \sqrt{(3 + 2)^2 + (3 + 3)^2} = \sqrt{25 + 36} = \sqrt{61} \approx 7.81 \, \text{m}
+			\]
+			\[
+				E_2 = k \frac{|q_2|}{r_2^2} = 8.99 \times 10^9 \frac{2 \times 10^{-3}}{7.81^2} = 2.34 \times 10^2 \, \text{N/C}
+			\]
+
+			3. Campo debido a \( q_3 \):
+			\[
+				r_3 = \sqrt{(3 - 0)^2 + (3 - 3)^2} = 3 \, \text{m}
+			\]
+			\[
+				E_3 = k \frac{|q_3|}{r_3^2} = 8.99 \times 10^9 \frac{4 \times 10^{-3}}{3^2} = 3.996 \times 10^3 \, \text{N/C}
+			\]
+
+			4. Campo debido a \( q_4 \):
+			\[
+				r_4 = \sqrt{(3 - 3)^2 + (3 - 1)^2} = 2 \, \text{m}
+			\]
+			\[
+				E_4 = k \frac{|q_4|}{r_4^2} = 8.99 \times 10^9 \frac{5 \times 10^{-3}}{2^2} = 1.124 \times 10^4 \, \text{N/C}
+			\]
+
+			Sumamos vectorialmente \( E_1 \), \( E_2 \), \( E_3 \), y \( E_4 \) para obtener el campo eléctrico en el punto \( (3,3) \).
+		\end{parts}
+
+	\end{solution}
+
+
+	% Pregunta 4
+	\question \large\textbf{Un plano cargado con densidad superficial de carga \( \sigma = 20 \, \mu \text{C/m}^2 \) de longitud 3m y ancho 1m se dobla a lo largo de su longitud en tres partes iguales formando dos ángulos rectos. Calcular el vector campo eléctrico en el centro de la figura formada.}
+
+	\begin{solution}
+		Aquí la solución correspondiente.
+	\end{solution}
+
+\end{questions}
+
+\end{document}
