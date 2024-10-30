@@ -1,1 +1,3 @@
-A continuacion una serie de preguntas en latex. Vas respondiendo conforme el numero de pregunta indique. Si la pregunta necesita paquetes adicionales me avisas. Imprime la solucion en Latex solamente de la pregunta indicada. Empieza por la primera pregunta: 
+A continuacion una serie de preguntas. Quiero que empiezes imprimiendo un documento inicial de latex. Usaras el paquete "exam". Luego vas imprimiendo la seccion "respuesta" del numero de pregunta indique. Imprime la solucion en Latex solamente de la pregunta indicada. Empieza por la primera pregunta: 
+
+###
