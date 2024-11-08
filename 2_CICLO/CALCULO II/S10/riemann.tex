@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section*{Aproximaciones usando las Sumas de Riemann}
+
+Sea \( f(x) \) una función continua en el intervalo \([0, \frac{5}{2}]\), queremos aproximar el área bajo la curva en este intervalo mediante las Sumas de Riemann. Dividimos el intervalo en 10 subintervalos y calculamos la suma izquierda, derecha y del punto medio.
+
+Dividimos el intervalo en 10 subintervalos de igual tamaño, con \(\Delta x = \frac{1}{4}\).
+
+Los intervalos son:
+\[
+    \left[0, \frac{1}{4}\right], \quad \left[\frac{1}{4}, \frac{1}{2}\right], \quad \left[\frac{1}{2}, \frac{3}{4}\right], \quad \left[\frac{3}{4}, 1\right],\quad \left[1, \frac{5}{4}\right], 
+\]
+\[
+    \left[\frac{5}{4}, \frac{3}{2}\right],\quad \left[\frac{3}{2}, \frac{7}{4}\right],\quad \left[\frac{7}{4}, 2\right],\quad \left[2, \frac{9}{4}\right], \quad \left[\frac{9}{4}, \frac{5}{2}\right]
+\]
+
+\section{Suma Izquierda}
+La suma de Riemann izquierda se define como:
+\[
+L = \sum_{i=1}^{10} f(x_{i-1}) \cdot \Delta x
+\]
+donde los valores de \( x_{i-1} \) son los puntos izquierdos de cada intervalo.
+
+Por lo tanto,
+\[
+L = f(0) \cdot \frac{1}{4} + f\left(\frac{1}{4}\right) \cdot \frac{1}{4} + f\left(\frac{1}{2}\right) \cdot \frac{1}{4} + \dots 
+\]
+
+\section{Suma Derecha}
+La suma de Riemann derecha se define como:
+\[
+R = \sum_{i=1}^{10} f(x_{i}) \cdot \Delta x
+\]
+donde los valores de \( x_{i} \) son los puntos derechos de cada intervalo.
+
+Por lo tanto,
+\[
+R = f\left(\frac{1}{4}\right) \cdot \frac{1}{4} + f\left(\frac{1}{2}\right) \cdot \frac{1}{4} + \dots 
+\]
+\section{Suma del Punto Medio}
+La suma de Riemann del punto medio se define como:
+\[
+M = \sum_{i=1}^{10} f\left(\frac{x_{i-1} + x_i}{2}\right) \cdot \Delta x
+\]
+donde los valores de \( \frac{x_{i-1} + x_i}{2} \) son los puntos medios de cada intervalo:
+\[
+\frac{0 + \frac{1}{4}}{2} = \frac{1}{8}, \quad \frac{\frac{1}{4} + \frac{1}{2}}{2} = \frac{3}{8}, \quad \dots
+\]
+Por lo tanto,
+\[
+M = f\left(\frac{1}{8}\right) \cdot \frac{1}{4} + f\left(\frac{3}{8}\right) \cdot \frac{1}{4} + f\left(\frac{5}{8}\right) \cdot \frac{1}{4} + \dots
+\]
+
+\end{document}

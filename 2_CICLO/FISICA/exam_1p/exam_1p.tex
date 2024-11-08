@@ -7,8 +7,8 @@
 
 % Configuración de encabezado y pie de página
 \pagestyle{headandfoot}
-\firstpageheader{Examen de Física}{}{} 
-\runningheader{Examen de Física}{}{}
+\firstpageheader{Examen de Física}{}{20 de octubre del 2024} 
+\runningheader{Examen de Física}{}{Cálculo de Campos Eléctricos}
 \firstpagefooter{}{\thepage}{}
 \runningfooter{}{\thepage}{}
 
@@ -18,8 +18,8 @@
 \begin{document}
 
 \begin{center}
-    \large\textbf{Examen de Física}\\[1em]
-    \large Ingeniería Física, Segundo Ciclo\\[1em]
+    \large\textbf{Examen de Física - Campos Eléctricos}\\[1em]
+    \large Ingeniería Física, Primer Ciclo\\[1em]
 \end{center}
 
 \begin{questions}
@@ -91,25 +91,83 @@
     \question \large\textbf{Calcular el campo eléctrico producido por un alambre de 2 m de longitud ubicado en la dirección del eje x, y cargado con una densidad lineal de carga dada por $\lambda = (x^2 + 2)$C/m en un punto a 0.5 m del extremo del alambre sobre el mismo eje x.}
 
     
-        Para calcular el campo eléctrico en un punto ubicado a \( 0.5 \, \text{m} \) del extremo del alambre, utilizamos la ley de Coulomb para un elemento de carga \( dq \) sobre el alambre. La densidad lineal de carga es \( \lambda = (x^2 + 2) \, \text{C/m} \), por lo que un elemento infinitesimal de carga es:
-        
-        \[
-        dq = \lambda \, dx = (x^2 + 2) \, dx
-        \]
-        
-        El campo eléctrico en el punto \( P \) a una distancia de \( 0.5 \, \text{m} \) del extremo del alambre es la suma de los campos creados por cada elemento de carga. Aplicando la fórmula para el campo eléctrico:
-        
-        \[
-        dE = \frac{1}{4 \pi \epsilon_0} \cdot \frac{dq}{r^2}
-        \]
-        
-        donde \( r \) es la distancia entre el elemento de carga y el punto \( P \). Integramos a lo largo de la longitud del alambre (desde \( x = 0 \) hasta \( x = 2 \, \text{m} \)):
-        
-        \[
-        E = \frac{1}{4 \pi \epsilon_0} \int_0^2 \frac{(x^2 + 2) \, dx}{(x + 0.5)^2}
-        \]
-        
-        Calculamos el resultado de la integral numéricamente para obtener el valor del campo eléctrico en \( P \).
+    
+    
+    El elemento diferencial de carga en el alambre es:
+    \[
+    dq = \lambda(x) \, dx = (x^2 + 2) \, dx.
+    \]
+    
+    La contribución diferencial al campo eléctrico debido a \(dq\) en un punto \(P\) a 0.5 m del extremo derecho del alambre es:
+    \[
+    dE = \frac{1}{4 \pi \epsilon_0} \frac{dq}{r^2},
+    \]
+    donde \(r\) es la distancia desde el elemento de carga \(dq\) hasta el punto \(P\).
+    
+ 
+    
+    Ubicamos el alambre en el intervalo \(0 \leq x \leq 2\) sobre el eje \(x\). El punto \(P\) se encuentra en \(x = 2.5\), por lo que la distancia entre un elemento de carga en \(x\) y el punto \(P\) es:
+    \[
+    r = 2.5 - x.
+    \]
+    
+    Entonces, el diferencial de campo eléctrico \(dE\) es:
+    \[
+    dE = \frac{1}{4 \pi \epsilon_0} \frac{x^2 + 2}{(2.5 - x)^2} \, dx.
+    \]
+    
+    El campo total \(E\) es la integral de \(dE\) a lo largo del alambre:
+    \[
+    E = \frac{1}{4 \pi \epsilon_0} \int_0^2 \frac{x^2 + 2}{(2.5 - x)^2} \, dx.
+    \]
+    
+
+    
+    Evaluamos la integral:
+    \[
+    \int_0^2 \frac{x^2 + 2}{(2.5 - x)^2} \, dx.
+    \]
+    
+    Realizando un cambio de variable, sea \(u = 2.5 - x\), lo cual implica que \(du = -dx\). Los límites cambian así:
+    - Cuando \(x = 0\), \(u = 2.5\).
+    - Cuando \(x = 2\), \(u = 0.5\).
+    
+    Reescribimos la integral en términos de \(u\):
+    \[
+    \int_0^2 \frac{x^2 + 2}{(2.5 - x)^2} \, dx = \int_{2.5}^{0.5} \frac{(2.5 - u)^2 + 2}{u^2} (-du).
+    \]
+    Cambiamos el signo y límites de integración:
+    \[
+    = \int_{0.5}^{2.5} \frac{(2.5 - u)^2 + 2}{u^2} \, du.
+    \]
+    
+    Expandimos \((2.5 - u)^2\) y simplificamos:
+    \[
+    = \int_{0.5}^{2.5} \left( 1 - \frac{1}{u} + \frac{2.25}{u^2} \right) \, du.
+    \]
+    
+    Resolviendo cada término por separado:
+    \[
+    \int_{0.5}^{2.5} 1 \, du = 2,
+    \]
+    \[
+    \int_{0.5}^{2.5} -\frac{1}{u} \, du = -\ln 5,
+    \]
+    \[
+    \int_{0.5}^{2.5} \frac{2.25}{u^2} \, du = 3.6.
+    \]
+    
+    Así, la integral total es:
+    \[
+    \int_0^2 \frac{x^2 + 2}{(2.5 - x)^2} \, dx = 5.6 - \ln 5.
+    \]
+    
+
+    
+    Por lo tanto, el campo eléctrico en \(P\) es:
+    \[
+    E = \frac{1}{4 \pi \epsilon_0} \left( 5.6 - \ln 5 \right).
+    \]
 
     % Pregunta 3
     \question \large\textbf{¿Cuál es la intensidad del campo eléctrico en el interior de una esfera maciza cargada? ¿Y si esta fuera hueca? ¿Y si además la esfera fuera conductora?}
