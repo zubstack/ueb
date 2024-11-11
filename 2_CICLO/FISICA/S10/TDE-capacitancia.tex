@@ -39,9 +39,9 @@
     % Question 1
     \question \large\textbf{Dado un capacitor de placas paralelas distanciadas 1 mm, Hallar el área de las placas para que su capacitancia sea de 1 F, 1 uF, 1 pF.:}
   
-        Para calcular el área \( A \) de las placas de un capacitor de placas paralelas con una capacitancia \( C \), la fórmula es:
+       Area \( A \) de las placas de un capacitor de placas paralelas con una capacitancia \( C \):
         \[
-        C = \frac{\varepsilon_0 A}{d}
+        \boxed{C = \frac{\varepsilon_0 A}{d}}
         \]
 
         donde:\\
@@ -50,7 +50,7 @@
         - \( d = 1 \, \text{mm} = 1 \times 10^{-3} \, \text{m} \) es la distancia entre las placas.\\
 
         
-        Para hallar \( A \), despejamos en la ecuación:
+        Entonces:
         \[
         A = \frac{C \cdot d}{\varepsilon_0}
         \]
@@ -69,53 +69,38 @@
            \[
            A = \frac{1 \times 10^{-12} \, \text{F} \times 1 \times 10^{-3} \, \text{m}}{8.85 \times 10^{-12} \, \text{F/m}} = 0.113 \, \text{m}^2
            \]
-        
+    \vspace{1.5cm} 
     \begin{center}
-        \begin{tikzpicture}
-            % Configuración de estilos
-            \tikzset{
-                capacitor/.style={fill=blue!30, draw=black},
-                field/.style={->, thick, color=red},
-            }
+      \begin{tikzpicture}
+        % Dimensiones y posiciones
+        \def\platewidth{4cm}    % Ancho de las placas
+        \def\distance{1.5cm}    % Distancia visual entre las placas en el dibujo
+        \def\platedepth{0.3cm}  % Espesor visual de cada placa
+    
+        % Placa inferior
+        \fill[gray!70] (0, 0) rectangle (\platewidth, \platedepth); 
+        \node[below] at (\platewidth/2, 0) {- - - - - - - - - - - - - - - };
         
-            % Dimensiones de las placas
-            \def\plateWidth{3}    % Ancho de las placas
-            \def\plateHeight{0.3} % Altura de las placas
-            \def\distance{1.5}    % Distancia entre las placas
+        % Placa superior
+        \fill[gray!70] (0, \distance) rectangle (\platewidth, \distance + \platedepth); 
+        \node[above] at (\platewidth/2, \distance + \platedepth ) {++++++++++++++};
+    
+        % Flecha de distancia
+        \draw[thick] (\platewidth + 0.2, \platedepth) -- (\platewidth + 0.2, \distance);
+        \node[right] at (\platewidth + 0.4, \distance/2 + \platedepth/2) {$d = 1 \, \text{mm}$};
+  
+    \end{tikzpicture}
+    
+    \end{center}
         
-            % Dibujar placa superior
-            \fill[capacitor] (-\plateWidth/2, \distance/2) rectangle (\plateWidth/2, \distance/2 + \plateHeight);
-            \node at (0, \distance/2 + \plateHeight + 0.3) {Placa positiva};
-        
-            % Dibujar placa inferior
-            \fill[capacitor] (-\plateWidth/2, -\distance/2) rectangle (\plateWidth/2, -\distance/2 - \plateHeight);
-            \node at (0, -\distance/2 - \plateHeight - 0.3) {Placa negativa};
-        
-            % Etiqueta de la distancia
-            \draw[thick] (\plateWidth/2 + 0.2, -\distance/2) -- (\plateWidth/2 + 0.2, \distance/2);
-            \node[right] at (\plateWidth/2 + 0.5, 0) {$d = 1 \, \text{mm}$};
-        
-         %    % Flechas del campo eléctrico
-         %    \foreach \y in {-0.7, -0.3, 0, 0.3, 0.7} {
-         %        \draw[field] (-\plateWidth/2 + 0.5, \y) -- (\plateWidth/2 - 0.5, \y)
-         %    }
-         %    \node[red] at (0, 1) {Campo eléctrico};
-        
-            % Etiqueta del área
-            \draw[dashed] (-\plateWidth/2, -\distance/2 - 0.5) -- (\plateWidth/2, -\distance/2 - 0.5);
-            \node[below] at (0, -\distance/2 - 0.7) {$A$ (Área de las placas)};
-        
-        \end{tikzpicture}
-    \end{center} 
-        
-     \vspace{0.5cm}
+    \newpage
     % Question 2
     \question \large\textbf{Calcular la capacitancia de un cable coaxial en el vacío cuyos radios son de 1 mm y 2 mm y longitud 2m.}
  
    
-        Para calcular la capacitancia \( C \) de un cable coaxial en el vacío, se usa la fórmula:
+        Calcular la capacitancia \( C \) de un cable coaxial en el vacío:
         \[
-        C = \frac{2 \pi \varepsilon_0 L}{\ln\left(\frac{b}{a}\right)}
+        \boxed{C = \frac{2 \pi \varepsilon_0 L}{\ln\left(\frac{b}{a}\right)}}
         \]
 
         donde:\\
@@ -129,28 +114,57 @@
         C = \frac{2 \pi \times 8.85 \times 10^{-12} \, \text{F/m} \times 2 \, \text{m}}{\ln\left(\frac{2 \times 10^{-3} \, \text{m}}{1 \times 10^{-3} \, \text{m}}\right)}
         \]
         
-        Calculamos el valor del logaritmo natural:
+     
         \[
         \ln\left(\frac{2 \times 10^{-3}}{1 \times 10^{-3}}\right) = \ln(2) \approx 0.693
         \]
         
-        Sustituyendo en la ecuación:
+
         \[
         C = \frac{2 \pi \times 8.85 \times 10^{-12} \times 2}{0.693} \approx 1.60 \times 10^{-10} \, \text{F} = 160 \, \text{pF}
         \]
         
         Por lo tanto, la capacitancia del cable coaxial es aproximadamente \( 160 \, \text{pF} \).
+        \vspace{1.5cm}
+        \begin{center}
+          \begin{tikzpicture}
+            % Definimos los radios y la longitud del dibujo
+            \def\innerRadius{2cm}
+            \def\outerRadius{4cm}
+            \def\length{4cm}
         
-     \vspace{0.5cm}
+            % Dibujamos el aislante entre conductores
+            \fill[gray!10] (\innerRadius,0) arc[start angle=0, end angle=360, radius=\innerRadius] --
+                          (\outerRadius,0) arc[start angle=0, end angle=360, radius=\outerRadius] -- cycle;
+        
+            % Dibujamos el conductor externo
+            \draw[thick] (\outerRadius,0) arc[start angle=0, end angle=360, radius=\outerRadius];
+
+             % Dibujamos el conductor interno
+            \fill[gray!80] (0,0) circle (\innerRadius);
+          
+            % Flechas para indicar los radios
+            \draw[thick] (0, 0) -- (\innerRadius, 0.7);
+            \node[above] at (\innerRadius/2, 0.75) {$a = 1 \, \text{mm}$};
+        
+            \draw[thick] (0, 0) -- (\outerRadius, -0.8);
+            \node[above] at (\outerRadius/1.5, -0.2) {$b = 2 \, \text{mm}$};
+        
+            % Dimensión de longitud
+            \node[right] at (1.6*\outerRadius, 0) {$L = 2 \, \text{m}$};
+        
+        \end{tikzpicture}   
+        \end{center}
+    \newpage
     % Question 3
     \question \large\textbf{Calcular la capacitancia de un capacitor esférico de radios 2 mm y 4 mm
     respectivamente si el espacio entre los conductores está relleno de aceite, cuya
     permitividad eléctrica relativa es 4.}
 
     
-        Para calcular la capacitancia \( C \) de un capacitor esférico con un dieléctrico de permitividad relativa \( \varepsilon_r = 4 \), usamos la fórmula:
+        Calcular la capacitancia \( C \):
         \[
-        C = 4 \pi \varepsilon_0 \varepsilon_r \frac{a \cdot b}{b - a}
+        \boxed{C = 4 \pi \varepsilon_0 \varepsilon_r \frac{a \cdot b}{b - a}}
         \]
 
         donde:\\
@@ -162,13 +176,6 @@
         \[
         C = 4 \pi \times 8.85 \times 10^{-12} \, \text{F/m} \times 4 \times \frac{2 \times 10^{-3} \times 4 \times 10^{-3}}{4 \times 10^{-3} - 2 \times 10^{-3}}
         \]
-        
-        Calculamos el valor del denominador:
-        \[
-        4 \times 10^{-3} - 2 \times 10^{-3} = 2 \times 10^{-3} \, \text{m}
-        \]
-        
-        Sustituyendo en la ecuación:
         \[
         C = 4 \pi \times 8.85 \times 10^{-12} \times 4 \times \frac{8 \times 10^{-6}}{2 \times 10^{-3}}
         \]
@@ -186,15 +193,13 @@
     \question \large\textbf{Calcular la energía almacenada por los condensadores de los ejercicios anteriores si están sometidos a una diferencia de potencial de 100 voltios.}
 
   
-        La energía almacenada \( U \) en un capacitor se calcula con la fórmula:
+        La energía almacenada \( U \) en un capacitor:
         \[
-        U = \frac{1}{2} C V^2
+        \boxed{U = \frac{1}{2} C V^2}
         \]
         donde:\\
         - \( C \) es la capacitancia del capacitor,\\
         - \( V = 100 \, \text{V} \) es la diferencia de potencial aplicada.\\
-        
-        Calculamos la energía almacenada para cada uno de los capacitores obtenidos en los ejercicios anteriores.
         
         1. Capacitor de placas paralelas (Ejercicio 1):
            - Para \( C = 1 \, \text{F} \):
@@ -222,7 +227,6 @@
              U = \frac{1}{2} \times 17.8 \times 10^{-12} \times (100)^2 = 8.9 \times 10^{-8} \, \text{J} = 0.089 \, \mu \text{J}
              \]
         
-
         
 
      \vspace{0.5cm}
@@ -230,11 +234,11 @@
     \question \large\textbf{Resolver los cuatro ejercicios anteriores, si los condensadores están rellenos de un dieléctrico cuya permitividad relativa es de 52, y una diferencia de potencial de 50
     voltios.}
     
-        Para resolver los ejercicios anteriores con un dieléctrico cuya permitividad relativa es \( \varepsilon_r = 52 \) y una diferencia de potencial de \( V = 50 \, \text{V} \), recalculamos la capacitancia de cada capacitor y la energía almacenada en cada caso.
+     
         
-        La capacitancia con un dieléctrico se obtiene multiplicando la capacitancia en el vacío \( C_0 \) por \( \varepsilon_r \):
+        La capacitancia con un dieléctrico:
         \[
-        C = \varepsilon_r \cdot C_0
+        \boxed{C = \varepsilon_r \cdot C_0}
         \]
         
         1. Capacitor de placas paralelas (Ejercicio 1):\\
@@ -298,15 +302,13 @@
     % Question 6
     \question \large\textbf{En las circunstancias del ejercicio 1, ¿qué cantidad de carga almacenarán cada condensador?}
    
-        La cantidad de carga \( Q \) almacenada en un capacitor se calcula con la fórmula:
+        La cantidad de carga \( Q \) almacenada en un capacitor:
         \[
-        Q = C \cdot V
+        \boxed{Q = C \cdot V}
         \]
         donde:\\
         - \( C \) es la capacitancia del capacitor,\\
         - \( V \) es la diferencia de potencial aplicada.\\
-        
-        Utilizando los valores de capacitancia para cada caso en el Ejercicio 1 y una diferencia de potencial de \( V = 100 \, \text{V} \), calculamos la carga almacenada en cada capacitor.
         
         Capacitor de placas paralelas (Ejercicio 1):\\
         1. Para \( C = 1 \, \text{F} \):
