@@ -1,0 +1,23 @@
+1. Se tiene un sistema formado por tres capacitores, como en la figura. Entre los terminales A y B de dicho sistema se ha aplicado una diferencia de potencia de 200V. Determine:
+a) La capacitancia equivalente del sistema.
+b) La carda y la diferencia de potencial en cada capacitor.
+
+FIGURA
+
+2. Se tienen dos capacitores planos conectados entre si, y se conoce que el potencial de cada una es 200V. Si se introduce un dielectrico de permitividad relativa Er = 3 entrre las plcas del capacitor C1, halle la carga y el potencial de cada capcitor si sus capacitancias antes de introducir el dielectrico son C1=0.05uF y C2=0.1 uF.
+
+3. Dentro de un capacitor plano cuyas plcas tienen una area de 300cm2 y estan separadas una distancia d=1cm se introduce un dielectrico que ocupa todo su volumen interior, de manera que su capacitancia ahora toma el valor de C=0.053pF. Determine la permitividad relativa del dielectrico.
+
+4. La intensidad de corriente en el circuito varia en la forma I=Io*e^{-kt}. Halle la cantidad de carga que atraviesa una seccion del conductor en los dos primeros segundos. Tome k=0.5seg^{-1}, Io=0.2A.
+
+5. Un conductor cilindrico de seccion transversal A=0.01cm2
+ esta formado por dos conductores de hierro y cobre, como se muestra en la figura. Las resistividades de los metales son: dCu=1.75E-8 [ohmios metros], dFe=9.8E-8[ohmios metros]. La longitud del conductor compuesto en 2.5,. Entre los extremos se aplica una diferencia de potencial de 1.5V. Halle:
+ a) La resistencia del conductor.
+ b) La intensidad de corriente por cada conductor.
+ c) El valor de la intensidad de campo electrico en cada conductor.
+
+ FIGURA
+
+6. Se envidla un alambre de aluminio, formando espiras bien apretadas, sobre un cilindro de radio 5cm. Que resistencia presenta dicho alambre cuando se ha enrrollado una longitud de 200m? El radio del alambre es 0,2m; la resitividad del aluminio es dAl=2.8E-8 [ohmios metros].
+
+7
