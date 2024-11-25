@@ -1,0 +1,450 @@
+\documentclass[answers]{exam} % Clase para exámenes con respuestas
+\usepackage[english,spanish]{babel} % Soporte para inglés y español
+\usepackage[autostyle]{csquotes} % Manejo de citas
+\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
+\usepackage{graphicx} % Inclusión de gráficos
+\usepackage{enumitem} % Personalización de listas enumeradas
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} % Configuración de márgenes
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} % Enlaces con color
+
+\usepackage{array}   % for adjusting row height
+\renewcommand{\arraystretch}{1.5} % adjust the vertical spacing between rows
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Respuesta:}\par\noindent} % Personalización del título de respuestas
+\renewcommand{\familydefault}{\sfdefault}
+
+\title{Sumas de Riemann}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+\section{Introducción}
+Las sumas de Riemann son una forma de aproximar el valor de una integral definida. El proceso consiste en dividir el intervalo de integración en subintervalos, calcular áreas aproximadas de rectángulos bajo la curva de una función y tomar el límite de estas sumas cuando el número de subintervalos tiende a infinito. Esta aproximación se convierte en una integral definida en el límite.
+
+En este tutorial, aprenderemos cómo resolver ejercicios que involucran sumas de Riemann y cómo convertirlas en integrales definidas.
+
+\section{Relación entre una Suma y una Integral}
+
+Una suma, como una suma de Riemann, se aproxima a una integral definida a medida que el número de términos en la suma aumenta. Esta aproximación se puede entender de manera más clara considerando el concepto de particionar un intervalo en subintervalos cada vez más pequeños. 
+
+\subsection{Particionando el Intervalo}
+Consideremos un intervalo \( [a, b] \) sobre el eje \( x \). Para aproximar el área bajo la curva de una función \( f(x) \), dividimos el intervalo en \( n \) subintervalos de igual longitud, cada uno con ancho \( \Delta x = \frac{b-a}{n} \). A medida que \( n \) crece, los subintervalos se hacen más pequeños y la partición se vuelve más refinada.
+
+En cada subintervalo, seleccionamos un punto \( x_k \) (por ejemplo, un punto a la izquierda, en el medio o a la derecha del subintervalo). La idea es calcular el valor de la función \( f(x) \) en cada uno de estos puntos y multiplicarlo por el ancho del subintervalo \( \Delta x \). Esto nos da una aproximación del área de cada rectángulo bajo la curva de \( f(x) \).
+
+La suma de Riemann asociada a esta partición es:
+\[
+S_n = \sum_{k=1}^{n} f(x_k) \Delta x
+\]
+donde \( f(x_k) \) es el valor de la función en el punto de evaluación \( x_k \), y \( \Delta x \) es el ancho de cada subintervalo.
+
+\subsection{Aproximación a la Integral}
+A medida que aumentamos el número de subintervalos \( n \), los rectángulos que sumamos se ajustan mejor a la forma de la curva de la función. En el límite, cuando el número de subintervalos tiende a infinito (\( n \to \infty \)), la suma de Riemann se convierte en una integral definida.
+
+Formalmente, la integral definida de una función \( f(x) \) sobre el intervalo \( [a, b] \) se define como el límite de la suma de Riemann cuando \( n \to \infty \). Es decir:
+\[
+\int_a^b f(x) \, dx = \lim_{n \to \infty} \sum_{k=1}^{n} f(x_k) \Delta x
+\]
+Este límite es lo que convierte a la suma en una integral. En otras palabras, una suma de Riemann es una forma discreta de aproximar la integral, y el límite de esta suma es la integral continua.
+
+\subsection{Interpretación Geométrica}
+Geométricamente, cada término \( f(x_k) \Delta x \) en la suma de Riemann representa el área de un rectángulo bajo la curva de \( f(x) \), con base \( \Delta x \) y altura \( f(x_k) \). A medida que \( n \) aumenta, el número de rectángulos también aumenta, y su altura se ajusta mejor a la curva de la función. En el límite, la suma de estos rectángulos se aproxima al área exacta bajo la curva, que es precisamente el valor de la integral.
+
+\subsection{Ejemplo de Aproximación}
+Supongamos que tenemos la función \( f(x) = x \) en el intervalo \( [0, 1] \). Dividimos el intervalo en \( n \) subintervalos de longitud \( \Delta x = \frac{1}{n} \), y evaluamos la suma de Riemann:
+\[
+S_n = \sum_{k=1}^{n} \left( \frac{k}{n} \right) \frac{1}{n}
+\]
+A medida que \( n \) crece, los rectángulos se ajustan mejor a la curva de \( f(x) = x \), y la suma se aproxima a la integral:
+\[
+\int_0^1 x \, dx = \frac{1}{2}
+\]
+Cuando tomamos el límite de la suma a medida que \( n \to \infty \), obtenemos el valor exacto de la integral.
+
+
+\section{Pasos para resolver ejercicios de sumas de Riemann}
+
+\subsection{Paso 1: Identificar la suma de Riemann}
+Una suma de Riemann típica tiene la forma:
+\[
+\sum_{k=1}^{n} f\left( x_k \right) \Delta x
+\]
+donde:
+\begin{itemize}
+    \item \( f(x_k) \) es el valor de la función en el punto de evaluación \( x_k \),
+    \item \( \Delta x \) es el ancho de los subintervalos, que en el caso de particiones uniformes es \( \frac{b - a}{n} \), con \( [a, b] \) siendo el intervalo de integración y \( n \) el número de subintervalos.
+\end{itemize}
+
+\subsection{Paso 2: Escribir la integral definida}
+Una vez que hemos identificado la suma de Riemann, debemos escribir la integral definida correspondiente. Esto se hace reconociendo la función \( f(x) \) y el intervalo \( [a, b] \) que se está aproximando con la suma.
+
+\textbf{Ejemplo:}
+Supongamos que tenemos la suma:
+\[
+\lim_{n \to \infty} \sum_{k=1}^{n} \left( \frac{k}{n} \right) \frac{1}{n}
+\]
+Aquí, \( f(x) = x \) y el intervalo es \( [0, 1] \), con \( \Delta x = \frac{1}{n} \). La integral correspondiente sería:
+\[
+\int_0^1 x \, dx
+\]
+
+\subsection{Paso 3: Evaluar la integral}
+Una vez que tenemos la integral, el siguiente paso es evaluarla. Si la integral es sencilla, podemos usar las reglas estándar de integración para encontrar su valor.
+
+\textbf{Ejemplo:}
+Para la integral:
+\[
+\int_0^1 x \, dx
+\]
+Usamos la regla de potencias de la integración:
+\[
+\int x \, dx = \frac{x^2}{2}
+\]
+Evaluamos de \( 0 \) a \( 1 \):
+\[
+\left[ \frac{x^2}{2} \right]_0^1 = \frac{1^2}{2} - \frac{0^2}{2} = \frac{1}{2}
+\]
+Por lo tanto, la suma de Riemann converge a \( \frac{1}{2} \).
+
+\subsection{Paso 4: Resolver integrales más complejas}
+En algunos casos, la integral puede ser más compleja y requerir métodos de integración más avanzados. Es importante reconocer los términos de la función, aplicar las reglas de integración adecuadas y realizar las simplificaciones necesarias.
+
+\textbf{Ejemplo:}
+Supongamos la suma:
+\[
+\lim_{n \to \infty} \sum_{k=1}^{n} \frac{1}{n} \left( \left( \frac{k}{n} \right)^3 + 1 \right)
+\]
+Esta suma corresponde a la integral:
+\[
+\int_0^1 (x^3 + 1) \, dx
+\]
+Evaluamos esta integral dividiendo en dos partes:
+\[
+\int_0^1 x^3 \, dx + \int_0^1 1 \, dx
+\]
+Usamos las reglas de integración para obtener:
+\[
+\frac{x^4}{4} \Big|_0^1 = \frac{1}{4}, \quad \int_0^1 1 \, dx = 1
+\]
+Sumando los resultados:
+\[
+\frac{1}{4} + 1 = \frac{5}{4}
+\]
+
+
+
+
+\section{Ejercicios}
+
+    \large\textbf{Convert each limit of a Riemann sum to a definite integral, and evaluate: }
+
+    \begin{enumerate}[label=\alph*.]
+        \item $\displaystyle \lim_{n\to\infty} \sum_{k = 1}^{n} \left(\dfrac{k}{n} \right) \dfrac{1} {n}$
+        
+        \item $\displaystyle \lim_{n\to\infty} \dfrac{1}{n} \sum_{k = 1}^{n} \dfrac{1} {1+\frac{k}{n}}$
+        
+        \item $\displaystyle \lim_{n\to\infty} \sum_{k = 1}^{n} \dfrac{1}{n} \left(2+\dfrac{k}{n}\right)^2$
+        
+        \item $\displaystyle \lim_{n\to\infty} \dfrac{\pi}{2n} \sum_{k = 1}^{n} \sin \left(\dfrac{k\pi}{2n}\right)$
+        
+        \item $\displaystyle \lim_{n\to\infty} \sum_{k = 1}^{n} \left(1+ \dfrac{3k}{n}\right)^3 \dfrac{3}{n}$
+        
+        \item $\displaystyle \lim_{n\to\infty} \sum_{k = 1}^{n} \dfrac{1}{n} \left(\left(\dfrac{k}{n}\right) ^3 + 1\right)$
+        
+        \item $\displaystyle \lim_{n\to\infty} \dfrac{3}{n} \sum_{k = 1}^{n} \left(\left(2+ \dfrac{3k}{n}\right) ^2- 2\left(2+\dfrac{3k}{n}\right)\right) $
+        
+        \item $\displaystyle \lim_{n\to\infty} \sum_{i = 1}^{n} \left(\left(\dfrac{2i}{n}\right) ^3 + 5\left(\dfrac{2i}{n}\right)\right)  \dfrac{1}{n} $
+        
+        \item $\displaystyle \lim_{n\to\infty} \sum_{k = 1}^{n} \dfrac{1}{n+k}$
+        \item $\displaystyle \lim_{n\to\infty} \sum_{k = 1}^{n} \dfrac{1}{\sqrt{n}} \left(\dfrac{1}{\sqrt{n+k}}\right)$
+    \end{enumerate}
+    \vspace{0.5cm}
+    \section{Solutions}
+    \begin{parts}
+        
+        
+        \part $\lim_{n\to\infty} \sum_{k = 1}^{n} \left(\dfrac{k}{n} \right) \dfrac{1} {n}$
+        
+  
+        \textbf{Procedimiento:}
+        Esta suma corresponde a una suma de Riemann para la función \( f(x) = x \) en el intervalo \([0, 1]\), con particiones \( x_k = \frac{k}{n} \) y el ancho de los subintervalos \( \Delta x = \frac{1}{n} \).
+        
+        Escribimos la integral correspondiente:
+        \[
+        \int_0^1 x \, dx
+        \]
+        Evaluamos la integral:
+        \[
+        \int_0^1 x \, dx = \left[\frac{x^2}{2}\right]_0^1 = \frac{1}{2}
+        \]
+        Por lo tanto, el resultado es:
+        \[
+        \lim_{n\to\infty} \sum_{k = 1}^{n} \left(\dfrac{k}{n} \right) \dfrac{1} {n} = \frac{1}{2}
+        \]
+
+        
+        
+        \part $\lim_{n\to\infty} \dfrac{1}{n} \sum_{k = 1}^{n} \dfrac{1} {1+\frac{k}{n}}$
+        
+
+        \textbf{Procedimiento:}
+        Esta suma es una suma de Riemann para la función \( f(x) = \frac{1}{1+x} \) sobre el intervalo \([0, 1]\), con particiones \( x_k = \frac{k}{n} \) y \( \Delta x = \frac{1}{n} \).
+        
+        Escribimos la integral correspondiente:
+        \[
+        \int_0^1 \frac{1}{1+x} \, dx
+        \]
+        Evaluamos la integral:
+        \[
+        \int_0^1 \frac{1}{1+x} \, dx = \ln(1+x) \Big|_0^1 = \ln(2) - \ln(1) = \ln(2)
+        \]
+        Por lo tanto, el resultado es:
+        \[
+        \lim_{n\to\infty} \dfrac{1}{n} \sum_{k = 1}^{n} \dfrac{1} {1+\frac{k}{n}} = \ln(2)
+        \]
+
+        
+        
+        \part $\lim_{n\to\infty} \sum_{k = 1}^{n} \dfrac{1}{n} \left(2+\dfrac{k}{n}\right)^2$
+        
+    
+        \textbf{Procedimiento:}
+        Esta suma corresponde a una suma de Riemann para la función \( f(x) = (2+x)^2 \) sobre el intervalo \([0, 1]\), con particiones \( x_k = \frac{k}{n} \) y \( \Delta x = \frac{1}{n} \).
+        
+        Escribimos la integral correspondiente:
+        \[
+        \int_0^1 (2+x)^2 \, dx
+        \]
+        Expandimos el integrando:
+        \[
+        (2+x)^2 = 4 + 4x + x^2
+        \]
+        La integral se convierte en:
+        \[
+        \int_0^1 (4 + 4x + x^2) \, dx = \int_0^1 4 \, dx + \int_0^1 4x \, dx + \int_0^1 x^2 \, dx
+        \]
+        Evaluamos las integrales:
+        \[
+        \int_0^1 4 \, dx = 4x \Big|_0^1 = 4
+        \]
+        \[
+        \int_0^1 4x \, dx = 2x^2 \Big|_0^1 = 2
+        \]
+        \[
+        \int_0^1 x^2 \, dx = \frac{x^3}{3} \Big|_0^1 = \frac{1}{3}
+        \]
+        Sumando los resultados:
+        \[
+        4 + 2 + \frac{1}{3} = \frac{29}{3}
+        \]
+        Por lo tanto, el resultado es:
+        \[
+        \lim_{n\to\infty} \sum_{k = 1}^{n} \dfrac{1}{n} \left(2+\dfrac{k}{n}\right)^2 = \frac{29}{3}
+        \]
+
+        
+        
+        \part $\lim_{n\to\infty} \dfrac{\pi}{2n} \sum_{k = 1}^{n} \sin \left(\dfrac{k\pi}{2n}\right)$
+        
+      
+        \textbf{Procedimiento:}
+        Esta suma corresponde a una suma de Riemann para la función \( f(x) = \sin(x) \) sobre el intervalo \([0, \frac{\pi}{2}]\), con particiones \( x_k = \frac{k\pi}{2n} \) y el ancho de los subintervalos \( \Delta x = \frac{\pi}{2n} \).
+        
+        Escribimos la integral correspondiente:
+        \[
+        \int_0^{\frac{\pi}{2}} \sin(x) \, dx
+        \]
+        Evaluamos la integral:
+        \[
+        \int_0^{\frac{\pi}{2}} \sin(x) \, dx = -\cos(x) \Big|_0^{\frac{\pi}{2}} = -\cos\left(\frac{\pi}{2}\right) + \cos(0) = 1
+        \]
+        Por lo tanto, el resultado es:
+        \[
+        \lim_{n\to\infty} \dfrac{\pi}{2n} \sum_{k = 1}^{n} \sin \left(\dfrac{k\pi}{2n}\right) = 1
+        \]
+
+        
+        
+        \part $\lim_{n\to\infty} \sum_{k = 1}^{n} \left(1+ \dfrac{3k}{n}\right)^3 \dfrac{3}{n}$
+        
+     
+        \textbf{Procedimiento:}
+        Esta suma corresponde a una suma de Riemann para la función \( f(x) = (1 + 3x)^3 \) sobre el intervalo \([0, 1]\), con particiones \( x_k = \frac{k}{n} \) y \( \Delta x = \frac{1}{n} \).
+        
+        Escribimos la integral correspondiente:
+        \[
+        \int_0^1 (1 + 3x)^3 \, dx
+        \]
+        Expandiendo el cubo:
+        \[
+        (1 + 3x)^3 = 1 + 9x + 27x^2 + 27x^3
+        \]
+        La integral se convierte en:
+        \[
+        \int_0^1 (1 + 9x + 27x^2 + 27x^3) \, dx = \int_0^1 1 \, dx + \int_0^1 9x \, dx + \int_0^1 27x^2 \, dx + \int_0^1 27x^3 \, dx
+        \]
+        Evaluamos las integrales:
+        \[
+        \int_0^1 1 \, dx = 1
+        \]
+        \[
+        \int_0^1 9x \, dx = \frac{9}{2}
+        \]
+        \[
+        \int_0^1 27x^2 \, dx = 9
+        \]
+        \[
+        \int_0^1 27x^3 \, dx = \frac{27}{4}
+        \]
+        Sumando los resultados:
+        \[
+        1 + \frac{9}{2} + 9 + \frac{27}{4} = \frac{4}{4} + \frac{18}{4} + \frac{36}{4} + \frac{27}{4} = \frac{85}{4}
+        \]
+        Por lo tanto, el resultado es:
+        \[
+        \lim_{n\to\infty} \sum_{k = 1}^{n} \left(1+ \dfrac{3k}{n}\right)^3 \dfrac{3}{n} = \frac{85}{4}
+        \]
+
+        
+        
+        \part $\lim_{n\to\infty} \sum_{k = 1}^{n} \dfrac{1}{n} \left(\left(\dfrac{k}{n}\right) ^3 + 1\right)$
+        
+      
+        \textbf{Procedimiento:}
+        Esta suma corresponde a una suma de Riemann para la función \( f(x) = x^3 + 1 \) sobre el intervalo \([0, 1]\), con particiones \( x_k = \frac{k}{n} \) y \( \Delta x = \frac{1}{n} \).
+        
+        Escribimos la integral correspondiente:
+        \[
+        \int_0^1 (x^3 + 1) \, dx
+        \]
+        Evaluamos la integral:
+        \[
+        \int_0^1 (x^3 + 1) \, dx = \int_0^1 x^3 \, dx + \int_0^1 1 \, dx
+        \]
+        Evaluamos ambas integrales:
+        \[
+        \int_0^1 x^3 \, dx = \frac{x^4}{4} \Big|_0^1 = \frac{1}{4}
+        \]
+        \[
+        \int_0^1 1 \, dx = 1
+        \]
+        Sumando los resultados:
+        \[
+        \frac{1}{4} + 1 = \frac{5}{4}
+        \]
+        Por lo tanto, el resultado es:
+        \[
+        \lim_{n\to\infty} \sum_{k = 1}^{n} \dfrac{1}{n} \left(\left(\dfrac{k}{n}\right) ^3 + 1\right) = \frac{5}{4}
+        \]
+
+        
+        
+        \part $\lim_{n\to\infty} \dfrac{3}{n} \sum_{k = 1}^{n} \left(\left(2+ \dfrac{3k}{n}\right) ^2- 2\left(2+\dfrac{3k}{n}\right)\right)$
+        
+      
+        \textbf{Procedimiento:}
+        Esta suma corresponde a una suma de Riemann para la función \( f(x) = (2 + 3x)^2 - 2(2 + 3x) \) sobre el intervalo \([0, 1]\), con particiones \( x_k = \frac{k}{n} \) y \( \Delta x = \frac{1}{n} \).
+        
+        Escribimos la integral correspondiente:
+        \[
+        \int_0^1 \left((2 + 3x)^2 - 2(2 + 3x)\right) \, dx
+        \]
+        Expandiendo los términos:
+        \[
+        (2 + 3x)^2 = 4 + 12x + 9x^2
+        \]
+        \[
+        2(2 + 3x) = 4 + 6x
+        \]
+        La integral se convierte en:
+        \[
+        \int_0^1 (4 + 12x + 9x^2 - 4 - 6x) \, dx = \int_0^1 (6x + 9x^2) \, dx
+        \]
+        Evaluamos la integral:
+        \[
+        \int_0^1 6x \, dx = 3x^2 \Big|_0^1 = 3
+        \]
+        \[
+        \int_0^1 9x^2 \, dx = 3x^3 \Big|_0^1 = 3
+        \]
+        Sumando los resultados:
+        \[
+        3 + 3 = 6
+        \]
+        Por lo tanto, el resultado es:
+        \[
+        \lim_{n\to\infty} \dfrac{3}{n} \sum_{k = 1}^{n} \left(\left(2+ \dfrac{3k}{n}\right) ^2- 2\left(2+\dfrac{3k}{n}\right)\right) = 6
+        \]
+
+        
+        
+        \part $\lim_{n\to\infty} \sum_{i = 1}^{n} \left(\left(\dfrac{2i}{n}\right) ^3 + 5\left(\dfrac{2i}{n}\right)\right)  \dfrac{1}{n}$
+        
+      
+        \textbf{Procedimiento:}
+        Esta suma corresponde a una suma de Riemann para la función \( f(x) = 8x^3 + 5x \) sobre el intervalo \([0, 2]\), con particiones \( x_i = \frac{2i}{n} \) y \( \Delta x = \frac{2}{n} \).
+        
+        Escribimos la integral correspondiente:
+        \[
+        \int_0^2 (8x^3 + 5x) \, dx
+        \]
+        Evaluamos la integral:
+        \[
+        \int_0^2 8x^3 \, dx = 2x^4 \Big|_0^2 = 2(16) = 32
+        \]
+        \[
+        \int_0^2 5x \, dx = \frac{5x^2}{2} \Big|_0^2 = \frac{5(4)}{2} = 10
+        \]
+        Sumando los resultados:
+        \[
+        32 + 10 = 42
+        \]
+        Por lo tanto, el resultado es:
+        \[
+        \lim_{n\to\infty} \sum_{i = 1}^{n} \left(\left(\dfrac{2i}{n}\right) ^3 + 5\left(\dfrac{2i}{n}\right)\right)  \dfrac{1}{n} = 42
+        \]
+
+        
+        
+        \part $\lim_{n\to\infty} \sum_{k = 1}^{n} \dfrac{1}{n+k}$
+        
+      
+        \textbf{Procedimiento:}
+        Esta suma no corresponde directamente a una integral estándar, pero puede aproximarse usando una integral. Observamos que:
+        \[
+        \sum_{k=1}^{n} \dfrac{1}{n+k} \approx \int_n^{2n} \frac{1}{x} \, dx
+        \]
+        Evaluamos la integral:
+        \[
+        \int_n^{2n} \frac{1}{x} \, dx = \ln(x) \Big|_n^{2n} = \ln(2n) - \ln(n) = \ln(2)
+        \]
+        Por lo tanto, el resultado es:
+        \[
+        \lim_{n\to\infty} \sum_{k = 1}^{n} \dfrac{1}{n+k} = \ln(2)
+        \]
+
+        
+        
+        \part $\lim_{n\to\infty} \sum_{k = 1}^{n} \dfrac{1}{\sqrt{n}} \left(\dfrac{1}{\sqrt{n+k}}\right)$
+        
+      
+        \textbf{Procedimiento:}
+        Consideramos la aproximación para una integral. Esta suma se puede escribir como:
+        \[
+        \sum_{k=1}^{n} \dfrac{1}{\sqrt{n}} \cdot \frac{1}{\sqrt{n+k}} \approx \int_0^1 \frac{1}{\sqrt{1+x}} \, dx
+        \]
+        Evaluamos la integral:
+        \[
+        \int_0^1 \frac{1}{\sqrt{1+x}} \, dx = 2\sqrt{1+x} \Big|_0^1 = 2\sqrt{2} - 2
+        \]
+        Por lo tanto, el resultado es:
+        \[
+        \lim_{n\to\infty} \sum_{k = 1}^{n} \dfrac{1}{\sqrt{n}} \left(\dfrac{1}{\sqrt{n+k}}\right) = 2\sqrt{2} - 2
+        \]
+
+    \end{parts}
+
+
+\end{document}
