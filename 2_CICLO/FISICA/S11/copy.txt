@@ -2,7 +2,7 @@
 a) La capacitancia equivalente del sistema.
 b) La carda y la diferencia de potencial en cada capacitor.
 
-FIGURA
+
 
 2. Se tienen dos capacitores planos conectados entre si, y se conoce que el potencial de cada una es 200V. Si se introduce un dielectrico de permitividad relativa Er = 3 entrre las plcas del capacitor C1, halle la carga y el potencial de cada capcitor si sus capacitancias antes de introducir el dielectrico son C1=0.05uF y C2=0.1 uF.
 
@@ -16,8 +16,11 @@ FIGURA
  b) La intensidad de corriente por cada conductor.
  c) El valor de la intensidad de campo electrico en cada conductor.
 
- FIGURA
 
 6. Se envidla un alambre de aluminio, formando espiras bien apretadas, sobre un cilindro de radio 5cm. Que resistencia presenta dicho alambre cuando se ha enrrollado una longitud de 200m? El radio del alambre es 0,2m; la resitividad del aluminio es dAl=2.8E-8 [ohmios metros].
 
-7
+7. Si el resistor del problema anterior va a operar a una tension de 120V; y la potencia maxima que puede disipar es 150W. Que longitud tendra entonces?
+
+8. Una lampara electrica tiene filamenteo de 80[ohmios] conectada a una linea de corriente directa de 110V. Cual es la corriente que circula por al filamento?Cual es la potencia disipada por la bombilla.
+
+9. Un alambre de aluminio de 20 km de longitud y 0.04cm2 de area transversal se encuentra a 20[grados] C . Si la temperaturase eleva 10[grados] C determine que variacion experimenta la resisitencia de dicho alamabre. Tome los siguientes datos: resistividad del aluminio a 20 [grados]C dAl=2.8E-8[ohmios metros]; coeficiente de resisitividad de temperatura ar=3.9E-3 x^{-1}; coeficiente de dilatacion superficial b= 2a.
