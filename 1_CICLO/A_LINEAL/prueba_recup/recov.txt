@@ -1,0 +1,45 @@
+
+1. Escriba solo con esfero sobre la linea si la opción VoF si a su julcis la proposición es
+verdadera o falsa.
+
+a. El principio de Inducción matemática es un método que permite verificar enunciados matematicos.
+b. Se puede aplicar el determinante de una matriz a cualquier sistema de ecuaciones
+c. La matriz escalonada reducida no tiene solución
+
+\begin{array}{ccccc|c}
+ 0 & 1 & 0 & 0 & 0 & -5\\
+ 0 & 0 & 0 & 1 & 0 & 4\\
+ 0 & 0 & 0 & 0 & 1 & -5\\
+ 0 & 0 & 0 & 0 & 0 & 0
+ \end{array}
+
+d. Puede (3,-1, 4) ser escrito como combinación lineal de (1,-1, 0), (0,1,1) y (3,-5,-2)
+e. ¿El conjunto S = ((0,0,1), (0,1,0); (1,0, 0),) es un conjunto de vectores lineamente independiente
+
+2. Use la sustitución hacia a tras para resolver el sistema de ecuaciones. Escriba asi (x,y,z) la solución.
+
+2x-y+5z=24
+y+2z=6
+z=8
+
+3. Encontrar una matriz X tal que 
+
+\begin{array}{ccc}
+  1 & 0 & 0\\
+  4 & 1 & 0\\
+  0 & 4 & 1\\
+ \end{array} X = 
+\begin{array}{cc}
+   1 & 0\\
+   0 & 1\\
+   1 & 1\\
+ \end{array} 
+
+4. Determine el tipo de solución y cuántas variables libres para el siguiente sistema de ecuaciones.
+
+x-2y+5z=2
+3x-6y+15z=0
+
+5. Demostrar la siguiente expresión matemática por inducción matemática
+
+\frac{1}{1 \cdot 4} + \frac{1}{4 \cdot 7 } + \frac{1}{7 \cdot 10} + ... + \frac{1}{(3n-2)\cdot(3n+1)} = \frac{n}{3n+1}

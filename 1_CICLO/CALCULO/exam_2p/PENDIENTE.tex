@@ -10,155 +10,142 @@
 
 % Header and footer
 \pagestyle{headandfoot}
-\firstpageheader{Universidad de Bolívar}{}{\today}
-\runningheader{Universidad de Bolívar}{}{\thepage}
+\firstpageheader{}{}{}
+\runningheader{}{}{}
 \firstpagefooter{}{}{}
 \runningfooter{}{}{}
 
 \begin{document}
 
-\begin{center}
-	\Large\textbf{Cálculo I}\\[1em]
-	\large\textbf{Corrección del Examen}\\[1em]
-	\large Primer Ciclo "A" - Ingeniería de Software\\[1em]
-	% \large \today
-\end{center}
-
-\vspace{0.5cm}
-\large\textbf{Estudiante}: Ariel Alejandro Calderón
-\vspace{0.5cm}
-
 \begin{questions}
 
 	% Question 1
-	\question \large\textbf{Para la función $\displaystyle y = \frac{x^3}{x^2 - 3} $ determine:}
+	\question \large\textbf{Calcular limites:}
 	\begin{enumerate}[label=\alph*.]
-		\item El dominio y recorrido.
-		\item Si la función es par o impar.
-		\item Estudie la monotonía.
+		\item $\displaystyle \lim_{x \to 0} \frac{\sqrt{25+x}-5}{\sqrt{1+x}-1} $
+		\item $\displaystyle \lim_{x \to 0} \frac{2x^3 -3x}{2 \sin x} $
 	\end{enumerate}
 	\begin{solution}
-		\begin{enumerate}[label=\alph*.]
-			\item El dominio de la función son todos los números reales excepto los valores que hacen el denominador igual a cero, es decir, $x^2 - 3 = 0 \Rightarrow x = \pm\sqrt{3}$. Por lo tanto, el dominio es $D = \mathbb{R} \setminus \{\pm\sqrt{3}\}$.
+		\begin{parts}
+			\part Para resolverlo, multiplicamos el numerador y el denominador por las expresiones conjugadas correspondientes:
 
-			\item La función no es ni par ni impar. Para comprobar esto, evaluamos $f(-x)$:
-			      \[
-				      f(-x) = \frac{(-x)^3}{(-x)^2 - 3} = \frac{-x^3}{x^2 - 3} \neq f(x) \text{ y } \neq -f(x)
-			      \]
+			\[
+				\frac{\sqrt{25+x}-5}{\sqrt{1+x}-1} \cdot \frac{\sqrt{25+x}+5}{\sqrt{25+x}+5} \cdot \frac{\sqrt{1+x}+1}{\sqrt{1+x}+1}
+			\]
+	
+			Esto nos da:
+	
+			\[
+				\frac{(\sqrt{25+x})^2 - 5^2}{(\sqrt{1+x})^2 - 1^2} = \frac{25+x - 25}{1+x - 1} = \frac{x}{x}
+			\]
+	
+			Entonces el límite es:
+	
+			\[
+				\lim_{x \to 0} \frac{x}{x} = 1.
+			\]
+	
+		
 
-			\item La monotonía de la función se determina asi:
-			      \begin{itemize}
-				      \item \normalsize\textbf{Crece:} $\displaystyle
-					            \left]-\infty, 3\right]\cup \left[3, \infty\right[
-				            $
-				      \item \normalsize\textbf{Decrece:} $\displaystyle
-					            \left[-3, -\sqrt{3}\right[\cup \left]-\sqrt{3}, \sqrt{3}\right[\cup \left]\sqrt{3}, 3\right]
-				            $
-			      \end{itemize}
-		\end{enumerate}
-		\vspace{0.5cm}
+			\part Primero, intentamos sustituir directamente $x = 0$ en la expresión, pero obtenemos una forma indeterminada $\frac{0}{0}$, ya que $2x^3 - 3x = 0$ y $\sin(0) = 0$.
+
+			Para resolverlo, podemos utilizar la expansión en serie de Taylor de $\sin x$ alrededor de $x = 0$. Sabemos que:
+	
+			\[
+				\sin x = x - \frac{x^3}{6} + O(x^5)
+			\]
+	
+			Sustituyendo esta aproximación en la expresión original:
+	
+			\[
+				\frac{2x^3 - 3x}{2 \sin x} = \frac{2x^3 - 3x}{2\left(x - \frac{x^3}{6} + O(x^5)\right)}
+			\]
+	
+			Factorizando el numerador:
+	
+			\[
+				= \frac{x(2x^2 - 3)}{2\left(x - \frac{x^3}{6} + O(x^5)\right)}
+			\]
+	
+			Ahora podemos simplificar $x$ en el numerador y denominador:
+	
+			\[
+				= \frac{2x^2 - 3}{2\left(1 - \frac{x^2}{6} + O(x^4)\right)}
+			\]
+	
+			Cuando $x \to 0$, el término $x^2$ en el denominador tiende a cero, por lo que la expresión se simplifica a:
+	
+			\[
+				\lim_{x \to 0} \frac{2x^2 - 3}{2} = \frac{-3}{2}.
+			\]
+	
+			Por lo tanto, el valor del límite es:
+	
+			\[
+				\lim_{x \to 0} \frac{2x^3 - 3x}{2 \sin x} = -\frac{3}{2}.
+			\]
+			
+		\end{parts}
+
+	
 
 
-		\begin{minipage}{\textwidth}
-			\centering
-			\includegraphics[width=0.9\textwidth]{public/g1.png}\\
-		\end{minipage}
-		\vspace{0.5cm}
+
+
+
 	\end{solution}
 
-	\vspace{0.5cm}
 
-	% Question 2
-	\question \large\textbf{Para la función $y = 1 + \tan x$ definida únicamente en el intervalo $\displaystyle \left]-\frac{\pi}{2}, \frac{\pi}{2}\right[$ determinar:}
-	\begin{enumerate}[label=\alph*.]
-		\item Si la función es biyectiva. Justifique su respuesta.
-		\item Encuentre su inversa.
-		\item Grafique en el mismo plano de la directa.
-	\end{enumerate}
+	\question \large\textbf{Estudie continuidad de $f(x)=\dfrac{x^2-3}{x^2+2x-8}$}
+
 	\begin{solution}
-		\begin{enumerate}[label=\alph*.]
-			\item La función $y = 1 + \tan x$ es biyectiva en el intervalo dado porque es continua y estrictamente creciente en $\left]-\frac{\pi}{2}, \frac{\pi}{2}\right[$.
-
-			\item Para encontrar la inversa, resolvemos $y = 1 + \tan x$ para $x$:
-			      \[
-				      y - 1 = \tan x \Rightarrow x = \tan^{-1}(y - 1)
-			      \]
-			      La inversa es $f^{-1}(y) = \tan^{-1}(y - 1)$.
-
-			\item La gráfica de $y = 1 + \tan x$ y su inversa $y = \tan^{-1}(x - 1)$ se puede representar en el mismo plano.
-		\end{enumerate}
-		\vspace{0.5cm}
-		\begin{minipage}{\textwidth}
-			\centering
-			\includegraphics[width=0.9\textwidth]{public/g2.png}\\
-		\end{minipage}
-		\vspace{0.5cm}
+		\textbf{Solución:}
+	
+		Estudiamos la continuidad de \( f(x) = \frac{x^2 - 3}{x^2 + 2x - 8} \).
+	
+		**1. Asíntotas verticales:** 
+	
+		Factorizamos el denominador:
+	
+		\[
+		x^2 + 2x - 8 = (x - 2)(x + 4)
+		\]
+	
+		La función tiene potenciales discontinuidades en \( x = 2 \) y \( x = -4 \). Evaluamos el numerador en estos puntos: \\
+	
+		- Para \( x = 2 \), \( x^2 - 3 = 1 \neq 0 \).\\
+		- Para \( x = -4 \), \( x^2 - 3 = 13 \neq 0 \).
+	
+		Dado que el numerador no se anula en estos puntos, no hay discontinuidades removibles. Por lo tanto, la función tiene discontinuidades no removibles en \( x = 2 \) y \( x = -4 \).
+	
+		**2. Conclusión:** La función es continua en \( \mathbb{R} \setminus \{2, -4\} \).
 	\end{solution}
+	
+	
+	\question \large\textbf{Determine las asintotas de la funcion $f(x)=\sqrt{4x^2+2x+1}$:}
 
-	\newpage
-
-	% Question 3
-	\question \large\textbf{Para la función $\displaystyle f(x) = 3^{x-3}-2$ determine:}
-	\begin{enumerate}[label=\alph*.]
-		\item Su inversa si existe.
-		\item Encuentre la función compuesta $f(f^{-1}(x))$.
-	\end{enumerate}
 	\begin{solution}
-		\begin{enumerate}[label=\alph*.]
-			\item Para encontrar la inversa, resolvemos $y = 3^{x-3} - 2$ para $x$:
-			      \[
-				      y + 2 = 3^{x-3} \Rightarrow x - 3 = \log_3(y + 2) \Rightarrow x = \log_3(y + 2) + 3
-			      \]
-			      La inversa es $f^{-1}(x) = \log_3(x + 2) + 3$.
-
-			\item La función compuesta $f(f^{-1}(x))$ es:
-			      \[
-				      f(f^{-1}(x)) = f(\log_3(x + 2) + 3) = 3^{(\log_3(x + 2) + 3) - 3} - 2 = x + 2 - 2
-			      \]
-			      \[
-				      f(f^{-1}(x)) = x
-			      \]
-		\end{enumerate}
-		\vspace{0.5cm}
+		\textbf{Solución:}
+	
+		Estudiamos las asíntotas de \( f(x) = \sqrt{4x^2 + 2x + 1} \).
+	
+		**1. Asíntotas verticales:**
+	
+		El radicando \( 4x^2 + 2x + 1 \) es siempre positivo (discriminante negativo), por lo que no hay asíntotas verticales.
+	
+		**2. Asíntotas horizontales:**
+	
+		La función tiende a \( \infty \) tanto para \( x \to \infty \) como para \( x \to -\infty \), por lo que no tiene asíntotas horizontales.
+	
+		**3. Asíntotas oblicuas:**\\
+	
+		- Para \( x \to \infty \), \( f(x) \sim 2x + \frac{1}{2} \).\\
+		- Para \( x \to -\infty \), \( f(x) \sim -2x - \frac{1}{2} \).
+	
+		**Conclusión:** La función tiene asíntotas oblicuas en \( x \to \infty \) y \( x \to -\infty \), pero no tiene asíntotas verticales ni horizontales.
 	\end{solution}
-
-	\vspace{0.5cm}
-
-	% Question 4
-	\question \large\textbf{Calcular los límites indicados a continuación:}
-	\begin{enumerate}[label=\alph*.]
-		\item $\displaystyle \lim_{x\to{2}} \frac{\sqrt{3^x+7}}{x+2}$
-		\item $\displaystyle \lim_{x\to{2}} \frac{x^3-4x}{x^2-3x+2}$
-	\end{enumerate}
-	\vspace{0.5cm}
-	\begin{solution}
-		\begin{enumerate}[label=\alph*.]
-			\item Para el límite $\displaystyle \lim_{x\to{2}} \frac{\sqrt{3^x+7}}{x+2}$:
-			      \[
-				      \lim_{x \to 2} \frac{\sqrt{3^x+7}}{x+2} = \frac{\sqrt{3^2+7}}{2+2} = \frac{\sqrt{9+7}}{4} = \frac{\sqrt{16}}{4} = \frac{4}{4} = 1
-			      \]
-
-			\item Para el límite $\displaystyle \lim_{x\to{2}} \frac{x^3-4x}{x^2-3x+2}$:
-			      \[
-				      \lim_{x \to 2} \frac{x^3-4x}{x^2-3x+2} = \lim_{x \to 2} \frac{x(x^2-4)}{(x-1)(x-2)}= \frac{\infty}{\infty}
-			      \]
-			      Levantamos la indeterminación:
-			      \[
-				      x^3-4x = x(x^2-4) = x(x-2)(x+2)
-			      \]
-			      \[
-				      \lim_{x \to 2} \frac{x(x-2)(x+2)}{(x-1)(x-2)} = \lim_{x \to 2} \frac{x(x+2)}{x-1}
-			      \]
-			      \vspace{0.1cm}
-			      \[
-				      = \frac{2(2+2)}{2-1} = \frac{2 \cdot 4}{1} = 8
-			      \]
-		\end{enumerate}
-	\end{solution}
-
-	\vspace{0.5cm}
-
-	% End of questions
+	
+	
 \end{questions}
 
 \end{document}
