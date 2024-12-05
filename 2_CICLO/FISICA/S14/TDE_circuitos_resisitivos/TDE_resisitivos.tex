@@ -1,22 +1,354 @@
-\documentclass{article}
+\documentclass[answers]{exam} % Clase para exámenes con respuestas
+\usepackage[english,spanish]{babel} % Soporte para inglés y español
+\usepackage[autostyle]{csquotes} % Manejo de citas
+\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
+\usepackage{graphicx} % Inclusión de gráficos
+\usepackage{enumitem} % Personalización de listas enumeradas
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} % Configuración de márgenes
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} % Enlaces con color
 \usepackage{circuitikz}
+
+\usepackage{array}   % for adjusting row height
+\renewcommand{\arraystretch}{1.5} % adjust the vertical spacing between rows
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Respuesta:}\par\noindent} % Personalización del título de respuestas
+\renewcommand{\familydefault}{\sfdefault}
+
+% Configuración de encabezado y pie de página
+\pagestyle{headandfoot}
+\firstpageheader{Universidad de Bolívar}{}{Diciembre 6, 2024} 
+\runningheader{Universidad de Bolívar}{}{Física}
+\firstpagefooter{}{\thepage}{}
+\runningfooter{}{\thepage}{}
 
 \begin{document}
 
-\begin{circuitikz}
-    
-    \draw
-    (0,0) to[V, v={$110V$}] (0,4)  % 
-    to[R, l_={$R_1 = 20 \ \Omega$}, v^={}] (4,4)   
-    to[R, l_={$R_2 = 10 \ \Omega$}, v^={}] (4,0)   
-    to[R, l_={$R_3 = 5 \ \Omega$}, v^={}] (0,0) 
+\begin{center}
+	\large\textbf{Trabajo Autónomo 2.14 - Fundamentos de Física para Ingeniería}\\[1em]
+	\large Segundo Ciclo \enquote*{A} - Ingeniería de Software\\[1em]
+\end{center}
 
-    % Malla 2
-    (4,4) to[R, l_={$R_3 = 5 \ \Omega$}, v^={}] (8,4)  
-    to[R, l_={$R_4 = 15 \ \Omega$}, v^={}] (8,0)  
-    to[R, l_={$R_5 = 10 \ \Omega$}, v^={}] (4,0)  
-  
-    ;
-\end{circuitikz}
+\vspace{0.5cm}
+\noindent
+\large\textbf{Tema:} Circuitos resistivos\\
+\large\textbf{Estudiante:} Ariel Alejandro Calderón
+\vspace{0.5cm}
+
+\begin{questions}
+	\question \large\textbf{En los siguientes circuitos eléctricos encontrar: }
+
+	\begin{parts}
+		\part La corriente eléctrica en todas las ramas del circuito.
+		\part La diferencia de potencial entre los puntos a y b.
+		\part La potencia que disipa la resistencia $R_3$.
+		\part La potencia que entrega cada fuente.
+	\end{parts}
+
+	\section*{Circuito 1}
+
+	\begin{center}
+
+		\begin{circuitikz}
+
+			\draw
+			(0,0) to[V, v={$110V$}] (0,4)  % 
+			to[R, l_={$R_1 = 10 \ \Omega$}, v^={}] (4,4)
+			to[R, l_={$R_2 = 15 \ \Omega$}, v^={}] (4,0)
+			to[R, l_={$R_3 = 10 \ \Omega$}, v^={}] (0,0)
+
+			% Malla 2
+			(4,4) to[R, l_={$R_4 = 15 \ \Omega$}, v^={}] (8,4)
+			to[R, l_={$R_5 = 5 \ \Omega$}, v^={}] (8,0)
+			to[R, l_={$R_6 = 20 \ \Omega$}, v^={}] (4,0)
+
+			;
+		\end{circuitikz}
+	\end{center}
+
+
+
+	\textbf{Análisis de Mallas}
+
+	\[
+		\text{Malla 1:} \quad 110 - 10 I_1 - 10 (I_1 - I_2) - 15 I_1 = 0
+	\]
+	\[
+		110 - 10 I_1 - 10 I_1 + 10 I_2 - 15 I_1 = 0
+	\]
+	\[
+		- 35 I_1 + 10 I_2 = - 110
+	\]
+
+	\[
+		\text{Malla 2:} \quad -10 (I_1 - I_2) - 15 I_2 - 5 I_2 - 20 I_2 = 0
+	\]
+	\[
+		-10 I_1 + 10 I_2 - 15 I_2 - 5 I_2 - 20 I_2 = 0
+	\]
+	\[
+		-10 I_1 - 50 I_2 = 0 \implies I_1 = 5 I_2
+	\]
+
+	\[
+		\text{Reemplazo:} \quad - 35 ( 5 I_2 )+ 10 I_2 = - 110
+	\]
+	\[
+		I_2 = \dfrac{-110}{-165} \implies \boxed{I_2 = \dfrac{2}{3} \text{ A} ; I_1 = \dfrac{10}{3} \text{ A}}
+	\]
+
+	\newpage
+	\begin{parts}
+		\part \textbf{Corrientes de rama}
+		\begin{enumerate}[label=•]
+			\item $ i_1 = I_1 = \dfrac{2}{3} \text{ A}$
+			\item $ i_2 = I_1 - I_2 =  \dfrac{8}{3} \text{ A}$
+			\item $ i_3 = I_2 = \dfrac{10}{3} \text{ A}$
+		\end{enumerate}
+		\part \textbf{Diferencia de potencia entre a y b}
+		\[
+			V_{ab}= V_{R_3} = i_2 * R_3 = \dfrac{80}{3} \text{ V}
+		\]
+		\part \textbf{Potencia disipada por $R_3$}
+
+		\[
+			\boxed{P = I^2 R }
+		\]
+		\[
+			P_{R_3} = (i_2)^2 \times R_3 = 71.10 \text{ W}
+		\]
+
+
+
+		\part \textbf{Potencia que entrega cada fuente}
+
+		\[
+			\boxed{P=I*R}
+		\]
+
+		\[
+			P_1 = i_1 * V_1 = 366.6\text{ W}
+		\]
+
+	\end{parts}
+
+	\vspace{0.5cm}
+	\section*{Circuito 2}
+
+	\begin{center}
+
+		\begin{circuitikz}
+
+			\draw
+			(0,0) to[V, v={$V_1 = 100V$}] (0,4)  % 
+			to[R, l_={$R_1 = 10 \ \Omega$}, v^={}] (4,4)
+			to[R, l_={$R_2 = 10 \ \Omega$}, v^={}] (4,0)
+			to[R, l_={$R_4 = 10 \ \Omega$}, v^={}] (0,0)
+
+			% Malla 2
+			(4,4) to[R, l_={$R_2 = 10 \ \Omega$}, v^={}] (8,4)
+			to[V, v={$V_2 = 60 V$}] (8,0)
+			to[R, l_={$R_5 = 10 \ \Omega$}, v^={}] (4,0)
+			;
+
+		\end{circuitikz}
+	\end{center}
+
+
+
+	\textbf{Análisis de Mallas}
+
+	\[
+		\text{Malla 1:} \quad 110 - 10 I_1 - 10 (I_1 - I_2) - 10 I_1 = 0
+	\]
+	\[
+		110 - 10 I_1 - 10 I_1 + 10 I_2 - 10 I_1 = 0
+	\]
+	\[
+		- 30 I_1 + 10 I_2 = - 110
+	\]
+
+	\[
+		\text{Malla 2:} \quad -10 (I_2 - I_1) - 10 I_2 - 10 I_2 - 10 I_2 + 60= 0
+	\]
+	\[
+		10 I_1  - 10 I_2 - 10 I_2 - 10 I_2 = -60
+	\]
+	\[
+		10 I_1 - 30 I_2 = -60 \implies I_1 = 3I_2 - 6
+	\]
+	\[
+		-30(3I_2-6)+10I_2 = -100 \implies -90I_2 +180 + 10I_2=-100
+	\]
+	\[
+		-80I_2 = -280 \implies \boxed{I_2= 3.5 \text{ A}; I_1 = 4.5 \text{ A}}
+	\]
+
+
+	\begin{parts}
+		\part \textbf{Corrientes de rama}
+		\begin{enumerate}[label=•]
+			\item $ i_1 = I_1 = 4.5 \text{ A}$
+			\item $ i_2 = I_1 - I_2 =  1\text{ A}$
+			\item $ i_3 = I_2 = 3.5 \text{ A}$
+		\end{enumerate}
+		\part \textbf{Diferencia de potencia entre a y b}
+		\[
+			V_{ab}= V_{R_3} = i_2 * R_3 = 10 \text{ V}
+		\]
+		\part \textbf{Potencia disipada por $R_3$}
+
+		\[
+			\boxed{P = I^2 R }
+		\]
+		\[
+			P_{R_3} = (i_2)^2 \times R_3 = 10 \text{ W}
+		\]
+
+
+
+		\part \textbf{Potencia que entrega cada fuente}
+
+		\[
+			\boxed{P=I*R}
+		\]
+
+		\[
+			P_1 = i_1 * V_1 = 450\text{ W}
+		\]
+		\[
+			P_2 = i_3 * V_2 = 210\text{ W}
+		\]
+
+	\end{parts}
+
+	\vspace{0.5cm}
+	\section*{Circuito 3}
+
+	\begin{center}
+
+		\begin{circuitikz}
+
+			\draw
+			(0,0) to[V, v={$V_1 = 100V$}] (0,5)  % 
+			to[R, l_={$R_1 = 20 \ \Omega$}, v^={}] (5,5)
+			(5,2.4) to[V, v={$V_2 = 120 V$}] (5,5)
+			(5,2.4) to[R, l_={$R_3 = 10 \ \Omega$}, v^={}] (5,0)
+			to[R, l_={$R_4 = 10 \ \Omega$}, v^={}] (0,0)
+
+			% Malla 2
+			(5,5) to[R, l_={$R_2 = 10 \ \Omega$}, v^={}] (10,5)
+			(10,0)to[V, v={$V_3 = 100 V$}] (10,5)
+			(10,0)to[R, l_={$R_5 = 20 \ \Omega$}, v^={}] (5,0)
+			;
+
+		\end{circuitikz}
+	\end{center}
+
+
+
+	\textbf{Análisis de Mallas}
+
+	\[
+		\text{Malla 1:} \quad 100 - 20 I_1 - 10 I_1 - 10 (I_1 - I_2) - 120 = 0
+	\]
+	\[
+		-40 I_1 + 10 I_2 = 20 
+	\]
+
+	\[
+		\text{Malla 2:} \quad -120 + 10 I_2 + 10 I_2 + 20 (I_2 - I_1) - 100 = 0
+	\]
+	\[
+		-20 I_1 + 40 I_2 = 220 
+	\]
+	\newpage
+
+	\[
+		-80 I_1 + 20 I_2 = 40 
+	\]
+
+	\[
+		(-80 I_1 + 20 I_2) - (-20 I_1 + 40 I_2) = 40 - 220
+	\]
+	\[
+		-60 I_1 - 20 I_2 = -180
+	\]
+	\[
+		3 I_1 + I_2 = 9 
+	\]
+
+	\[
+		-40 I_1 + 10 (9 - 3 I_1) = 20
+	\]
+	\[
+		\boxed{I_1 = 1 \, \text{A}, \quad I_2 = 6 \, \text{A}}
+	\]
+
+	\begin{parts}
+		\part \textbf{Corrientes de rama}
+		\begin{enumerate}[label=•]
+			\item $ i_1 = I_1 =  1 \, \text{A}$
+			\item $ i_2 = I_1 - I_2 = -5 \text{ A}$
+			\item $ i_3 = I_2 = 6 \text{ A}$
+		\end{enumerate}
+		\part \textbf{Diferencia de potencia entre a y b}
+		\[
+			V_{ab}= V_2 + V_{R_3} =V_2 + i_2 * R_3 = 70 \text{ V}
+		\]
+		\part \textbf{Potencia disipada por $R_3$}
+
+		\[
+			\boxed{P = I^2 R }
+		\]
+		\[
+			P_{R_3} = (i_2)^2 \times R_3 = 250 \text{ W}
+		\]
+
+
+
+		\part \textbf{Potencia que entrega cada fuente}
+
+		\[
+			\boxed{P=I*R}
+		\]
+
+		\[
+			P_1 = i_1 * V_1 = 100\text{ W}
+		\]
+		\[
+			P_2 = |i_2| * V_2 = 600\text{ W}
+		\]
+		\[
+			P_3 = i_3 * V_3 = 600\text{ W}
+		\]
+
+	\end{parts}
+
+	\vspace{0.5cm}
+
+
+\end{questions}
 
 \end{document}
+
+
+
+% \section*{Cálculo de la potencia disipada por cada resistencia}
+
+% La potencia disipada en cada resistencia se calcula con la fórmula \( P = I^2 R \).
+
+
+
+% \section*{Verificación de la conservación de energía}
+
+% La potencia total generada por las fuentes es:
+
+% \[
+% P_{\text{total}} = 100 \times 1 + 120 \times 5 + 100 \times 6 = 1300 \, \text{W}
+% \]
+
+% La potencia total disipada es:
+
+% \[
+% P_{\text{disipada}} = 20 + 360 + 490 + 250 + 500 = 1620 \, \text{W}
+% \]

@@ -3,3 +3,10 @@ Imprime el codigo latex de la seccion RESPUESTA para cada uno de los ejercicios 
 
 Diagramas esquematicos:
 ¡Claro! Ahora te proporcionaré un diagrama más esquemático que muestre las relaciones entre las variables mencionadas: longitud del alambre, radio del cilindro, radio del alambre, etc. Esta representación no incluirá espiras detalladas, pero sí los parámetros clave del problema, como el radio del cilindro, la longitud del alambre, el radio del alambre y la resistividad.
+
+Describir circuitos:
+Tengo un circuito resistivo compuesto por dos mallas. En la malla 1 está: V1, R1, V2, R3, R4. En la segunda malla está: R3, V2, R2, V3, R5.
+Los valores de las resistencias en orden son: 20, 10, 10, 10, 20. Los valores de los voltajes en orden son 100, 120, 100.
+Como observacion, 3 fuentes estan conectadas en paralelo.
+Calcular la potencia disipada por cada resistencia.
+
