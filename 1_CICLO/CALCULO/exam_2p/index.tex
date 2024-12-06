@@ -1,0 +1,344 @@
+\documentclass[answers]{exam}
+\usepackage[english]{babel}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} 
+\usepackage{array}  
+\renewcommand{\arraystretch}{1.5} 
+\renewcommand{\solutiontitle}{\noindent\textbf{Respuesta:}\par\noindent} %
+\renewcommand{\familydefault}{\sfdefault}
+
+% Header and footer
+\pagestyle{headandfoot}
+\firstpageheader{Universidad de Bolívar}{}{\today}
+\runningheader{Universidad de Bolívar}{}{\thepage}
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+
+\begin{document}
+
+\begin{center}
+	\Large\textbf{Corrección del Examen II}\\[1em]
+	\large\textbf{Cálculo I}\\[1em]
+	\large Primer Ciclo "A" - Ingeniería de Software\\[1em]
+	% \large \today
+\end{center}
+
+
+\begin{questions}
+
+	\question \large\textbf{Determinar si la  función \(f(x) =
+		\begin{cases}
+			3x-5,                    & \text{si } x \le 1 \\[1em]
+			\dfrac{x^2-1}{x^2-3x+2}, & \text{si } x > 1
+		\end{cases}\) es continua en $x=1$}
+
+	\vspace{0.5cm}
+
+	Evaluamos las tres condiciones de continuidad:\\
+
+	(I). \textbf{Existencia de \( f(1) \):  }
+	Dado que \( x = 1 \) pertenece al dominio de la primera rama, evaluamos:
+	\[
+		f(1) = 3(1) - 5 = -2.
+	\]
+
+	(II). \textbf{Existencia del límite cuando \( x \to 1 \):  }
+	Evaluamos el límite lateral izquierdo y derecho:\\
+
+	- Límite cuando \( x \to 1^- \) (usando la primera rama):
+	\[
+		\lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} (3x - 5) = 3(1) - 5 = -2.
+	\]
+	- Límite cuando \( x \to 1^+ \) (usando la segunda rama):
+	\[
+		\lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} \dfrac{x^2 - 1}{x^2 - 3x + 2}.
+	\]
+	\[
+		\dfrac{x^2 - 1}{x^2 - 3x + 2} =  \dfrac{(x - 1)(x + 1)}{(x - 1)(x - 2)}=  \dfrac{x + 1}{x - 2}
+	\]
+
+	\[
+		\lim_{x \to 1^+} \dfrac{x + 1}{x - 2} = \dfrac{1 + 1}{1 - 2} = \dfrac{2}{-1} = -2.
+	\]
+
+	Dado que:
+	\[ \lim_{x \to 1^-} f(x) = \lim_{x \to 1^+} f(x) = -2 \]
+
+	$\implies$ Entonces el límite existe y es igual a \(-2\).\\
+
+	(III). \textbf{Igualdad entre \( f(1) \) y \( \lim_{x \to 1} f(x) \):  }
+	\[
+		f(1) = -2 \quad \text{y} \quad \lim_{x \to 1} f(x) = -2.
+	\]
+
+	$\implies$ Dado que las tres condiciones de continuidad se satisfacen, entonces \textbf{\( f(x) \) es continua en \( x = 1 \)}.
+	\newpage
+
+	\question \large\textbf{Escribir las derivadasde las siguientes funciones:}
+
+	\begin{parts}
+		\part Para \( y = ax^n \), donde \( a \) es constante y \( n \in \mathbb{N} \):
+		\[
+			y' = a n x^{n-1}.
+		\]
+
+		\part Para \( y = \dfrac{a}{x} \), donde \( a \) es constante:
+		\[
+			y' = -\dfrac{a}{x^2}.
+		\]
+
+		\part Para \( y = a \cos(x) \), donde \( a \) es constante:
+		\[
+			y' = -a \sin(x).
+		\]
+
+		\part Para \( y = a b^x \), donde \( a \) y \( b \) son constantes y \( b > 1 \):
+		\[
+			y' = a b^x \ln(b).
+		\]
+
+		\part Para \( y = a \sin^{-1}(x) \), donde \( a \) es constante:
+		\[
+			y' = \dfrac{a}{\sqrt{1-x^2}}.
+		\]
+
+		\part Para \( y = \sin(x) \cos(x) \):
+		Usamos el producto de funciones:
+		\[
+			y' = \cos^2(x) - \sin^2(x).
+		\]
+
+		\part Para \( y = \dfrac{\sin(x)}{\tan(x)} \):
+		Simplificamos primero: \( \tan(x) = \dfrac{\sin(x)}{\cos(x)} \), entonces:
+		\[
+			y = \dfrac{\sin(x)}{\dfrac{\sin(x)}{\cos(x)}} = \cos(x).
+		\]
+		Por lo tanto:
+		\[
+			y' = -\sin(x).
+		\]
+
+		\part Para \( y = (\ln(a)) \log_a(x) \), donde \( a > 3 \):
+		Usamos \( \log_a(x) = \dfrac{\ln(x)}{\ln(a)} \):
+		\[
+			y = \ln(a) \cdot \dfrac{\ln(x)}{\ln(a)} = \ln(x).
+		\]
+		Derivamos:
+		\[
+			y' = \dfrac{1}{x}.
+		\]
+	\end{parts}
+
+	\newpage
+
+	\question \large\textbf{Encontrar la derivada de las siguientes funciones:}
+
+
+	\begin{parts}
+		\part Para \( y = 2x^{-2} + 3e^2 - 2\ln(2x) \): \\
+
+		Derivamos cada término:
+		\[
+			y' = \dfrac{d}{dx}\left( 2x^{-2} \right) + \dfrac{d}{dx}\left( 3e^2 \right) - \dfrac{d}{dx}\left( 2\ln(2x) \right).
+		\]
+		- Derivada del primer término:
+		\[
+			\dfrac{d}{dx}\left( 2x^{-2} \right) = -4x^{-3}.
+		\]
+		- Derivada del segundo término (\( 3e^2 \) es constante):
+		\[
+			\dfrac{d}{dx}\left( 3e^2 \right) = 0.
+		\]
+		- Derivada del tercer término (aplicamos regla de la cadena):
+		\[
+			\dfrac{d}{dx}\left( 2\ln(2x) \right) = 2 \cdot \dfrac{1}{2x} \cdot 2 = \dfrac{2}{x}.
+		\]
+		Entonces:
+		\[
+			y' = -4x^{-3} - \dfrac{2}{x}.
+		\]
+
+		\part Para \( y = \sqrt{\dfrac{2-x}{2+x}} \): \\
+
+		Reescribimos la función como:
+		\[
+			y = \left( \dfrac{2-x}{2+x} \right)^{1/2}.
+		\]
+		Derivamos usando la regla de la cadena y la regla del cociente:
+
+		\[
+			y' = \dfrac{1}{2} \left( \dfrac{2-x}{2+x} \right)^{-1/2} \cdot \dfrac{d}{dx}\left( \dfrac{2-x}{2+x} \right).
+		\]
+
+		Calculamos la derivada del cociente :
+
+		\[
+			\dfrac{d}{dx}\left( \dfrac{2-x}{2+x} \right) = \dfrac{(2+x)(-1) - (2-x)(1)}{(2+x)^2} = \dfrac{-2 - x - 2 + x}{(2+x)^2} = \dfrac{-4}{(2+x)^2}.
+		\]
+
+		\[
+			y' = \dfrac{1}{2} \left( \dfrac{2-x}{2+x} \right)^{-1/2} \cdot \dfrac{-4}{(2+x)^2}.
+		\]
+
+		\[
+			y' = -\dfrac{2}{(2+x)^2 \sqrt{\dfrac{2-x}{2+x}}}.
+		\]
+
+		\[
+			y' = -\dfrac{2 \sqrt{2+x}}{(2+x)^2 \sqrt{2-x}}.
+		\]
+	\end{parts}
+
+
+
+	\question \large\textbf{Resolver:}
+	\begin{parts}
+		\part Encontrar $y'$ en la siguiente ecuación: $x-(y+1)^2=2xy$
+		\part Encontrar la tercera derivada de $y=xe^{-x}$
+	\end{parts}
+
+
+
+	\begin{parts}
+		\part Encontrar \( y' \) en la ecuación \( x - (y+1)^2 = 2xy \):\\
+
+		Derivamos implícitamente con respecto a \( x \):
+		\[
+			\frac{d}{dx}\left( x \right) - \frac{d}{dx}\left( (y+1)^2 \right) = \frac{d}{dx}\left( 2xy \right).
+		\]
+		- Derivada del primer término:
+		\[
+			\frac{d}{dx}(x) = 1.
+		\]
+		- Derivada del segundo término (regla de la cadena):
+		\[
+			\frac{d}{dx}((y+1)^2) = 2(y+1)y'.
+		\]
+		- Derivada del tercer término (regla del producto):
+		\[
+			\frac{d}{dx}(2xy) = 2\left( y + xy' \right).
+		\]
+		Sustituimos:
+		\[
+			1 - 2(y+1)y' = 2y + 2xy'.
+		\]
+		Despejar \( y' \):
+		\[
+			1 - 2y - 2(y+1)y' = 2xy'.
+		\]
+		\[
+			1 - 2y = 2xy' + 2(y+1)y'.
+		\]
+		\[
+			1 - 2y = y'(2x + 2y + 2).
+		\]
+		\[
+			y' = \frac{1 - 2y}{2x + 2y + 2}.
+		\]
+
+		\part Encontrar la tercera derivada de \( y = xe^{-x} \):\\
+
+		Derivamos sucesivamente:
+		- Primera derivada:
+		\[
+			y' = \frac{d}{dx}(xe^{-x}) = e^{-x} - xe^{-x}.
+		\]
+		- Segunda derivada:
+		\[
+			y'' = \frac{d}{dx}\left( e^{-x} - xe^{-x} \right) = -e^{-x} - (e^{-x} - xe^{-x}) = -2e^{-x} + xe^{-x}.
+		\]
+		- Tercera derivada:
+		\[
+			y''' = \frac{d}{dx}\left( -2e^{-x} + xe^{-x} \right) = 2e^{-x} + (e^{-x} - xe^{-x}).
+		\]
+		Simplificamos:
+		\[
+			y''' = 3e^{-x} - xe^{-x}.
+		\]
+	\end{parts}
+
+
+	\newpage
+	\question \large\textbf{La posicion en funcion del tiempo (distancia - tiempo) de un movil viene dado como: $x=-5t+10\sin(2t)$, donde $x$ esta en metros y $t$ esta en segundos.}
+	\begin{parts}
+		\part {Encuentre las ecuaciones de la velocidad(rapidez) y de la aceleracion.}
+		\part {Encuentre la posicion, velocidad y aceleracion para los tiempos $t=0$ y $t=5$ segundos.}
+	\end{parts}
+
+
+	\begin{parts}
+		\part Encuentre las ecuaciones de la velocidad (rapidez) y de la aceleración:
+		La posición en función del tiempo está dada por:
+		\[
+			x(t) = -5t + 10\sin(2t).
+		\]
+		- La velocidad es la derivada de la posición con respecto al tiempo:
+		\[
+			v(t) = \frac{dx}{dt} = \frac{d}{dt} \left( -5t + 10\sin(2t) \right).
+		\]
+		Derivamos:
+		\[
+			v(t) = -5 + 10\cdot 2\cos(2t) = -5 + 20\cos(2t).
+		\]
+		- La aceleración es la derivada de la velocidad con respecto al tiempo:
+		\[
+			a(t) = \frac{dv}{dt} = \frac{d}{dt} \left( -5 + 20\cos(2t) \right).
+		\]
+		Derivamos:
+		\[
+			a(t) = -20 \cdot 2\sin(2t) = -40\sin(2t).
+		\]
+
+		\part Encuentre la posición, velocidad y aceleración para los tiempos \( t = 0 \) y \( t = 5 \) segundos:\\
+
+		Sustituimos \( t = 0 \) y \( t = 5 \) en las ecuaciones:
+
+		- Para \( t = 0 \):
+		\[
+			x(0) = -5(0) + 10\sin(2(0)) = 0,
+		\]
+		\[
+			v(0) = -5 + 20\cos(2(0)) = -5 + 20(1) = 15,
+		\]
+		\[
+			a(0) = -40\sin(2(0)) = -40(0) = 0.
+		\]
+
+		- Para \( t = 5 \):
+		\[
+			x(5) = -5(5) + 10\sin(2(5)) = -25 + 10\sin(10).
+		\]
+		\newpage
+		Aproximamos \( \sin(10) \) usando radianes:
+		\[
+			x(5) \approx -25 + 10(-0.544) = -25 - 5.44 = -30.44.
+		\]
+		\[
+			v(5) = -5 + 20\cos(10).
+		\]
+		Aproximamos \( \cos(10) \):
+		\[
+			v(5) \approx -5 + 20(-0.839) = -5 - 16.78 = -21.78.
+		\]
+		\[
+			a(5) = -40\sin(10).
+		\]
+		Usando \( \sin(10) \approx -0.544 \):
+		\[
+			a(5) \approx -40(-0.544) = 21.76.
+		\]
+
+		Resultados:
+		\begin{itemize}
+			\item Para \( t = 0 \): \( x = 0 \), \( v = 15 \), \( a = 0 \).
+			\item Para \( t = 5 \): \( x \approx -30.44 \), \( v \approx -21.78 \), \( a \approx 21.76 \).
+		\end{itemize}
+	\end{parts}
+
+
+
+\end{questions}
+
+\end{document}
