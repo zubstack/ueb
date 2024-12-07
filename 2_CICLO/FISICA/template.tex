@@ -1,16 +1,11 @@
-\documentclass[answers]{exam} % Clase para exámenes con respuestas
+\documentclass[answers]{exam} 
 \usepackage[english,spanish]{babel} % Soporte para inglés y español
-\usepackage[autostyle]{csquotes} % Manejo de citas
-\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
-\usepackage{graphicx} % Inclusión de gráficos
-\usepackage{enumitem} % Personalización de listas enumeradas
-\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} % Configuración de márgenes
-\usepackage[colorlinks=true, allcolors=blue]{hyperref} % Enlaces con color
-
+\usepackage[autostyle]{csquotes} 
+\usepackage{graphicx}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} 
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} 
 \usepackage{array}   % for adjusting row height
 \renewcommand{\arraystretch}{1.5} % adjust the vertical spacing between rows
-
-\renewcommand{\solutiontitle}{\noindent\textbf{Respuesta:}\par\noindent} % Personalización del título de respuestas
 \renewcommand{\familydefault}{\sfdefault}
 
 % Configuración de encabezado y pie de página
@@ -20,42 +15,30 @@
 \firstpagefooter{}{\thepage}{}
 \runningfooter{}{\thepage}{}
 
+% Documento
 \begin{document}
 
+% Encabezado principal
 \begin{center}
-    \large\textbf{Trabajo Autónomo ? - Fundamentos de Física para Ingeniería}\\[1em]
-    \large Segundo Ciclo \enquote*{A} - Ingeniería de Software\\[1em]
+	\large\textbf{Trabajo Autónomo ? - Fundamentos de Física para Ingeniería}\\[1em]
+	\large Segundo Ciclo \enquote*{A} - Ingeniería de Software\\[1em]
 \end{center}
-
 \vspace{0.5cm}
 \noindent
 \large\textbf{Tema:} tema \\
 \large\textbf{Estudiante:} Ariel Alejandro Calderón
 \vspace{0.5cm}
 
+
 \begin{questions}
 
-    % Question 1
-    \question \large\textbf{Presentar una tabla con las fórmulas de las derivadas de las funciones básicas:}
+	\question \large\textbf{Descripcion del ejercicio:}
+	\begin{parts}
+		\part Tarea 1
+		\part Tarea 2
+	\end{parts}
 
+	\vspace{0.5cm}
 
-    \vspace{0.5cm}
-
-    % Question 2
-    \question \large\textbf{Resolver los siguientes ejercicios de derivadas: }
-
-    \begin{enumerate}[label=\alph*.]
-        \item $\displaystyle f(x)=(\sin(x) + x)^2$
-              \[
-                  f'(x) = 2(\sin(x) + x)(\cos(x) + 1)
-              \]
-
-        \item $\displaystyle f(x)=\log(x^2 + 2x^4)$
-              \[
-                  f'(x) = \frac{1}{x^2 + 2x^4} \cdot (2x + 8x^3) = \frac{2x(1 + 4x^2)}{x^2 + 2x^4}
-              \] 
-    \end{enumerate}
-    \vspace{0.5cm}
 \end{questions}
-
 \end{document}
