@@ -1,4 +1,5 @@
-Imprime el codigo latex de la seccion RESPUESTA para cada uno de los ejercicios segun los nombre. Solo imprime la seccion RESPUESTA. Empecemos solo por la pregunta 1:
+Respuestas de preguntas:
+Please provide the latex code corresponding to the solution of the first question:
 ###
 
 Diagramas esquematicos:
