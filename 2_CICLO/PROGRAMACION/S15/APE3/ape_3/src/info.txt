@@ -1,0 +1,139 @@
+import java.util.ArrayList;
+
+public class Biblioteca {
+    private String nombre;
+    private String direccion;
+    private ArrayList<Libro> libros;
+    private ArrayList<Usuario> usuarios;
+    ArrayList<Prestamo> prestamos;
+
+    public Biblioteca(String nombre, String direccion) {
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.libros = new ArrayList<>();
+        this.usuarios = new ArrayList<>();
+        this.prestamos = new ArrayList<>();
+    }
+
+    public void agregarLibro(Libro libro) {
+        libros.add(libro);
+    }
+
+    public void agregarUsuario(Usuario usuario) {
+        usuarios.add(usuario);
+    }
+
+    public Libro consultarLibro(String ISBN) {
+        for (Libro libro : libros) {
+            if (libro.toString().contains(ISBN)) {
+                return libro;
+            }
+        }
+        return null;
+    }
+
+    public Usuario consultarUsuario(String idUsuario) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getIdUsuario().equals(idUsuario)) {
+                return usuario;
+            }
+        }
+        return null;
+    }
+
+    public void realizarPrestamo(Libro libro, Usuario usuario) {
+        if (libro.consultarDisponibilidad()) {
+            Prestamo prestamo = new Prestamo(libro, usuario);
+            prestamos.add(prestamo);
+            System.out.println("Préstamo realizado: " + prestamo);
+        } else {
+            System.out.println("El libro no está disponible para préstamo.");
+        }
+    }
+
+    public void devolverLibro(Prestamo prestamo) {
+        prestamo.finalizarPrestamo();
+        System.out.println("Préstamo finalizado: " + prestamo);
+    }
+}
+public class Libro {
+    private String titulo;
+    private String autor;
+    private String ISBN;
+    private int anoPublicacion;
+    private boolean estado; // true si está disponible, false si está prestado
+
+    public Libro(String titulo, String autor, String ISBN, int anoPublicacion) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.ISBN = ISBN;
+        this.anoPublicacion = anoPublicacion;
+        this.estado = true; // por defecto está disponible
+    }
+
+    public boolean consultarDisponibilidad() {
+        return estado;
+    }
+
+    public void actualizarEstado() {
+        this.estado = !estado;
+    }
+
+    @Override
+    public String toString() {
+        return "Libro: " + titulo + ", Autor: " + autor + ", ISBN: " + ISBN;
+    }
+}
+import java.util.Date;
+
+public class Prestamo {
+    private Libro libro;
+    private Usuario usuario;
+    private Date fechaInicio;
+    private Date fechaFin;
+    private boolean estado; // true si está activo, false si ya se devolvió
+
+    public Prestamo(Libro libro, Usuario usuario) {
+        this.libro = libro;
+        this.usuario = usuario;
+        this.fechaInicio = new Date(); // fecha actual
+        this.estado = true;
+        libro.actualizarEstado(); // el libro pasa a estar prestado
+    }
+
+    public void finalizarPrestamo() {
+        this.fechaFin = new Date(); // fecha de devolución
+        this.estado = false;
+        libro.actualizarEstado(); // el libro pasa a estar disponible
+    }
+
+    @Override
+    public String toString() {
+        return "Préstamo de " + libro.toString() + " a " + usuario.toString() +
+                " desde " + fechaInicio + " hasta " + (estado ? "en curso" : fechaFin);
+    }
+}
+public class Usuario {
+    private String nombre;
+    private String idUsuario;
+    private String direccion;
+    private String telefono;
+    private String email;
+
+    public Usuario(String nombre, String idUsuario, String direccion, String telefono, String email) {
+        this.nombre = nombre;
+        this.idUsuario = idUsuario;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.email = email;
+    }
+
+    public String getIdUsuario() {
+        return idUsuario;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario: " + nombre + ", ID: " + idUsuario;
+    }
+}
