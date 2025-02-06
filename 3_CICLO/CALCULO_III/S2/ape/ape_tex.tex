@@ -1,0 +1,330 @@
+\documentclass[answers]{exam} 
+\usepackage[english,spanish]{babel} % Soporte para inglés y español
+\usepackage[autostyle]{csquotes} 
+\usepackage{graphicx}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry} 
+\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} 
+\usepackage{array}   % for adjusting row height
+\renewcommand{\arraystretch}{1.5} % adjust the vertical spacing between rows
+\renewcommand{\familydefault}{\sfdefault}
+
+\edef\svparindent{\the\parindent}
+\newenvironment{specindent}
+  {\par\everypar{\leftskip=\svparindent\relax}\parindent=0pt\relax\parskip=1ex}
+  {\vspace{\parskip}\par}
+
+% Configuración de encabezado y pie de página
+% \pagestyle{headandfoot}
+% \firstpageheader{Universidad de Bolívar}{}{fecha} 
+% \runningheader{Universidad de Bolívar}{}{Cálculo III}
+% \firstpagefooter{}{\thepage}{}
+\runningfooter{}{}{}
+
+% Documento
+\begin{document}
+
+% % Encabezado principal
+% \begin{center}
+% 	\large\textbf{Trabajo Autónomo ? - Cálculo III}\\[1em]
+% 	\large Tercer Ciclo A - Ingeniería de Software\\[1em]
+% \end{center}
+% \vspace{0.5cm}
+% \noindent
+% \large\textbf{Tema:} tema \\
+% \large\textbf{Estudiante:} Ariel Alejandro Calderón
+% \vspace{0.5cm}
+
+
+\section*{Problema 1}
+
+\specindent{Una partícula P se mueve a lo largo del eje x de tal manera que su aceleración en cualquier tiempo $t \ge 0$, está dada por $a = 8 - 12 t$.}
+\begin{parts}
+
+	\part Encuentre la posición x de la partícula, medida del origen 0 a cualquier tiempo t > 0, asumiendo que inicialmente está localizada en x = 2 y está viajando a una velocidad $V = -2$.
+	\part Resuelva a) si solo se sabe que la partícula está
+	localizada inicialmente en x = 2 y en x = 7, cuando t = 1.
+
+\end{parts}
+\vspace{0.5em}
+
+
+\textbf{1. Analizar y comprender el problema presentado}
+
+La partícula \( P \) se mueve a lo largo del eje \( x \) con una aceleración dependiente del tiempo:
+
+\[
+	a(t) = 8 - 12t
+\]
+
+
+\vspace{0.3cm}
+\textbf{2. Revisar o investigar las leyes físicas que presenta el problema}
+
+Sabemos que la aceleración es la derivada de la velocidad respecto al tiempo:
+
+\[
+	a(t) = \frac{dv}{dt}
+\]
+
+Asimismo, la velocidad es la derivada de la posición respecto al tiempo:
+
+\[
+	v(t) = \frac{dx}{dt}
+\]
+
+Para encontrar la posición \( x(t) \), integramos sucesivamente la aceleración.
+
+\vspace{0.3cm}
+\textbf{3. Modelar el problema como una ecuación diferencial con valores iniciales}
+
+Dado que \( a(t) = \dfrac{dv}{dt} \), la ecuación diferencial a resolver es:
+
+\[
+	\frac{dv}{dt} = 8 - 12t
+\]
+
+Con la condición inicial \( v(0) = -2 \).
+
+Luego, como \( v(t) = \dfrac{dx}{dt} \), obtenemos la ecuación:
+
+\[
+	\frac{dx}{dt} = v(t)
+\]
+
+Con la condición inicial \( x(0) = 2 \).
+
+\vspace{0.3cm}
+\textbf{4. Encontrar la solución general de la ecuación diferencial}
+
+Para la ecuación de aceleración:
+
+\[
+	\int dv = \int (8 - 12t) dt
+\]
+
+\[
+	v(t) = 8t - 6t^2 + C_1
+\]
+
+Para la ecuación de velocidad:
+
+\[
+	\int dx = \int (8t - 6t^2 + C_1) dt
+\]
+
+\[
+	x(t) = 4t^2 - 2t^3 + C_1 t + C_2
+\]
+
+\newpage
+\textbf{5. Encontrar la solución específica}
+
+Usamos las condiciones iniciales:\\
+
+1. \( v(0) = -2 \Rightarrow 8(0) - 6(0)^2 + C_1 = -2 \Rightarrow C_1 = -2 \)\\
+
+2. \( x(0) = 2 \Rightarrow 4(0)^2 - 2(0)^3 -2(0) + C_2 = 2 \Rightarrow C_2 = 2 \)\\
+
+Sustituyendo en la ecuación de posición:
+
+\[
+	x(t) = 4t^2 - 2t^3 - 2t + 2
+\]
+
+
+\textbf{6. Encontrar la solución del problema real}
+
+\[
+	x(t) = 4t^2 - 2t^3 - 2t + 2
+\]
+
+Para la segunda parte del problema, donde se da que \( x(0) = 2 \) y \( x(1) = 7 \):
+
+\[
+	4(1)^2 - 2(1)^3 - 2(1) + C_2 = 7
+\]
+
+Resolviendo para \( C_2 \):
+
+\[
+	4 - 2 - 2 + C_2 = 7 \implies C_2 = 7
+\]
+
+Por lo que la nueva ecuación de posición es:
+
+\[
+	x(t) = 4t^2 - 2t^3 - 2t + 7
+\]
+
+\textbf{Literal b)}: El problema enuncia que "la partícula está localizada inicialmente en x = 2 y en x = 7, cuando t = 1" lo cual es \textbf{imposible}, ya que un cuerpo no puede hallarse en dos posiciones distintas a la vez.
+
+\section*{Problema 2}
+
+Una partícula se mueve a lo largo del eje x, de tal manera que su velocidad es proporcional
+al producto de su posición instantánea x (medida de x = 0) y el tiempo t (medido de t = 0). Si
+la partícula está localizada en $x = 25 m$ cuando t = 0 seg. y $x = 12 m$ cuando t = 1seg, ¿dónde
+estará cuando t=2?
+
+
+\vspace{1em}
+\textbf{1. Analizar y comprender el problema presentado}
+
+La partícula se mueve a lo largo del eje \( x \), y su velocidad \( v \) es proporcional al producto de su posición instantánea \( x \) y el tiempo \( t \):
+
+\[
+	v = k x t
+\]
+
+donde \( k \) es una constante de proporcionalidad.
+
+Las condiciones iniciales son:\\
+- \( x(0) = 25 \) m\\
+- \( x(1) = 12 \) m
+
+Nos piden encontrar \( x(2) \).
+
+\newpage
+
+\textbf{2. Revisar o investigar las leyes físicas que presenta el problema}
+
+Sabemos que la velocidad es la derivada de la posición con respecto al tiempo:
+
+\[
+	v = \frac{dx}{dt}
+\]
+
+Sustituyendo la relación dada en el problema:
+
+\[
+	\frac{dx}{dt} = k x t
+\]
+
+Esta es una ecuación diferencial separable.
+
+\vspace{0.3cm}
+\textbf{3. Modelar el problema como una ecuación diferencial con valores iniciales}
+
+La ecuación diferencial a resolver es:
+
+\[
+	\frac{dx}{dt} = k x t
+\]
+
+con las condiciones:
+
+\[
+	x(0) = 25, \quad x(1) = 12
+\]
+
+\vspace{0.3cm}
+\textbf{4. Encontrar la solución general de la ecuación diferencial}
+
+Reescribimos la ecuación en forma separable:
+
+\[
+	\frac{dx}{x} = k t dt
+\]
+
+Integramos ambos lados:
+
+\[
+	\int \frac{dx}{x} = \int k t dt
+\]
+
+Resolviendo:
+
+\[
+	\ln |x| = \frac{k t^2}{2} + C
+\]
+
+Despejando \( x \):
+
+\[
+	x(t) = e^{C} e^{\frac{k t^2}{2}}
+\]
+
+Definiendo \( e^C = C_1 \):
+
+\[
+	x(t) = C_1 e^{\frac{k t^2}{2}}
+\]
+
+\newpage
+\textbf{5. Encontrar la solución específica}
+
+Usamos la condición inicial \( x(0) = 25 \):
+
+\[
+	25 = C_1 e^{\frac{k(0)^2}{2}}
+	\implies
+	C_1 = 25
+\]
+
+Entonces,
+
+\[
+	x(t) = 25 e^{\frac{k t^2}{2}}
+\]
+
+Ahora usamos \( x(1) = 12 \) para encontrar \( k \):
+
+\[
+	12 = 25 e^{\frac{k (1)^2}{2}}
+\]
+
+\[
+	\frac{12}{25} = e^{\frac{k}{2}}
+\]
+
+Tomamos logaritmo natural:
+
+\[
+	\ln \left(\frac{12}{25} \right) = \frac{k}{2}
+\]
+
+\[
+	k = 2 \ln \left(\frac{12}{25} \right)
+\]
+
+\vspace{0.3cm}
+\textbf{6. Encontrar la solución del problema real}
+
+Ahora buscamos \( x(2) \):
+
+\[
+	x(2) = 25 e^{\frac{k(2)^2}{2}}
+\]
+
+Sustituyendo \( k = 2 \ln \left(\frac{12}{25} \right) \):
+
+\[
+	x(2) = 25 e^{\frac{2 \ln(12/25) \cdot 4}{2}}
+\]
+
+\[
+	x(2) = 25 e^{4 \ln(12/25)}
+\]
+
+\[
+	x(2) = 25 \left( e^{\ln(12/25)} \right)^4
+\]
+
+\[
+	x(2) = 25 \left(\frac{12}{25} \right)^4
+\]
+
+Resolviendo:
+
+\[
+	x(2) = 25 \times \left(\frac{20736}{390625} \right)
+\]
+
+\[
+	x(2) \approx 1.33 \text{ m}
+\]
+
+Por lo tanto, la partícula estará aproximadamente en \( x(2) = 1.33 \) m cuando \( t = 2 \) segundos.
+
+
+\end{document}

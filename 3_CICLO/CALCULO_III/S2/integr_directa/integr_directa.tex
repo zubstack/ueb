@@ -1,0 +1,208 @@
+\documentclass[answers]{exam} 
+\usepackage[english,spanish]{babel} % Soporte para inglés y español
+\usepackage[autostyle]{csquotes} 
+\usepackage{graphicx}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} 
+\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} 
+\usepackage{array}   % for adjusting row height
+\renewcommand{\arraystretch}{1.5} % adjust the vertical spacing between rows
+\renewcommand{\familydefault}{\sfdefault}
+
+% Configuración de encabezado y pie de página
+\pagestyle{headandfoot}
+\firstpageheader{Universidad de Bolívar}{}{10 de Febrero del 2025} 
+\runningheader{Universidad de Bolívar}{}{Cálculo III}
+\firstpagefooter{}{\thepage}{}
+\runningfooter{}{\thepage}{}
+
+% Documento
+\begin{document}
+
+% Encabezado principal
+\begin{center}
+	\large\textbf{Trabajo Autónomo 1.2 - Cálculo III}\\[1em]
+	\large Tercer Ciclo A - Ingeniería de Software\\[1em]
+\end{center}
+\vspace{0.5cm}
+\noindent
+\large\textbf{Tema:} Introducción a las Ecuaciones Diferenciales. \\
+\large\textbf{Estudiante:} Ariel Alejandro Calderón
+\vspace{0.5cm}
+
+
+\begin{questions}
+
+	\question\textbf{ Determine el tipo, orden y la linealidad de las siguientes ecuaciones diferenciales: }
+
+	\begin{center}
+		\renewcommand{\arraystretch}{1.5} % Aumenta la separación entre filas
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Ecuación Diferencial}   & \textbf{Orden} & \textbf{Linealidad} & \textbf{Tipo} \\
+			\hline
+			\( y'' + 3y = 0 \)              & 2              & Lineal              & Homogénea     \\
+			\hline
+			\( y'' + 3y = 2x + 5 \)         & 2              & Lineal              & No homogénea  \\
+			\hline
+			\( y'' + 3yy' = 0 \)            & 2              & No lineal           & Homogénea     \\
+			\hline
+			\( y''' + 2(y')^2 + 3y = 5 \)   & 3              & No lineal           & No homogénea  \\
+			\hline
+			\( y'' + 3x^4 y = 0 \)          & 2              & Lineal              & Homogénea     \\
+			\hline
+			\( y' + 3xy^4 = e^{-2x} \)      & 1              & No lineal           & No homogénea  \\
+			\hline
+			\( y''' + y' + \sin(y) = 0.2 \) & 3              & No lineal           & No homogénea  \\
+			\hline
+		\end{tabular}
+	\end{center}
+
+	\vspace{2em}
+
+	\question \textbf{Compruebe que \( y_1 = 3e^{-2x} \) es solución de la ecuación diferencial \( y'' - 4y = 0 \)}.\\
+
+
+	Comprobamos si \( y_1 = 3e^{-2x} \) satisface la ecuación diferencial \( y'' - 4y = 0 \).
+
+	\textbf{Derivadas de \( y_1 \)}:
+
+	\[
+		y_1 = 3e^{-2x}, \quad y_1' = -6e^{-2x}, \quad y_1'' = 12e^{-2x}
+	\]
+
+	\textbf{Sustitución en la ecuación diferencial}:
+
+	\[
+		y'' - 4y = 12e^{-2x} - 4(3e^{-2x})
+	\]
+
+	\[
+		= 12e^{-2x} - 12e^{-2x} = 0
+	\]
+
+	\(\Rightarrow\) Por lo tanto, \( y_1 \) es solución.
+
+	\newpage
+
+
+	\question \textbf{Compruebe que \( y_1 = \sin x \) y $y_2 = \dfrac{\sin 2x}{\sin x}$ son soluciones de \( y'' + y = 0 \).}\\
+
+	\textbf{Para \( y_1 = \sin x \):}
+
+	\[
+		y_1' = \cos x, \quad y_1'' = -\sin x
+	\]
+
+	Sustituyendo en la ecuación:
+
+	\[
+		y_1'' + y_1 = -\sin x + \sin x = 0
+	\]
+
+	\(\Rightarrow\) \( y_1 \) es solución.
+
+
+	\textbf{Para \( y_2 = \frac{\sin 2x}{\sin x} \):}
+
+	Reescribimos usando la identidad trigonométrica \( \sin 2x = 2\sin x \cos x \):
+
+	\[
+		y_2 = \frac{2\sin x \cos x}{\sin x} = 2\cos x
+	\]
+
+	\textbf{Derivadas:}
+
+	\[
+		y_2' = -2\sin x, \quad y_2'' = -2\cos x
+	\]
+
+	\textbf{Sustituyendo en la ecuación diferencial:}
+
+	\[
+		y_2'' + y_2 = (-2\cos x) + (2\cos x) = 0
+	\]
+
+	\(\Rightarrow\) \( y_2 \) es solución.
+
+	\vspace{2em}
+	\question \textbf{Resolver por integración directa las siguientes ecuaciones diferenciales:}\\
+    
+		\textbf{1. Resolver \( y'' = 0 \):}
+
+		Integrando una vez:
+
+		\[
+			y' = C_1
+		\]
+
+		Integrando nuevamente:
+
+		\[
+			y = C_1 x + C_2
+		\]
+
+		\(\Rightarrow\) Solución general: \( y = C_1 x + C_2 \).
+
+		\newpage
+
+		\textbf{2. Resolver \( y'' - x = 0 \):}
+
+		Reescribimos:
+
+		\[
+			y'' = x
+		\]
+
+		Integrando una vez:
+
+		\[
+			y' = \frac{x^2}{2} + C_1
+		\]
+
+		Integrando nuevamente:
+
+		\[
+			y = \frac{x^3}{6} + C_1 x + C_2
+		\]
+		\vspace{2em}
+
+		\(\Rightarrow\) Solución general: \( y = \frac{x^3}{6} + C_1 x + C_2 \).
+
+		\vspace{2em}
+
+		\textbf{3. Resolver \( y''' - 5x = 0 \):}
+
+		Reescribimos:
+
+		\[
+			y''' = 5x
+		\]
+
+		Integrando una vez:
+
+		\[
+			y'' = \frac{5x^2}{2} + C_1
+		\]
+
+		Integrando nuevamente:
+
+		\[
+			y' = \frac{5x^3}{6} + C_1 x + C_2
+		\]
+
+		Integrando una última vez:
+
+		\[
+			y = \frac{5x^4}{24} + \frac{C_1 x^2}{2} + C_2 x + C_3
+		\]
+
+		\vspace{2em}
+
+		\(\Rightarrow\) Solución general: \( y = \frac{5x^4}{24} + \frac{C_1 x^2}{2} + C_2 x + C_3 \).
+
+
+
+
+\end{questions}
+\end{document}

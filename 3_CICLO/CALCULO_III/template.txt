@@ -1,0 +1,45 @@
+\documentclass[answers]{exam} 
+\usepackage[english,spanish]{babel} % Soporte para inglés y español
+\usepackage[autostyle]{csquotes} 
+\usepackage{graphicx}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} 
+\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} 
+\usepackage{array}   % for adjusting row height
+\renewcommand{\arraystretch}{1.5} % adjust the vertical spacing between rows
+\renewcommand{\familydefault}{\sfdefault}
+
+% Configuración de encabezado y pie de página
+\pagestyle{headandfoot}
+\firstpageheader{Universidad de Bolívar}{}{fecha} 
+\runningheader{Universidad de Bolívar}{}{Cálculo III}
+\firstpagefooter{}{\thepage}{}
+\runningfooter{}{\thepage}{}
+
+% Documento
+\begin{document}
+
+% Encabezado principal
+\begin{center}
+	\large\textbf{Trabajo Autónomo ? - Cálculo III}\\[1em]
+	\large Tercer Ciclo A - Ingeniería de Software\\[1em]
+\end{center}
+\vspace{0.5cm}
+\noindent
+\large\textbf{Tema:} tema \\
+\large\textbf{Estudiante:} Ariel Alejandro Calderón
+\vspace{0.5cm}
+
+
+\begin{questions}
+
+	\question \large\textbf{Descripcion del ejercicio:}
+	\begin{parts}
+		\part Tarea 1
+		\part Tarea 2
+	\end{parts}
+
+	\vspace{0.5cm}
+
+\end{questions}
+\end{document}
