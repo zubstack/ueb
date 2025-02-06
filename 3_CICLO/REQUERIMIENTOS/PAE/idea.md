@@ -4,10 +4,10 @@
     }
 </style>
 
-# **Prototipo de Pago de Pasajes con Tarjeta Magnética y Código QR**
+# **Requerimientos funcionales y no funcionales del Sistema de Pago de Pasajes de la Coop. de buses "Univesidad Estatal de Bolivar" con Código QR**
 
 ## **1. Introducción**
-El transporte público en muchas ciudades aún depende de métodos tradicionales de pago, como el dinero en efectivo o tarjetas con tecnología costosa. Este proyecto propone una solución innovadora y de bajo presupuesto basada en **Arduino y códigos QR** para validar y procesar pagos electrónicos en autobuses.
+El transporte público en la cuidad de Guaranda aún depende de métodos tradicionales de pago, como el dinero en efectivo. Este proyecto propone una solución innovadora y de bajo presupuesto basada en **Arduino y códigos QR** para validar y procesar pagos electrónicos en autobuses.
 
 ## **2. Objetivo General**
 Desarrollar un **prototipo funcional** para el pago de pasajes en autobuses utilizando un **Arduino como validador de códigos QR**, los cuales estarán vinculados a cuentas de usuario mediante una aplicación móvil.
@@ -106,3 +106,4 @@ El objetivo es demostrar que esta solución es **más económica** que los siste
 La implementación del sistema de pago con códigos QR en transporte público es **técnicamente viable y financieramente accesible**. Con una estrategia de **prueba piloto, ajustes progresivos y escalabilidad**, se puede lograr una modernización efectiva del sistema sin incurrir en altos costos.  
 
 La clave del éxito radica en la **usabilidad del sistema**, la aceptación por parte de los pasajeros y la optimización del hardware y software para un desempeño fluido en condiciones reales. 🚀
+
