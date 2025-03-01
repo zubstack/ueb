@@ -4,7 +4,7 @@
     }
 </style>
 
-# **Requerimientos funcionales y no funcionales del Sistema de Pago de Pasajes de la Coop. de buses "Univesidad Estatal de Bolivar" con Código QR**
+# Requerimientos funcionales y no funcionales del Sistema de Pago de Pasajes de la Coop. de buses "Univesidad Estatal de Bolivar" con Código QR
 
 ## **1. Introducción**
 El transporte público en la cuidad de Guaranda aún depende de métodos tradicionales de pago, como el dinero en efectivo. Este proyecto propone una solución innovadora y de bajo presupuesto basada en **Arduino y códigos QR** para validar y procesar pagos electrónicos en autobuses.
@@ -104,6 +104,3 @@ El objetivo es demostrar que esta solución es **más económica** que los siste
 
 ### **7.6 Conclusión**
 La implementación del sistema de pago con códigos QR en transporte público es **técnicamente viable y financieramente accesible**. Con una estrategia de **prueba piloto, ajustes progresivos y escalabilidad**, se puede lograr una modernización efectiva del sistema sin incurrir en altos costos.  
-
-La clave del éxito radica en la **usabilidad del sistema**, la aceptación por parte de los pasajeros y la optimización del hardware y software para un desempeño fluido en condiciones reales. 🚀
-
