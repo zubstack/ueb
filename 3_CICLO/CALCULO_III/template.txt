@@ -1,17 +1,29 @@
 \documentclass[answers]{exam} 
+
+% Language and Quotes
 \usepackage[english,spanish]{babel} % Soporte para inglés y español
 \usepackage[autostyle]{csquotes} 
+
+% Math and Symbols
+\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
+
+% Font and Typography
+\usepackage{tgtermes} % Fuente Times-like
+\renewcommand{\familydefault}{\ttdefault} % Cambia la fuente a monoespaciada
+
+% Page Layout and Graphics
 \usepackage{graphicx}
 \usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} 
-\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
-\usepackage[colorlinks=true, allcolors=blue]{hyperref} 
-\usepackage{array}   % for adjusting row height
-\renewcommand{\arraystretch}{1.5} % adjust the vertical spacing between rows
-\renewcommand{\familydefault}{\sfdefault}
+\usepackage{array}   % Para ajustar la altura de las filas
+\renewcommand{\arraystretch}{1.5} % Ajusta el espacio vertical entre filas
 
-% Configuración de encabezado y pie de página
+% Hyperlinks
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} 
+
+
+% Header and Footer Configuration
 \pagestyle{headandfoot}
-\firstpageheader{Universidad de Bolívar}{}{fecha} 
+\firstpageheader{Universidad de Bolívar}{}{?*} 
 \runningheader{Universidad de Bolívar}{}{Cálculo III}
 \firstpagefooter{}{\thepage}{}
 \runningfooter{}{\thepage}{}
@@ -21,25 +33,46 @@
 
 % Encabezado principal
 \begin{center}
-	\large\textbf{Trabajo Autónomo ? - Cálculo III}\\[1em]
+	\large\textbf{Trabajo Autónomo ?* - Cálculo III}\\[1em]
 	\large Tercer Ciclo A - Ingeniería de Software\\[1em]
 \end{center}
+
 \vspace{0.5cm}
 \noindent
-\large\textbf{Tema:} tema \\
+\large\textbf{Tema:} ?* \\
 \large\textbf{Estudiante:} Ariel Alejandro Calderón
+
 \vspace{0.5cm}
 
+\begin{center}
+    Resolver las siguientes ecuaciones diferenciales de primer orden con las condiciones iniciales dadas.
+\end{center}
 
 \begin{questions}
 
-	\question \large\textbf{Descripcion del ejercicio:}
-	\begin{parts}
-		\part Tarea 1
-		\part Tarea 2
-	\end{parts}
+    \question Resolver la ecuación diferencial:
+    $
+        y' + x^2y = 4x^3
+    $
+    con la condición inicial \( y(1) = 1 \).
 
-	\vspace{0.5cm}
+    \question Resolver la ecuación diferencial:
+    $
+        (1 - x^2)y' - 2y = 0
+    $
+
+    \question Resolver la ecuación diferencial:
+    $
+        y' + y = 0
+    $
+    con la condición inicial \( y(0) = 1 \).
+
+    \question Resolver la ecuación diferencial:
+    $
+        y' + 3(y - 1) = 2x
+    $
+    con la condición inicial \( y(0) = 4 \).
 
 \end{questions}
+
 \end{document}

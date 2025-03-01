@@ -1,0 +1,17 @@
+Options for \familydefault
+Replace \sfdefault in your code with one of the following:
+
+\rmdefault → Default serif font (e.g., Latin Modern Roman)
+\sfdefault → Default sans-serif font (e.g., Latin Modern Sans)
+\ttdefault → Default monospaced font (e.g., Latin Modern Mono)
+cmr → Computer Modern Roman (default serif)
+lmodern → Latin Modern (improved CM fonts)
+times → Times (similar to Times New Roman)
+helvet → Helvetica (similar to Arial, needs \usepackage{helvet})
+bookman → Bookman
+avant → Avant Garde (modern sans-serif)
+courier → Courier (monospace)
+tgtermes → TeX Gyre Termes (Times-like)
+tgbonum → TeX Gyre Bonum (Bookman-like)
+tgpagella → TeX Gyre Pagella (Palatino-like)
+tgheros → TeX Gyre Heros (Helvetica-like)

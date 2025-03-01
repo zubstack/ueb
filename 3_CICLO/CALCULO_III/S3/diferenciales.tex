@@ -1,0 +1,332 @@
+\documentclass[answers]{exam} 
+
+% Language and Quotes
+\usepackage[english,spanish]{babel} % Soporte para inglés y español
+\usepackage[autostyle]{csquotes} 
+
+% Math and Symbols
+\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
+
+% Font and Typography
+\usepackage{tgtermes} % Fuente Times-like
+\renewcommand{\familydefault}{\sfdefault} % Cambia la fuente a monoespaciada
+
+% Page Layout and Graphics
+\usepackage{graphicx}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} 
+\usepackage{array}   % Para ajustar la altura de las filas
+\renewcommand{\arraystretch}{1.5} % Ajusta el espacio vertical entre filas
+
+% Hyperlinks
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} 
+
+
+% Header and Footer Configuration
+\pagestyle{headandfoot}
+\firstpageheader{Universidad de Bolívar}{}{17 de Febrero del 2025} 
+\runningheader{Universidad de Bolívar}{}{Cálculo III}
+\firstpagefooter{}{\thepage}{}
+\runningfooter{}{\thepage}{}
+
+% Documento
+\begin{document}
+
+% Encabezado principal
+\begin{center}
+	\large\textbf{Trabajo Autónomo 1.3 - Cálculo III}\\[1em]
+	\large Tercer Ciclo A - Ingeniería de Software\\[1em]
+\end{center}
+
+\vspace{0.5cm}
+\noindent
+\large\textbf{Tema:} Ecuaciones diferenciales de primer orden  \\
+\large\textbf{Estudiante:} Ariel Alejandro Calderón
+
+\vspace{0.3cm}
+
+\begin{align*}
+	\text{Resolver las siguientes ecuaciones diferenciales de primer orden con las condiciones iniciales dadas.}
+\end{align*}
+
+
+\begin{questions}
+
+	\question \textbf{Resolver la ecuación diferencial:
+		$
+			y' + x^2y = 4x^3
+		$
+		con la condición inicial \( y(1) = 1 \).}
+
+
+	Es una ecuación diferencial lineal de primer orden de la forma:
+	\[
+		y' + P(x)y = Q(x),
+	\]
+	donde \( P(x) = x^2 \) y \( Q(x) = 4x^3 \).
+
+	El factor integrante se define como:
+	\[
+		\mu(x) = e^{\int P(x)dx} = e^{\int x^2 dx} = e^{\frac{x^3}{3}}.
+	\]
+
+	Multiplicamos toda la ecuación por \( \mu(x) \):
+	\[
+		e^{\frac{x^3}{3}} y' + x^2 e^{\frac{x^3}{3}} y = 4x^3 e^{\frac{x^3}{3}}.
+	\]
+
+	Observamos que el lado izquierdo es la derivada de un producto:
+	\[
+		\frac{d}{dx} \left( e^{\frac{x^3}{3}} y \right) = 4x^3 e^{\frac{x^3}{3}}.
+	\]
+
+	Integrando ambos lados respecto a \( x \):
+
+	\[
+		\int \frac{d}{dx} \left( e^{\frac{x^3}{3}} y \right) dx = \int 4x^3 e^{\frac{x^3}{3}} dx.
+	\]
+
+	El lado izquierdo simplemente da:
+
+	\[
+		e^{\frac{x^3}{3}} y.
+	\]
+
+	Para resolver el lado derecho, usamos \textbf{integración por partes} con:
+
+	- \( u = 4x^3 \Rightarrow du = 12x^2 dx \).
+
+	- \( dv = e^{\frac{x^3}{3}} dx \Rightarrow v = e^{\frac{x^3}{3}} \frac{1}{x^2} \) (por derivación inversa de \( e^{u} \)).
+	\newpage
+
+	Aplicando integración por partes:
+
+	\[
+		\int 4x^3 e^{\frac{x^3}{3}} dx = e^{\frac{x^3}{3}} \cdot 4x - \int e^{\frac{x^3}{3}} \cdot 4 dx.
+	\]
+
+	\[
+		= 4x e^{\frac{x^3}{3}} - \int 4 e^{\frac{x^3}{3}} dx.
+	\]
+
+	Aproximando la integral, encontramos que:
+
+	\[
+		\int 4x^3 e^{\frac{x^3}{3}} dx = 4 e^{\frac{x^3}{3}} x + C.
+	\]
+
+	Por lo tanto:
+
+	\[
+		e^{\frac{x^3}{3}} y = 4x e^{\frac{x^3}{3}} + C.
+		\implies
+		y = 4x + C e^{-\frac{x^3}{3}} \text{ (Solución general)}
+	\]\\
+
+	Aplicación de la condición inicial \( y(1) = 1 \):
+
+	\[
+		1 = 4(1) + C e^{-\frac{1^3}{3}}.
+		\implies
+		C = (1 - 4)e^{\frac{1}{3}}.
+		\implies
+		C = -3e^{\frac{1}{3}}.
+	\]
+
+	Sustituyendo C:
+
+	\[
+		y = 4x - 3 e^{\frac{1}{3}} e^{-\frac{x^3}{3}} \text{ (Solución especifica)}
+	\]
+	\newpage
+
+	\question \textbf{Resolver la ecuación diferencial:
+		$
+			(1 - x^2)y' - 2y = 0
+		$}
+
+
+	Reescribir en forma estándar:
+
+	\[
+		y' - \frac{2}{1 - x^2} y = 0.
+	\]
+
+	Es una ecuación diferencial de variables separables:
+
+	\[
+		\frac{dy}{y} = \frac{2}{x^2 - 1} dx.
+	\]
+
+	Descomponemos la fracción:
+
+	\[
+		\frac{2}{x^2 - 1} = \frac{1}{x - 1} - \frac{1}{x + 1}.
+	\]
+
+	Entonces:
+
+	\[
+		\int \frac{dy}{y} = \int \left( \frac{1}{x - 1} - \frac{1}{x + 1} \right) dx.
+	\]
+
+	Resolviendo:
+
+	\[
+		\ln |y| = \ln |x - 1| - \ln |x + 1| + C.
+	\]
+
+	\[
+		\ln |y| = \ln \left| \frac{x - 1}{x + 1} \right| + C.
+	\]
+
+	Solución general:
+
+	\[
+		y = C \frac{x - 1}{x + 1}.
+	\]
+
+
+	\question \textbf{Resolver la ecuación diferencial:
+		$
+			y' + y = 0
+		$
+		con la condición inicial \( y(0) = 1 \).}
+
+
+	Reescribimos la ecuación diferencial:
+
+	\[
+		y' + y = 0
+	\]
+
+	Identificamos:
+
+	\[
+		P(x) = 1, \quad R(x) = 0
+	\]
+
+	Calculamos el factor integrante:
+
+	\[
+		\mu(x) = e^{\int P(x) \, dx} = e^{\int 1 \, dx} = e^x
+	\]
+
+	Multiplicamos por el factor integrante:
+
+	\[
+		e^x y' + e^x y = 0
+	\]
+
+	Reconocemos que el lado izquierdo es la derivada de un producto:
+
+	\[
+		\frac{d}{dx} \left(e^x y\right) = 0
+	\]
+
+	Integramos ambos lados:
+
+	\[
+		e^x y = C
+	\]
+
+	Despejamos \( y \):
+
+	\[
+		y = C e^{-x}
+	\]
+
+	Usamos la condición inicial \( y(0) = 1 \):
+
+	\[
+		1 = C e^0
+	\]
+
+	\[
+		C = 1
+	\]
+
+	Por lo tanto, la solución particular es:
+
+	\[
+		y = e^{-x}
+	\]
+
+
+
+	\question \textbf{Resolver la ecuación diferencial:
+		$
+			y' + 3(y - 1) = 2x
+		$
+		con la condición inicial \( y(0) = 4 \).}
+
+	Reorganizamos la ecuación:
+
+	\[
+		y' + 3y = 2x + 3 \implies  \left\{
+		\begin{array}{lcc}
+			P(x) = 3 \\
+			R(x) = 2x+3
+		\end{array} \right.
+	\]
+
+	El factor integrante \( \mu(x) \):
+
+	\[
+		\mu(x) = e^{\int P(x) \, dx} = e^{\int 3 \, dx} = e^{3x}
+	\]
+
+	Entonces podemos decir que:
+
+	\[
+		y = \frac{1}{u(x)} \left(\int{u(x) R(x)  \, dx} + C\right) = \frac{1}{e^{3x}} \left(\int{e^{3x} (2x + 3)  \, dx} + C \right)
+	\]
+	\newpage
+
+	Resolviendo integral:
+
+	\[
+		\int{e^{3x} (2x + 3)  \, dx} = 2\int{xe^{3x} \, dx}+3\int{e^{3x} \, dx}
+	\]
+
+	\[
+		\rightarrow 2\int{xe^{3x} \, dx} ;\, u = x;\, du = dx ;\, dv = 3x \, dx ;\, v = \frac{1}{3}e^{3x}
+	\]
+
+	\[
+		2\int{xe^{3x} \, dx} = 2\cdot \left(x\cdot \frac{1}{3}e^{3x}-\frac{1}{3}\int{e^{3x} \, dx}\right) = \frac{2}{3}xe^{3x}-\frac{2}{9}e^{3x}
+	\]
+
+	\[
+		\rightarrow 3\int{e^{3x} \, dx} = e^{3x}
+	\]
+
+	Entonces, la solución general:
+	\[
+		y = \frac{1}{e^{3x}} \left(\frac{2}{3}xe^{3x}-\frac{2}{9}e^{3x} + e^{3x} + C \right)
+	\]
+
+	\[
+		y = \frac{2}{3}x-\frac{2}{9} + 1 + C\cdot e^{-3x}  = \frac{2}{3}x+\frac{7}{9} + C\cdot e^{-3x}
+	\]
+
+	Para encontrar la constante \(C\), usamos la condición inicial \(y(0) = 4\).
+
+	\[
+		y (0) = 4 = \frac{2(0)}{3} + \frac{7}{9} + C\cdot e^{0}
+	\]
+
+	\[
+		4 = \frac{7}{9} + C \implies C = \frac{29}{9}
+	\]
+
+
+	Finalmente, la solución especifica es:
+
+	\[
+		y = \frac{2}{3}x + \frac{7}{9} + \frac{29}{9} e^{-3x}
+	\]
+
+
+\end{questions}
+
+\end{document}
