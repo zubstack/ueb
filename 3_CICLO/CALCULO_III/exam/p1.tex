@@ -1,0 +1,195 @@
+\documentclass[answers]{exam} 
+\usepackage[english,spanish]{babel} % Soporte para inglés y español
+\usepackage[autostyle]{csquotes} 
+\usepackage{graphicx}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry} 
+\usepackage{textgreek}
+\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} 
+\usepackage{array}   % for adjusting row height
+\renewcommand{\arraystretch}{1.5} % adjust the vertical spacing between rows
+\renewcommand{\familydefault}{\sfdefault}
+
+% Configuración de encabezado y pie de página
+\pagestyle{headandfoot}
+\firstpageheader{Universidad de Bolívar}{}{fecha} 
+\runningheader{Universidad de Bolívar}{}{Cálculo III}
+\firstpagefooter{}{\thepage}{}
+\runningfooter{}{\thepage}{}
+
+% Documento
+\begin{document}
+
+\begin{questions}
+
+	\question \large\textbf{Compruebe que $y_1 = \sin x$ y $y_2=\dfrac{\sin 2x}{\sin x}$ son soluciones de $y''+y=0$:}
+
+	Primero, verificamos para $y_1 = \sin x$:  
+	\[
+	y_1' = \cos x \quad \text{y} \quad y_1'' = -\sin x
+	\]
+	Sustituyendo en la ecuación $y'' + y = 0$:  
+	\[
+	y_1'' + y_1 = -\sin x + \sin x = 0 \quad \checkmark
+	\]
+	
+	Ahora, para $y_2 = \dfrac{\sin 2x}{\sin x}$:  
+	
+	\[
+	y_2 = \frac{2\sin x \cos x}{\sin x} = 2\cos x
+	\]
+	 
+	\[
+	y_2' = -2\sin x \quad \text{y} \quad y_2'' = -2\cos x
+	\]
+	 
+	\[
+	y_2'' + y_2 = -2\cos x + 2\cos x = 0 \quad \checkmark
+	\]
+
+	\vspace{0.5cm}
+	
+	
+	\question \large\textbf{Resolver por integración directa la siguiente ecuación diferencial: $y''' - 5x = 0$:}
+
+	La ecuación dada es: $y''' - 5x = 0$  
+
+	1. Integramos una vez: \[y'' = \int 5x \, dx = \dfrac{5x^2}{2} + C_1\]  
+	2. Integramos de nuevo: \[y' = \int \left(\dfrac{5x^2}{2} + C_1\right) dx = \dfrac{5x^3}{6} + C_1x + C_2\]  
+	3. Una vez más: \[y = \int \left(\dfrac{5x^3}{6} + C_1x + C_2\right) dx = \dfrac{5x^4}{24} + \dfrac{C_1x^2}{2} + C_2x + C_3\]  
+
+	Esta es la solución general de la ecuación diferencial. 
+	
+	\vspace{0.5cm}
+	
+	
+	\question \large\textbf{Aplicando la ley de voltajes de Kirchhoff, encontrar la corriente $i$ cuando $t=10$ segundos que circula por el circuito resistivo inductivo de la figura.}
+	
+	\large\textbf{Condición inicial: $i(0)=15$ Amp.}
+
+	\(
+		V_S = 110 \text{ Voltios}\\
+		R = 10 \Omega\\	
+		L = 5 \text{Henrios}\\	
+		V_R = iR\\
+		V_L = L\dfrac{di}{dt}	
+	\)\\
+
+		Aplicamos la Ley de Voltajes de Kirchhoff al circuito:  
+		\[
+		V_s = V_R + V_L
+		\]
+		Donde:  
+		\[
+		V_R = iR \quad \text{y} \quad V_L = L \frac{di}{dt}
+		\]
+		Sustituyendo los valores dados:  
+		\[
+		110 = 10i + 5\frac{di}{dt}
+		\]
+		Reordenamos la ecuación diferencial:  
+		\[
+		\frac{di}{dt} + 2i = 22
+		\]
+		
+		Resolvemos la homogénea: $\frac{di_h}{dt} + 2i_h = 0$  
+		\[
+		i_h(t) = Ce^{-2t}
+		\]
+		
+		Buscamos una solución particular $i_p$:  
+		Suponemos $i_p = k$ (constante):  
+		\[
+		2k = 22 \quad \Rightarrow \quad k = 11
+		\]
+		
+		Solución general:  
+		\[
+		i(t) = i_h + i_p = Ce^{-2t} + 11
+		\]
+		
+		Usamos la condición inicial $i(0)=15$:  
+		\[
+		15 = C + 11 \quad \Rightarrow \quad C = 4
+		\]
+		Así que:  
+		\[
+		i(t) = 4e^{-2t} + 11
+		\]
+		
+		Calculamos $i(10)$:  
+		\[
+		i(10) = 4e^{-20} + 11 \approx 11 \quad (\text{ya que } e^{-20} \approx 0)
+		\]
+		
+		Por lo tanto, la corriente en $t=10$ s es aproximadamente $11$ A.  		
+	
+	\vspace{0.5cm}
+	
+	
+	\question \large\textbf{Resuelva por dos métodos la ecuación diferencial: $y' = x + y + 1$:}\\
+	
+		La ecuación diferencial dada es:  
+		\[
+		y' = x + y + 1
+		\]
+		
+		Método 1: Factor integrante  
+		Reescribimos:  
+		\[
+		y' - y = x + 1
+		\]
+		El factor integrante es:  
+		\[
+		\mu(x) = e^{\int -1 \, dx} = e^{-x}
+		\]
+		
+		Multiplicamos la ecuación por $e^{-x}$:  
+		\[
+		e^{-x}y' - e^{-x}y = (x+1)e^{-x}
+		\]
+		La izquierda es la derivada de $(e^{-x}y)$:  
+		\[
+		\frac{d}{dx}(e^{-x}y) = (x+1)e^{-x}
+		\]
+		
+		Integramos ambos lados:  
+		\[
+		e^{-x}y = \int (x+1)e^{-x} \, dx
+		\]
+		
+		Usando integración por partes, obtenemos:  
+		\[
+		e^{-x}y = -xe^{-x} - e^{-x} + C
+		\]
+		Multiplicamos por $e^x$:  
+		\[
+		y = -x - 1 + Ce^x
+		\]
+		
+		Método 2: Ecuación diferencial lineal con sustitución  
+		Sea $v = y + x + 1 \Rightarrow v' = y' + 1$:  
+		Sustituyendo en la ecuación:  
+		\[
+		v' - 1 = x + (v - x - 1) + 1 \quad \Rightarrow \quad v' = v
+		\]
+		La solución de $v' = v$ es:  
+		\[
+		v = Ce^x
+		\]
+		
+		Volvemos a $y$:  
+		\[
+		y + x + 1 = Ce^x \quad \Rightarrow \quad y = Ce^x - x - 1
+		\]
+		
+		Conclusión:  
+		Ambos métodos dan la misma solución general:  
+		\[
+		\boxed{y = Ce^x - x - 1}
+		\]
+		
+	\vspace{0.5cm}
+
+\end{questions}
+\end{document}
