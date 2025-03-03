@@ -1,14 +1,11 @@
 # **Informe de Planificación Temporal del Proyecto: Sistema de Pago de Pasajes con Código QR**  
 
-## **1. Introducción**  
-Este informe tiene como objetivo presentar la planificación temporal del proyecto **"Sistema de Pago de Pasajes de la Coop. de Buses 'Universidad Estatal de Bolívar' con Código QR"**. La correcta gestión del tiempo es crucial para garantizar una implementación eficiente, optimizando los recursos y minimizando riesgos.  
-
-## **2. Metodología de Planificación**  
+## **1. Metodología de Planificación**  
 Para estructurar el cronograma del proyecto, se ha adoptado un **enfoque en fases**, basado en el ciclo de vida del desarrollo tecnológico y considerando pruebas piloto previas a la implementación total.  
 
 Se ha utilizado la metodología **SCRUM**, permitiendo iteraciones ágiles y ajustes en función de pruebas y retroalimentación de los stakeholders.  
 
-## **3. Fases y Cronograma del Proyecto**  
+## **2. Fases y Cronograma del Proyecto**  
 
 ### **Fase 1: Análisis y Requisitos (Semanas 1-4)**  
 **Objetivo:** Definir los requerimientos funcionales y no funcionales, así como las necesidades de los stakeholders.  
@@ -63,12 +60,9 @@ Se ha utilizado la metodología **SCRUM**, permitiendo iteraciones ágiles y aju
 | Ajustes finales en hardware y software | 2 semanas  | Ingenieros y QA        |
 | Implementación total en la flota      | 3 semanas   | Equipo de instalación  |
 
-## **4. Recursos y Dependencias**  
+## **3. Recursos y Dependencias**  
 El cumplimiento del cronograma depende de la disponibilidad de:  
 - **Equipos de hardware** (Arduino, lectores QR, módulos de comunicación).  
 - **Desarrolladores de software** especializados en Flutter/React Native y Node.js.  
 - **Infraestructura en la nube** para la gestión de datos.  
 - **Coordinación con la cooperativa de buses** para pruebas y adopción del sistema.  
-
-## **5. Conclusión**  
-El proyecto sigue un plan estructurado en **seis fases**, con una duración total de **30 semanas**. La adopción de una metodología ágil permitirá realizar ajustes durante la implementación para maximizar la eficiencia y minimizar riesgos. Una prueba piloto será clave para evaluar la viabilidad del sistema antes de su despliegue total.
