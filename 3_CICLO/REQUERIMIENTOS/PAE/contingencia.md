@@ -1,4 +1,4 @@
-# Plan de Mitigación y Contingencia**  
+# Plan de Mitigación y Contingencia
 Para los riesgos identificados, se han desarrollado planes de **reducción, supervisión y contingencia**, como se muestra en la siguiente tabla:  
 
 | **Riesgo** | **Estrategia de Mitigación** | **Plan de Contingencia** |

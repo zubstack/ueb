@@ -1,4 +1,4 @@
-# Identificación de Stakeholders**  
+# Identificación de Stakeholders
 
 ### **a) Stakeholders Primarios (Directos)**
 Estos son los actores que tienen una relación directa con el sistema y serán los más afectados por su implementación.  

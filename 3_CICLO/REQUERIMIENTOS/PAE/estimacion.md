@@ -1,9 +1,6 @@
 # Estimación de Software para el Proyecto de Pago de Pasajes con Código QR  
 
-## **1. Introducción**  
-Este informe presenta la **estimación del esfuerzo, tiempo y costos** del desarrollo del **Sistema de Pago de Pasajes con Código QR**, utilizando técnicas de estimación basadas en **puntos de función y modelos empíricos como COCOMO y PUTNAM**.  
-
-## **2. Cálculo de Puntos de Función (PF)**  
+## **1. Cálculo de Puntos de Función (PF)**  
 
 El cálculo de puntos de función se realiza mediante la siguiente fórmula:  
 
@@ -13,7 +10,7 @@ Donde:
 - **CT**: Cuenta total de puntos de función sin ajuste.  
 - **SUM(Fi)**: Sumatoria de los factores de ajuste de complejidad.  
 
-### **2.1 Cálculo de la Cuenta Total (CT)**  
+### **1.1 Cálculo de la Cuenta Total (CT)**  
 
 Se determinan los puntos de función para cada componente del sistema:  
 
@@ -26,7 +23,7 @@ Se determinan los puntos de función para cada componente del sistema:
 | **Interfaces externas**   | 4         | 7         | 11      | 20         | 20           |
 | **Total (CT)**           |           |           |         |            | **90**       |
 
-### **2.2 Factores de Complejidad (Fi)**  
+### **1.2 Factores de Complejidad (Fi)**  
 
 Se evalúa la complejidad del sistema mediante el cuestionario de Pressman, asignando valores de 0 a 5 según su impacto.  
 
@@ -48,7 +45,7 @@ Se evalúa la complejidad del sistema mediante el cuestionario de Pressman, asig
 | Facilidad de uso y mantenimiento | 4 |
 | **Sumatoria de Fi** | **47** |
 
-### **2.3 Cálculo de Puntos de Función Ajustados**  
+### **1.3 Cálculo de Puntos de Función Ajustados**  
 
 PF = 90 × [ 0.65 + 0.01 × 47 ]  
 PF = 90 × [ 0.65 + 0.47 ]  
@@ -56,7 +53,7 @@ PF = 90 × 1.12 = **101 (aproximado)**
 
 ---
 
-## **3. Estimación con el Modelo COCOMO**  
+## **2. Estimación con el Modelo COCOMO**  
 
 Usamos el **modo orgánico**, aplicando las siguientes ecuaciones:  
 
@@ -68,13 +65,13 @@ Donde:
 - **cb = 2.5**, **db = 0.38**  
 - **KPF = 101 / 1000 = 0.101**  
 
-### **3.1 Cálculo del esfuerzo (E) en personas-mes**  
+### **2.1 Cálculo del esfuerzo (E) en personas-mes**  
 
 E = 2.4 × (0.101)^1.05  
 E = 2.4 × 0.103  
 E = **0.2472 ≈ 1 persona-mes**  
 
-### **3.2 Cálculo del tiempo de desarrollo (D) en meses**  
+### **2.2 Cálculo del tiempo de desarrollo (D) en meses**  
 
 D = 2.5 × (1)^0.38  
 D = 2.5 × 1  
@@ -82,7 +79,7 @@ D = **2.5 ≈ 3 meses**
 
 ---
 
-## **4. Estimación con el Modelo PUTNAM**  
+## **3. Estimación con el Modelo PUTNAM**  
 
 Se emplea la ecuación:  
 
@@ -94,13 +91,13 @@ Donde:
 - **P = 10000** (productividad para software comercial).  
 - **B = 0.16** para sistemas pequeños.  
 
-### **4.1 Cálculo del tiempo mínimo (Tmin) en meses**  
+### **3.1 Cálculo del tiempo mínimo (Tmin) en meses**  
 
 Tmin = 8.14 × (5000 / 10000)^0.43  
 Tmin = 8.14 × (0.5)^0.43  
 Tmin = 8.14 × 0.77 = **6.27 ≈ 6 meses**  
 
-### **4.2 Cálculo del esfuerzo en personas-mes**  
+### **3.2 Cálculo del esfuerzo en personas-mes**  
 
 E = 180 × 0.16 × (6)^3  
 E = 180 × 0.16 × 216  
@@ -108,7 +105,7 @@ E = **622 personas-mes**
 
 ---
 
-## **5. Conclusión**  
+## **4. Conclusión**  
 
 La estimación de esfuerzo y tiempo para el desarrollo del sistema de pago de pasajes con código QR es la siguiente:  
 
