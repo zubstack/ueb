@@ -66,6 +66,3 @@ El cumplimiento del cronograma depende de la disponibilidad de:
 - **Desarrolladores de software** especializados en Flutter/React Native y Node.js.  
 - **Infraestructura en la nube** para la gestión de datos.  
 - **Coordinación con la cooperativa de buses** para pruebas y adopción del sistema.  
-
-## **4. Conclusión**  
-El proyecto sigue un plan estructurado en **seis fases**, con una duración total de **30 semanas**. La adopción de una metodología ágil permitirá realizar ajustes durante la implementación para maximizar la eficiencia y minimizar riesgos. Una prueba piloto será clave para evaluar la viabilidad del sistema antes de su despliegue total.
