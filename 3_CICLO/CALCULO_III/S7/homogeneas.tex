@@ -1,0 +1,705 @@
+\documentclass[answers]{exam} 
+
+% Language and Quotes
+\usepackage[english,spanish]{babel} % Soporte para inglés y español
+\usepackage[autostyle]{csquotes} 
+
+% Math and Symbols
+\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
+
+% Font and Typography
+\usepackage{tgtermes} % Fuente Times-like
+\renewcommand{\familydefault}{\ttdefault} % Cambia la fuente a monoespaciada
+
+% Page Layout and Graphics
+\usepackage{graphicx}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=3cm,marginparwidth=1.75cm]{geometry} 
+\usepackage{array}   % Para ajustar la altura de las filas
+\renewcommand{\arraystretch}{1.5} % Ajusta el espacio vertical entre filas
+
+% Hyperlinks
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} 
+
+
+% Header and Footer Configuration
+\pagestyle{headandfoot}
+\firstpageheader{Universidad de Bolívar}{}{17 de Marzo del 2025} 
+\runningheader{Universidad de Bolívar}{}{Cálculo III}
+\firstpagefooter{}{\thepage}{}
+\runningfooter{}{\thepage}{}
+
+% Documento
+\begin{document}
+
+% Encabezado principal
+\begin{center}
+	\large\textbf{Trabajo Autónomo 1.6 - Cálculo III}\\[1em]
+	\large Tercer Ciclo A - Ingeniería de Software\\[1em]
+\end{center}
+
+\vspace{0.5cm}
+\noindent
+\large\textbf{Tema:} ECUACIONES DIFERENCIALES DE PRIMER ORDEN\\
+\large\textbf{Estudiante:} Ariel Alejandro Calderón
+
+\vspace{0.5cm}
+
+\begin{questions}
+
+	\question Resolver las siguientes ecuaciones diferenciales de primer orden homogéneas (previamente demostrando si son homogéneas).
+
+	\begin{parts}
+		\part $\displaystyle y' = \frac{x^2 - 6y^2}{2xy}$\\
+
+		Verificamos si la ecuación es homogénea aplicando el cambio de escala \( x \to \lambda x \) y \( y \to \lambda y \):
+
+		\[
+			y' = \frac{(\lambda x)^2 - 6(\lambda y)^2}{2\cdot \lambda x \cdot \lambda y} = \frac{\lambda^2(x^2 - 6y^2)}{\lambda^2(2xy)} = \frac{x^2 - 6y^2}{2xy}.
+		\]
+
+		Como la ecuación es homogénea, aplicamos el cambio de variable:
+
+		\[
+			y = vx \implies y' = v + x v'= f(v)
+		\]
+
+		Sustituyendo en la ecuación original y simplificando:
+
+		\[
+			v + x v' = \frac{x^2 - 6v^2x^2}{2x^2v} = \frac{x^2(1-6v^2)}{x^2(2v)} = \frac{1-6v^2}{2v}=f(v).
+		\]
+
+		Reescribimos en la forma separable:
+
+		\[
+			\frac{dx}{x} = \frac{dv}{f(v)-v} = \frac{2v \, dv}{1-4v^2}.
+		\]
+
+		Integrando ambos lados:
+
+		\[
+			\ln x = -\frac{1}{4} \ln |1 - 4v^2| + C.
+		\]
+
+		Sustituyendo \( v = \frac{y}{x} \):
+
+		\[
+			\ln x = -\frac{1}{4} \ln |1 - 4(y/x)^2| + C.
+		\]
+
+		Tomando exponencial en ambos lados:
+
+		\[
+			x (1 - 4(y/x)^2)^{1/4} = e^C.
+		\]
+
+		Redefiniendo \( C' = e^C \):
+
+		\[
+			(1 - 4(y/x)^2)^{1/4} = \frac{C'}{x}.
+		\]
+
+		Elevando ambos lados a la cuarta potencia:
+
+		\[
+			1 - 4(y/x)^2 = \frac{C'^4}{x^4}.
+		\]
+
+		Multiplicando por \( x^2 \):
+
+		\[
+			y^2 = \frac{1}{4} x^2 \left( 1 - \frac{C'^4}{x^4} \right).
+		\]
+
+		Tomando raíz cuadrada:
+
+		\[
+			y = \frac{x}{2} \sqrt{1 - \frac{C'^4}{x^4}}.
+		\]
+
+		\part $\displaystyle y' = \frac{2x^2 y}{x^3 - y^3}$\\
+
+		Verificamos si la ecuación es homogénea aplicando el cambio de escala \( x \to \lambda x \) y \( y \to \lambda y \):
+
+		\[
+			y' = \frac{2(\lambda x)^2 (\lambda y)}{(\lambda x)^3 - (\lambda y)^3}
+			= \frac{2\lambda^3 x^2 y}{\lambda^3 (x^3 - y^3)}
+			= \frac{2x^2 y}{x^3 - y^3}.
+		\]
+
+		Como la ecuación es homogénea, aplicamos el cambio de variable:
+
+		\[
+			y = vx \implies y' = v + x v'.
+		\]
+
+		Sustituyendo en la ecuación original:
+
+		\[
+			v + x v' = \frac{2x^2 (vx)}{x^3 - (vx)^3}.
+		\]
+
+		Factorizamos \( x^3 \) en el denominador:
+
+		\[
+			v + x v' = \frac{2vx^3}{x^3(1 - v^3)} = \frac{2v}{1 - v^3}.
+		\]
+
+		Reescribimos en la forma separable:
+
+		\[
+			\frac{dx}{x} = \frac{1 - v^3}{2v} dv.
+		\]
+
+		Separando términos:
+
+		\[
+			\int \frac{dx}{x} = \frac{1}{2} \int \left( \frac{1}{v} - v^2 \right) dv.
+		\]
+
+		Calculamos las integrales:
+
+		\[
+			\int \frac{dx}{x} = \ln |x| + C_1.
+		\]
+
+		\[
+			\frac{1}{2} \int \frac{dv}{v} = \frac{1}{2} \ln |v|.
+		\]
+
+		\[
+			-\frac{1}{2} \int v^2 dv = -\frac{1}{2} \cdot \frac{v^3}{3} = -\frac{v^3}{6}.
+		\]
+
+		Sumamos los términos:
+
+		\[
+			\ln |x| = \frac{1}{2} \ln |v| - \frac{v^3}{6} + C.
+		\]
+
+		Sustituyendo \( v = \frac{y}{x} \):
+
+		\[
+			\ln |x| = \frac{1}{2} \ln \left| \frac{y}{x} \right| - \frac{(y/x)^3}{6} + C.
+		\]
+
+		\[
+			\ln |x| - \frac{1}{2} \ln |y| + \frac{1}{2} \ln |x| = -\frac{y^3}{6x^3} + C.
+		\]
+
+		Agrupando términos:
+
+		\[
+			\frac{3}{2} \ln |x| - \frac{1}{2} \ln |y| = -\frac{y^3}{6x^3} + C.
+		\]
+
+		Tomando exponencial en ambos lados:
+
+		\[
+			\frac{|x|^{3/2}}{|y|^{1/2}} = e^{C} e^{-\frac{y^3}{6x^3}}.
+		\]
+
+		Redefiniendo \( C' = e^C \):
+
+		\[
+			\frac{|x|^{3/2}}{|y|^{1/2}} e^{\frac{y^3}{6x^3}} = C'.
+		\]
+
+		Despejamos \( y \):
+
+		\[
+			y = \left( \frac{|x|^{3/2}}{C' e^{\frac{y^3}{6x^3}}} \right)^2.
+		\]
+		\part $\displaystyle y' = \frac{y - 10\sqrt{4x^2 - y^2}}{x}$\\
+
+		Verificamos si la ecuación es homogénea aplicando el cambio de escala \( x \to \lambda x \) y \( y \to \lambda y \):
+
+		\[
+			y' = \frac{\lambda y - 10\sqrt{4\lambda^2 x^2 - \lambda^2 y^2}}{\lambda x}
+			= \frac{\lambda \left( y - 10\sqrt{4x^2 - y^2} \right)}{\lambda x}
+			= \frac{y - 10\sqrt{4x^2 - y^2}}{x}.
+		\]
+
+		Como la ecuación es homogénea, aplicamos el cambio de variable:
+
+		\[
+			y = vx \implies y' = v + x v'.
+		\]
+
+		Sustituyendo en la ecuación original:
+
+		\[
+			v + x v' = \frac{vx - 10\sqrt{4x^2 - (vx)^2}}{x}.
+		\]
+
+		Simplificamos el denominador:
+
+		\[
+			v + x v' = \frac{vx - 10\sqrt{4x^2 - v^2 x^2}}{x}
+			= \frac{vx - 10x\sqrt{4 - v^2}}{x}
+			= v - 10\sqrt{4 - v^2}.
+		\]
+
+		Reescribimos la ecuación de la siguiente forma:
+
+		\[
+			x v' = -10\sqrt{4 - v^2}.
+		\]
+
+		Separando los términos:
+
+		\[
+			\frac{dv}{\sqrt{4 - v^2}} = -\frac{10}{x} dx.
+		\]
+
+		Integramos ambos lados:
+
+		\[
+			\int \frac{dv}{\sqrt{4 - v^2}} = -10 \int \frac{dx}{x}.
+		\]
+
+		La integral de la izquierda es \( \arcsin \left( \frac{v}{2} \right) \) y la de la derecha es \( -10 \ln |x| \):
+
+		\[
+			\arcsin \left( \frac{v}{2} \right) = -10 \ln |x| + C.
+		\]
+
+		Sustituyendo \( v = \frac{y}{x} \):
+
+		\[
+			\arcsin \left( \frac{y}{2x} \right) = -10 \ln |x| + C.
+		\]
+
+		Finalmente, despejamos \( y \):
+
+		\[
+			\frac{y}{2x} = \sin \left( -10 \ln |x| + C \right).
+		\]
+
+		Por lo tanto, la solución general es:
+
+		\[
+			y = 2x \sin \left( -10 \ln |x| + C \right).
+		\]
+		\part $\displaystyle y' = \frac{2xy - y^2}{3x^2}$ \quad con \quad $y(8) = 1$\\
+
+		Verificamos si la ecuación es homogénea aplicando el cambio de escala \( x \to \lambda x \) y \( y \to \lambda y \):
+
+		\[
+			y' = \frac{2(\lambda x)(\lambda y) - (\lambda y)^2}{3(\lambda x)^2}
+			= \frac{2\lambda^2 xy - \lambda^2 y^2}{3\lambda^2 x^2}
+			= \frac{2xy - y^2}{3x^2}.
+		\]
+
+		Como la ecuación es homogénea, aplicamos el cambio de variable:
+
+		\[
+			y = vx \implies y' = v + x v'.
+		\]
+
+		Sustituyendo en la ecuación original:
+
+		\[
+			v + x v' = \frac{2x(vx) - (vx)^2}{3x^2}
+			= \frac{2v x^2 - v^2 x^2}{3x^2}
+			= \frac{x^2(2v - v^2)}{3x^2}
+			= \frac{2v - v^2}{3}.
+		\]
+
+		Reescribimos la ecuación de la siguiente forma:
+
+		\[
+			v + x v' = \frac{2v - v^2}{3}.
+		\]
+
+		Separando términos:
+
+		\[
+			x v' = \frac{2v - v^2}{3} - v
+			= \frac{2v - v^2 - 3v}{3}
+			= \frac{-v^2 - v}{3}.
+		\]
+
+		Es decir:
+
+		\[
+			v' = \frac{-v(v + 1)}{3x}.
+		\]
+
+		Ahora, separando variables:
+
+		\[
+			\frac{dv}{v(v + 1)} = -\frac{dx}{3x}.
+		\]
+
+		Descomponemos la fracción en la izquierda mediante fracciones parciales:
+
+		\[
+			\frac{1}{v(v + 1)} = \frac{1}{v} - \frac{1}{v + 1}.
+		\]
+
+		Entonces:
+
+		\[
+			\left( \frac{1}{v} - \frac{1}{v + 1} \right) dv = -\frac{dx}{3x}.
+		\]
+
+		Integramos ambos lados:
+
+		\[
+			\int \left( \frac{1}{v} - \frac{1}{v + 1} \right) dv = \int -\frac{dx}{3x}.
+		\]
+
+		Las integrales son:
+
+		\[
+			\ln |v| - \ln |v + 1| = -\frac{1}{3} \ln |x| + C.
+		\]
+
+		Simplificamos:
+
+		\[
+			\ln \left| \frac{v}{v + 1} \right| = -\frac{1}{3} \ln |x| + C.
+		\]
+
+		Sustituyendo \( v = \frac{y}{x} \):
+
+		\[
+			\ln \left| \frac{\frac{y}{x}}{\frac{y}{x} + 1} \right| = -\frac{1}{3} \ln |x| + C
+			= \ln \left| \frac{y}{y + x} \right|.
+		\]
+
+		Finalmente:
+
+		\[
+			\ln \left| \frac{y}{y + x} \right| = -\frac{1}{3} \ln |x| + C.
+		\]
+
+		Usamos la condición inicial \( y(8) = 1 \) para determinar la constante \( C \):
+
+		\[
+			\ln \left| \frac{1}{1 + 8} \right| = -\frac{1}{3} \ln |8| + C.
+		\]
+
+		Calculamos:
+
+		\[
+			\ln \left| \frac{1}{9} \right| = -\frac{1}{3} \ln 8 + C
+			= -\ln 9 = -\frac{1}{3} \ln 8 + C.
+		\]
+
+		Así:
+
+		\[
+			C = -\ln 9 + \frac{1}{3} \ln 8.
+		\]
+
+		La solución general es:
+
+		\[
+			\ln \left| \frac{y}{y + x} \right| = -\frac{1}{3} \ln |x| - \ln 9 + \frac{1}{3} \ln 8.
+		\]
+
+		Finalmente, tomando la exponencial en ambos lados:
+
+		\[
+			\frac{y}{y + x} = \frac{e^{-\frac{1}{3} \ln |x| - \ln 9 + \frac{1}{3} \ln 8}}{1}
+			= \frac{e^{\frac{1}{3} \ln 8}}{9x^{1/3}}.
+		\]
+
+		Reescribiendo:
+
+		\[
+			\frac{y}{y + x} = \frac{2}{9x^{1/3}}.
+		\]
+
+		Finalmente:
+
+		\[
+			y = \frac{2x^{1/3}}{9 - 2x^{1/3}}.
+		\]
+
+	\end{parts}
+
+	\question Determine si las siguientes ecuaciones diferenciales de primer orden son exactas o no. En caso de serlo, resuélvalas.
+
+	\begin{parts}
+		\part $\displaystyle (3x + 1) + (3y - 1)y' = 0$\\
+
+		Verificamos si la ecuación es exacta, para lo cual escribimos la ecuación en la forma estándar \( M(x, y) + N(x, y) y' = 0 \), donde
+
+		\[
+			M(x, y) = 3x + 1 \quad \text{y} \quad N(x, y) = 3y - 1.
+		\]
+
+		Para que la ecuación sea exacta, debe cumplirse la condición de exactitud, que es:
+
+		\[
+			\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}.
+		\]
+
+		Calculamos las derivadas parciales:
+
+		\[
+			\frac{\partial M}{\partial y} = 0 \quad \text{y} \quad \frac{\partial N}{\partial x} = 0.
+		\]
+
+		Como ambas derivadas son iguales, la ecuación es exacta. Ahora, buscamos una función potencial \( \psi(x, y) \) tal que:
+
+		\[
+			\frac{\partial \psi}{\partial x} = M(x, y) \quad \text{y} \quad \frac{\partial \psi}{\partial y} = N(x, y).
+		\]
+
+		1: Encontrar \( \psi(x, y) \) a partir de \( \frac{\partial \psi}{\partial x} = 3x + 1 \):
+
+		Integramos respecto a \( x \):
+
+		\[
+			\psi(x, y) = \int (3x + 1) \, dx = \frac{3x^2}{2} + x + h(y),
+		\]
+
+		donde \( h(y) \) es una función de integración que depende solo de \( y \).
+
+		2: Encontrar \( h(y) \) a partir de \( \frac{\partial \psi}{\partial y} = 3y - 1 \):
+
+		Derivamos \( \psi(x, y) \) con respecto a \( y \):
+
+		\[
+			\frac{\partial \psi}{\partial y} = h'(y) = 3y - 1.
+		\]
+
+		Integrando con respecto a \( y \):
+
+		\[
+			h(y) = \frac{3y^2}{2} - y + C,
+		\]
+
+		donde \( C \) es una constante de integración.
+
+		Por lo tanto, la función potencial es:
+
+		\[
+			\psi(x, y) = \frac{3x^2}{2} + x + \frac{3y^2}{2} - y + C.
+		\]
+
+		3: Solución de la ecuación:
+
+		La solución general de la ecuación diferencial es:
+
+		\[
+			\psi(x, y) = C \quad \Rightarrow \quad \frac{3x^2}{2} + x + \frac{3y^2}{2} - y = C.
+		\]
+		\part $\displaystyle (3y - 1) - (3x + 1)y' = 0$\\
+
+		Verificamos si la ecuación es exacta, para lo cual escribimos la ecuación en la forma estándar \( M(x, y) + N(x, y) y' = 0 \), donde
+
+		\[
+			M(x, y) = 3y - 1 \quad \text{y} \quad N(x, y) = -(3x + 1).
+		\]
+
+		Para que la ecuación sea exacta, debe cumplirse la condición de exactitud, que es:
+
+		\[
+			\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}.
+		\]
+
+		Calculamos las derivadas parciales:
+
+		\[
+			\frac{\partial M}{\partial y} = 3 \quad \text{y} \quad \frac{\partial N}{\partial x} = -3.
+		\]
+
+		Como las derivadas parciales no son iguales, la ecuación no es exacta. Por lo tanto, no podemos resolverla directamente como una ecuación exacta.
+
+
+		\part $\displaystyle (y^2 - 2x) + (2xy - e^y)y' = 0$\\
+
+		Verificamos si la ecuación es exacta, para lo cual escribimos la ecuación en la forma estándar \( M(x, y) + N(x, y) y' = 0 \), donde
+
+		\[
+			M(x, y) = y^2 - 2x \quad \text{y} \quad N(x, y) = 2xy - e^y.
+		\]
+
+		Para que la ecuación sea exacta, debe cumplirse la condición de exactitud, que es:
+
+		\[
+			\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}.
+		\]
+
+		Calculamos las derivadas parciales:
+
+		\[
+			\frac{\partial M}{\partial y} = 2y \quad \text{y} \quad \frac{\partial N}{\partial x} = 2y.
+		\]
+
+		Como ambas derivadas son iguales, la ecuación es exacta. Ahora, buscamos una función potencial \( \psi(x, y) \) tal que:
+
+		\[
+			\frac{\partial \psi}{\partial x} = M(x, y) \quad \text{y} \quad \frac{\partial \psi}{\partial y} = N(x, y).
+		\]
+
+		1: Encontrar \( \psi(x, y) \) a partir de \( \frac{\partial \psi}{\partial x} = y^2 - 2x \):
+
+		Integramos respecto a \( x \):
+
+		\[
+			\psi(x, y) = \int (y^2 - 2x) \, dx = y^2 x - x^2 + h(y),
+		\]
+
+		donde \( h(y) \) es una función de integración que depende solo de \( y \).
+
+		2: Encontrar \( h(y) \) a partir de \( \frac{\partial \psi}{\partial y} = 2xy - e^y \):
+
+		Derivamos \( \psi(x, y) \) con respecto a \( y \):
+
+		\[
+			\frac{\partial \psi}{\partial y} = 2xy + h'(y) = 2xy - e^y.
+		\]
+
+		De aquí obtenemos:
+
+		\[
+			h'(y) = -e^y.
+		\]
+
+		Integrando con respecto a \( y \):
+
+		\[
+			h(y) = -e^y + C,
+		\]
+
+		donde \( C \) es una constante de integración.
+
+		Por lo tanto, la función potencial es:
+
+		\[
+			\psi(x, y) = y^2 x - x^2 - e^y + C.
+		\]
+
+		3: Solución de la ecuación:
+
+		La solución general de la ecuación diferencial es:
+
+		\[
+			\psi(x, y) = C \quad \Rightarrow \quad y^2 x - x^2 - e^y = C.
+		\]
+
+		\part $\displaystyle y^2 - 2xyy' = 0$
+
+		Verificamos si la ecuación es exacta, para lo cual escribimos la ecuación en la forma estándar \( M(x, y) + N(x, y) y' = 0 \), donde
+
+		\[
+			M(x, y) = y^2 \quad \text{y} \quad N(x, y) = -2xy.
+		\]
+
+		Para que la ecuación sea exacta, debe cumplirse la condición de exactitud, que es:
+
+		\[
+			\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}.
+		\]
+
+		Calculamos las derivadas parciales:
+
+		\[
+			\frac{\partial M}{\partial y} = 2y \quad \text{y} \quad \frac{\partial N}{\partial x} = -2y.
+		\]
+
+		Como las derivadas parciales no son iguales, la ecuación no es exacta. Por lo tanto, no podemos resolverla directamente como una ecuación exacta.
+
+		\part $\displaystyle (x^2 + \sin x) - (y^2 - \cos y)y' = 0$\\
+
+		Verificamos si la ecuación es exacta, para lo cual escribimos la ecuación en la forma estándar \( M(x, y) + N(x, y) y' = 0 \), donde
+
+		\[
+			M(x, y) = x^2 + \sin x \quad \text{y} \quad N(x, y) = -(y^2 - \cos y).
+		\]
+
+		Para que la ecuación sea exacta, debe cumplirse la condición de exactitud:
+
+		\[
+			\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}.
+		\]
+
+		Calculamos las derivadas parciales:
+
+		\[
+			\frac{\partial M}{\partial y} = 0 \quad \text{y} \quad \frac{\partial N}{\partial x} = 0.
+		\]
+
+		Como ambas derivadas son iguales, la ecuación es exacta. Ahora, buscamos una función potencial \( \psi(x, y) \) tal que:
+
+		\[
+			\frac{\partial \psi}{\partial x} = M(x, y) \quad \text{y} \quad \frac{\partial \psi}{\partial y} = N(x, y).
+		\]
+
+		1: Encontrar \( \psi(x, y) \) a partir de \( \frac{\partial \psi}{\partial x} = x^2 + \sin x \):
+
+		Integramos respecto a \( x \):
+
+		\[
+			\psi(x, y) = \int (x^2 + \sin x) \, dx = \frac{x^3}{3} - \cos x + h(y),
+		\]
+
+		donde \( h(y) \) es una función de integración que depende solo de \( y \).
+
+		2: Encontrar \( h(y) \) a partir de \( \frac{\partial \psi}{\partial y} = -(y^2 - \cos y) \):
+
+		Derivamos \( \psi(x, y) \) con respecto a \( y \):
+
+		\[
+			\frac{\partial \psi}{\partial y} = h'(y) = -(y^2 - \cos y).
+		\]
+
+		De aquí obtenemos:
+
+		\[
+			h'(y) = -y^2 + \cos y.
+		\]
+
+		Integrando con respecto a \( y \):
+
+		\[
+			h(y) = -\frac{y^3}{3} + \sin y + C,
+		\]
+
+		donde \( C \) es una constante de integración.
+
+		Por lo tanto, la función potencial es:
+
+		\[
+			\psi(x, y) = \frac{x^3}{3} - \cos x - \frac{y^3}{3} + \sin y + C.
+		\]
+
+		3: Solución de la ecuación:
+
+		La solución general de la ecuación diferencial es:
+
+		\[
+			\psi(x, y) = C \quad \Rightarrow \quad \frac{x^3}{3} - \cos x - \frac{y^3}{3} + \sin y = C.
+		\]
+		\part $\displaystyle (x^2 + \sin y) - (y^2 - \cos x)y' = 0$\\
+
+		Verificamos si la ecuación es exacta, para lo cual escribimos la ecuación en la forma estándar \( M(x, y) + N(x, y) y' = 0 \), donde
+
+		\[
+			M(x, y) = x^2 + \sin y \quad \text{y} \quad N(x, y) = -(y^2 - \cos x).
+		\]
+
+		Para que la ecuación sea exacta, debe cumplirse la condición de exactitud:
+
+		\[
+			\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}.
+		\]
+
+		Calculamos las derivadas parciales:
+
+		\[
+			\frac{\partial M}{\partial y} = \cos y, \quad \frac{\partial N}{\partial x} = \sin x.
+		\]
+
+		Como \( \frac{\partial M}{\partial y} \neq \frac{\partial N}{\partial x} \), la ecuación no es exacta. Por lo tanto, no podemos resolverla directamente como una ecuación exacta.
+	\end{parts}
+
+\end{questions}
+
+\end{document}
