@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>pae.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="requerimientos-funcionales-y-no-funcionales-del-sistema-de-pago-de-pasajes-de-la-coop-de-buses-%22universidad-estatal-de-bol%C3%ADvar%22-con-c%C3%B3digo-qr"><strong>Requerimientos funcionales y no funcionales del Sistema de Pago de Pasajes de la Coop. de buses &quot;Universidad Estatal de Bolívar&quot; con Código QR</strong></h1>
+<hr>
+<h2 id="1-introducci%C3%B3n"><strong>1. Introducción</strong></h2>
+<p>En la actualidad, la transformación digital ha permitido optimizar procesos en diversos sectores, incluyendo el transporte público. La Cooperativa de Buses &quot;Universidad Estatal de Bolívar&quot; busca modernizar su sistema de cobro mediante la implementación de pagos con código QR. Para ello, es fundamental analizar el problema, definir los requisitos del software y proponer una solución eficiente que garantice una mejor experiencia para conductores y pasajeros.</p>
+<p>Este informe detalla el proceso de identificación de requerimientos funcionales y no funcionales del sistema de pago con código QR, así como la metodología empleada y los resultados obtenidos en su análisis e implementación.</p>
+<h2 id="2-objetivo-general"><strong>2. Objetivo General</strong></h2>
+<p>Implementar los procesos adecuados para analizar un problema y proponer una solución mediante requisitos de software.</p>
+<h2 id="3-objetivos-espec%C3%ADficos"><strong>3. Objetivos Específicos</strong></h2>
+<ul>
+<li>Identificar las necesidades y problemáticas actuales del sistema de pago en la cooperativa de buses.</li>
+<li>Determinar los requerimientos funcionales y no funcionales del software de pago con código QR.</li>
+<li>Diseñar una propuesta de solución basada en los requisitos identificados.</li>
+<li>Validar la viabilidad técnica y operativa de la solución propuesta.</li>
+<li>Documentar el proceso de análisis y diseño del sistema de pago digital.</li>
+</ul>
+<h2 id="4-descripci%C3%B3n-de-la-pr%C3%A1ctica"><strong>4. Descripción de la práctica</strong></h2>
+<p>Para abordar el problema, se llevó a cabo un análisis detallado de la operatividad actual del cobro de pasajes en la cooperativa. Se realizaron entrevistas con conductores y pasajeros para identificar dificultades y necesidades. Posteriormente, se definieron los requisitos funcionales y no funcionales del sistema de pago con código QR.</p>
+<ol>
+<li>Análisis de stakeholders → Primero, se identifican los actores clave del sistema (conductores, pasajeros, administradores, etc.).</li>
+<li>Herramienta de recolección de información → Se definen los métodos para obtener datos relevantes (encuestas, entrevistas, observación).</li>
+<li>Estimación → Se realiza una estimación de recursos, tiempo y costos para el desarrollo del sistema.</li>
+<li>Gestión de riesgos → Se identifican y analizan posibles riesgos en el proceso de implementación.</li>
+<li>Plan de contingencia → Se establecen estrategias para mitigar los riesgos identificados.</li>
+<li>Planificación temporal → Se organiza el cronograma de actividades del proyectos.</li>
+<li>Tabla de requerimientos</li>
+</ol>
+<h2 id="5-metodolog%C3%ADa"><strong>5. Metodología</strong></h2>
+<p>La metodología utilizada para el análisis y propuesta de solución incluyó las siguientes etapas:</p>
+<ol>
+<li><strong>Análisis del problema</strong>: Evaluación del sistema de pago actual y sus deficiencias.</li>
+<li><strong>Levantamiento de requerimientos</strong>: Identificación de necesidades mediante encuestas y entrevistas con usuarios y transportistas.</li>
+<li><strong>Definición de requisitos</strong>: Clasificación de los requisitos funcionales y no funcionales del software.</li>
+<li><strong>Propuesta de solución</strong>: Diseño de la arquitectura del sistema y propuesta de implementación.</li>
+<li><strong>Validación y ajustes</strong>: Análisis de factibilidad técnica y mejoras a la solución propuesta.</li>
+</ol>
+<h2 id="6-resultados-obtenidos"><strong>6. Resultados obtenidos</strong></h2>
+<ul>
+<li>Se identificaron las principales problemáticas del sistema de pago actual, como la falta de agilidad y seguridad en las transacciones.</li>
+<li>Se definieron los requisitos funcionales del sistema, como la generación de códigos QR, validación de pagos y registro de transacciones.</li>
+<li>Se establecieron requisitos no funcionales como la usabilidad, seguridad y compatibilidad con dispositivos móviles.</li>
+<li>Se propuso una solución basada en una aplicación móvil que facilite los pagos mediante códigos QR.</li>
+<li>Se validó la viabilidad de la propuesta con un análisis técnico y de operatividad.</li>
+</ul>
+<h2 id="7-recomendaciones"><strong>7. Recomendaciones</strong></h2>
+<ul>
+<li>Desarrollar un prototipo funcional para realizar pruebas piloto antes de la implementación total.</li>
+<li>Integrar métodos de pago adicionales para mayor accesibilidad.</li>
+<li>Diseñar una estrategia de capacitación para conductores y pasajeros sobre el uso del nuevo sistema.</li>
+<li>Garantizar la seguridad del sistema mediante cifrado de datos y autenticación de usuarios.</li>
+</ul>
+<h2 id="8-conclusi%C3%B3n"><strong>8. Conclusión</strong></h2>
+<p>El análisis del problema permitió definir los requisitos necesarios para el desarrollo de un sistema de pago con código QR en la Cooperativa de Buses &quot;Universidad Estatal de Bolívar&quot;. La solución propuesta busca mejorar la eficiencia y seguridad en el cobro de pasajes, reduciendo la dependencia del efectivo y facilitando las transacciones digitales. Se recomienda continuar con la validación del sistema y su posterior desarrollo para garantizar una implementación exitosa.</p>
+<h2 id="9-bibliograf%C3%ADa"><strong>9. Bibliografía</strong></h2>
+<ul>
+<li>Sommerville, I. (2015). <em>Ingeniería de Software</em>. Pearson.</li>
+<li>Pressman, R. (2014). <em>Software Engineering: A Practitioner's Approach</em>. McGraw-Hill.</li>
+<li>ISO/IEC 25010:2011. &quot;Sistemas y software de ingeniería – Modelos de calidad&quot;.</li>
+</ul>
+<h2 id="10-anexos"><strong>10. Anexos</strong></h2>
+<ul>
+<li>Diagramas de flujo del sistema de pago con código QR.</li>
+<li>Encuestas realizadas a usuarios y transportistas.</li>
+<li>Prototipos iniciales de la interfaz del sistema.</li>
+</ul>
+
+</body>
+</html>

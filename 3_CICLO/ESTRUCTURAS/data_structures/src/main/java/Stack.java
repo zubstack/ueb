@@ -1,7 +1,7 @@
 
 public class Stack extends LinkedList {
     public void push(Node n) {
-        this.insert(n.data);
+        this.insertTail(n.data);
     }
 
     public Node pop() {

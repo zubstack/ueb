@@ -1,106 +1,65 @@
-<style>
-    *{
-        font-family: "Calibri";
-    }
-</style>
+# **Requerimientos funcionales y no funcionales del Sistema de Pago de Pasajes de la Coop. de buses "Universidad Estatal de Bolívar" con Código QR**  
 
-# Requerimientos funcionales y no funcionales del Sistema de Pago de Pasajes de la Coop. de buses "Univesidad Estatal de Bolivar" con Código QR
+---
 
-## **1. Introducción**
-El transporte público en la cuidad de Guaranda aún depende de métodos tradicionales de pago, como el dinero en efectivo. Este proyecto propone una solución innovadora y de bajo presupuesto basada en **Arduino y códigos QR** para validar y procesar pagos electrónicos en autobuses.
+## **1. Introducción**  
+En la actualidad, la transformación digital ha permitido optimizar procesos en diversos sectores, incluyendo el transporte público. La Cooperativa de Buses "Universidad Estatal de Bolívar" busca modernizar su sistema de cobro mediante la implementación de pagos con código QR. Para ello, es fundamental analizar el problema, definir los requisitos del software y proponer una solución eficiente que garantice una mejor experiencia para conductores y pasajeros.  
 
-## **2. Objetivo General**
-Desarrollar un **prototipo funcional** para el pago de pasajes en autobuses utilizando un **Arduino como validador de códigos QR**, los cuales estarán vinculados a cuentas de usuario mediante una aplicación móvil.
+Este informe detalla el proceso de identificación de requerimientos funcionales y no funcionales del sistema de pago con código QR, así como la metodología empleada y los resultados obtenidos en su análisis e implementación.  
 
-## **3. Objetivos Específicos**
-- Diseñar e implementar una **aplicación móvil** que genere códigos QR únicos para cada usuario.
-- Desarrollar un **sistema de validación de pasajes** con un **Arduino y un módulo de escaneo QR**.
-- Integrar una **base de datos** para asociar cada QR con la cuenta del usuario y registrar transacciones.
-- Evaluar la **viabilidad y costos** del sistema en comparación con tecnologías existentes.
+## **2. Objetivo General**  
+Implementar los procesos adecuados para analizar un problema y proponer una solución mediante requisitos de software.  
 
-## **4. Descripción del Prototipo**
-El sistema estará compuesto por los siguientes elementos:
+## **3. Objetivos Específicos**  
+- Identificar las necesidades y problemáticas actuales del sistema de pago en la cooperativa de buses.  
+- Determinar los requerimientos funcionales y no funcionales del software de pago con código QR.  
+- Diseñar una propuesta de solución basada en los requisitos identificados.  
+- Validar la viabilidad técnica y operativa de la solución propuesta.  
+- Documentar el proceso de análisis y diseño del sistema de pago digital.  
 
-### **a) Dispositivo validador (Arduino)**
-- **Hardware:**  
-  - Arduino (modelo compatible con módulos de comunicación).  
-  - Módulo lector de **códigos QR** (como el **Zebra SE-1224** o **EM18**).  
-  - Conexión a una base de datos a través de **Wi-Fi o Bluetooth** (ESP8266 o ESP32).  
-  - Pantalla LCD para mostrar el estado de la validación.  
+## **4. Descripción de la práctica**
 
-- **Funcionamiento:**  
-  1. El usuario sube al autobús y escanea su **código QR** en el lector.  
-  2. El Arduino consulta la base de datos para verificar la validez del código.  
-  3. Si el QR es válido y el usuario tiene saldo suficiente, la pantalla mostrará un mensaje de **"Acceso aprobado"** y se descontará el pasaje.  
-  4. Si el saldo es insuficiente o el QR es inválido, el sistema indicará un **"Error"**.  
+Para abordar el problema, se llevó a cabo un análisis detallado de la operatividad actual del cobro de pasajes en la cooperativa. Se realizaron entrevistas con conductores y pasajeros para identificar dificultades y necesidades. Posteriormente, se definieron los requisitos funcionales y no funcionales del sistema de pago con código QR.
 
-### **b) Aplicación móvil**
-- Permite a los usuarios **registrarse, generar códigos QR únicos y recargar saldo**.  
-- Se conecta con una **base de datos en la nube** para gestionar información de los pasajeros.  
-- Puede incluir métodos de pago como **tarjeta de crédito, débito o billeteras digitales**.  
+1. Análisis de stakeholders → Primero, se identifican los actores clave del sistema (conductores, pasajeros, administradores, etc.).
+2. Herramienta de recolección de información → Se definen los métodos para obtener datos relevantes (encuestas, entrevistas, observación).
+3. Estimación → Se realiza una estimación de recursos, tiempo y costos para el desarrollo del sistema.
+4. Gestión de riesgos → Se identifican y analizan posibles riesgos en el proceso de implementación.
+5. Plan de contingencia → Se establecen estrategias para mitigar los riesgos identificados.
+6. Planificación temporal → Se organiza el cronograma de actividades del proyectos.
+7. Tabla de requerimientos
 
-### **c) Base de datos y backend**
-- Base de datos **centralizada** para almacenar usuarios, saldos y transacciones.  
-- Backend desarrollado en **Node.js con Express** y base de datos en **Firebase o MySQL**.  
+## **5. Metodología**  
+La metodología utilizada para el análisis y propuesta de solución incluyó las siguientes etapas:  
 
-## **5. Beneficios del Proyecto**
-- **Bajo costo** en comparación con los sistemas de pago con tarjeta RFID.  
-- Mayor **accesibilidad**, ya que cualquier usuario con un smartphone puede generar un QR.  
-- Facilita la integración con **otros sistemas de pago**.  
-- **Seguridad** y control de acceso eficiente sin necesidad de contacto físico.  
+1. **Análisis del problema**: Evaluación del sistema de pago actual y sus deficiencias.  
+2. **Levantamiento de requerimientos**: Identificación de necesidades mediante encuestas y entrevistas con usuarios y transportistas.  
+3. **Definición de requisitos**: Clasificación de los requisitos funcionales y no funcionales del software.  
+4. **Propuesta de solución**: Diseño de la arquitectura del sistema y propuesta de implementación.  
+5. **Validación y ajustes**: Análisis de factibilidad técnica y mejoras a la solución propuesta.  
 
-## **6. Tecnologías a Utilizar**
-- **Hardware:** Arduino, lector QR, módulo Wi-Fi/Bluetooth.  
-- **Software:** Aplicación en Flutter o React Native, backend en Node.js, base de datos Firebase/MySQL.  
-- **Comunicación:** API REST para consulta y validación de QR.  
+## **6. Resultados obtenidos**  
+- Se identificaron las principales problemáticas del sistema de pago actual, como la falta de agilidad y seguridad en las transacciones.  
+- Se definieron los requisitos funcionales del sistema, como la generación de códigos QR, validación de pagos y registro de transacciones.  
+- Se establecieron requisitos no funcionales como la usabilidad, seguridad y compatibilidad con dispositivos móviles.  
+- Se propuso una solución basada en una aplicación móvil que facilite los pagos mediante códigos QR.  
+- Se validó la viabilidad de la propuesta con un análisis técnico y de operatividad.  
 
-## **7. Implementación del Prototipo en el Sistema Real**
+## **7. Recomendaciones**  
+- Desarrollar un prototipo funcional para realizar pruebas piloto antes de la implementación total.  
+- Integrar métodos de pago adicionales para mayor accesibilidad.  
+- Diseñar una estrategia de capacitación para conductores y pasajeros sobre el uso del nuevo sistema.  
+- Garantizar la seguridad del sistema mediante cifrado de datos y autenticación de usuarios.  
 
-### **7.1 Consideraciones para la Integración**
-Para llevar el prototipo a un entorno real, se deben analizar diversos factores técnicos, financieros y operativos. La implementación en el sistema de transporte público requiere pruebas piloto, ajustes en infraestructura y aceptación por parte de usuarios y operadores.
+## **8. Conclusión**  
+El análisis del problema permitió definir los requisitos necesarios para el desarrollo de un sistema de pago con código QR en la Cooperativa de Buses "Universidad Estatal de Bolívar". La solución propuesta busca mejorar la eficiencia y seguridad en el cobro de pasajes, reduciendo la dependencia del efectivo y facilitando las transacciones digitales. Se recomienda continuar con la validación del sistema y su posterior desarrollo para garantizar una implementación exitosa.  
 
-### **7.2 Desafíos y Soluciones**
-| **Desafío**                                          | **Posible Solución**                                                                        |
-| ---------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| **Conectividad en autobuses**                        | Uso de módulos **ESP32** con Wi-Fi y Bluetooth para sincronización de datos en tiempo real. |
-| **Velocidad de validación**                          | Optimización del código en Arduino para reducir el tiempo de respuesta del escáner QR.      |
-| **Seguridad de pagos**                               | Implementación de cifrado en la base de datos y autenticación de usuario en la app.         |
-| **Falsificación de códigos QR**                      | Generación de códigos dinámicos con vencimiento o uso de autenticación en dos pasos.        |
-| **Aceptación del sistema por parte de los usuarios** | Campañas de concientización y programas de prueba gratuitos para incentivar su uso.         |
+## **9. Bibliografía**  
+- Sommerville, I. (2015). *Ingeniería de Software*. Pearson.  
+- Pressman, R. (2014). *Software Engineering: A Practitioner's Approach*. McGraw-Hill.  
+- ISO/IEC 25010:2011. "Sistemas y software de ingeniería – Modelos de calidad".  
 
-### **7.3 Etapas de Implementación**
-1. **Prueba piloto:**  
-   - Implementación en **un grupo reducido de autobuses** en una ruta específica.  
-   - Monitoreo del rendimiento del lector QR y respuesta de los usuarios.  
-   - Recolección de feedback para realizar mejoras.  
-
-2. **Expansión progresiva:**  
-   - Ajustes en el hardware y software basados en resultados de la prueba piloto.  
-   - Capacitación a conductores y operadores sobre el uso del sistema.  
-   - Implementación en un mayor número de unidades de transporte.  
-
-3. **Escalabilidad y mantenimiento:**  
-   - Creación de una **infraestructura en la nube** para almacenar datos de viajes y transacciones.  
-   - Mantenimiento periódico del hardware y actualizaciones de software.  
-   - Posible integración con **otras formas de pago** (NFC, tarjetas bancarias, billeteras digitales).  
-
-### **7.4 Evaluación de Costos**
-Para garantizar la viabilidad del proyecto, es necesario analizar el **costo-beneficio** de la implementación. Se consideran los siguientes gastos:
-
-| **Recurso**                      | **Costo Aproximado**                    |
-| -------------------------------- | --------------------------------------- |
-| **Arduino + Módulo QR**          | $50 - $80 por unidad                    |
-| **Desarrollo de App Móvil**      | $3,000 - $7,000 (según funcionalidades) |
-| **Infraestructura en la nube**   | $100 - $500 mensuales                   |
-| **Capacitación y mantenimiento** | Variable                                |
-
-El objetivo es demostrar que esta solución es **más económica** que los sistemas actuales basados en tarjetas magnéticas o NFC.
-
-### **7.5 Impacto Esperado**
-- **Reducción de costos operativos** al eliminar tarjetas físicas costosas.  
-- **Mayor accesibilidad** para los usuarios sin necesidad de dispositivos especializados.  
-- **Mejor control financiero** para empresas de transporte mediante digitalización de pagos.  
-- **Menor contacto físico**, contribuyendo a la higiene y seguridad sanitaria.  
-
-### **7.6 Conclusión**
-La implementación del sistema de pago con códigos QR en transporte público es **técnicamente viable y financieramente accesible**. Con una estrategia de **prueba piloto, ajustes progresivos y escalabilidad**, se puede lograr una modernización efectiva del sistema sin incurrir en altos costos.  
+## **10. Anexos**  
+- Diagramas de flujo del sistema de pago con código QR.  
+- Encuestas realizadas a usuarios y transportistas.  
+- Prototipos iniciales de la interfaz del sistema.

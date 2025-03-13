@@ -1,5 +1,6 @@
 class LinkedList {
-    Node head;
+
+    public Node head;
 
     public void insertHead(int value) {
         Node newNode = new Node(value);
@@ -45,11 +46,11 @@ class LinkedList {
         node.next = newNode;
     }
 
-
     public Node extractHead() {
         if (head == null) return null;
         Node temp = head;
         head = head.next;
+        temp.next = null; // Avoid memory leaks
         return temp;
     }
 
@@ -68,6 +69,7 @@ class LinkedList {
             temp2 = temp1;
             temp1 = temp1.next;
         }
+
         temp2.next = null;
         return temp1;
     }
@@ -75,19 +77,24 @@ class LinkedList {
     public Node extractValue(int value) {
         if (head == null) return null;
 
-        Node temp = head;
-        Node temp2;
-
         if (head.data == value) {
+            Node temp = head;
             head = head.next;
+            temp.next = null; // Avoid memory leaks
             return temp;
         }
 
+        Node temp = head;
         while (temp.next != null && temp.next.data != value) {
             temp = temp.next;
         }
-        temp2 = temp.next;
-        return temp2;
+
+        if (temp.next == null) return null; // Value not found
+
+        Node nodeToRemove = temp.next;
+        temp.next = nodeToRemove.next;
+        nodeToRemove.next = null; // Avoid memory leaks
+        return nodeToRemove;
     }
 
     public Node extractReference(Node node) {
@@ -95,6 +102,7 @@ class LinkedList {
 
         if (head == node) {
             head = head.next;
+            node.next = null; // Avoid memory leaks
             return node;
         }
 
@@ -103,10 +111,12 @@ class LinkedList {
             temp = temp.next;
         }
 
+        if (temp.next == null) return null; // Node not found
+
         temp.next = node.next;
+        node.next = null; // Avoid memory leaks
         return node;
     }
-
 
     public void display() {
         Node temp = head;
@@ -125,5 +135,9 @@ class LinkedList {
             temp = temp.next;
         }
         return count;
+    }
+
+    public void clear() {
+        this.head = null;
     }
 }

@@ -22,15 +22,15 @@ Se utiliza una **tabla de riesgo** para evaluar la **probabilidad e impacto** de
 
 ### **Tabla de Riesgos**  
 
-| **Riesgo** | **Categoría** | **Probabilidad** | **Impacto** | **Nivel de Riesgo** |
-|------------|-------------|-----------------|-------------|-----------------|
-| Fallos en la integración de hardware y software | Técnico | 40% (Probable) | Alto | Alto |
-| Problemas de conectividad en los buses | Técnico | 30% (Moderado) | Alto | Medio |
-| Falta de aceptación por los usuarios | Negocio | 50% (Bastante probable) | Medio | Alto |
-| Resistencia al cambio de conductores | Operativo | 60% (Irrealizable) | Medio | Alto |
-| Problemas en la implementación en los buses | Operativo | 35% (Probable) | Alto | Medio |
-| Falta de recursos financieros | Financiero | 25% (Moderado) | Alto | Medio |
-| Fraude o clonación de códigos QR | Seguridad | 40% (Probable) | Alto | Alto |
-| Vulnerabilidades en la base de datos | Seguridad | 30% (Moderado) | Alto | Medio |
+| **Riesgo**                                      | **Categoría** | **Probabilidad**        | **Impacto** | **Nivel de Riesgo** |
+| ----------------------------------------------- | ------------- | ----------------------- | ----------- | ------------------- |
+| Fallos en la integración de hardware y software | Técnico       | 40% (Probable)          | Alto        | Alto                |
+| Problemas de conectividad en los buses          | Técnico       | 30% (Moderado)          | Alto        | Medio               |
+| Falta de aceptación por los usuarios            | Negocio       | 50% (Bastante probable) | Medio       | Alto                |
+| Resistencia al cambio de conductores            | Operativo     | 60% (Irrealizable)      | Medio       | Alto                |
+| Problemas en la implementación en los buses     | Operativo     | 35% (Probable)          | Alto        | Medio               |
+| Falta de recursos financieros                   | Financiero    | 25% (Moderado)          | Alto        | Medio               |
+| Fraude o clonación de códigos QR                | Seguridad     | 40% (Probable)          | Alto        | Alto                |
+| Vulnerabilidades en la base de datos            | Seguridad     | 30% (Moderado)          | Alto        | Medio               |
 
 
