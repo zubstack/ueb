@@ -69,7 +69,7 @@ public class Main {
 
     static void displayInsertMenu(int option) {
         int value, value2;
-        Node n;
+        LinkedList.Node n;
 
         if (option < 1 || option > 4) return; // Ignore invalid options
 
@@ -120,7 +120,7 @@ public class Main {
     }
 
     static void displayExtractMenu(int option) {
-        Node n;
+        LinkedList.Node n;
         int value;
 
         if (option < 1 || option > 4) return; // Ignore invalid options
@@ -175,8 +175,8 @@ public class Main {
         }
     }
 
-    static Node findNode(int value) {
-        Node temp = list.head;
+    static LinkedList.Node findNode(int value) {
+        LinkedList.Node temp = list.head;
         while (temp != null) {
             if (temp.data == value) return temp;
             temp = temp.next;

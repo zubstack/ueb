@@ -2,6 +2,16 @@ class LinkedList {
 
     public Node head;
 
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
     public void insertHead(int value) {
         Node newNode = new Node(value);
         newNode.next = head;

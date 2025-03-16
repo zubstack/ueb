@@ -1,0 +1,295 @@
+\documentclass[answers]{exam} 
+\usepackage[english,spanish]{babel} % Soporte para inglés y español
+\usepackage[autostyle]{csquotes} 
+\usepackage{graphicx}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry} 
+\usepackage{amsmath, amssymb} % Paquetes para matemáticas avanzadas
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} 
+\usepackage{array}   % for adjusting row height
+\renewcommand{\arraystretch}{1.5} % adjust the vertical spacing between rows
+\renewcommand{\familydefault}{\sfdefault}
+
+\edef\svparindent{\the\parindent}
+\newenvironment{specindent}
+  {\par\everypar{\leftskip=\svparindent\relax}\parindent=0pt\relax\parskip=1ex}
+  {\vspace{\parskip}\par}
+
+% Configuración de encabezado y pie de página
+% \pagestyle{headandfoot}
+% \firstpageheader{Universidad de Bolívar}{}{fecha} 
+% \runningheader{Universidad de Bolívar}{}{Cálculo III}
+% \firstpagefooter{}{\thepage}{}
+\runningfooter{}{}{}
+
+% Documento
+\begin{document}
+
+% % Encabezado principal
+% \begin{center}
+% 	\large\textbf{Trabajo Autónomo ? - Cálculo III}\\[1em]
+% 	\large Tercer Ciclo A - Ingeniería de Software\\[1em]
+% \end{center}
+% \vspace{0.5cm}
+% \noindent
+% \large\textbf{Tema:} tema \\
+% \large\textbf{Estudiante:} Ariel Alejandro Calderón
+% \vspace{0.5cm}
+\section*{Problema 1}
+
+\begin{specindent}
+	El radio se desintegra con una velocidad proporcional a la cantidad presente. La vida media es de 1600 años, tiempo necesario para que se descomponga la mitad. Hallar la cantidad desintegrada en 100 años.
+
+\end{specindent}
+\vspace{0.5em}
+
+\textbf{1. Analizar y comprender el problema presentado}
+
+La desintegración radiactiva sigue un modelo exponencial donde la tasa de cambio de la cantidad de sustancia \( N \) es
+
+proporcional a la cantidad presente:
+
+
+\[
+	\frac{dN}{dt} = -kN
+\]
+
+donde: \\
+
+- \( N(t) \) es la cantidad de radio en el tiempo \( t \),
+
+- \( k \) es la constante de desintegración,
+
+- el signo negativo indica que la cantidad de material disminuye con el tiempo.
+
+Se nos proporciona la vida media:
+
+\[
+	t_{1/2} = 1600 \text{ años}
+\]
+
+y queremos determinar la cantidad desintegrada en \( t = 100 \) años.
+
+\vspace{0.3cm}
+\textbf{2. Revisar o investigar las leyes físicas que presenta el problema}
+
+La ecuación diferencial de desintegración radiactiva es:
+
+\[
+	N(t) = N_0 e^{-kt}
+\]
+
+donde:\\
+
+- \( N_0 \) es la cantidad inicial de la sustancia radiactiva
+
+- \( k \) es la constante de desintegración que depende de la vida media.
+
+Sabemos que la relación entre la constante de desintegración \( k \) y la vida media es:
+
+\[
+	k = \frac{\ln 2}{t_{1/2}}
+\]
+
+\vspace{0.3cm}
+\textbf{3. Modelar el problema como una ecuación diferencial con valores iniciales}
+
+La ecuación diferencial es:
+
+\[
+	\frac{dN}{dt} = -kN
+\]
+
+y su solución es:
+
+\[
+	N(t) = N_0 e^{-kt}
+\]
+
+Para encontrar \( k \), usamos la vida media:
+
+\[
+	k = \frac{\ln 2}{1600}
+	\implies
+	k \approx \frac{0.693}{1600} \approx 0.000433
+\]
+
+\vspace{0.3cm}
+\textbf{4. Encontrar la solución general de la ecuación diferencial}
+
+La cantidad de radio en cualquier tiempo \( t \) está dada por:
+
+\[
+	N(t) = N_0 e^{-0.000433t}
+\]
+
+\vspace{0.3cm}
+\textbf{5. Encontrar la solución específica}
+
+Para hallar la cantidad desintegrada en \( t = 100 \) años, calculamos:
+
+\[
+	N(100) = N_0 e^{-0.000433(100)}
+\]
+
+\[N(100)= N_0 e^{-0.0433}\]
+
+\[N(100) \approx N_0 (0.9576)\]
+
+La cantidad desintegrada es:
+
+\[
+	\Delta N = N_0 - N(100)
+\]
+
+\[
+	\Delta N = N_0 - N_0(0.9576)
+\]
+
+\[
+	\Delta N = N_0 (1 - 0.9576)
+\]
+
+\[
+	\Delta N = N_0 (0.0424)
+\]
+
+\vspace{0.3cm}
+\textbf{6. Encontrar la solución del problema real}
+
+El porcentaje de sustancia que se ha desintegrado en 100 años es:
+
+\[
+	4.24\% \text{ de la cantidad inicial}
+\]
+
+Por lo que, en términos absolutos:
+
+\[
+	\Delta N = 0.0424 N_0
+\]
+
+
+% \vspace{1cm}
+\section*{Problema 2}
+
+\begin{specindent}
+	Suponga que una gota de un líquido se evapora con una velocidad proporcional a su superficie. Hallar el radio de la gota en función del tiempo.
+\end{specindent}
+
+\vspace{0.5em}
+
+\textbf{1. Analizar y comprender el problema presentado}
+
+Tenemos una gota de líquido que se evapora a una velocidad proporcional a su superficie.
+
+Si suponemos que la gota es esférica, su volumen está dado por:
+
+\[
+	V = \frac{4}{3} \pi r^3
+\]
+
+y su superficie por:
+
+\[
+	S = 4 \pi r^2
+\]
+
+Dado que la evaporación implica la pérdida de volumen, podemos escribir la ecuación diferencial:
+
+\[
+	\frac{dV}{dt} = - k S
+\]
+
+donde:
+- \( V \) es el volumen de la gota,
+- \( S \) es la superficie de la gota,
+- \( k \) es una constante de proporcionalidad positiva.
+
+\vspace{0.3cm}
+\textbf{2. Revisar o investigar las leyes físicas que presenta el problema}
+
+Sustituyendo la expresión de \( V \) y \( S \):
+
+\[
+	\frac{d}{dt} \left( \frac{4}{3} \pi r^3 \right) = - k (4 \pi r^2)
+\]
+
+Calculando la derivada:
+
+\[
+	4 \pi r^2 \frac{dr}{dt} = - 4 \pi k r^2
+\]
+
+Simplificando:
+
+\[
+	\frac{dr}{dt} = - k
+\]
+
+\vspace{0.3cm}
+\textbf{3. Modelar el problema como una ecuación diferencial con valores iniciales}
+
+Tenemos la ecuación diferencial:
+
+\[
+	\frac{dr}{dt} = -k
+\]
+
+con la condición inicial:
+
+\[
+	r(0) = r_0
+\]
+
+donde \( r_0 \) es el radio inicial de la gota.
+
+\vspace{0.3cm}
+\textbf{4. Encontrar la solución general de la ecuación diferencial}
+
+Separando variables:
+
+\[
+	dr = - k dt
+\]
+
+Integrando ambos lados:
+
+\[
+	r = - k t + C
+\]
+
+\vspace{0.3cm}
+\textbf{5. Encontrar la solución específica}
+
+Usando la condición inicial \( r(0) = r_0 \):
+
+\[
+	r_0 = - k (0) + C \Rightarrow C = r_0
+\]
+
+Por lo que la solución es:
+
+\[
+	r(t) = r_0 - k t
+\]
+
+\vspace{0.3cm}
+\textbf{6. Encontrar la solución del problema real}
+
+El radio de la gota en función del tiempo es:
+
+\[
+	r(t) = r_0 - k t
+\]
+
+Esta ecuación indica que la gota se evapora de manera lineal con el tiempo hasta que \( r(t) = 0 \), es decir, cuando:
+
+\[
+	t = \frac{r_0}{k}
+\]
+
+lo que significa que la gota desaparece completamente en \( t = r_0 / k \).
+
+
+
+\end{document}
