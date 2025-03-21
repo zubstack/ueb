@@ -44,34 +44,10 @@
 
 \vspace{0.5cm}
 
-\begin{center}
-    Resolver las siguientes ecuaciones diferenciales de primer orden con las condiciones iniciales dadas.
-\end{center}
-
 \begin{questions}
 
-    \question Resolver la ecuación diferencial:
-    $
-        y' + x^2y = 4x^3
-    $
-    con la condición inicial \( y(1) = 1 \).
+    \question Resolver la ecuación diferencial:$y' + x^2y = 4x^3$con la condición inicial \( y(1) = 1\).
 
-    \question Resolver la ecuación diferencial:
-    $
-        (1 - x^2)y' - 2y = 0
-    $
-
-    \question Resolver la ecuación diferencial:
-    $
-        y' + y = 0
-    $
-    con la condición inicial \( y(0) = 1 \).
-
-    \question Resolver la ecuación diferencial:
-    $
-        y' + 3(y - 1) = 2x
-    $
-    con la condición inicial \( y(0) = 4 \).
 
 \end{questions}
 

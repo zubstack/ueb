@@ -1,0 +1,280 @@
+Java Project Summary
+=====================
+
+Project Directory: /home/zubstack/ueb/3_CICLO/ESTRUCTURAS/ape1/ape-java
+
+Project Structure:
+/home/zubstack/ueb/3_CICLO/ESTRUCTURAS/ape1/ape-java
+├── ape-java.iml
+├── out
+│   └── production
+├── project_summary.txt
+└── src
+    ├── Banco.java
+    ├── Cliente.java
+    ├── ColaPrioridad.java
+    ├── ListaEnlazada.java
+    ├── Main.java
+    └── UIMenu.java
+
+4 directories, 8 files
+
+Configuration Files:
+
+Source Files (Java):
+/home/zubstack/ueb/3_CICLO/ESTRUCTURAS/ape1/ape-java/src/Main.java
+/home/zubstack/ueb/3_CICLO/ESTRUCTURAS/ape1/ape-java/src/ListaEnlazada.java
+/home/zubstack/ueb/3_CICLO/ESTRUCTURAS/ape1/ape-java/src/ColaPrioridad.java
+/home/zubstack/ueb/3_CICLO/ESTRUCTURAS/ape1/ape-java/src/UIMenu.java
+/home/zubstack/ueb/3_CICLO/ESTRUCTURAS/ape1/ape-java/src/Cliente.java
+/home/zubstack/ueb/3_CICLO/ESTRUCTURAS/ape1/ape-java/src/Banco.java
+
+Test Files (Java):
+
+File Contents (Initial Lines):
+File: /home/zubstack/ueb/3_CICLO/ESTRUCTURAS/ape1/ape-java/src/Main.java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        UIMenu uiMenu = new UIMenu(scanner);
+        uiMenu.showMenu();
+
+    }
+}
+
+
+File: /home/zubstack/ueb/3_CICLO/ESTRUCTURAS/ape1/ape-java/src/ListaEnlazada.java
+class ListaEnlazada<T> {
+    private class Nodo {
+        T elemento;
+        int prioridad;
+        Nodo siguiente;
+
+        public Nodo(T elemento, int prioridad) {
+            this.elemento = elemento;
+            this.prioridad = prioridad;
+            this.siguiente = null;
+        }
+    }
+
+    private Nodo cabeza;
+
+    public ListaEnlazada() {
+        this.cabeza = null;
+    }
+
+    // Agregar elemento en orden de prioridad
+    public void agregarOrdenado(T elemento, int prioridad) {
+        Nodo nuevo = new Nodo(elemento, prioridad);
+
+        if (cabeza == null || cabeza.prioridad > prioridad) {
+            nuevo.siguiente = cabeza;
+            cabeza = nuevo;
+        } else {
+            Nodo actual = cabeza;
+            while (actual.siguiente != null && actual.siguiente.prioridad <= prioridad) {
+                actual = actual.siguiente;
+            }
+            nuevo.siguiente = actual.siguiente;
+            actual.siguiente = nuevo;
+        }
+    }
+
+    // Eliminar y devolver el primer elemento (mayor prioridad)
+    public T eliminarPrimero() {
+        if (cabeza == null) {
+            return null;
+        }
+        T elemento = cabeza.elemento;
+        cabeza = cabeza.siguiente;
+        return elemento;
+    }
+
+    // Verificar si la lista está vacía
+    public boolean estaVacia() {
+        return cabeza == null;
+    }
+
+    // Imprimir elementos:
+    public void imprimirElementos() {
+        if (cabeza == null) {
+            System.out.println("[!] La lista esta vacia");
+            return;
+        }
+        Nodo actual = cabeza;
+        while (actual != null) {
+            System.out.println(":: Cliente: " + actual.elemento);
+            actual = actual.siguiente;
+        }
+    }
+}
+
+File: /home/zubstack/ueb/3_CICLO/ESTRUCTURAS/ape1/ape-java/src/ColaPrioridad.java
+class ColaPrioridad<T> {
+    private ListaEnlazada<T> lista;
+
+    public ColaPrioridad() {
+        this.lista = new ListaEnlazada<>();
+    }
+
+    // Agregar un elemento con prioridad
+    public void agregar(T elemento, int prioridad) {
+        lista.agregarOrdenado(elemento, prioridad);
+    }
+
+    // Eliminar y devolver el elemento de mayor prioridad
+    public T eliminar() {
+        return lista.eliminarPrimero();
+    }
+
+    // Verificar si la cola está vacía
+    public boolean estaVacia() {
+        return lista.estaVacia();
+    }
+
+    // Imprimir elementos en la cola:
+    public void imprimir(){
+        lista.imprimirElementos();
+    }
+
+}
+
+File: /home/zubstack/ueb/3_CICLO/ESTRUCTURAS/ape1/ape-java/src/UIMenu.java
+import java.util.Scanner;
+
+public class UIMenu {
+
+    private Banco banco = new Banco();
+    Scanner scanner;
+
+    public UIMenu(Scanner scanner) {
+        this.scanner = scanner;
+    }
+
+    public void showMenu() {
+        System.out.println("BIENVENIDO AL SISTEMA DEL BANCO");
+        int opcion = 0;
+
+        while (opcion != 4) {
+            System.out.println("""
+                    Escoja una opcion:
+                    (1). Agregar Clientes
+                    (2). Ver clientes en espera
+                    (3). Atender cliente
+                    (4). Cerrar el dia
+                    """);
+            System.out.print("Opcion: ");
+            opcion = scanner.nextInt();
+            switch (opcion) {
+                case 1:
+                    agregarClienteMenu();
+                    break;
+                case 2:
+                    banco.imprimirColaClientes();
+                    break;
+                case 3:
+                    banco.atenderCliente();
+                    break;
+                case 4:
+                    banco.cerrarDia();
+                    break;
+                default:
+                    System.out.println("[!] Opcion invalida, intente de nuevo.");
+                    break;
+            }
+        }
+    }
+
+    private void agregarClienteMenu() {
+        String nombre;
+        int prioridad = 0;
+        int tiempoAtencion = 1;
+
+        // Limpiar scanner
+        scanner.nextLine();
+
+        // Registar nombre
+        System.out.print("Ingrese nombre del cliente: ");
+        nombre = scanner.nextLine();
+
+        // Registar prioridad
+        while (prioridad < 1 || prioridad > 3) {
+            System.out.print("Ingrese prioridad del cliente (1: alto, 2: medio, 3: bajo): ");
+            prioridad = scanner.nextInt();
+        }
+
+        // Registar atencion
+        while (tiempoAtencion < 5 || tiempoAtencion > 30 || tiempoAtencion % 5 != 0) {
+            System.out.print("Ingrese tiempo de atencion (max: 30, min: 5, multiplos de 5): ");
+            tiempoAtencion = scanner.nextInt();
+        }
+
+        banco.agregarCliente(nombre, prioridad, tiempoAtencion);
+    }
+}
+
+File: /home/zubstack/ueb/3_CICLO/ESTRUCTURAS/ape1/ape-java/src/Cliente.java
+public class Cliente {
+    private String nombre;
+    private int prioridad;
+    private int tiempoAtencion;
+
+    public Cliente(String nombre, int prioridad, int tiempoAtencion) {
+        this.nombre = nombre;
+        this.prioridad = prioridad;
+        this.tiempoAtencion = tiempoAtencion;
+    }
+
+    public int getTiempoAtencion() {
+        return tiempoAtencion;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente: " + nombre + " | Prioridad: " + prioridad + " | Tiempo Atención: " + tiempoAtencion + " min";
+    }
+}
+File: /home/zubstack/ueb/3_CICLO/ESTRUCTURAS/ape1/ape-java/src/Banco.java
+public class Banco {
+    private ColaPrioridad<Cliente> cola;
+    private int tiempoTotalAtencion = 0;
+
+    public Banco() {
+        this.cola = new ColaPrioridad<>();
+    }
+
+    // Agregar cliente a la cola
+    public void agregarCliente(String nombre, int prioridad, int tiempoAtencion) {
+        Cliente nuevoCliente = new Cliente(nombre, prioridad, tiempoAtencion);
+        cola.agregar(nuevoCliente, prioridad);
+        System.out.println(":: Cliente agregado: " + nuevoCliente);
+    }
+
+    // Atender al siguiente cliente
+    public void atenderCliente() {
+        Cliente atendido = cola.eliminar();
+        if (atendido != null) {
+            tiempoTotalAtencion += atendido.getTiempoAtencion();
+            System.out.println(":: Atendiendo a: " + atendido);
+        } else {
+            System.out.println("[!] No hay clientes en espera.");
+        }
+    }
+
+    // Cerrar el día
+    public void cerrarDia() {
+        System.out.println("[Cierre del día]: Atendiendo a todos los clientes restantes...");
+        while (!cola.estaVacia()) {
+            atenderCliente();
+        }
+        System.out.println(":: Tiempo total de atención: " + tiempoTotalAtencion + " min");
+    }
+
+    // Imprimir cola de Clientes:
+    public void imprimirColaClientes() {
+        cola.imprimir();
+    }
+}
+

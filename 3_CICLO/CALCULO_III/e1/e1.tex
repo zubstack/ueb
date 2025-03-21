@@ -1,0 +1,291 @@
+\documentclass[12pt]{exam}
+
+\usepackage{amsmath}
+
+\begin{document}
+
+
+\begin{questions}
+
+\question Determine los valores de $m$ para los cuales las ecuaciones diferenciales dadas tienen una solución de la forma $y = e^{mx}$:
+\begin{parts}
+    \part $y'' + 10y' + 25y = 0$
+    \part $y'' + 5y' + 25y = 0$
+\end{parts}
+
+\section*{Solución}
+
+\begin{parts}
+    \part Consideramos la ecuación característica asociada:
+    \[
+    m^2 + 10m + 25 = 0.
+    \]
+    Factorizando,
+    \[
+    (m+5)^2 = 0 \Rightarrow m = -5.
+    \]
+
+    \part La ecuación característica es:
+    \[
+    m^2 + 5m + 25 = 0.
+    \]
+    Resolviendo con la fórmula cuadrática:
+    \[
+    m = \frac{-5 \pm \sqrt{25 - 100}}{2} = \frac{-5 \pm \sqrt{-75}}{2} = \frac{-5 \pm 5i\sqrt{3}}{2}.
+    \]
+\end{parts}
+
+
+\question Resuelva la ecuación diferencial: 
+\[
+y' + 3(y - 1) = 2x
+\]
+con $y(0) = 4$.
+
+\section*{Solución}
+
+La ecuación diferencial es:
+\[
+y' + 3(y - 1) = 2x.
+\]
+Reescribiéndola en la forma estándar:
+\[
+y' - 3y = 2x - 3.
+\]
+Este es un caso de ecuación diferencial lineal de primer orden, cuya solución general es:
+\[
+y(x) = e^{\int -3dx} \left( \int (2x - 3) e^{\int 3dx}dx + C \right).
+\]
+Calculando el factor integrante:
+\[
+\mu(x) = e^{-3x}.
+\]
+Multiplicando la ecuación por $\mu(x)$:
+\[
+e^{-3x} y' - 3e^{-3x} y = (2x - 3)e^{-3x}.
+\]
+Observamos que el lado izquierdo es la derivada de un producto:
+\[
+\frac{d}{dx} \left( e^{-3x} y \right) = (2x - 3)e^{-3x}.
+\]
+Integramos ambos lados:
+\[
+e^{-3x} y = \int (2x - 3)e^{-3x}dx.
+\]
+Resolviendo la integral por partes:
+\[
+\int 2x e^{-3x}dx = -\frac{2x}{3} e^{-3x} + \frac{2}{9} e^{-3x},
+\]
+\[
+\int -3 e^{-3x}dx = e^{-3x}.
+\]
+Por lo tanto:
+\[
+e^{-3x} y = -\frac{2x}{3} e^{-3x} + \frac{2}{9} e^{-3x} + e^{-3x} C.
+\]
+Multiplicando por $e^{3x}$:
+\[
+y = -\frac{2x}{3} + \frac{2}{9} + C e^{3x}.
+\]
+Aplicando la condición inicial $y(0) = 4$:
+\[
+4 = -\frac{2(0)}{3} + \frac{2}{9} + C e^{0}.
+\]
+\[
+4 = \frac{2}{9} + C.
+\]
+\[
+C = \frac{36}{9} - \frac{2}{9} = \frac{34}{9}.
+\]
+La solución final es:
+\[
+y(x) = -\frac{2x}{3} + \frac{2}{9} + \frac{34}{9} e^{3x}.
+\]
+
+
+\question Resuelva la ecuación diferencial de primer orden:
+\[
+x^2 + \sin{x} - (y^2 - \cos{y}) y' = 0
+\]
+
+\section*{Solución}
+
+La ecuación diferencial dada es:
+\[
+x^2 + \sin{x} - (y^2 - \cos{y}) y' = 0.
+\]
+Reescribiéndola en la forma estándar:
+\[
+M(x, y) + N(x, y) y' = 0,
+\]
+donde:
+\[
+M(x, y) = x^2 + \sin{x}, \quad N(x, y) = -(y^2 - \cos{y}).
+\]
+
+Verificamos la condición de exactitud, calculando las derivadas parciales:
+\[
+\frac{\partial M}{\partial y} = 0, \quad \frac{\partial N}{\partial x} = 0.
+\]
+Como \(\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}\), la ecuación es exacta.
+
+Ahora encontramos la función potencial \( F(x, y) \) tal que:
+\[
+\frac{\partial F}{\partial x} = M = x^2 + \sin{x}.
+\]
+
+Integramos con respecto a \(x\):
+\[
+F(x, y) = \int (x^2 + \sin{x})dx = \frac{x^3}{3} - \cos{x} + g(y).
+\]
+
+Ahora usamos la ecuación:
+\[
+\frac{\partial F}{\partial y} = N = -(y^2 - \cos{y}).
+\]
+
+Derivamos \(F(x, y)\) respecto a \(y\):
+\[
+\frac{\partial}{\partial y} \left( \frac{x^3}{3} - \cos{x} + g(y) \right) = g'(y).
+\]
+
+Igualando con \(N(x, y)\):
+\[
+g'(y) = -(y^2 - \cos{y}).
+\]
+
+Integrando con respecto a \(y\):
+\[
+g(y) = -\frac{y^3}{3} + y\sin{y} + C.
+\]
+
+Por lo tanto, la solución implícita de la ecuación diferencial es:
+\[
+\frac{x^3}{3} - \cos{x} - \frac{y^3}{3} + y\sin{y} = C.
+\]
+
+
+\question Resuelva la ecuación diferencial:
+\[
+y' - \frac{3y}{x} = \frac{1}{y^3}, \quad y(1) = 1
+\]
+\section*{Solución}
+
+La ecuación diferencial dada es:
+\[
+y' - \frac{3y}{x} = \frac{1}{y^3}, \quad y(1) = 1.
+\]
+
+Reescribiéndola en la forma estándar:
+\[
+\frac{dy}{dx} = \frac{3y}{x} + \frac{1}{y^3}.
+\]
+
+Observamos que es una ecuación de variables separables. Reescribimos:
+\[
+y^3 dy = \left( 3y x + 1 \right) \frac{dx}{x}.
+\]
+
+Separando términos:
+\[
+y^3 dy = \frac{dx}{x} + 3y \, dx.
+\]
+
+Sin embargo, reorganizando mejor:
+\[
+(y^3 - 3y) dy = \frac{dx}{x}.
+\]
+
+Factorizamos el lado izquierdo:
+\[
+y(y^2 - 3) dy = \frac{dx}{x}.
+\]
+
+Ahora integramos ambos lados:
+\[
+\int \frac{y(y^2 - 3)}{1} dy = \int \frac{dx}{x}.
+\]
+
+Para el lado izquierdo, expandimos la integral:
+\[
+\int y^3 dy - 3 \int y dy.
+\]
+
+Resolvemos:
+\[
+\frac{y^4}{4} - \frac{3y^2}{2} = \ln{|x|} + C.
+\]
+
+Aplicamos la condición inicial \( y(1) = 1 \):
+\[
+\frac{1}{4} - \frac{3}{2} = \ln{1} + C.
+\]
+
+Dado que \( \ln{1} = 0 \), tenemos:
+\[
+C = \frac{1}{4} - \frac{3}{2} = \frac{1}{4} - \frac{6}{4} = -\frac{5}{4}.
+\]
+
+Por lo tanto, la solución implícita es:
+\[
+\frac{y^4}{4} - \frac{3y^2}{2} = \ln{|x|} - \frac{5}{4}.
+\]
+
+
+\question Una partícula se mueve a lo largo del eje $x$ de modo que su velocidad en cualquier tiempo $t \geq 0$ está dada por:
+\[
+v(t) = \frac{1}{t^2 + 1}.
+\]
+Asumiendo que inicialmente se encuentra en el origen, ¿en qué tiempo la partícula se ha desplazado 1m?
+
+\section*{Solución}
+
+La ecuación diferencial dada es:
+\[
+v(t) = \frac{1}{t^2 + 1}.
+\]
+Sabemos que la velocidad \(v(t)\) es la derivada de la posición \(x(t)\) con respecto al tiempo:
+\[
+v(t) = \frac{dx}{dt}.
+\]
+Por lo tanto, la ecuación es:
+\[
+\frac{dx}{dt} = \frac{1}{t^2 + 1}.
+\]
+Para encontrar la posición \(x(t)\), integramos ambos lados:
+\[
+x(t) = \int \frac{1}{t^2 + 1} dt.
+\]
+La integral de \(\frac{1}{t^2 + 1}\) es una función estándar:
+\[
+x(t) = \tan^{-1}(t) + C.
+\]
+Dado que la partícula comienza en el origen, tenemos la condición inicial \(x(0) = 0\). Sustituyendo en la ecuación:
+\[
+0 = \tan^{-1}(0) + C.
+\]
+Sabemos que \(\tan^{-1}(0) = 0\), por lo que:
+\[
+C = 0.
+\]
+Entonces, la posición \(x(t)\) es:
+\[
+x(t) = \tan^{-1}(t).
+\]
+Ahora, queremos saber en qué tiempo la partícula se ha desplazado 1 metro, es decir, cuando \(x(t) = 1\). Entonces, resolvemos:
+\[
+1 = \tan^{-1}(t).
+\]
+Despejamos \(t\):
+\[
+t = \tan(1).
+\]
+Por lo tanto, el tiempo en el que la partícula se ha desplazado 1 metro es:
+\[
+t = \tan(1) \approx 1.557.
+\]
+
+
+\end{questions}
+
+\end{document}

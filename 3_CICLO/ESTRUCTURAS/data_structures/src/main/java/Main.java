@@ -2,184 +2,166 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner scan = new Scanner(System.in);
-    static LinkedList list = new LinkedList();
+    static ListaEnlazada lista = new ListaEnlazada();
 
     public static void main(String[] args) {
-        int result = 0;
+        int opcionPrincipal = 0;
 
-        list.insertHead(10);
-        list.insertHead(20);
-        list.insertHead(30);
+        // Opciones de los menús
+        String[] opciones = {"Insertar", "Extraer", "Mostrar", "Vaciar", "Salir"};
+        String[] opcionesSecundarias = {"Cabeza", "Cola", "Valor", "Referencia", "Regresar"};
 
-        String[] options = {"Insert", "Extract", "Display", "Empty", "Exit"};
-        String[] second_options = {"Head", "Tail", "Value", "Reference", "Back"};
+        while (opcionPrincipal != opciones.length) { // Mientras no se elija "Salir"
+            System.out.println("\n== LISTA ENLAZADA ==");
+            mostrarOpciones(opciones);
+            opcionPrincipal = leerOpcion(1, opciones.length);
 
-        while (result != options.length) { // Match with "Exit"
-            System.out.println("\n== LINKED LIST ==");
-            displayOptions(options);
-            System.out.print("Option: ");
-
-            if (!scan.hasNextInt()) { // Prevent invalid input errors
-                scan.next(); // Discard invalid input
-                System.out.println("Invalid input! Please enter a number.");
-                continue;
-            }
-
-            result = scan.nextInt();
-            scan.nextLine(); // Consume newline
-
-            switch (result) {
-                case 1: // Insert
-                    result = 0; // Reset for new menu
-                    displayOptions(second_options);
-                    System.out.print("Option: ");
-                    if (scan.hasNextInt()) {
-                        result = scan.nextInt();
-                        scan.nextLine();
-                        displayInsertMenu(result);
-                    }
+            switch (opcionPrincipal) {
+                case 1: // Insertar
+                    ejecutarMenu(opcionesSecundarias, true);
                     break;
-                case 2: // Extract
-                    result = 0;
-                    displayOptions(second_options);
-                    System.out.print("Option: ");
-                    if (scan.hasNextInt()) {
-                        result = scan.nextInt();
-                        scan.nextLine();
-                        displayExtractMenu(result);
-                    }
+                case 2: // Extraer
+                    ejecutarMenu(opcionesSecundarias, false);
                     break;
-                case 3: // Display
-                    list.display();
+                case 3: // Mostrar lista
+                    lista.mostrar();
                     break;
-                case 4: // Empty List
-                    list.clear();
-                    System.out.println("The linked list has been emptied.");
+                case 4: // Vaciar lista
+                    lista.limpiar();
+                    System.out.println("La lista enlazada ha sido vaciada.");
                     break;
-                case 5: // Exit
-                    System.out.println("Exiting...");
+                case 5: // Salir
+                    System.out.println("Saliendo del programa...");
                     break;
-                default:
-                    System.out.println("Invalid option! Please select a valid option.");
             }
         }
 
         scan.close();
     }
 
-    static void displayInsertMenu(int option) {
-        int value, value2;
-        LinkedList.Node n;
-
-        if (option < 1 || option > 4) return; // Ignore invalid options
-
-        System.out.print("Enter the node value: ");
-        if (!scan.hasNextInt()) {
-            System.out.println("Invalid input! Please enter an integer.");
-            scan.next(); // Clear invalid input
-            return;
+    // Método para mostrar el menú de opciones
+    static void mostrarOpciones(String[] opciones) {
+        for (int i = 0; i < opciones.length; i++) {
+            System.out.println((i + 1) + ") " + opciones[i]);
         }
-        value = scan.nextInt();
-        scan.nextLine();
+    }
 
-        switch (option) {
+    // Método para manejar los submenús de inserción y extracción
+    static void ejecutarMenu(String[] opciones, boolean esInsercion) {
+        System.out.println("\nSeleccione una opción:");
+        mostrarOpciones(opciones);
+        int opcion = leerOpcion(1, opciones.length);
+
+        if (opcion == opciones.length) return; // Si elige "Regresar", salir del submenú
+
+        if (esInsercion) {
+            ejecutarInsercion(opcion);
+        } else {
+            ejecutarExtraccion(opcion);
+        }
+    }
+
+    // Método para manejar la inserción de nodos
+    static void ejecutarInsercion(int opcion) {
+        int valor = leerEntero("Ingrese el valor del nodo: ");
+
+        switch (opcion) {
             case 1:
-                list.insertHead(value);
+                lista.insertarCabeza(valor);
                 break;
             case 2:
-                list.insertTail(value);
+                lista.insertarCola(valor);
                 break;
             case 3:
-                System.out.print("Enter the value of the node to insert after: ");
-                if (scan.hasNextInt()) {
-                    value2 = scan.nextInt();
-                    scan.nextLine();
-                    list.insertValue(value2, value);
-                } else {
-                    System.out.println("Invalid input! Please enter an integer.");
-                    scan.next(); // Clear invalid input
-                }
+                int valorDespues = leerEntero("Ingrese el valor del nodo después del cual insertar: ");
+                lista.insertarPorValor(valorDespues, valor);
                 break;
             case 4:
-                System.out.print("Enter the reference node value: ");
-                if (scan.hasNextInt()) {
-                    value2 = scan.nextInt();
-                    scan.nextLine();
-                    n = findNode(value2); // Retrieve an actual reference
-                    if (n != null) {
-                        list.insertReference(n, value);
-                    } else {
-                        System.out.println("Node with value " + value2 + " not found.");
-                    }
+                int valorReferencia = leerEntero("Ingrese el valor del nodo de referencia: ");
+                ListaEnlazada.Nodo nodo = buscarNodo(valorReferencia);
+                if (nodo != null) {
+                    lista.insertarPorReferencia(nodo, valor);
                 } else {
-                    System.out.println("Invalid input! Please enter an integer.");
-                    scan.next(); // Clear invalid input
+                    System.out.println("El nodo con valor " + valorReferencia + " no fue encontrado.");
                 }
                 break;
         }
     }
 
-    static void displayExtractMenu(int option) {
-        LinkedList.Node n;
-        int value;
+    // Método para manejar la extracción de nodos
+    static void ejecutarExtraccion(int opcion) {
+        ListaEnlazada.Nodo nodo = null;
+        int valor;
 
-        if (option < 1 || option > 4) return; // Ignore invalid options
-
-        switch (option) {
+        switch (opcion) {
             case 1:
-                n = list.extractHead();
-                if (n != null) System.out.println("Extracted: " + n.data);
-                else System.out.println("List is empty.");
+                nodo = lista.extraerCabeza();
                 break;
             case 2:
-                n = list.extractTail();
-                if (n != null) System.out.println("Extracted: " + n.data);
-                else System.out.println("List is empty.");
+                nodo = lista.extraerCola();
                 break;
             case 3:
-                System.out.print("Enter the value of the node to extract: ");
-                if (scan.hasNextInt()) {
-                    value = scan.nextInt();
-                    scan.nextLine();
-                    n = list.extractValue(value);
-                    if (n != null) System.out.println("Extracted: " + n.data);
-                    else System.out.println("Node not found.");
-                } else {
-                    System.out.println("Invalid input! Please enter an integer.");
-                    scan.next(); // Clear invalid input
-                }
+                valor = leerEntero("Ingrese el valor del nodo a extraer: ");
+                nodo = lista.extraerPorValor(valor);
                 break;
             case 4:
-                System.out.print("Enter the reference node value: ");
-                if (scan.hasNextInt()) {
-                    value = scan.nextInt();
-                    scan.nextLine();
-                    n = findNode(value); // Retrieve an actual reference
-                    if (n != null) {
-                        list.extractReference(n);
-                        System.out.println("Extracted node with value: " + value);
-                    } else {
-                        System.out.println("Node with value " + value + " not found.");
-                    }
+                valor = leerEntero("Ingrese el valor del nodo de referencia: ");
+                nodo = buscarNodo(valor);
+                if (nodo != null) {
+                    nodo = lista.extraerPorReferencia(nodo);
                 } else {
-                    System.out.println("Invalid input! Please enter an integer.");
-                    scan.next(); // Clear invalid input
+                    System.out.println("El nodo con valor " + valor + " no fue encontrado.");
                 }
                 break;
         }
-    }
 
-    static void displayOptions(String[] options) {
-        for (int i = 0; i < options.length; i++) {
-            System.out.println("(" + (i + 1) + ") " + options[i]);
+        if (nodo != null) {
+            System.out.println("Nodo extraído con valor: " + nodo.dato);
+        } else {
+            System.out.println("No se pudo extraer el nodo.");
         }
     }
 
-    static LinkedList.Node findNode(int value) {
-        LinkedList.Node temp = list.head;
+    // Método para validar la entrada de opciones dentro de un rango
+    static int leerOpcion(int min, int max) {
+        int opcion;
+        while (true) {
+            System.out.print("Opción: ");
+            if (scan.hasNextInt()) {
+                opcion = scan.nextInt();
+                scan.nextLine();
+                if (opcion >= min && opcion <= max) {
+                    return opcion;
+                }
+            } else {
+                scan.next(); // Descartar entrada no válida
+            }
+            System.out.println("Entrada inválida. Ingrese un número entre " + min + " y " + max + ".");
+        }
+    }
+
+    // Método para leer un entero con validación
+    static int leerEntero(String mensaje) {
+        int numero;
+        while (true) {
+            System.out.print(mensaje);
+            if (scan.hasNextInt()) {
+                numero = scan.nextInt();
+                scan.nextLine();
+                return numero;
+            } else {
+                scan.next(); // Descartar entrada inválida
+                System.out.println("Entrada inválida. Ingrese un número entero.");
+            }
+        }
+    }
+
+    // Método para buscar un nodo en la lista
+    static ListaEnlazada.Nodo buscarNodo(int valor) {
+        ListaEnlazada.Nodo temp = lista.cabeza;
         while (temp != null) {
-            if (temp.data == value) return temp;
-            temp = temp.next;
+            if (temp.dato == valor) return temp;
+            temp = temp.siguiente;
         }
         return null;
     }
