@@ -7,12 +7,20 @@
 - Angeles Xiomara Punina 
 - Mikaela Alejandra Paredes
 
-**Ejercicio:** Implementar un menu de opciones para la clase de Java *Lista Enlazada* que incluya los siguientes métodos para la inserción y extracción de elementos:  
+**Ejercicio:** Implementar un menu de opciones para la clase de Java *Lista Enlazada* que incluya los siguientes métodos:
 
-- **Por cabecera**  
-- **Por final**  
-- **Por valor**  
-- **Por referencia**
+- Ingreso en cabecera
+- Ingreso al final
+- Ingreso al final recursivo
+- Ingreso por valor
+- Ingreso por referencia
+- Extracción en cabecera
+- Extracción al final
+- Extracción por valor
+- Extracción por referencia 
+- Recorrido
+- Recorrido recursivo
+- Recorrido recursivo inverso
 
 **Clase Main:**
 ```java
@@ -26,8 +34,9 @@ public class Main {
         int opcionPrincipal = 0;
 
         // Opciones de los menús
-        String[] opciones = {"Insertar", "Extraer", "Mostrar", "Vaciar", "Salir"};
+        String[] opciones = {"Insertar", "Extraer", "Mostrar", "Vaciar", "Recorrer", "Salir"};
         String[] opcionesSecundarias = {"Cabeza", "Cola", "Valor", "Referencia", "Regresar"};
+        String[] opcionesRecorrido = {"Recorrido normal", "Recorrido inverso", "Regresar"};
 
         while (opcionPrincipal != opciones.length) { // Mientras no se elija "Salir"
             System.out.println("\n== LISTA ENLAZADA ==");
@@ -48,7 +57,10 @@ public class Main {
                     lista.limpiar();
                     System.out.println("La lista enlazada ha sido vaciada.");
                     break;
-                case 5: // Salir
+                case 5: // Recorrer
+                    ejecutarRecorrido(opcionesRecorrido);
+                    break;
+                case 6: // Salir
                     System.out.println("Saliendo del programa...");
                     break;
             }
@@ -140,6 +152,23 @@ public class Main {
         }
     }
 
+    // Método para manejar el recorrido de la lista
+    static void ejecutarRecorrido(String[] opciones) {
+        System.out.println("\nSeleccione una opción:");
+        mostrarOpciones(opciones);
+        int opcion = leerOpcion(1, opciones.length);
+
+        if (opcion == opciones.length) return; // Si elige "Regresar", salir del submenú
+
+        if (opcion == 1) {
+            // Recorrido normal (recursivo)
+            lista.recorridoRecursivo(lista.cabeza);
+        } else if (opcion == 2) {
+            // Recorrido inverso (recursivo)
+            lista.recorridoRecursivoInverso(lista.cabeza);
+        }
+    }
+
     // Método para validar la entrada de opciones dentro de un rango
     static int leerOpcion(int min, int max) {
         int opcion;
@@ -184,12 +213,12 @@ public class Main {
         return null;
     }
 }
-
 ```
 
 **Clase Lista Enlazada**
 
 ```java
+
 class ListaEnlazada {
     public Nodo cabeza;
 
@@ -374,8 +403,32 @@ class ListaEnlazada {
     public void limpiar() {
         cabeza = null;
     }
+
+    // Recorrido recursivo (imprime la lista)
+    public void recorridoRecursivo(Nodo nodo) {
+        if (nodo != null) {
+            System.out.print(nodo.dato + " -> ");
+            recorridoRecursivo(nodo.siguiente);
+        } else {
+            System.out.println("null");
+        }
+    }
+
+    // Recorrido recursivo inverso (imprime la lista de atrás hacia adelante)
+    public void recorridoRecursivoInverso(Nodo nodo) {
+        if (nodo != null) {
+            recorridoRecursivoInverso(nodo.siguiente);
+            System.out.print(nodo.dato + " -> ");
+        } else {
+            System.out.println("null");
+        }
+    }
 }
+
 ```
+
+<div style="page-break-after: always;"></div>
+
 ### Capturas de ejecución:
 ![plot](./public/g2.png)
 ![plot](./public/g3.png)
